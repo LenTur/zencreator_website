@@ -16,14 +16,14 @@ export const Services = ({ services, className }: ServicesProps) => {
   return (
     <section className={cn("bg-white", className)}>
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-14 md:mb-16">
           <div className="inline-block bg-purple-100 text-purple-700 text-sm font-bold mb-4 px-4 py-1.5 rounded-full">
             Services
           </div>
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
             Our Services
           </h2>
-          <p className="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto mb-10 md:mb-12">
             Pick the services you need – we handle the rest.
           </p>
         </div>

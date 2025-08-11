@@ -10,7 +10,7 @@ import {
 
 export const Gallery = () => {
   return (
-    <section className="w-full py-24">
+    <section className="w-full py-24 md:py-28">
       {/* Header remains centered and constrained */}
       <div className="flex flex-col items-center gap-3 mb-12 text-center max-w-[1120px] w-full mx-auto px-4">
         <div className="inline-block bg-purple-100 text-purple-700 text-sm font-bold px-4 py-1.5 rounded-full">

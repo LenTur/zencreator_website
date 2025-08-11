@@ -94,7 +94,18 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+}
+
+/* Typography scale */
+@layer components {
+  .heading-1 { @apply text-4xl md:text-6xl leading-tight md:leading-[1.15] font-extrabold; }
+  .heading-2 { @apply text-3xl md:text-4xl leading-snug font-bold; }
+  .heading-3 { @apply text-2xl leading-8 font-bold; }
+  .heading-4 { @apply text-lg leading-7 font-semibold; }
+  .body-lg   { @apply text-lg leading-7; }
+  .body      { @apply text-base leading-6; }
+  .caption   { @apply text-xs leading-4 font-medium text-gray-600; }
 }

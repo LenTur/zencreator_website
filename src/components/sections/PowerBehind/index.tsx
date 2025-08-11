@@ -1,17 +1,17 @@
 export const PowerBehind = () => {
   return (
-    <section className="bg-white pt-[150px]">
+    <section className="bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-14 md:mb-16">
           <div className="inline-block bg-purple-100 text-purple-700 text-sm font-bold mb-4 px-4 py-1.5 rounded-full">
             advantages
           </div>
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
             Create, publish, and analyze
             <br />
             content in a single workspace.
           </h2>
-          <p className="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto mb-10 md:mb-12">
             One interface instead of seven tools.
           </p>
         </div>
