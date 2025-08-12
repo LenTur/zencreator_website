@@ -27,7 +27,7 @@ export const FinalFooter = ({ className }: FinalFooterProps) => {
             {/* Column 1: Logo & Contacts */}
             <div className="col-span-1 lg:col-span-2 pr-8">
                 <a href="/" className="mb-6 inline-block">
-                    <img src="/Logo.svg" alt="ZenCreator Logo" className="h-8 w-auto" />
+                    <img src="/LogoDark.svg" alt="ZenCreator Logo" className="h-8 w-auto brightness-0 invert" />
                 </a>
                 <div className="flex flex-col space-y-3">
                     <a href="mailto:info@zencreator.pro" className="flex items-center hover:text-white transition-colors">
