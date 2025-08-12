@@ -250,12 +250,6 @@ export const Home: React.FC = () => {
                   description: 'Studio-quality images from two reference photos.',
                   link: '/services/photo-shoot',
                   reverse: false
-                },
-                {
-                  title: 'CreatorOS Platform',
-                  description: 'Generation, scheduling and analytics in one dashboard.',
-                  link: '/services/platform',
-                  reverse: true
                 }
               ].map((service, index) => (
                 <div key={index} className="p-12 md:p-16">
