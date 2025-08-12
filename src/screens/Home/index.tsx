@@ -339,8 +339,8 @@ export const Home: React.FC = () => {
                 },
               ].map((item) => (
                 <div key={item.name} className="bg-ink-900 rounded-3xl p-6 border border-white/10 hover:shadow-xl hover:border-white/20 transition-all duration-300">
-                  <div className="w-12 h-12 rounded-xl bg-purple-600/20 border border-purple-400/30 flex items-center justify-center mb-4">
-                    <item.icon className="w-6 h-6 text-purple-400" />
+                  <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center mb-4">
+                    <item.icon className="w-6 h-6 text-white/70" />
                   </div>
                   <h3 className="text-lg font-bold text-white mb-3">{item.name}</h3>
                   <p className="text-white/80 text-sm leading-relaxed">{item.description}</p>
