@@ -152,40 +152,67 @@ export const Home: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { 
-                  name: 'AI Image Editor', 
-                  description: 'Edit images fast with one prompt no Photoshop needed.',
-                  link: '/products/zencreator/image-editor',
+                  name: 'Face Generation', 
+                  description: 'Generate realistic faces with AI technology.',
+                  link: '/products/zencreator/content-creation/ai-face-generation',
+                  tryLink: 'https://app.zencreator.pro/tools',
                   mockup: 'bg-gradient-to-br from-red-100 to-blue-100'
                 },
                 { 
-                  name: 'AI Face Swap', 
-                  description: 'Turn any image into a perfect AI prompt with no guesswork needed.',
-                  link: '/products/zencreator/face-swapping',
+                  name: 'Face Swapping', 
+                  description: 'Swap faces in images with perfect AI precision.',
+                  link: '/products/zencreator/content-creation/ai-face-swapping',
+                  tryLink: 'https://app.zencreator.pro/tools',
                   mockup: 'bg-gradient-to-br from-blue-100 to-gray-100'
                 },
                 { 
-                  name: 'AI Images', 
-                  description: 'Generate realistic AI images with perfect character consistency.',
-                  link: '/products/zencreator/generation-prompt',
-                  mockup: 'bg-gradient-to-br from-purple-100 to-pink-100'
-                },
-                { 
-                  name: 'Skin Enhancer', 
-                  description: 'Enhance images in high-resolution, add details and natural skin.',
-                  link: '/products/zencreator/skin-enhancer',
-                  mockup: 'bg-gradient-to-br from-yellow-100 to-orange-100'
-                },
-                { 
-                  name: 'Upscaler', 
-                  description: 'Enhance image quality and resolution with AI technology.',
-                  link: '/products/zencreator/upscaling',
+                  name: 'Upscaling', 
+                  description: 'Enhance image quality and resolution with AI.',
+                  link: '/products/zencreator/content-creation/ai-upscaling',
+                  tryLink: 'https://app.zencreator.pro/tools',
                   mockup: 'bg-gradient-to-br from-green-100 to-teal-100'
                 },
                 { 
-                  name: 'Video Generator', 
-                  description: 'Create stunning videos from text prompts and images.',
-                  link: '/products/zencreator/video',
+                  name: 'Generation by Prompt', 
+                  description: 'Create images from text descriptions.',
+                  link: '/products/zencreator/content-creation/ai-generation-prompt',
+                  tryLink: 'https://app.zencreator.pro/tools',
+                  mockup: 'bg-gradient-to-br from-purple-100 to-pink-100'
+                },
+                { 
+                  name: 'Generation by Reference', 
+                  description: 'Generate images based on reference photos.',
+                  link: '/products/zencreator/content-creation/ai-generation-reference',
+                  tryLink: 'https://app.zencreator.pro/tools',
+                  mockup: 'bg-gradient-to-br from-yellow-100 to-orange-100'
+                },
+                { 
+                  name: 'Photo Shoot Generation', 
+                  description: 'Create professional photo shoots with AI.',
+                  link: '/services/photo-shoots-generation',
+                  tryLink: 'https://app.zencreator.pro/tools',
+                  mockup: 'bg-gradient-to-br from-pink-100 to-red-100'
+                },
+                { 
+                  name: 'Dating Profile Generation', 
+                  description: 'Generate attractive dating profiles automatically.',
+                  link: '/services/dating-profiles-generation',
+                  tryLink: 'https://app.zencreator.pro/tools',
+                  mockup: 'bg-gradient-to-br from-rose-100 to-pink-100'
+                },
+                { 
+                  name: 'Video Generation', 
+                  description: 'Create stunning videos from text and images.',
+                  link: '/products/zencreator/content-creation/video-generation',
+                  tryLink: 'https://app.zencreator.pro/tools',
                   mockup: 'bg-gradient-to-br from-indigo-100 to-purple-100'
+                },
+                { 
+                  name: 'Carousel Generation', 
+                  description: 'Generate engaging carousel posts for social media.',
+                  link: '/products/zencreator/content-creation/carousel-generation',
+                  tryLink: 'https://app.zencreator.pro/tools',
+                  mockup: 'bg-gradient-to-br from-teal-100 to-blue-100'
                 }
               ].map((tool, index) => (
                 <div key={index} className="bg-white rounded-3xl p-0 border border-gray-200 hover:shadow-xl hover:border-gray-300 transition-all duration-300 overflow-hidden">
@@ -200,16 +227,29 @@ export const Home: React.FC = () => {
                   <div className="p-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{tool.name}</h3>
                     <p className="text-gray-600 text-sm leading-relaxed mb-4">{tool.description}</p>
-                    <Link 
-                      to={tool.link} 
-                      className="inline-flex items-center gap-2 text-gray-900 hover:text-purple-600 font-medium transition-colors duration-200"
-                    >
-                      Try it now
-                      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M7 17L17 7" />
-                        <path d="M7 7h10v10" />
-                      </svg>
-                    </Link>
+                    <div className="flex flex-wrap gap-3">
+                      <a 
+                        href={tool.tryLink} 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-gray-900 hover:text-purple-600 font-medium transition-colors duration-200"
+                      >
+                        Try it now
+                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M7 17L17 7" />
+                          <path d="M7 7h10v10" />
+                        </svg>
+                      </a>
+                      <Link 
+                        to={tool.link} 
+                        className="inline-flex items-center gap-2 text-gray-600 hover:text-purple-600 font-medium transition-colors duration-200"
+                      >
+                        Learn More
+                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M9 18l6-6-6-6" />
+                        </svg>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               ))}
