@@ -105,7 +105,7 @@ export const AIPhotoShoot: React.FC = () => {
             <h3 className="text-2xl font-bold text-gray-900 mb-3">Ready to turn two photos into an entire campaign?</h3>
             <div className="flex gap-3">
               <a href="/products/zencreator/content-creation/photo-shoot" className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Try AI Photo Shoot Generation</a>
-              <a href="mailto:info@zencreator.pro?subject=Demo" className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Book a demo</a>
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Book a demo</a>
             </div>
           </section>
         </div>

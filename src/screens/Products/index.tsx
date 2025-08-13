@@ -120,7 +120,7 @@ export const Products = () => {
                 <Link to="/products/zencreator" className="bg-gray-900 text-white px-8 py-4 rounded-xl font-semibold hover:bg-purple-600 transition-colors duration-200">
                   Explore Creator OS →
                 </Link>
-                <a href="mailto:info@zencreator.pro?subject=Creator%20OS%20Demo" className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold hover:bg-purple-50 hover:border-purple-400 hover:text-purple-900 transition-all duration-200">
+                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold hover:bg-purple-50 hover:border-purple-400 hover:text-purple-900 transition-all duration-200">
                   Book a Demo
                 </a>
               </div>
@@ -179,7 +179,7 @@ export const Products = () => {
                 <Link to="/products/zencomfy" className="bg-gray-900 text-white px-8 py-4 rounded-xl font-semibold hover:bg-purple-600 transition-colors duration-200">
                   Explore ZenComfy →
                 </Link>
-                <a href="mailto:info@zencreator.pro?subject=ZenComfy%20Demo" className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold hover:bg-purple-50 hover:border-purple-400 hover:text-purple-900 transition-all duration-200">
+                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold hover:bg-purple-50 hover:border-purple-400 hover:text-purple-900 transition-all duration-200">
                   Book a Demo
                 </a>
               </div>
@@ -214,9 +214,9 @@ export const Products = () => {
                     <span className="text-gray-700 leading-relaxed">Analytics and growth insights</span>
                   </li>
                 </ul>
-                <Link to="/products/zencreator" className="bg-gray-900 text-white px-8 py-4 rounded-xl font-semibold text-center hover:bg-purple-600 transition-colors duration-200">
+                <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-gray-900 text-white px-8 py-4 rounded-xl font-semibold text-center hover:bg-purple-600 transition-colors duration-200">
                   Get ZenCreator →
-                </Link>
+                </a>
               </div>
 
               {/* ZenComfy Column */}
@@ -344,13 +344,13 @@ export const Products = () => {
               Pick your starting point and see results today.
             </p>
             <div className="flex flex-wrap gap-4 justify-center mb-16">
-              <Link to="/products/zencreator" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-purple-600 hover:text-white transition-colors duration-200">
+              <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-purple-600 hover:text-white transition-colors duration-200">
                 Get ZenCreator
-              </Link>
+              </a>
               <Link to="/products/zencomfy" className="border-2 border-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 transition-colors duration-200">
                 Get ZenComfy
               </Link>
-              <a href="mailto:info@zencreator.pro?subject=Custom%20Quote" className="border-2 border-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 transition-colors duration-200">
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border-2 border-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 transition-colors duration-200">
                 Request Custom Quote
               </a>
             </div>

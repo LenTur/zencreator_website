@@ -13,7 +13,7 @@ export const AIInfluencers: React.FC = () => {
           {/* Lead CTA */}
           <section className="py-6">
             <div className="flex flex-wrap gap-3">
-              <a href="mailto:info@zencreator.pro?subject=AI%20Influencers%20Demo" className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800">Book a Demo</a>
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800">Book a Demo</a>
               <a href="mailto:info@zencreator.pro?subject=AI%20Influencers%20Proposal" className="border border-gray-300 text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-50">Get a Proposal</a>
             </div>
           </section>
@@ -100,7 +100,7 @@ export const AIInfluencers: React.FC = () => {
               <p className="text-white/80 mb-6">From brief to first posts — in one week.</p>
               <div className="flex flex-wrap gap-3 justify-center">
                 <a href="mailto:info@zencreator.pro?subject=Start%20AI%20Influencer" className="bg-white text-gray-900 px-6 py-3 rounded-lg font-medium hover:bg-gray-100">Start a Project</a>
-                <a href="mailto:info@zencreator.pro?subject=Book%20a%20Demo" className="bg-white/10 border border-white/20 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/20">Book a 15-Minute Demo</a>
+                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-white/10 border border-white/20 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/20">Book a 15-Minute Demo</a>
               </div>
             </div>
           </section>

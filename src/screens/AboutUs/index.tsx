@@ -127,7 +127,7 @@ export const AboutUs: React.FC = () => {
                 <p><span className="font-semibold">Phone</span> — <a className="underline" href="tel:+13254137454">+1 325 413 7454</a></p>
                 <p><span className="font-semibold">Follow Us</span> — <a className="underline" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a></p>
               </div>
-              <a href="#book-call" className="inline-flex items-center justify-center bg-white text-gray-900 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">Book a 15-Minute Call</a>
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center bg-white text-gray-900 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">Book a 15-Minute Call</a>
             </div>
           </section>
         </div>

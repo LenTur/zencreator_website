@@ -114,7 +114,7 @@ export const AccountManagement: React.FC = () => {
             <p className="text-gray-700 mb-6"><strong>Spin up a new persona and see the control tower in action in under five minutes.</strong></p>
             <div className="flex gap-3">
               <a href="/products/zencreator/account-management" className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Add New Persona</a>
-              <a href="mailto:info@zencreator.pro?subject=Demo" className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Book a demo</a>
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Book a demo</a>
             </div>
           </section>
         </div>

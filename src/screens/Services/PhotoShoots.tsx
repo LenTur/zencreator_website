@@ -13,8 +13,8 @@ export const PhotoShootsService: React.FC = () => {
           {/* CTA */}
           <section className="py-6">
             <div className="flex flex-wrap gap-3">
-              <a href="mailto:info@zencreator.pro?subject=Photo%20Shoots%20Quote" className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800">Get a Quote</a>
-              <a href="mailto:info@zencreator.pro?subject=Photo%20Shoots%20Demo" className="border border-gray-300 text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-50">Book a Demo</a>
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800">Get a Quote</a>
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border border-gray-300 text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-50">Book a Demo</a>
             </div>
           </section>
 
@@ -128,7 +128,7 @@ export const PhotoShootsService: React.FC = () => {
               <p className="text-white/80 mb-6">Cut costs, skip logistics, and receive studio-quality images today.</p>
               <div className="flex flex-wrap gap-3 justify-center">
                 <a href="mailto:info@zencreator.pro?subject=Start%20Photo%20Shoots%20Project" className="bg-white text-gray-900 px-6 py-3 rounded-lg font-medium hover:bg-gray-100">Start a Project</a>
-                <a href="mailto:info@zencreator.pro?subject=Book%20a%20Demo" className="bg-white/10 border border-white/20 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/20">Book a 15-Minute Demo</a>
+                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-white/10 border border-white/20 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/20">Book a 15-Minute Demo</a>
               </div>
             </div>
           </section>

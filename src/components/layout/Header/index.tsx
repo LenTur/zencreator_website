@@ -4,6 +4,9 @@ import { ChevronDown, Menu, X } from 'lucide-react';
 import { navigationMenu, MenuSection } from '@/config/menu';
 import { MegaMenu } from './MegaMenu';
 import { ServicesMenu } from './ServicesMenu';
+import { ZenCreatorMegaMenu } from './ZenCreatorMegaMenu';
+import { ZenComfyMegaMenu } from './ZenComfyMegaMenu';
+import { openCalendlyPopup } from '@/lib/calendly';
 
 
 
@@ -100,28 +103,19 @@ const NavItem: React.FC<NavItemProps> = ({ item, isDark }) => {
     );
   }
 
-  // Special handling for Services — use services menu
+  // Special handling for Services — disabled/semi-transparent
   if (item.children && item.title === 'Services') {
     return (
-      <div
-        ref={itemRef}
-        className="relative"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        <a 
-          href={item.href}
-          className={`font-medium transition-all duration-200 px-3 py-2 rounded-lg flex items-center space-x-1 ${
+      <div className="relative opacity-50 cursor-not-allowed">
+        <span 
+          className={`font-medium px-3 py-2 rounded-lg ${
             isDark 
-              ? `text-gray-900 ${isOpen ? 'bg-gray-100' : 'hover:bg-gray-50 hover:text-gray-900'}`
-              : `text-white ${isOpen ? 'bg-white/20' : 'hover:bg-white/10 hover:text-white/90'}`
+              ? 'text-gray-900'
+              : 'text-white'
           }`}
         >
-          <span>{item.title}</span>
-          <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
-        </a>
-        
-        {isOpen && <ServicesMenu onClose={closeMenu} />}
+          {item.title}
+        </span>
       </div>
     );
   }
@@ -167,6 +161,23 @@ const NavItem: React.FC<NavItemProps> = ({ item, isDark }) => {
     );
   }
 
+  // Special handling for About Us — disabled/semi-transparent
+  if (item.title === 'About Us') {
+    return (
+      <div className="relative opacity-50 cursor-not-allowed">
+        <span 
+          className={`font-medium px-3 py-2 rounded-lg ${
+            isDark 
+              ? 'text-gray-900'
+              : 'text-white'
+          }`}
+        >
+          {item.title}
+        </span>
+      </div>
+    );
+  }
+
   return (
     <a
       href={item.href}
@@ -201,30 +212,48 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
     const hasChildren = item.children && item.children.length > 0;
     const isOpen = openSections.includes(item.title);
     const paddingLeft = depth * 16;
+    const isDisabled = item.title === 'Services' || item.title === 'About Us';
 
     return (
       <div key={item.title}>
         {hasChildren ? (
           <button
-            onClick={() => toggleSection(item.title)}
-            className={`w-full flex items-center justify-between py-3 text-left text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors`}
+            onClick={isDisabled ? undefined : () => toggleSection(item.title)}
+            className={`w-full flex items-center justify-between py-3 text-left transition-colors ${
+              isDisabled 
+                ? 'text-gray-400 cursor-not-allowed opacity-50' 
+                : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+            }`}
             style={{ paddingLeft: `${paddingLeft + 16}px` }}
+            disabled={isDisabled}
           >
             <span className="font-medium">{item.title}</span>
             <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
           </button>
         ) : (
-          <a
-            href={item.href}
-            onClick={onClose}
-            className={`block py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors`}
+          <div
+            className={`block py-3 ${
+              isDisabled 
+                ? 'text-gray-400 cursor-not-allowed opacity-50' 
+                : 'text-gray-700'
+            }`}
             style={{ paddingLeft: `${paddingLeft + 16}px` }}
           >
-            {item.title}
-          </a>
+            {isDisabled ? (
+              <span>{item.title}</span>
+            ) : (
+              <a
+                href={item.href}
+                onClick={onClose}
+                className="hover:bg-gray-100 hover:text-gray-900 transition-colors"
+              >
+                {item.title}
+              </a>
+            )}
+          </div>
         )}
         
-        {hasChildren && isOpen && (
+        {hasChildren && isOpen && !isDisabled && (
           <div className="bg-gray-50">
             {item.children?.map(child => renderMobileItem(child, depth + 1))}
           </div>
@@ -253,15 +282,33 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
         </div>
         
         <div className="overflow-y-auto h-full pb-20">
-          {Object.values(navigationMenu).map(item => renderMobileItem(item))}
+          {/* Custom mobile menu items */}
+          <div className="py-2">
+            <a
+              href="/products/zencreator"
+              onClick={onClose}
+              className="block py-3 px-4 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors font-medium"
+            >
+              ZenCreator
+            </a>
+            <a
+              href="/products/zencomfy"
+              onClick={onClose}
+              className="block py-3 px-4 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors font-medium"
+            >
+              ZenComfy
+            </a>
+            {renderMobileItem(navigationMenu.services)}
+            {renderMobileItem(navigationMenu.pricing)}
+            {renderMobileItem(navigationMenu.about)}
+          </div>
           
           <div className="border-t mt-4 pt-4 px-4 space-y-2">
-            <Button variant="ghost" className="w-full justify-start text-gray-600">
-              Sign In
-            </Button>
-            <Button className="w-full bg-black text-white">
-              Start Creating
-            </Button>
+            <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer">
+              <Button className="w-full bg-black text-white">
+                Start Creating
+              </Button>
+            </a>
           </div>
         </div>
       </div>
@@ -316,28 +363,52 @@ export const Header = ({ forceDark = false }: { forceDark?: boolean }) => {
             
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center space-x-3">
-              <NavItem item={navigationMenu.products} isDark={isScrolled || forceDark} />
+              {/* ZenCreator Mega Menu */}
+              <div className="relative group">
+                <a
+                  href="/products/zencreator"
+                  className={`font-medium transition-colors px-3 py-2 rounded-lg flex items-center space-x-1 ${
+                    (isScrolled || forceDark)
+                      ? 'text-gray-900 hover:text-gray-900 hover:bg-gray-50'
+                      : 'text-white hover:text-white/90 hover:bg-white/10'
+                  }`}
+                >
+                  <span>ZenCreator</span>
+                  <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
+                </a>
+                
+                <ZenCreatorMegaMenu onClose={() => {}} />
+              </div>
+
+              {/* ZenComfy Mega Menu */}
+              <div className="relative group">
+                <a
+                  href="/products/zencomfy"
+                  className={`font-medium transition-colors px-3 py-2 rounded-lg flex items-center space-x-1 ${
+                    (isScrolled || forceDark)
+                      ? 'text-gray-900 hover:text-gray-900 hover:bg-gray-50'
+                      : 'text-white hover:text-white/90 hover:bg-white/10'
+                  }`}
+                >
+                  <span>ZenComfy</span>
+                  <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
+                </a>
+                
+                <ZenComfyMegaMenu onClose={() => {}} />
+              </div>
+
               <NavItem item={navigationMenu.services} isDark={isScrolled || forceDark} />
-              <NavItem item={navigationMenu.technologies} isDark={isScrolled || forceDark} />
               <NavItem item={navigationMenu.pricing} isDark={isScrolled || forceDark} />
               <NavItem item={navigationMenu.about} isDark={isScrolled || forceDark} />
             </div>
             
             {/* CTA Buttons */}
             <div className="flex items-center space-x-6">
-              <Button 
-                variant="ghost" 
-                className={`hidden sm:inline-flex transition-colors ${
-                  (isScrolled || forceDark) 
-                    ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100' 
-                    : 'text-white hover:text-white hover:bg-white/10'
-                }`}
-              >
-                Sign In
-              </Button>
-              <Button className="bg-black hover:bg-gray-800 text-white px-6 h-10 rounded-lg">
-                Start Creating
-              </Button>
+              <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer">
+                <Button className="bg-black hover:bg-gray-800 text-white px-6 h-10 rounded-lg">
+                  Start Creating
+                </Button>
+              </a>
               
               {/* Mobile menu button */}
               <button

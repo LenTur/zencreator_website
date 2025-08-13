@@ -1,118 +1,195 @@
-import React, { useMemo, useState } from 'react';
-import { ChevronRight, Sparkles, Image, ArrowUp, MessageSquare, Hash, Heart, Play, LayoutGrid, Camera, Instagram, Twitter, Facebook, Youtube, BarChart3, Settings, Cloud } from 'lucide-react';
-import { navigationMenu, MenuSection } from '@/config/menu';
+import React from 'react';
+import { Sparkles, Image, ArrowUp, MessageSquare, Hash, Play, LayoutGrid, Camera, Instagram, Twitter, Facebook, Youtube, BarChart3, Settings, Cloud, ChevronRight } from 'lucide-react';
 
-const getMenuIcon = (title: string) => {
+const getMenuIcon = (title: string, size: string = "h-4 w-4") => {
   const iconMap: { [key: string]: React.ReactNode } = {
-    'AI Face Generation': <Sparkles className="h-5 w-5 text-purple-500" />,
-    'AI Face Swapping': <Image className="h-5 w-5 text-purple-500" />,
-    'AI Upscaling': <ArrowUp className="h-5 w-5 text-purple-500" />,
-    'AI Generation by Prompt': <MessageSquare className="h-5 w-5 text-purple-500" />,
-    'AI Generation by Reference': <Hash className="h-5 w-5 text-purple-500" />,
-    'AI Dating Profile Generation': <Heart className="h-5 w-5 text-purple-500" />,
-    'AI Video Generation': <Play className="h-5 w-5 text-purple-500" />,
-    'AI Carousel Generation': <LayoutGrid className="h-5 w-5 text-purple-500" />,
-    'AI Photo Shoot Generation': <Camera className="h-5 w-5 text-purple-500" />,
-    'on Instagram': <Instagram className="h-5 w-5 text-purple-500" />,
-    'on Threads': <MessageSquare className="h-5 w-5 text-purple-500" />,
-    'on Twitter (X)': <Twitter className="h-5 w-5 text-purple-500" />,
-    'on Facebook': <Facebook className="h-5 w-5 text-purple-500" />,
-    'on YouTube': <Youtube className="h-5 w-5 text-purple-500" />,
-    'Analytics and Insights': <BarChart3 className="h-5 w-5 text-purple-500" />,
-    'Account Management': <Settings className="h-5 w-5 text-purple-500" />,
-    'ComfyUI in the Cloud': <Cloud className="h-5 w-5 text-purple-500" />,
+    'FaceGenerator': <Sparkles className={`${size} text-purple-400`} />,
+    'Face Swapping': <Image className={`${size} text-purple-400`} />,
+    'Upscaling': <ArrowUp className={`${size} text-purple-400`} />,
+    'Generation by Prompt': <MessageSquare className={`${size} text-purple-400`} />,
+    'Generation by Reference': <Hash className={`${size} text-purple-400`} />,
+    'Dating Profile Generation': <Sparkles className={`${size} text-purple-400`} />,
+    'Video Generation': <Play className={`${size} text-purple-400`} />,
+    'Carousel Generation': <LayoutGrid className={`${size} text-purple-400`} />,
+    'Photo Shoot Generation': <Camera className={`${size} text-purple-400`} />,
+    'on Instagram': <Instagram className={`${size} text-purple-400`} />,
+    'on Threads': <MessageSquare className={`${size} text-purple-400`} />,
+    'on Twitter (X)': <Twitter className={`${size} text-purple-400`} />,
+    'on Facebook': <Facebook className={`${size} text-purple-400`} />,
+    'on YouTube': <Youtube className={`${size} text-purple-400`} />,
   };
-  return iconMap[title] || <Sparkles className="h-5 w-5 text-purple-500" />;
+  return iconMap[title] || <Sparkles className={`${size} text-purple-400`} />;
 };
 
 interface MegaMenuProps { onClose: () => void }
 
 export const MegaMenu: React.FC<MegaMenuProps> = ({ onClose }) => {
-  const products = navigationMenu.products.children || [];
-  const [activeProduct, setActiveProduct] = useState<MenuSection>(products[0]);
-  const level2 = activeProduct?.children || [];
-  const [activeSection, setActiveSection] = useState<MenuSection>(level2[0]);
-
-  // Ensure activeSection follows activeProduct changes
-  React.useEffect(() => {
-    if (level2.length > 0) setActiveSection(level2[0]);
-  }, [activeProduct]);
-
-  const rightItems = useMemo(() => activeSection?.children || [], [activeSection]);
-
   return (
-    <div 
+    <div
       className="fixed bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden z-[9999] lg:block hidden"
-      style={{ 
+      style={{
         width: '900px',
-        height: '480px',
         top: '100px',
         left: '50%',
         transform: 'translateX(-50%)',
         boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-        padding: '24px',
-        gap: '40px',
-        display: 'flex'
       }}
       onMouseLeave={onClose}
     >
-      {/* Three-column layout */}
-      <div style={{ width: '1100px', display: 'grid', gridTemplateColumns: '240px 320px 540px', gap: '24px', height: '100%' }}>
-        {/* Column 1: Products */}
-        <div className="pr-4" style={{ borderRight: '1px solid #E9D5FF', overflowY: 'auto' }}>
-          {(products as MenuSection[]).map((p) => (
-            <a
-              key={p.title}
-              href={p.href}
-              onMouseEnter={() => setActiveProduct(p)}
-              onFocus={() => setActiveProduct(p)}
+      <div className="grid grid-cols-3 h-full min-h-[500px]">
+        {/* Left Column - ZenCreator */}
+        <div className="border-r border-gray-100 p-6">
+          {/* ZenCreator Header */}
+          <div className="border-b border-gray-200 pb-4 mb-6">
+            <a href="/products/zencreator" onClick={onClose} className="block group">
+              <h3 className="text-lg font-bold text-gray-900 group-hover:text-purple-600 mb-1">ZenCreator</h3>
+              <p className="text-sm text-gray-500">Описание продукта</p>
+            </a>
+          </div>
+
+          {/* Content Creation Section */}
+          <div className="mb-6">
+            <a 
+              href="/products/zencreator/content-creation" 
               onClick={onClose}
-              className={`flex items-center justify-between px-3 py-2 rounded-lg mb-2 transition-colors duration-200 ${p.title===activeProduct?.title ? 'bg-purple-50 text-purple-900' : 'hover:bg-gray-50 hover:text-gray-900'}`}
+              className="flex items-center justify-between py-2 px-2 rounded hover:bg-gray-50 transition-colors group mb-3"
             >
-              <span className="text-gray-900 font-semibold">{p.title}</span>
+              <span className="text-sm font-medium text-gray-900 group-hover:text-purple-600">Content Creation</span>
               <ChevronRight className="h-4 w-4 text-gray-400" />
             </a>
-          ))}
+            
+            {/* Content Creation Tools */}
+            <div className="space-y-1 ml-2">
+              <a href="/products/zencreator/content-creation/ai-face-generation" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded hover:bg-gray-50 transition-colors group">
+                {getMenuIcon('FaceGenerator')}
+                <span className="text-sm text-gray-700 group-hover:text-gray-900">FaceGenerator</span>
+              </a>
+              <a href="/products/zencreator/content-creation/ai-face-swapping" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded hover:bg-gray-50 transition-colors group">
+                {getMenuIcon('Face Swapping')}
+                <span className="text-sm text-gray-700 group-hover:text-gray-900">Face Swapping</span>
+              </a>
+              <a href="/products/zencreator/content-creation/ai-upscaling" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded hover:bg-gray-50 transition-colors group">
+                {getMenuIcon('Upscaling')}
+                <span className="text-sm text-gray-700 group-hover:text-gray-900">Upscaling</span>
+              </a>
+              <a href="/products/zencreator/content-creation/ai-generation-prompt" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded hover:bg-gray-50 transition-colors group">
+                {getMenuIcon('Generation by Prompt')}
+                <span className="text-sm text-gray-700 group-hover:text-gray-900">Generation by Prompt</span>
+              </a>
+              <a href="/products/zencreator/content-creation/ai-generation-reference" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded hover:bg-gray-50 transition-colors group">
+                {getMenuIcon('Generation by Reference')}
+                <span className="text-sm text-gray-700 group-hover:text-gray-900">Generation by Reference</span>
+              </a>
+              <a href="/services/dating-profiles-generation" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded hover:bg-gray-50 transition-colors group">
+                {getMenuIcon('Dating Profile Generation')}
+                <span className="text-sm text-gray-700 group-hover:text-gray-900">Dating Profile Generation</span>
+              </a>
+              <a href="/products/zencreator/content-creation/video-generation" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded hover:bg-gray-50 transition-colors group">
+                {getMenuIcon('Video Generation')}
+                <span className="text-sm text-gray-700 group-hover:text-gray-900">Video Generation</span>
+              </a>
+              <a href="/products/zencreator/content-creation/carousel-generation" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded hover:bg-gray-50 transition-colors group">
+                {getMenuIcon('Carousel Generation')}
+                <span className="text-sm text-gray-700 group-hover:text-gray-900">Carousel Generation</span>
+              </a>
+              <a href="/services/photo-shoots-generation" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded hover:bg-gray-50 transition-colors group">
+                {getMenuIcon('Photo Shoot Generation')}
+                <span className="text-sm text-gray-700 group-hover:text-gray-900">Photo Shoot Generation</span>
+              </a>
+            </div>
+          </div>
         </div>
 
-        {/* Column 2: Sections of selected product */}
-        <div className="pr-4" style={{ borderRight: '1px solid #E9D5FF', overflowY: 'auto' }}>
-          {(level2 as MenuSection[]).map((s) => (
-            <a
-              key={s.title}
-              href={s.href}
-              onMouseEnter={() => setActiveSection(s)}
-              onFocus={() => setActiveSection(s)}
+        {/* Middle Column - Publishing Hub + Analytics + Account */}
+        <div className="border-r border-gray-100 p-6">
+          {/* Publishing Hub Section */}
+          <div className="mb-6">
+            <a 
+              href="/products/zencreator/publishing-hub" 
               onClick={onClose}
-              className={`flex items-center justify-between px-3 py-2 rounded-lg mb-2 transition-colors duration-200 ${s.title===activeSection?.title ? 'bg-purple-50 text-purple-900' : 'hover:bg-gray-50 hover:text-gray-900'}`}
+              className="flex items-center justify-between py-2 px-2 rounded hover:bg-gray-50 transition-colors group mb-3"
             >
-              <span className="text-gray-900 font-semibold">{s.title}</span>
-              {(s.children && s.children.length > 0) ? (
-                <ChevronRight className="h-4 w-4 text-gray-400" />
-              ) : null}
+              <span className="text-sm font-medium text-gray-900 group-hover:text-purple-600">Publishing Hub</span>
+              <ChevronRight className="h-4 w-4 text-gray-400" />
             </a>
-          ))}
+            
+            {/* Publishing Platforms */}
+            <div className="space-y-1 ml-2 mb-6">
+              <a href="/products/zencreator/publishing-hub/instagram" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded hover:bg-gray-50 transition-colors group">
+                {getMenuIcon('on Instagram')}
+                <span className="text-sm text-gray-700 group-hover:text-gray-900">on Instagram</span>
+              </a>
+              <a href="/products/zencreator/publishing-hub/threads" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded hover:bg-gray-50 transition-colors group">
+                {getMenuIcon('on Threads')}
+                <span className="text-sm text-gray-700 group-hover:text-gray-900">on Threads</span>
+              </a>
+              <a href="/products/zencreator/publishing-hub/twitter" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded hover:bg-gray-50 transition-colors group">
+                {getMenuIcon('on Twitter (X)')}
+                <span className="text-sm text-gray-700 group-hover:text-gray-900">on Twitter (X)</span>
+              </a>
+              <a href="/products/zencreator/publishing-hub/facebook" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded hover:bg-gray-50 transition-colors group">
+                {getMenuIcon('on Facebook')}
+                <span className="text-sm text-gray-700 group-hover:text-gray-900">on Facebook</span>
+              </a>
+              <a href="/products/zencreator/publishing-hub/youtube" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded hover:bg-gray-50 transition-colors group">
+                {getMenuIcon('on YouTube')}
+                <span className="text-sm text-gray-700 group-hover:text-gray-900">on YouTube</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Analytics and Insights */}
+          <a 
+            href="/products/zencreator/analytics" 
+            onClick={onClose}
+            className="flex items-center justify-between py-2 px-2 rounded hover:bg-gray-50 transition-colors group mb-3"
+          >
+            <span className="text-sm font-medium text-gray-900 group-hover:text-purple-600">Analytics and Insights</span>
+            <ChevronRight className="h-4 w-4 text-gray-400" />
+          </a>
+
+          {/* Account Management */}
+          <a 
+            href="/products/zencreator/account-management" 
+            onClick={onClose}
+            className="flex items-center justify-between py-2 px-2 rounded hover:bg-gray-50 transition-colors group"
+          >
+            <span className="text-sm font-medium text-gray-900 group-hover:text-purple-600">Account Management</span>
+            <ChevronRight className="h-4 w-4 text-gray-400" />
+          </a>
         </div>
 
-        {/* Column 3: Items of selected section */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '8px' }}>
-          {(rightItems as MenuSection[]).map((it) => (
-            <a
-              key={it.title}
-              href={it.href}
-              onClick={onClose}
-              className="flex items-center px-3 py-2 rounded-lg hover:bg-gray-50 hover:text-gray-900 transition-colors duration-200"
-            >
-              <div className="flex items-center gap-3">
-                {getMenuIcon(it.title)}
-                <span className="text-gray-900 font-medium whitespace-nowrap">{it.title}</span>
-              </div>
+        {/* Right Column - ZenComfy */}
+        <div className="p-6">
+          {/* ZenComfy Header */}
+          <div className="border-b border-gray-200 pb-4 mb-6">
+            <a href="/products/zencomfy" onClick={onClose} className="block group">
+              <h3 className="text-lg font-bold text-gray-900 group-hover:text-purple-600 mb-1">ZenComfy</h3>
+              <p className="text-sm text-gray-500">Описание продукта</p>
             </a>
-          ))}
+          </div>
+
+          {/* ComfyUI in the Cloud */}
+          <a 
+            href="/products/zencomfy/comfyui-cloud" 
+            onClick={onClose}
+            className="flex items-center justify-between py-2 px-2 rounded hover:bg-gray-50 transition-colors group mb-3"
+          >
+            <span className="text-sm font-medium text-gray-900 group-hover:text-purple-600">ComfyUI in the Cloud</span>
+            <ChevronRight className="h-4 w-4 text-gray-400" />
+          </a>
+
+          {/* Analytics and Insights */}
+          <a 
+            href="/products/zencomfy/analytics" 
+            onClick={onClose}
+            className="flex items-center justify-between py-2 px-2 rounded hover:bg-gray-50 transition-colors group"
+          >
+            <span className="text-sm font-medium text-gray-900 group-hover:text-purple-600">Analytics and Insights</span>
+            <ChevronRight className="h-4 w-4 text-gray-400" />
+          </a>
         </div>
       </div>
-
-      {/* Right side removed: handled in 3rd column above */}
     </div>
   );
 };

@@ -106,7 +106,7 @@ export const ContentCreationSuite: React.FC = () => {
             </ol>
             <div className="flex flex-wrap gap-3 mt-6">
               <a href="/products/zencreator/content-creation/ai-face-generation" className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:from-purple-700 hover:to-blue-700 transition-colors">Try Creation Suite</a>
-              <a href="mailto:info@zencreator.pro?subject=Demo" className="border border-gray-300 text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Book a 15-Minute Demo</a>
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border border-gray-300 text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Book a 15-Minute Demo</a>
             </div>
           </section>
 

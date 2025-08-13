@@ -127,7 +127,7 @@ export const PublishingHub: React.FC = () => {
               </div>
               <div className="flex flex-wrap gap-3">
                  <a href="/products/zencreator/publishing-hub/instagram" className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Try Smart Publishing</a>
-                <a href="mailto:info@zencreator.pro?subject=Publishing%20Demo" className="border border-gray-300 text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Book a Demo</a>
+                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border border-gray-300 text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Book a Demo</a>
               </div>
             </div>
             <p className="text-gray-700 mt-6">Questions? Email us at <a className="text-blue-600 hover:underline font-medium" href="mailto:info@zencreator.pro">info@zencreator.pro</a> — our team answers within a business day.</p>

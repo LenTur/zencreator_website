@@ -36,8 +36,8 @@ export const Home: React.FC = () => {
               AI products and services for content creation and publishing — choose what you need and grow without limits.
             </p>
             <div className="flex flex-wrap gap-6 justify-center">
-              <Link to="/products/zencreator" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-all duration-200 shadow-lg hover:shadow-xl">Start Now</Link>
-              <Link to="/about-us#book-call" className="bg-white text-gray-900 border-2 border-gray-300 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-purple-50 hover:border-purple-400 hover:text-purple-900 transition-all duration-200">Book Call</Link>
+              <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-all duration-200 shadow-lg hover:shadow-xl">Start Now</a>
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 border-2 border-gray-300 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-purple-50 hover:border-purple-400 hover:text-purple-900 transition-all duration-200">Book Call</a>
             </div>
           </section>
         </div>
@@ -215,7 +215,7 @@ export const Home: React.FC = () => {
                   mockup: 'bg-gradient-to-br from-teal-100 to-blue-100'
                 }
               ].map((tool, index) => (
-                <div key={index} className="bg-white rounded-3xl p-0 border border-gray-200 hover:shadow-xl hover:border-gray-300 transition-all duration-300 overflow-hidden">
+                <div key={index} className="bg-white rounded-3xl p-0 border border-gray-200 hover:shadow-xl hover:border-gray-300 transition-all duration-300 overflow-hidden flex flex-col h-full">
                   {/* Visual area at top with gradient mockup */}
                   <div className={`w-full h-64 ${tool.mockup} flex items-center justify-center relative`}>
                     <div className="absolute inset-4 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
@@ -224,15 +224,15 @@ export const Home: React.FC = () => {
                   </div>
 
                   {/* Content area */}
-                  <div className="p-6">
+                  <div className="p-6 flex flex-col h-full">
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{tool.name}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-4">{tool.description}</p>
-                    <div className="flex flex-wrap gap-3">
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">{tool.description}</p>
+                    <div className="flex justify-between items-center gap-3 mt-auto">
                       <a 
                         href={tool.tryLink} 
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-gray-900 hover:text-purple-600 font-medium transition-colors duration-200"
+                        className="bg-purple-600 text-white px-4 py-2 rounded-xl font-semibold hover:bg-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-2"
                       >
                         Try it now
                         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -242,7 +242,7 @@ export const Home: React.FC = () => {
                       </a>
                       <Link 
                         to={tool.link} 
-                        className="inline-flex items-center gap-2 text-gray-600 hover:text-purple-600 font-medium transition-colors duration-200"
+                        className="border-2 border-gray-300 text-gray-700 px-4 py-2 rounded-xl font-semibold hover:border-purple-600 hover:text-purple-600 transition-all duration-200 flex items-center gap-2"
                       >
                         Learn More
                         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -397,9 +397,9 @@ export const Home: React.FC = () => {
               Pick a product — you can always add the other later. Same SSO, shared billing.
             </p>
             <div className="flex flex-wrap gap-4 justify-center mb-16">
-              <Link to="/products/zencreator" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-purple-600 hover:text-white transition-colors duration-200">
+              <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-purple-600 hover:text-white transition-colors duration-200">
                 Get ZenCreator
-              </Link>
+              </a>
               <Link to="/products/zencomfy" className="border-2 border-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 transition-colors duration-200">
                 Get ZenComfy
               </Link>

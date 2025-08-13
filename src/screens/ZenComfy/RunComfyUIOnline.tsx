@@ -14,8 +14,8 @@ export const RunComfyUIOnline: React.FC = () => {
             <p className="text-gray-700 mb-4"><strong>Share, run, and deploy complex ComfyUI workflows in minutes — no local GPU, no setup.</strong></p>
             <p className="text-gray-700 mb-6">ZenComfy spins up high-performance GPUs only while your job is active, so you pay for compute time, not idle time.</p>
             <div className="flex gap-3">
-              <a href="mailto:info@zencreator.pro?subject=Demo" className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Book a Demo</a>
-              <a href="mailto:info@zencreator.pro?subject=Sales" className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Talk to Sales</a>
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Book a Demo</a>
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Talk to Sales</a>
             </div>
           </section>
 
@@ -96,8 +96,8 @@ export const RunComfyUIOnline: React.FC = () => {
             <h3 className="text-2xl font-bold text-gray-900 mb-3">Ready to Create Without Limits?</h3>
             <p className="text-gray-700 mb-6">Join thousands of artists, devs, and studios running ComfyUI at cloud scale.</p>
             <div className="flex gap-3">
-              <a href="mailto:info@zencreator.pro?subject=Demo" className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Book a Demo</a>
-              <a href="mailto:info@zencreator.pro?subject=Sales" className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Talk to Sales</a>
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Book a Demo</a>
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Talk to Sales</a>
             </div>
           </section>
         </div>

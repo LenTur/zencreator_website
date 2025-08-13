@@ -120,7 +120,7 @@ export const Analytics: React.FC = () => {
             </ul>
             <div className="mt-6 flex gap-3">
               <a href="/products/zencreator" className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Try ZenCreator</a>
-              <a href="mailto:info@zencreator.pro?subject=Demo" className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Book a Demo</a>
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Book a Demo</a>
             </div>
           </section>
 
@@ -142,7 +142,7 @@ export const Analytics: React.FC = () => {
             <p className="text-gray-700 mb-6"><strong>Connect your channels and see insights populate in under five minutes.</strong></p>
             <div className="flex gap-3">
               <a href="/products/zencreator" className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Try ZenCreator</a>
-              <a href="mailto:info@zencreator.pro?subject=Demo" className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Book a Demo</a>
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Book a Demo</a>
             </div>
           </section>
         </div>

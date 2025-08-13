@@ -16,8 +16,8 @@ export const ZenComfy: React.FC = () => {
           {/* CTA Buttons */}
           <section className="py-4">
             <div className="flex flex-wrap gap-3 justify-center">
-              <a href="mailto:info@zencreator.pro?subject=ZenComfy%20Demo" className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:from-purple-700 hover:to-blue-700 transition-colors">Book a Demo</a>
-              <a href="mailto:sales@zencreator.pro?subject=ZenComfy%20Sales" className="border border-gray-300 text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Talk to Sales</a>
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:from-purple-700 hover:to-blue-700 transition-colors">Book a Demo</a>
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border border-gray-300 text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Talk to Sales</a>
             </div>
           </section>
 
@@ -171,8 +171,8 @@ export const ZenComfy: React.FC = () => {
               <h4 className="text-xl font-semibold text-gray-900 mb-4">Ready to Create Without Limits?</h4>
               <p className="text-gray-700 mb-6">Join thousands of artists, studios and enterprises who ship faster with ZenComfy.</p>
               <div className="flex flex-wrap gap-3 justify-center">
-                <a href="mailto:info@zencreator.pro?subject=ZenComfy%20Demo" className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:from-purple-700 hover:to-blue-700 transition-colors">Book a Demo</a>
-                <a href="mailto:sales@zencreator.pro?subject=ZenComfy%20Sales" className="border border-gray-300 text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Talk to Sales</a>
+                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:from-purple-700 hover:to-blue-700 transition-colors">Book a Demo</a>
+                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border border-gray-300 text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Talk to Sales</a>
               </div>
             </div>
           </section>

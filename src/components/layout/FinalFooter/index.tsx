@@ -6,7 +6,7 @@ interface FinalFooterProps {
 }
 
 const FooterLink = ({ href = "#", children }: { href?: string, children: React.ReactNode }) => (
-    <a href={href} className="text-gray-400 hover:text-white transition-colors duration-200">{children}</a>
+    <span className="text-gray-500 cursor-not-allowed opacity-50">{children}</span>
 );
 
 const FooterColumn = ({ title, children }: { title: string, children: React.ReactNode }) => (

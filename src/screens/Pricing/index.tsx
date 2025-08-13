@@ -244,7 +244,7 @@ export const Pricing = () => {
             </div>
             
             <div className="text-center">
-              <a href="mailto:sales@zencreator.pro?subject=ZenComfy%20Pricing" className="bg-orange-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-orange-700 transition-colors">
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-orange-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-orange-700 transition-colors">
                 Talk to Sales →
               </a>
             </div>
@@ -290,7 +290,7 @@ export const Pricing = () => {
             <p className="text-gray-600 mb-6">All services include human QA and dedicated PM.</p>
             
             <div className="text-center">
-              <a href="mailto:info@zencreator.pro?subject=Managed%20Services" className="bg-red-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-red-700 transition-colors">
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-red-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-red-700 transition-colors">
                 Book a Call →
               </a>
             </div>
@@ -334,7 +334,7 @@ export const Pricing = () => {
                 <div className="mt-8 pt-8 border-t border-gray-200">
                   <p className="text-gray-600">
                     Still unsure? <strong>Email</strong>{' '}
-                    <a href="mailto:sales@zencreator.pro" className="text-purple-600 hover:text-purple-800 font-medium transition-colors">
+                    <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:text-purple-800 font-medium transition-colors">
                       sales@zencreator.pro
                     </a>{' '}
                     — we'll walk you through a cost model in 10 minutes.

@@ -135,7 +135,7 @@ export const Technologies = () => {
             <div className="text-center">
               <h4 className="text-xl font-semibold text-gray-900 mb-4">Ready to Build on Top of Our Stack?</h4>
               <div className="flex justify-center gap-4">
-                <a href="mailto:info@zencreator.pro?subject=Engineering%20Call" className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Book an Engineering Call</a>
+                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Book an Engineering Call</a>
               </div>
             </div>
           </section>

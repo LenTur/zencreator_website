@@ -15,18 +15,24 @@ export const Cta = () => {
             Book a live walk-through or start a free workspace and publish your first Smart-Scheduled post today.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button
-              variant="outline"
-              className="border-white/50 bg-transparent text-white hover:bg-white/10 backdrop-blur-sm px-8 h-[50px] text-lg rounded-xl"
-            >
-              Book a Demo
-            </Button>
-            <Button className="bg-purple-600 hover:bg-purple-700 text-white px-8 h-[50px] text-lg rounded-xl">
-              Start Free
-            </Button>
-            <Button className="bg-white text-gray-900 hover:bg-gray-100 px-8 h-[50px] text-lg rounded-xl">
-              Contact Sales
-            </Button>
+            <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer">
+              <Button
+                variant="outline"
+                className="border-white/50 bg-transparent text-white hover:bg-white/10 backdrop-blur-sm px-8 h-[50px] text-lg rounded-xl"
+              >
+                Book a Demo
+              </Button>
+            </a>
+            <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-purple-600 hover:bg-purple-700 text-white px-8 h-[50px] text-lg rounded-xl">
+                Start Free
+              </Button>
+            </a>
+            <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-white text-gray-900 hover:bg-gray-100 px-8 h-[50px] text-lg rounded-xl">
+                Contact Sales
+              </Button>
+            </a>
           </div>
         </div>
       </div>

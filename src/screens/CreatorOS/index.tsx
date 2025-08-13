@@ -76,7 +76,7 @@ export const CreatorOS: React.FC = () => {
               <p className="text-lg text-gray-600 mb-6">Ready to accelerate your content pipeline?</p>
               <div className="flex justify-center gap-4">
                 <a href="/products/zencreator/content-creation" className="bg-gray-900 text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Open ZenCreator</a>
-                <a href="mailto:info@zencreator.pro?subject=Demo" className="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Book a demo</a>
+                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border border-gray-300 text-gray-700 px-8 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Book a demo</a>
               </div>
             </div>
           </section>
