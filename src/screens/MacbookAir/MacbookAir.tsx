@@ -1,6 +1,7 @@
 import { Cta } from "@/components/sections/Cta";
 import { Services } from "@/components/sections/Services";
 import { Hero } from "@/components/sections/Hero";
+import { ZenCreatorHero } from "@/components/sections/ZenCreatorHero";
 import { Header } from "@/components/layout/Header";
 import { SharedSuperpowers, Superpower } from "@/components/sections/Industries";
 import { FinalFooter } from "@/components/layout/FinalFooter";
@@ -63,7 +64,7 @@ export const MacbookAir = (): JSX.Element => {
         
         <div className="container mx-auto px-4 pb-10" style={{ paddingTop: '140px' }}>
           <div className="max-w-6xl mx-auto">
-            <Hero />
+            <ZenCreatorHero />
           </div>
         </div>
 
@@ -96,7 +97,7 @@ export const MacbookAir = (): JSX.Element => {
           <div className="mt-[150px]">
             <SocialProof />
           </div>
-          <div className="mt-[150px]">
+          <div className="mt-[75px]">
             <UseCaseHighlights />
           </div>
           <div className="mt-[150px]">

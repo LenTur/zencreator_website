@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+
 
 interface Module {
   title: string;
@@ -14,8 +14,6 @@ interface Module {
 }
 
 export const PlatformSnapshot = () => {
-  const [activeModule, setActiveModule] = useState<number>(0);
-
   const modules: Module[] = [
     {
       title: "Creator Hub",
@@ -132,19 +130,12 @@ export const PlatformSnapshot = () => {
           </p>
         </div>
 
-        {/* Interactive Tabs with Horizontal Arrows */}
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-6 mb-12">
-          {/* Creator Hub Tab */}
-          <button
-            onClick={() => setActiveModule(0)}
-            className={`w-full lg:w-48 p-4 text-center rounded-2xl transition-all duration-300 font-medium ${
-              activeModule === 0
-                ? 'bg-purple-600/20 border border-purple-400/30 text-white'
-                : 'bg-white/5 border border-white/10 text-white/70 hover:bg-white/10 hover:text-white'
-            }`}
-          >
-            Creator Hub
-          </button>
+        {/* Flow Schema with Equal Height Cards */}
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-6 mb-16">
+          {/* Creator Hub */}
+          <div className="w-full lg:w-48 h-24 p-4 text-center rounded-2xl bg-purple-600/20 border border-purple-400/30 text-white flex items-center justify-center">
+            <span className="font-medium">Creator Hub</span>
+          </div>
 
           {/* Arrow 1 */}
           <div className="hidden lg:flex items-center">
@@ -154,17 +145,10 @@ export const PlatformSnapshot = () => {
             </div>
           </div>
 
-          {/* Publishing Hub Tab */}
-          <button
-            onClick={() => setActiveModule(1)}
-            className={`w-full lg:w-48 p-4 text-center rounded-2xl transition-all duration-300 font-medium ${
-              activeModule === 1
-                ? 'bg-purple-600/20 border border-purple-400/30 text-white'
-                : 'bg-white/5 border border-white/10 text-white/70 hover:bg-white/10 hover:text-white'
-            }`}
-          >
-            Publishing Hub
-          </button>
+          {/* Publishing Hub */}
+          <div className="w-full lg:w-48 h-24 p-4 text-center rounded-2xl bg-purple-600/20 border border-purple-400/30 text-white flex items-center justify-center">
+            <span className="font-medium">Publishing Hub</span>
+          </div>
 
           {/* Arrow 2 */}
           <div className="hidden lg:flex items-center">
@@ -174,17 +158,10 @@ export const PlatformSnapshot = () => {
             </div>
           </div>
 
-          {/* Analytics Tab */}
-          <button
-            onClick={() => setActiveModule(3)}
-            className={`w-full lg:w-48 p-4 text-center rounded-2xl transition-all duration-300 font-medium ${
-              activeModule === 3
-                ? 'bg-purple-600/20 border border-purple-400/30 text-white'
-                : 'bg-white/5 border border-white/10 text-white/70 hover:bg-white/10 hover:text-white'
-            }`}
-          >
-            Analytics & Insights
-          </button>
+          {/* Analytics & Insights */}
+          <div className="w-full lg:w-48 h-24 p-4 text-center rounded-2xl bg-purple-600/20 border border-purple-400/30 text-white flex items-center justify-center">
+            <span className="font-medium">Analytics & Insights</span>
+          </div>
 
           {/* Arrow 3 (back) */}
           <div className="hidden lg:flex items-center">
@@ -194,75 +171,67 @@ export const PlatformSnapshot = () => {
             </div>
           </div>
 
-          {/* Account Management Tab */}
-          <button
-            onClick={() => setActiveModule(2)}
-            className={`w-full lg:w-48 p-4 text-center rounded-2xl transition-all duration-300 font-medium ${
-              activeModule === 2
-                ? 'bg-purple-600/20 border border-purple-400/30 text-white'
-                : 'bg-white/5 border border-white/10 text-white/70 hover:bg-white/10 hover:text-white'
-            }`}
-          >
-            Account Management
-          </button>
-        </div>
-
-        {/* Active Module Header */}
-        <div className="text-center mb-12">
-          {/* Active Module Description - above title */}
-          <div className="text-sm text-white/60 mb-2">
-            {activeModule === 0 && "🎨 Image · Video · Face · Profile · Upscale"}
-            {activeModule === 1 && "🚀 Now · Schedule · Smart Publish"}
-            {activeModule === 2 && "👥 Tokens · Goals · Galleries"}
-            {activeModule === 3 && "📊 Post → Model → Network → Portfolio"}
+          {/* Account Management */}
+          <div className="w-full lg:w-48 h-24 p-4 text-center rounded-2xl bg-purple-600/20 border border-purple-400/30 text-white flex items-center justify-center">
+            <span className="font-medium">Account Management</span>
           </div>
-          
-          <h3 className="text-3xl md:text-4xl font-black text-white mb-4">
-            {modules[activeModule].title}
-          </h3>
-          <p className="text-xl text-white/80">
-            {modules[activeModule].description}
-          </p>
         </div>
 
-        {/* Content Grid */}
-        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
-          {/* Left Content - Features */}
-          <div className="lg:col-span-2">
-            <div className="space-y-6 mb-8">
-              {modules[activeModule].features.map((feature, index) => (
-                <div key={index} className="flex gap-4 items-start">
-                  <div className="w-3 h-3 bg-white rounded-full mt-2 flex-shrink-0" />
-                  <div>
-                    <div className="text-lg font-bold text-white mb-2">
-                      {feature.title}
-                    </div>
-                    <div className="text-white/80 leading-relaxed">
-                      {feature.description}
-                    </div>
+        {/* All Modules - Sequential Display */}
+        <div className="space-y-24">
+          {modules.map((module, index) => (
+            <div key={index} className="bg-white/5 rounded-3xl p-8 lg:p-12 border border-white/10">
+              {/* Module Header */}
+              <div className="text-center mb-12">
+                <h3 className="text-3xl md:text-4xl font-black text-white mb-4">
+                  {module.title}
+                </h3>
+                <p className="text-xl text-white/80">
+                  {module.description}
+                </p>
+              </div>
+
+              {/* Content Grid */}
+              <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
+                {/* Left Content - Features */}
+                <div className="lg:col-span-2">
+                  <div className="space-y-6 mb-8">
+                    {module.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex gap-4 items-start">
+                        <div className="w-3 h-3 bg-white rounded-full mt-2 flex-shrink-0" />
+                        <div>
+                          <div className="text-lg font-bold text-white mb-2">
+                            {feature.title}
+                          </div>
+                          <div className="text-white/80 leading-relaxed">
+                            {feature.description}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <a 
+                    href={module.buttonLink} 
+                    className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-purple-600 hover:text-white transition-colors duration-200 inline-block"
+                  >
+                    {module.buttonText}
+                  </a>
+                </div>
+
+                {/* Right Visual */}
+                <div className="lg:col-span-3 flex items-center justify-center">
+                  <div className="w-full max-w-lg">
+                    <img 
+                      src={module.visual}
+                      alt={`${module.title} Interface`}
+                      className="w-full h-auto rounded-2xl min-h-[400px] object-cover"
+                    />
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
-
-            <a 
-              href={modules[activeModule].buttonLink} 
-              className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-purple-600 hover:text-white transition-colors duration-200 inline-block"
-            >
-              {modules[activeModule].buttonText}
-            </a>
-          </div>
-
-          {/* Right Visual */}
-          <div className="lg:col-span-3 flex items-center justify-center">
-            <div className="w-full max-w-lg">
-              <img 
-                src={modules[activeModule].visual}
-                alt={`${modules[activeModule].title} Interface`}
-                className="w-full h-auto rounded-2xl min-h-[500px] object-cover"
-              />
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
