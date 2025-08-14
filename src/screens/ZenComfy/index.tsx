@@ -6,7 +6,6 @@ import { PlatformFeatures } from '@/components/sections/PlatformFeatures';
 import { WorkflowSteps } from '@/components/sections/WorkflowSteps';
 import { WorkflowTemplates } from '@/components/sections/WorkflowTemplates';
 import { FAQAccordion } from '@/components/sections/FAQAccordion';
-import { Cta } from '@/components/sections/Cta';
 // import { FinalFooter } from '@/components/layout/FinalFooter';
 
 export const ZenComfy: React.FC = () => {
@@ -60,11 +59,18 @@ export const ZenComfy: React.FC = () => {
             </div>
             
             <div className="mt-[150px]">
-              <FAQAccordion />
-            </div>
-            
-            <div className="mt-[0px]">
-              <Cta />
+              <FAQAccordion
+                cta={(
+                  <div className="max-w-3xl mx-auto text-center">
+                    <h3 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">Ready to Create Without Limits?</h3>
+                    <p className="text-gray-700 mb-8 text-lg">Build, run, and deploy ComfyUI workflows at cloud scale.</p>
+                    <div className="flex flex-wrap gap-4 justify-center">
+                      <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-colors">Book a Demo</a>
+                      <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-colors">Talk to Sales</a>
+                    </div>
+                  </div>
+                )}
+              />
             </div>
             
             {/* Footer comes from PageLayout */}

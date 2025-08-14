@@ -1,140 +1,281 @@
 import React from 'react';
 import { PageLayout } from '@/components/layout/PageLayout';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Instagram, MessageSquare, Twitter, Facebook, Youtube, Music4 as TikTok } from 'lucide-react';
+import { FAQAccordion } from '@/components/sections/FAQAccordion';
 
 export const PublishingHub: React.FC = () => {
+  const whyItems = [
+    {
+      title: 'Official API Integrations',
+      description:
+        'Meta Tech-Partner (Instagram / Facebook / Threads), X OAuth v2, YouTube Data API — no scraping, no account risk.'
+    },
+    {
+      title: 'Smart Publish Windows',
+      description:
+        'Define posting windows; Creator OS auto-slots the next free time and fills missing copy, hashtags, CTAs, and music.'
+    },
+    {
+      title: 'Unified Calendar',
+      description:
+        'Drag-and-drop across channels; colour-coded status (scheduled / live / edited / deleted).'
+    },
+    {
+      title: 'AI Copy & Hashtags',
+      description:
+        'Generates or compresses platform-perfect captions, titles, and tags while keeping your brand voice.'
+    },
+    {
+      title: 'Smart Formatting',
+      description:
+        'Auto-crop, resize, and bitrate-check assets so every post meets platform specs the first time.'
+    },
+    {
+      title: 'Compliance Guardrails',
+      description:
+        'Scans for banned keywords, over-texted images, copyright risk, and nudity mismatches before publishing.'
+    },
+    {
+      title: 'Deep Analytics',
+      description:
+        'Reach, ER, watch time, CTR, follower delta — compare Smart Publish vs. manual to refine strategy.'
+    },
+    {
+      title: 'Role-Based Approvals (soon)',
+      description:
+        'Draft → Manager Approval → Legal Sign-off workflow with full audit trail.'
+    }
+  ];
+
+  const channels = [
+    ['Instagram','Feed, Carousels (10), Stories, Reels. Location + music tags, user mentions.','/products/zencreator/publishing-hub/instagram'],
+    ['Threads','Single posts & multi-reply chains. AI splitting, hashtag hints.','/products/zencreator/publishing-hub/threads'],
+    ['X (Twitter)','Tweets, media threads, ≤ 2m 20 s video. Alt-text, GIF support, future polls.','/products/zencreator/publishing-hub/twitter'],
+    ['Facebook Pages / Groups','Images, carousels, native video, link posts. CTA buttons, brand-content flag.','/products/zencreator/publishing-hub/facebook'],
+    ['YouTube Shorts','≤ 60 s vertical video. Thumbnail grab, auto-#Shorts tags.','/products/zencreator/publishing-hub/youtube'],
+    ['TikTok (soon)','9×16 vertical, up to 10 min video. Sounds library integration, cover selector.','#']
+  ];
+
+  const getChannelIcon = (title: string) => {
+    const cls = 'w-6 h-6 text-purple-600';
+    if (title.toLowerCase().includes('instagram')) return <Instagram className={cls} />;
+    if (title.toLowerCase().includes('threads')) return <MessageSquare className={cls} />;
+    if (title.toLowerCase().includes('twitter') || title.includes('X (Twitter)')) return <Twitter className={cls} />;
+    if (title.toLowerCase().includes('facebook')) return <Facebook className={cls} />;
+    if (title.toLowerCase().includes('youtube')) return <Youtube className={cls} />;
+    if (title.toLowerCase().includes('tiktok')) return <TikTok className={cls} />;
+    return <Instagram className={cls} />;
+  };
+
   return (
     <PageLayout
       title="Publishing — From Asset to Audience in One Click"
       description={
-        "Every visual you create in ZenCreator can go live on five major social networks without ever leaving the platform."
+        'Every visual you create in Creator OS can go live on five major social networks without ever leaving the platform.'
       }
     >
-      <div className="container mx-auto px-4 pb-20">
-        <div className="max-w-6xl mx-auto">
+      {/* Hero */}
+      <div className="bg-gray-900 pb-20" style={{ paddingTop: '140px' }}>
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <section className="pt-24 pb-[40px] text-center">
+              <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
+                Publishing Hub<br />
+                <span
+                  style={{
+                    background: 'linear-gradient(135deg, #7BA1F8, #C084FC)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text'
+                  }}
+                  className="text-2xl md:text-4xl"
+                >
+                  From Asset to Audience in One Click
+                </span>
+              </h1>
+              <p className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
+                Every visual you create in Creator OS can go live on five major social networks without ever leaving the platform.
+              </p>
+              <div className="flex justify-center gap-4">
+                <a href="/products/zencreator/publishing-hub/instagram" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl">
+                  Connect Your First Channel
+                </a>
+                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-transparent text-white border-2 border-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all duration-200">
+                  Book a Demo
+                </a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
 
-          {/* Top CTA */}
-          <section className="py-4">
-            <div className="text-center">
-              <a href="/products/zencreator/publishing-hub/instagram" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Connect Your First Channel</a>
+      {/* Why Teams Choose — advanced cards like WorkflowTemplates */}
+      <section className="py-[150px] bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">Why Teams Choose<br /> the Publishing Hub</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              {whyItems.map((item, idx) => (
+                <div key={idx} className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
+                  <div className="relative flex items-start gap-6 p-8 bg-white/90 backdrop-blur-md rounded-3xl border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] group-hover:border-purple-200/50 min-h-[200px]">
+                    <div className="relative flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-purple-100 to-indigo-100 group-hover:from-purple-200 group-hover:to-indigo-200 transition-all duration-500 flex-shrink-0 group-hover:rotate-3 group-hover:scale-110">
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-400/20 to-indigo-400/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      <div className="relative z-10 text-purple-600 font-black text-xl">{String(idx + 1).padStart(2, '0')}</div>
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors duration-300 group-hover:translate-x-1">{item.title}</h4>
+                      <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">{item.description}</p>
+                    </div>
+                    <div className="absolute top-4 right-4 w-2 h-2 bg-gradient-to-br from-purple-400 to-indigo-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </div>
+                </div>
+              ))}
             </div>
-          </section>
+          </div>
+        </div>
+      </section>
 
-          {/* Why Teams Choose */}
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">Why Teams Choose the Publishing Hub</h3>
-            <div className="space-y-6 text-gray-800">
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-1">Official API Integrations</h4>
-                <p>Meta Tech-Partner (Instagram / Facebook / Threads), X OAuth v2, YouTube Data API — no scraping, no account risk.</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-1">Smart Publish Windows</h4>
-                <p>Define posting windows; ZenCreator auto-slots the next free time and fills missing copy, hashtags, CTAs, and music.</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-1">Unified Calendar</h4>
-                <p>Drag-and-drop across channels; colour-coded status (scheduled / live / edited / deleted).</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-1">AI Copy & Hashtags</h4>
-                <p>Generates or compresses platform-perfect captions, titles, and tags while keeping your brand voice.</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-1">Smart Formatting</h4>
-                <p>Auto-crop, resize, and bitrate-check assets so every post meets platform specs the first time.</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-1">Compliance Guardrails</h4>
-                <p>Scans for banned keywords, over-texted images, copyright risk, and nudity mismatches before publishing.</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-1">Deep Analytics</h4>
-                <p>Reach, ER, watch time, CTR, follower delta — compare Smart Publish vs. manual to refine strategy.</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-1">Role-Based Approvals (soon)</h4>
-                <p>Draft → Manager Approval → Legal Sign-off workflow with full audit trail.</p>
-              </div>
-            </div>
-          </section>
-
-          {/* Supported Channels */}
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">Supported Channels & Highlights</h3>
-            <div className="grid md:grid-cols-2 gap-4">
-              {[ 
-                ['Instagram','Feed, Carousels (10), Stories, Reels. Location + music tags, user mentions.','/products/zencreator/publishing-hub/instagram'],
-                ['Threads','Single posts & multi-reply chains. AI splitting, hashtag hints.','/products/zencreator/publishing-hub/threads'],
-                ['X (Twitter)','Tweets, media threads, ≤ 2m 20 s video. Alt-text, GIF support, future polls.','/products/zencreator/publishing-hub/twitter'],
-                ['Facebook Pages / Groups','Images, carousels, native video, link posts. CTA buttons, brand-content flag.','/products/zencreator/publishing-hub/facebook'],
-                ['YouTube Shorts','≤ 60 s vertical video. Thumbnail grab, auto-#Shorts tags.','/products/zencreator/publishing-hub/youtube'],
-                ['TikTok (soon)','9×16 vertical, up to 10 min video. Sounds library integration, cover selector.','#']
-              ].map(([title,desc,href]) => (
+      {/* Supported Channels — modern cards */}
+      <section className="py-[150px] bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">Supported Channels & Highlights</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              {channels.map(([title, desc, href]) => (
                 <a key={title as string} href={href as string}>
-                  <Card className="h-full transition-all hover:shadow-lg hover:border-purple-200">
-                    <CardHeader className="p-5">
-                      <CardTitle className="text-gray-900 text-base">{title as string}</CardTitle>
-                      <CardDescription className="text-gray-600 mt-1">{desc as string}</CardDescription>
-                    </CardHeader>
-                    <CardContent className="pt-0 pb-5 px-5">
-                      <span className="inline-flex items-center text-sm font-medium text-purple-700">Learn More →</span>
-                    </CardContent>
-                  </Card>
+                  <div className="relative group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
+                    <div className="relative p-7 bg-white/90 backdrop-blur-md rounded-3xl border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] group-hover:border-purple-200/50">
+                      <div className="flex items-center gap-3 mb-2">
+                        {getChannelIcon(title as string)}
+                        <h4 className="text-lg font-bold text-gray-900 group-hover:text-purple-600 transition-colors">{title as string}</h4>
+                      </div>
+                      <p className="text-gray-600 leading-relaxed">{desc as string}</p>
+                      {(href as string) !== '#' && (
+                        <div className="mt-4 inline-flex items-center text-sm font-medium text-purple-700">Learn More →</div>
+                      )}
+                    </div>
+                  </div>
                 </a>
               ))}
             </div>
-            <p className="text-sm text-gray-600 italic mt-3">(New networks become available soon)</p>
-          </section>
+            <p className="text-sm text-gray-600 italic mt-6 text-center">(New networks become available soon)</p>
+          </div>
+        </div>
+      </section>
 
-          {/* End-to-End Workflow */}
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">End-to-End Workflow</h3>
-            <ol className="space-y-3 list-decimal pl-6 text-gray-800">
+      {/* End-to-End Workflow — site style (Get Started pattern) */}
+      <section className="py-[150px] bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">End-to-End Workflow</h3>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+              {/* Left column: Steps 01 and 02 */}
+              <div className="flex flex-col gap-6">
+                <div className="rounded-3xl p-8 border border-white/10 bg-gradient-to-br from-[#0B1220] to-[#020817] hover:shadow-xl transition-all duration-300 flex flex-col h-full text-white">
+                  <div className="text-3xl font-black text-purple-400 mb-6">01</div>
+                  <h4 className="text-xl font-bold text-white mb-2">Generate</h4>
+                  <p className="text-white/80">Create images, videos or entire sets in the Content Creation suite.</p>
+                </div>
+
+                <div className="rounded-3xl p-8 border border-white/10 bg-gradient-to-br from-[#0B1220] to-[#020817] hover:shadow-xl transition-all duration-300 flex flex-col h-full text-white">
+                  <div className="text-3xl font-black text-purple-400 mb-6">02</div>
+                  <h4 className="text-xl font-bold text-white mb-2">Push to Publishing</h4>
+                  <p className="text-white/80">One click moves assets (and metadata) into the Publishing queue.</p>
+                </div>
+              </div>
+
+              {/* Right column: Step 03 wide card */}
+              <div className="rounded-3xl p-8 lg:col-span-2 text-white relative overflow-hidden bg-gradient-to-br from-[#5400A7] to-[#020817] flex flex-col justify-between">
+                <div>
+                  <div className="text-3xl font-black mb-6">03</div>
+                  <h4 className="text-2xl md:text-3xl font-black leading-snug mb-3">Approve, Launch & Analyse</h4>
+                  <p className="text-white/90 mb-8 max-w-2xl">Role-based sign-off, then automatic posting with compliance checks. Built-in dashboards surface winners; recycle or boost in seconds.</p>
+                </div>
+                <div className="flex flex-wrap gap-4">
+                  <a href="/products/zencreator/publishing-hub/instagram" className="bg-white text-gray-900 px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl">Try Smart Publishing</a>
+                  <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-transparent text-white border-2 border-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-gray-900 transition-all duration-200">Book a 15-Minute Demo</a>
+                </div>
+                <div className="pointer-events-none absolute -top-20 -right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
+              </div>
+            </div>
+
+            {/* Textual 5-step outline */}
+            <ol className="mt-10 space-y-2 list-decimal pl-6 text-gray-800">
               <li><strong>Generate</strong> – Create images, videos or entire sets in the Content Creation suite.</li>
               <li><strong>Push to Publishing</strong> – One click moves assets (and metadata) into the Publishing queue.</li>
               <li><strong>Set Strategy</strong> – Pick channels, fill or auto-generate copy, choose Now / Schedule / Smart Publish.</li>
               <li><strong>Approve & Launch</strong> – Role-based sign-off, then automatic posting with compliance checks.</li>
               <li><strong>Analyse & Iterate</strong> – Built-in dashboards surface winners; recycle or boost in seconds.</li>
             </ol>
-          </section>
+          </div>
+        </div>
+      </section>
 
-          {/* Batch & Scale */}
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Batch & Scale Without Bottlenecks</h3>
+      {/* Batch & Scale Without Bottlenecks */}
+      <section className="py-[150px] bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">Batch & Scale Without Bottlenecks</h3>
             <ul className="space-y-3 text-gray-800">
               <li>• <strong>Bulk Upload</strong> hundreds of assets, apply templates, and let Smart Publish drip content over days or weeks.</li>
               <li>• <strong>Parallel Posting</strong> engine pushes to multiple channels simultaneously — no rate-limit surprises.</li>
             </ul>
-          </section>
+          </div>
+        </div>
+      </section>
 
-          {/* Security & Compliance */}
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Security & Compliance</h3>
-            <ul className="space-y-3 text-gray-800">
-              <li>• OAuth only; revoke access anytime.</li>
-              <li>• Zero retention of tokens outside encrypted vaults.</li>
-              <li>• SOC-2 hosting, optional VPC peering for enterprise.</li>
-            </ul>
-          </section>
-
-          {/* Final CTA */}
-          <section className="py-12 border-t border-gray-200">
-            <div className="flex flex-wrap gap-3 items-center justify-between">
-              <div>
-                <h4 className="text-xl font-semibold text-gray-900 mb-1">Ready to Replace Six Dashboards With One?</h4>
-                <p className="text-gray-700">Connect a channel and schedule your first Smart Publish in under <strong>two minutes</strong>.</p>
+      {/* Security & Compliance — compact cards */}
+      <section className="py-[150px] bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">Security & Compliance</h3>
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div className="bg-white rounded-3xl p-8 border border-gray-200 hover:shadow-xl hover:border-gray-300 transition-all duration-300">
+                <ul className="space-y-2 text-gray-700">
+                  <li>• OAuth only; revoke access anytime.</li>
+                  <li>• Zero retention of tokens outside encrypted vaults.</li>
+                  <li>• SOC-2 hosting, optional VPC peering for enterprise.</li>
+                </ul>
               </div>
-              <div className="flex flex-wrap gap-3">
-                 <a href="/products/zencreator/publishing-hub/instagram" className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Try Smart Publishing</a>
-                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border border-gray-300 text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Book a Demo</a>
+              <div className="bg-white rounded-3xl p-8 border border-gray-200 hover:shadow-xl hover:border-gray-300 transition-all duration-300">
+                <ul className="space-y-2 text-gray-700">
+                  <li>• Banned keywords and over-text checks before posting.</li>
+                  <li>• Copyright risk and nudity mismatch scanning.</li>
+                  <li>• Audit trail with role-based approvals.</li>
+                </ul>
               </div>
             </div>
-            <p className="text-gray-700 mt-6">Questions? Email us at <a className="text-blue-600 hover:underline font-medium" href="mailto:info@zencreator.pro">info@zencreator.pro</a> — our team answers within a business day.</p>
-          </section>
-
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Unified FAQ with CTA inside same background */}
+      <FAQAccordion
+        cta={(
+          <section className="relative overflow-hidden">
+            <div className="text-center py-16">
+              <div className="relative z-10 max-w-4xl mx-auto px-4">
+                <div className="inline-block bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+                  Start in minutes
+                </div>
+                <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">Ready to Replace Six Dashboards With One?</h2>
+                <p className="text-gray-700 text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
+                  Connect a channel and schedule your first Smart Publish in under two minutes.
+                </p>
+                <div className="flex flex-wrap gap-4 justify-center mb-2">
+                  <a href="/products/zencreator/publishing-hub/instagram" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-colors">Try Smart Publishing</a>
+                  <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border-2 border-gray-300 text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-colors">Book a Demo</a>
+                </div>
+                <p className="text-gray-700">Questions? Email us at <strong>info@zencreator.pro</strong> — our team answers within a business day.</p>
+              </div>
+            </div>
+          </section>
+        )}
+      />
+
+      {/* Final CTA removed (merged into FAQ background) */}
     </PageLayout>
   );
 };

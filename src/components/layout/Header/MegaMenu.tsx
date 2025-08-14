@@ -74,8 +74,8 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({ onClose }) => {
             <a href="/products/zencomfy/comfy-ui-cloud" onClick={onClose} className="block rounded-xl p-3 hover:bg-gray-50 transition">
               <div className="text-gray-900 font-semibold">ComfyUI in the Cloud</div>
             </a>
-            <a href="/products/zencomfy/analytics" onClick={onClose} className="block rounded-xl p-3 hover:bg-gray-50 transition">
-              <div className="text-gray-900 font-semibold">Analytics and Insights</div>
+            <a href="/products/zencomfy/workflow-as-app" onClick={onClose} className="block rounded-xl p-3 hover:bg-gray-50 transition">
+              <div className="text-gray-900 font-semibold">Workflow as Web App</div>
             </a>
           </div>
         </div>

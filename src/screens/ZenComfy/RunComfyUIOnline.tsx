@@ -1,107 +1,144 @@
 import React from 'react';
 import { PageLayout } from '@/components/layout/PageLayout';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { FAQAccordion } from '@/components/sections/FAQAccordion';
 
 export const RunComfyUIOnline: React.FC = () => {
   return (
     <PageLayout
       title="Run ComfyUI in the Cloud"
-      description="Launch, edit, and share ComfyUI workflows on ZenComfy’s serverless GPU cloud. Zero install, pay-per-second billing, enterprise-grade security, and 99.9% uptime."
+      description="Share, run, and deploy complex ComfyUI workflows in minutes — no local GPU, no setup."
     >
-      <div className="container mx-auto px-4 pb-20">
-        <div className="max-w-6xl mx-auto">
-          <section className="py-6">
-            <p className="text-gray-700 mb-4"><strong>Share, run, and deploy complex ComfyUI workflows in minutes — no local GPU, no setup.</strong></p>
-            <p className="text-gray-700 mb-6">ZenComfy spins up high-performance GPUs only while your job is active, so you pay for compute time, not idle time.</p>
-            <div className="flex gap-3">
-              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Book a Demo</a>
-              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Talk to Sales</a>
-            </div>
-          </section>
-
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Trusted by 10,000+ creators worldwide</h3>
-            <p className="text-gray-700">10 000+ creators worldwide • 4.9 / 5 satisfaction • 50k+ deployed workflows • 99.9% uptime</p>
-          </section>
-
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Unlock ComfyUI’s Full Power — Hassle-Free</h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              {[ 
-                ['Import or Build from Scratch','Drag-and-drop any .json graph or start fresh in the built-in ComfyUI manager.'],
-                ['One-Click GPU Selection','Choose from L4, A100 80 GB or H100 cards. We auto-scale VRAM and cores to match your workflow.'],
-                ['Team-Wide Access, Anywhere','Invite teammates; shared workspace, models and history. No local installs.'],
-                ['Secure by Default','Zero-retention data policy. Or plug S3/GCS for persistence.'],
-                ['Bring Your Own Models & Nodes','Pull from Civitai, Hugging Face or your storage at 25× typical speed.'],
-                ['Pay-Per-Second Billing','Only pay while a workflow is running — truly serverless.'],
-                ['Parallel Execution','Run multiple GPUs in parallel for A/B or batch jobs.'],
-              ].map(([title,desc]) => (
-                <Card key={title as string}>
-                  <CardHeader className="p-5 pb-2"><CardTitle>{title as string}</CardTitle></CardHeader>
-                  <CardContent className="pt-0 px-5 pb-5 text-gray-700">{desc as string}</CardContent>
-                </Card>
-              ))}
-            </div>
-          </section>
-
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Ready-to-Use Workflow Templates</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[ 
-                ['Image → Video','AnimateDiff • IPAdapter • ControlNet'],
-                ['Text → Video','AnimateDiff • Prompt Travel'],
-                ['Upscaling','Hires-Fix • UltraSharp • SUPIR • CCSR • APISR'],
-                ['Style Transfer','IPAdapter • IC-Light'],
-                ['More Coming','Custom recipes & community contributions. Zero downloads. Zero config. Just click Deploy.']
-              ].map(([title,desc]) => (
-                <Card key={title as string}>
-                  <CardHeader className="p-5 pb-2"><CardTitle>{title as string}</CardTitle></CardHeader>
-                  <CardContent className="pt-0 px-5 pb-5 text-gray-700">{desc as string}</CardContent>
-                </Card>
-              ))}
-            </div>
-          </section>
-
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h3>
-            <div className="space-y-4 text-gray-700">
-              <div>
-                <p className="font-medium">What is ComfyUI?</p>
-                <p>ComfyUI is a node-based interface for Stable Diffusion and beyond. Design granular image or video pipelines without code.</p>
+      {/* Hero */}
+      <div className="bg-gray-900 pb-20" style={{ paddingTop: '140px' }}>
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <section className="pt-24 pb-[40px] text-center">
+              <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
+                Run ComfyUI in the Cloud
+              </h1>
+              <p className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                <strong>Share, run, and deploy complex ComfyUI workflows in minutes — no local GPU, no setup.</strong>
+              </p>
+              <p className="text-lg text-gray-300 max-w-4xl mx-auto mt-4 leading-relaxed">
+                ZenComfy spins up high-performance GPUs only while your job is active, so you pay for compute time, not idle time.
+              </p>
+              <div className="flex gap-4 justify-center mt-10">
+                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl">
+                  Book a Demo
+                </a>
+                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all duration-200">
+                  Talk to Sales
+                </a>
               </div>
-              <div>
-                <p className="font-medium">Do I need a local GPU to use ZenComfy?</p>
-                <p>No. All compute happens on ZenComfy’s cloud GPUs. You only need a browser.</p>
-              </div>
-              <div>
-                <p className="font-medium">Can I upload my own models, LoRAs or checkpoints?</p>
-                <p>Yes — upload or pull directly from Civitai, Hugging Face, Google Drive, S3, etc.</p>
-              </div>
-              <div>
-                <p className="font-medium">Can I install custom nodes or Python dependencies?</p>
-                <p>Absolutely. Use the built-in ComfyUI Manager or upload a requirements.txt.</p>
-              </div>
-              <div>
-                <p className="font-medium">How is billing calculated?</p>
-                <p>Per-second GPU runtime plus optional persistent storage. No charges while you edit graphs.</p>
-              </div>
-              <div>
-                <p className="font-medium">Is my data secure?</p>
-                <p>Encrypted in transit and at rest. By default nothing is stored; outputs saved only to your connected bucket.</p>
-              </div>
-            </div>
-          </section>
-
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">Ready to Create Without Limits?</h3>
-            <p className="text-gray-700 mb-6">Join thousands of artists, devs, and studios running ComfyUI at cloud scale.</p>
-            <div className="flex gap-3">
-              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Book a Demo</a>
-              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Talk to Sales</a>
-            </div>
-          </section>
+              <p className="text-white/70 mt-10">(Embedded: live ComfyUI graph running in browser on ZenComfy GPU)</p>
+            </section>
+          </div>
         </div>
       </div>
+
+      <div className="container mx-auto px-4 pb-20">
+        <div className="max-w-6xl mx-auto">
+          {/* Trusted by */}
+          <section className="py-[150px] bg-white text-center">
+            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">Trusted by 10,000+ creators worldwide</h3>
+            <p className="text-gray-700">• 10 000 + creators worldwide &emsp;• 4.9 / 5 satisfaction &emsp;• 50 k + deployed workflows &emsp;• 99.9 % uptime</p>
+          </section>
+
+          {/* Unlock Full Power */}
+          <section className="py-[150px] bg-white">
+            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">Unlock ComfyUI’s Full Power — Hassle-Free</h3>
+            <div className="grid md:grid-cols-2 gap-6 items-stretch">
+              {[
+                ['Import or Build from Scratch', 'Drag-and-drop any `.json` graph or start fresh in the built-in ComfyUI manager.'],
+                ['One-Click GPU Selection', 'Choose from L4, A100 80 GB or H100 cards. We auto-scale VRAM and cores to match your workflow—it finishes in seconds, not minutes.'],
+                ['Team-Wide Access, Anywhere', 'Invite teammates by email; all share the same workspace, models and history. No local installs required.'],
+                ['Secure by Default', 'Zero-retention data policy. Need persistence? Plug in your S3, GCS or on-prem bucket.'],
+                ['Bring Your Own Models & Nodes', 'Pull directly from Civitai, Hugging Face or your own storage at 25× typical upload speed. Models persist across sessions.'],
+                ['Pay-Per-Second Billing', 'Stop burning money on forgotten instances. ZenComfy meters GPU seconds only while a workflow is running—truly serverless.'],
+                ['Parallel Execution', 'Spin up multiple GPUs in parallel and iterate faster. Perfect for A/B prompts, batch jobs or heavy video chains.'],
+              ].map(([title, desc]) => (
+                <div key={title as string} className="relative group h-full">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
+                  <div className="relative bg-white/90 backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] group-hover:border-purple-200/50 h-full">
+                    <h4 className="text-xl font-bold text-gray-900 mb-2">{title as string}</h4>
+                    <p className="text-gray-700">{desc as string}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Templates */}
+          <section className="py-[150px] bg-white">
+            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">Ready-to-Use Workflow Templates</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+              {[
+                ['Image → Video', 'AnimateDiff • IPAdapter • ControlNet'],
+                ['Text → Video', 'AnimateDiff • Prompt Travel'],
+                ['Upscaling', 'Hires-Fix • UltraSharp • SUPIR • CCSR • APISR'],
+                ['Style Transfer', 'IPAdapter • IC-Light'],
+                ['More Coming', 'Custom recipes & community contributions\n\nZero downloads. Zero config. Just click Deploy.'],
+              ].map(([title, desc]) => (
+                <div key={title as string} className="relative group h-full">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
+                  <div className="relative p-7 bg-white/90 backdrop-blur-md rounded-3xl border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] group-hover:border-purple-200/50 h-full">
+                    <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">{title as string}</h4>
+                    <p className="text-gray-700 whitespace-pre-line">{desc as string}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Built for Teams & Enterprises */}
+          <section className="py-[150px] bg-white">
+            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">Built for Teams & Enterprises</h3>
+            <div className="grid md:grid-cols-2 gap-6 items-stretch">
+              {[
+                ['Single Workspace', 'Central hub for workflows, models and usage stats.'],
+                ['Hardware Flexibility', 'From cost-efficient L4 to 144 GB B200s. Swap anytime.'],
+                ['Instant Scale', 'Serverless fleet auto-matches demand—no DevOps.'],
+                ['Instant Scale', 'Serverless fleet auto-matches demand—no DevOps.'],
+                ['Custom UI Layers', 'Expose only the sliders your users need; hide the rest.'],
+                ['SSO & RBAC', 'SAML 2.0, Google & Microsoft 365 logins; fine-grained roles.'],
+                ['Consistent Environments', 'Version-locked containers keep nodes stable across updates.'],
+              ].map(([title, desc]) => (
+                <div key={title as string} className="relative group h-full">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
+                  <div className="relative bg-white/90 backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] group-hover:border-purple-200/50 h-full">
+                    <h4 className="text-xl font-bold text-gray-900 mb-2">{title as string}</h4>
+                    <p className="text-gray-700">{desc as string}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* FAQ + Final CTA moved into global FAQAccordion below for full-width background */}
+        </div>
+      </div>
+
+      {/* Unified FAQ with CTA inside */}
+      <FAQAccordion
+        items={[
+          { question: 'What is ComfyUI?', answer: 'ComfyUI is a node-based interface for Stable Diffusion and beyond (SD1.x, SDXL, SD3, Flux.1, AnimateDiff, ControlNet, SVD and many more). It lets you design granular image or video pipelines without writing code.' },
+          { question: 'Do I need a local GPU to use ZenComfy?', answer: 'No. All compute happens on ZenComfy’s cloud GPUs. You only need a browser.' },
+          { question: 'Can I upload my own models, LoRAs or checkpoints?', answer: 'Yes — upload from your device or pull directly from Civitai, Hugging Face, Google Drive, S3, etc. They remain in your private storage between sessions.' },
+          { question: 'Can I install custom nodes or Python dependencies?', answer: 'Absolutely. Use the built-in ComfyUI Manager or upload a requirements.txt. Each workspace is containerised and isolated.' },
+          { question: 'How is billing calculated?', answer: 'Per-second GPU runtime plus optional persistent storage. No charges while you edit graphs or when instances are idle.' },
+          { question: 'Is my data secure?', answer: 'We encrypt everything in transit and at rest. By default nothing is stored; persistent outputs are saved only to your connected bucket.' },
+        ]}
+        cta={(
+          <div className="max-w-3xl mx-auto text-center">
+            <h3 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">Ready to Create Without Limits?</h3>
+            <p className="text-gray-700 mb-8">Join thousands of artists, devs, and studios running ComfyUI at cloud scale.</p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-colors">Book a Demo</a>
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-colors">Talk to Sales</a>
+            </div>
+          </div>
+        )}
+      />
     </PageLayout>
   );
 };
