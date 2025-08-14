@@ -3,10 +3,6 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { navigationMenu, MenuSection } from '@/config/menu';
 import { MegaMenu } from './MegaMenu';
-import { ServicesMenu } from './ServicesMenu';
-import { ZenCreatorMegaMenu } from './ZenCreatorMegaMenu';
-import { ZenComfyMegaMenu } from './ZenComfyMegaMenu';
-import { openCalendlyPopup } from '@/lib/calendly';
 
 
 
@@ -363,39 +359,8 @@ export const Header = ({ forceDark = false }: { forceDark?: boolean }) => {
             
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center space-x-3">
-              {/* ZenCreator Mega Menu */}
-              <div className="relative group">
-                <a
-                  href="/products/zencreator"
-                  className={`font-medium transition-colors px-3 py-2 rounded-lg flex items-center space-x-1 ${
-                    (isScrolled || forceDark)
-                      ? 'text-gray-900 hover:text-gray-900 hover:bg-gray-50'
-                      : 'text-white hover:text-white/90 hover:bg-white/10'
-                  }`}
-                >
-                  <span>ZenCreator</span>
-                  <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
-                </a>
-                
-                <ZenCreatorMegaMenu onClose={() => {}} />
-              </div>
-
-              {/* ZenComfy Mega Menu */}
-              <div className="relative group">
-                <a
-                  href="/products/zencomfy"
-                  className={`font-medium transition-colors px-3 py-2 rounded-lg flex items-center space-x-1 ${
-                    (isScrolled || forceDark)
-                      ? 'text-gray-900 hover:text-gray-900 hover:bg-gray-50'
-                      : 'text-white hover:text-white/90 hover:bg-white/10'
-                  }`}
-                >
-                  <span>ZenComfy</span>
-                  <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
-                </a>
-                
-                <ZenComfyMegaMenu onClose={() => {}} />
-              </div>
+              {/* Combined Products with MegaMenu */}
+              <NavItem item={navigationMenu.products} isDark={isScrolled || forceDark} />
 
               <NavItem item={navigationMenu.services} isDark={isScrolled || forceDark} />
               <NavItem item={navigationMenu.pricing} isDark={isScrolled || forceDark} />
