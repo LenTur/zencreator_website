@@ -27,17 +27,21 @@ export const Home: React.FC = () => {
 
   return (
     <PageLayout>
-      <div className="container mx-auto px-4 pb-20">
+      <div className="container mx-auto px-4 pb-20" style={{ paddingTop: '140px' }}>
         <div className="max-w-6xl mx-auto">
           {/* Hero */}
           <section className="pt-24 pb-[40px] text-center">
-            <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-8 leading-tight">Create. Publish. Grow.</h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
+            <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-6 leading-tight">Create. Publish. Grow.</h1>
+            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
               AI products and services for content creation and publishing — choose what you need and grow without limits.
             </p>
             <div className="flex flex-wrap gap-6 justify-center">
-              <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-all duration-200 shadow-lg hover:shadow-xl">Start Now</a>
-              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 border-2 border-gray-300 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-purple-50 hover:border-purple-400 hover:text-purple-900 transition-all duration-200">Book Call</a>
+              <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-all duration-200 shadow-lg hover:shadow-xl">
+                Sign Up and Try
+              </a>
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 border-2 border-gray-300 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-purple-50 hover:border-purple-400 hover:text-purple-900 transition-all duration-200">
+                Book a Demo
+              </a>
             </div>
           </section>
         </div>
@@ -98,7 +102,7 @@ export const Home: React.FC = () => {
           {/* Products */}
           <section className="py-[150px]">
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 text-center">Products</h2>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 text-center leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-12 text-center leading-relaxed">
               Explore AI tools and cloud workflows that help teams create, deploy and scale visual content without friction.
             </p>
             {/* Product Cards */}

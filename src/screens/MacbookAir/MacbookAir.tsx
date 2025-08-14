@@ -1,18 +1,12 @@
 import { Cta } from "@/components/sections/Cta";
-import { Services } from "@/components/sections/Services";
-import { Hero } from "@/components/sections/Hero";
 import { ZenCreatorHero } from "@/components/sections/ZenCreatorHero";
-import { Header } from "@/components/layout/Header";
 import { SharedSuperpowers, Superpower } from "@/components/sections/Industries";
 import { FinalFooter } from "@/components/layout/FinalFooter";
-import { Gallery } from "@/components/sections/Gallery";
-import { PowerBehind } from "@/components/sections/PowerBehind";
 import { WhyZenCreator } from "@/components/sections/WhyZenCreator";
 import { PlatformSnapshot } from "@/components/sections/PlatformSnapshot";
 
 import { SocialProof } from "@/components/sections/SocialProof";
 import { UseCaseHighlights } from "@/components/sections/UseCaseHighlights";
-import { FAQ } from "@/components/sections/FAQ";
 import { FAQAccordion } from "@/components/sections/FAQAccordion";
 
 
@@ -60,9 +54,8 @@ export const MacbookAir = (): JSX.Element => {
   return (
     <div className="bg-white flex flex-col items-center w-full">
       <main className="w-full">
-        <Header forceDark={true} />
         
-        <div className="container mx-auto px-4 pb-10" style={{ paddingTop: '140px' }}>
+        <div className="container mx-auto px-4 pb-20" style={{ paddingTop: '140px' }}>
           <div className="max-w-6xl mx-auto">
             <ZenCreatorHero />
           </div>
@@ -118,9 +111,7 @@ export const MacbookAir = (): JSX.Element => {
             <Gallery />
           </div> */}
           
-          <div className="bg-[#0F172A] pt-[150px]">
-            <FinalFooter />
-          </div>
+          {/* Footer comes from PageLayout */}
         </div>
       </main>
     </div>

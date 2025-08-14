@@ -8,6 +8,20 @@ export const Pricing = () => {
       title="Pricing" 
       description="Simple credit packs for every ZenCreator tool, flat-rate add-ons for publishing & references, and transparent 'book-a-call' enterprise tiers for ZenComfy and managed services."
     >
+      {/* Hero Section */}
+      <div className="container mx-auto px-4 pb-20" style={{ paddingTop: '140px' }}>
+        <div className="max-w-6xl mx-auto">
+          <section className="pt-24 pb-[40px] text-center">
+            <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-6 leading-tight">
+              Pricing<br />Creator OS & ZenComfy
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
+              Simple credit packs for every Creator OS tool, flat-rate add-ons for publishing & references, and transparent "book-a-call" enterprise tiers for ZenComfy and managed services.
+            </p>
+          </section>
+        </div>
+      </div>
+
       <div className="container mx-auto px-4 pb-16">
         <div className="max-w-6xl mx-auto">
 

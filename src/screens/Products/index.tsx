@@ -59,15 +59,18 @@ export const Products = () => {
       title="ZenCreator Product Suite — Creator OS & ZenComfy" 
       description="Discover Creator OS for social-first AI content and ZenComfy for ComfyUI cloud workflows. Two solutions, one vision: create, deploy and scale visual content without friction."
     >
+      <div className="container mx-auto px-4 pb-20" style={{ paddingTop: '140px' }}>
+        <div className="max-w-6xl mx-auto">
+          {/* Hero Section */}
+          <section className="pt-24 pb-[40px] text-center">
+            <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-6 leading-tight">Our Products</h1>
+            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">One company, two powerful engines for creative scale.</p>
+          </section>
+        </div>
+      </div>
+
       <div className="container mx-auto px-4 pb-16">
         <div className="max-w-6xl mx-auto">
-
-          {/* Hero Section */}
-          <section className="pt-20 pb-[40px] text-center">
-            <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-8 leading-tight">Our Products</h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">One company, two powerful engines for creative scale.</p>
-          </section>
-
           {/* Creator OS */}
           <section className="pt-[40px] pb-[40px]">
             <div className="bg-ink-900 rounded-3xl p-6 md:p-8">
