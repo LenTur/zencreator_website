@@ -7,7 +7,7 @@ import { WorkflowSteps } from '@/components/sections/WorkflowSteps';
 import { WorkflowTemplates } from '@/components/sections/WorkflowTemplates';
 import { FAQAccordion } from '@/components/sections/FAQAccordion';
 import { Cta } from '@/components/sections/Cta';
-import { FinalFooter } from '@/components/layout/FinalFooter';
+// import { FinalFooter } from '@/components/layout/FinalFooter';
 
 export const ZenComfy: React.FC = () => {
   return (

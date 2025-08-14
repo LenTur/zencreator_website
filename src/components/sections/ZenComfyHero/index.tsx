@@ -2,7 +2,7 @@
 
 export const ZenComfyHero = () => {
   return (
-    <section className="pb-[40px] text-center">
+    <section className="pt-24 pb-[40px] text-center">
       {/* Title - ZenComfy */}
       <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-6 leading-tight">
         ZenComfy

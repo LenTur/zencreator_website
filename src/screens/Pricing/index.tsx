@@ -1,12 +1,13 @@
 import React from 'react';
 import { PageLayout } from '@/components/layout/PageLayout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Cta } from '@/components/sections/Cta';
 
 export const Pricing = () => {
   return (
     <PageLayout 
       title="Pricing" 
-      description="Simple credit packs for every ZenCreator tool, flat-rate add-ons for publishing & references, and transparent 'book-a-call' enterprise tiers for ZenComfy and managed services."
+      description="Simple credit packs for every Creator OS tool, flat-rate add-ons for publishing & references, and transparent 'book-a-call' enterprise tiers for ZenComfy and managed services."
     >
       {/* Hero Section */}
       <div className="container mx-auto px-4 pb-20" style={{ paddingTop: '140px' }}>
@@ -26,7 +27,7 @@ export const Pricing = () => {
         <div className="max-w-6xl mx-auto">
 
           {/* Overview Table */}
-          <section className="py-16">
+          <section id="overview" className="py-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Pick the Plan That Fits Your Workflow</h2>
             
             <div className="bg-white border border-gray-200 rounded-xl overflow-hidden mb-16">
@@ -71,9 +72,9 @@ export const Pricing = () => {
             </div>
           </section>
 
-          {/* 1. ZenCreator Credit Packs */}
-          <section className="py-16 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">1 | ZenCreator Credit Packs</h3>
+          {/* ZenCreator Credit Packs */}
+          <section id="credit-packs" className="py-16 border-t border-gray-200">
+            <h3 className="text-2xl font-bold text-gray-900 mb-8">ZenCreator Credit Packs</h3>
             
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
               {[
@@ -102,7 +103,7 @@ export const Pricing = () => {
               <h4 className="font-semibold text-gray-900 mb-4">Good to know</h4>
               <ul className="space-y-2 text-gray-700">
                 <li>• Credits <strong>never expire</strong>.</li>
-                <li>• One shared balance for <em>all</em> ZenCreator tools.</li>
+                <li>• One shared balance for <em>all</em> Creator OS tools.</li>
                 <li>• Buy packs any time; larger packs stack and lower blended cost.</li>
               </ul>
             </div>
@@ -148,9 +149,9 @@ export const Pricing = () => {
             </p>
           </section>
 
-          {/* 2. Publishing Hub Add-On */}
-          <section className="py-16 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">2 | Publishing Hub Add-On</h3>
+          {/* Publishing Hub Add-On */}
+          <section id="publishing-hub" className="py-16 border-t border-gray-200">
+            <h3 className="text-2xl font-bold text-gray-900 mb-8">Publishing Hub Add-On</h3>
             
             <div className="bg-white border border-gray-200 rounded-xl overflow-hidden mb-6">
               <div className="bg-gray-50 px-6 py-3 border-b border-gray-200">
@@ -191,9 +192,9 @@ export const Pricing = () => {
             </p>
           </section>
 
-          {/* 3. Reference Feed Add-On */}
-          <section className="py-16 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">3 | Reference Feed Add-On</h3>
+          {/* Reference Feed Add-On */}
+          <section id="reference-feed" className="py-16 border-t border-gray-200">
+            <h3 className="text-2xl font-bold text-gray-900 mb-8">Reference Feed Add-On</h3>
             
             <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden">
               <div className="bg-gray-50 px-6 py-3 border-b border-gray-200">
@@ -219,9 +220,9 @@ export const Pricing = () => {
             </div>
           </section>
 
-          {/* 4. ZenComfy */}
-          <section className="py-16 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">4 | ZenComfy — ComfyUI in the Cloud</h3>
+          {/* ZenComfy */}
+          <section id="zencomfy" className="py-16 border-t border-gray-200">
+            <h3 className="text-2xl font-bold text-gray-900 mb-8">ZenComfy — ComfyUI in the Cloud</h3>
             
             <div className="bg-white border border-gray-200 rounded-xl overflow-hidden mb-6">
               <div className="bg-gray-50 px-6 py-3 border-b border-gray-200">
@@ -264,9 +265,9 @@ export const Pricing = () => {
             </div>
           </section>
 
-          {/* 5. Managed Services */}
-          <section className="py-16 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">5 | Managed Services</h3>
+          {/* Managed Services */}
+          <section id="managed-services" className="py-16 border-t border-gray-200">
+            <h3 className="text-2xl font-bold text-gray-900 mb-8">Managed Services</h3>
             
             <div className="bg-white border border-gray-200 rounded-xl overflow-hidden mb-6">
               <div className="bg-gray-50 px-6 py-3 border-b border-gray-200">
@@ -310,8 +311,8 @@ export const Pricing = () => {
             </div>
           </section>
 
-          {/* FAQ */}
-          <section className="py-[150px]">
+          {/* FAQ (kept inside container for structure; full-width gradient below) */}
+          <section id="faq" className="py-[150px]">
             <div className="grid lg:grid-cols-5 gap-12 items-start">
               {/* Left side - Title */}
               <div className="lg:col-span-2">
@@ -346,13 +347,7 @@ export const Pricing = () => {
                 </div>
                 
                 <div className="mt-8 pt-8 border-t border-gray-200">
-                  <p className="text-gray-600">
-                    Still unsure? <strong>Email</strong>{' '}
-                    <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:text-purple-800 font-medium transition-colors">
-                      sales@zencreator.pro
-                    </a>{' '}
-                    — we'll walk you through a cost model in 10 minutes.
-                  </p>
+                  <p className="text-gray-600">Still unsure? Email <span className="font-semibold">sales@zencreator.pro</span> — we'll walk you through a cost model in 10 minutes.</p>
                 </div>
               </div>
             </div>
@@ -360,6 +355,13 @@ export const Pricing = () => {
 
         </div>
       </div>
+
+      {/* Full-width gradient connector + CTA */}
+      <section className="py-[150px] bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <Cta />
+        </div>
+      </section>
     </PageLayout>
   );
 };

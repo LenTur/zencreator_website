@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { PageLayout } from '@/components/layout/PageLayout';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import { CreditCard, Shield, Zap, Users } from 'lucide-react';
 
 export const Products = () => {
-  const [activeModule, setActiveModule] = useState('creator-hub');
-  const [activeZenModule, setActiveZenModule] = useState('comfyui-cloud');
+  type CreatorModuleKey = 'creator-hub' | 'publishing-hub' | 'account-management' | 'analytics-insights';
+  type ZenComfyModuleKey = 'comfyui-cloud' | 'workflow-webapp' | 'serverless-autoscale' | 'private-models';
+  interface ModuleDef { title: string; description: string; visual: string }
 
-  const creatorModules = {
+  const [activeModule, setActiveModule] = useState<CreatorModuleKey>('creator-hub');
+  const [activeZenModule, setActiveZenModule] = useState<ZenComfyModuleKey>('comfyui-cloud');
+
+  const creatorModules: Record<CreatorModuleKey, ModuleDef> = {
     'creator-hub': {
       title: 'Creator Hub',
       description: 'Face generation, photo-shoots, upscaling, video & more—batch-ready.',
@@ -31,7 +34,7 @@ export const Products = () => {
     }
   };
 
-  const zenComfyModules = {
+  const zenComfyModules: Record<ZenComfyModuleKey, ModuleDef> = {
     'comfyui-cloud': {
       title: 'ComfyUI in the Cloud',
       description: 'One-click spin-up of dedicated GPU workspaces—pay only for runtime.',

@@ -1,9 +1,10 @@
 import { Cta } from "@/components/sections/Cta";
 import { ZenCreatorHero } from "@/components/sections/ZenCreatorHero";
 import { SharedSuperpowers, Superpower } from "@/components/sections/Industries";
-import { FinalFooter } from "@/components/layout/FinalFooter";
+// import { FinalFooter } from "@/components/layout/FinalFooter";
 import { WhyZenCreator } from "@/components/sections/WhyZenCreator";
 import { PlatformSnapshot } from "@/components/sections/PlatformSnapshot";
+import { PageLayout } from "@/components/layout/PageLayout";
 
 import { SocialProof } from "@/components/sections/SocialProof";
 import { UseCaseHighlights } from "@/components/sections/UseCaseHighlights";
@@ -23,37 +24,38 @@ export const MacbookAir = (): JSX.Element => {
   ];
 
   // Data for the Services section
-  const services = [
-    {
-      title: "AI Dating Profiles",
-      description: "Photos, videos, bios for dating (SFW/NSFW, with or without bio).",
-      image: "/DatingProfiles.png" // Added image path
-    },
-    {
-      title: "SVF Profiles",
-      description: "Virtual characters (SFW)."
-    },
-    {
-      title: "OnlyFans Content Factory",
-      description: "Generation of private photo and video content."
-    },
-    {
-      title: "AutoPreQ",
-      description: "Multi-language voiceover, subtitles, lip sync, AI scripts."
-    },
-    {
-      title: "AI Content Factory",
-      description: "Scalable photo and video production."
-    },
-    {
-      title: "Reels Factory",
-      description: "Scalable video production, from idea to video."
-    },
-  ];
+  // const services = [
+  //   {
+  //     title: "AI Dating Profiles",
+  //     description: "Photos, videos, bios for dating (SFW/NSFW, with or without bio).",
+  //     image: "/DatingProfiles.png"
+  //   },
+  //   {
+  //     title: "SVF Profiles",
+  //     description: "Virtual characters (SFW)."
+  //   },
+  //   {
+  //     title: "OnlyFans Content Factory",
+  //     description: "Generation of private photo and video content."
+  //   },
+  //   {
+  //     title: "AutoPreQ",
+  //     description: "Multi-language voiceover, subtitles, lip sync, AI scripts."
+  //   },
+  //   {
+  //     title: "AI Content Factory",
+  //     description: "Scalable photo and video production."
+  //   },
+  //   {
+  //     title: "Reels Factory",
+  //     description: "Scalable video production, from idea to video."
+  //   },
+  // ];
 
   return (
-    <div className="bg-white flex flex-col items-center w-full">
-      <main className="w-full">
+    <PageLayout>
+      <div className="bg-white flex flex-col items-center w-full">
+        <main className="w-full">
         
         <div className="container mx-auto px-4 pb-20" style={{ paddingTop: '140px' }}>
           <div className="max-w-6xl mx-auto">
@@ -115,5 +117,6 @@ export const MacbookAir = (): JSX.Element => {
         </div>
       </main>
     </div>
+    </PageLayout>
   );
 };
