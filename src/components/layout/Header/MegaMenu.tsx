@@ -62,11 +62,11 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({ onClose }) => {
             <a href="/products/zencreator/publishing-hub" onClick={onClose} className="block rounded-xl p-3 hover:bg-gray-50 transition">
               <div className="text-gray-900 font-semibold">Publishing Hub</div>
             </a>
-            <a href="/products/zencreator/analytics" onClick={onClose} className="block rounded-xl p-3 hover:bg-gray-50 transition">
-              <div className="text-gray-900 font-semibold">Analytics and Insights</div>
-            </a>
             <a href="/products/zencreator/account-management" onClick={onClose} className="block rounded-xl p-3 hover:bg-gray-50 transition">
               <div className="text-gray-900 font-semibold">Account Management</div>
+            </a>
+            <a href="/products/zencreator/analytics" onClick={onClose} className="block rounded-xl p-3 hover:bg-gray-50 transition">
+              <div className="text-gray-900 font-semibold">Analytics and Insights</div>
             </a>
           </div>
           <div className="text-xs font-semibold uppercase tracking-wide text-[#D8B4FE] mb-3">Deep Dives ZenComfy</div>
