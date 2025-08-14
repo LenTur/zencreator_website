@@ -1,10 +1,49 @@
 import React from 'react';
 import { PageLayout } from '@/components/layout/PageLayout';
-import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-import { Users, Image, RotateCcw, Wand2, Palette, Play, LayoutGrid, Camera, Heart, ShoppingBag, Gamepad2, GraduationCap, Building2, Monitor, Briefcase, Film } from 'lucide-react';
+import { Users, Heart, ShoppingBag, Gamepad2, GraduationCap, Building2, Monitor, Film } from 'lucide-react';
 
 export const Home: React.FC = () => {
+
+  const galleryFileNames = [
+    '111_00064_ 1.png',
+    '1e4a3be9b9334767b6d0522708431214.png',
+    '1HtPYlwbQWSmRYkmxzDaWA.jpeg',
+    '1x1_Portrait_of_a_young_woman__casua (1).png',
+    '28-year-old-latina-european-woman-light-_QFovFprPSee9IR3jREjlwA_QIn3H1lIRxuECCBkUCiplg.png',
+    '6JGte3LQSTShDYLEJyuP8w.webp',
+    '919d196e-5dfc-47b5-a8d7-bb66a4cc2155.png',
+    '9W4B7QvdQLStUWto28kmJw.webp',
+    '9x16_Full_body_portrait_of_a_young_wo.png',
+    'a-confident-black-african-woman-with-vol_8P-yoXoWRWOQgprmeNR3Ag_NbOikeTkR4OzvEVJinvfSA.png',
+    'a-hyperrealistic-close-up-portrait-of-a-_oOfoTRacTuuu2Wg4_ZCdkg_LFHybzKnRJe6E-7RcNNeQg.png',
+    'a-luminous-beauty-editorial-portrait-sho_Br68z7gZSquot9ikUo3Djg_7OssQuGmQzG5lLQF1xkb8A (1).png',
+    'a-soft-cinematic-macro-portrait-photogra_Thy_mcTmQHGGRMnfh1h9Qw_P7zi2BzwRH2HXubE70K1IA.png',
+    'b82bae1e-3c44-4a6b-bfec-60a0943aa8b7.png',
+    'beautiful-model-instagram-appearance-raw_4FaGNTiASwuvX-2ZajfW5w_7HswgjCQQ1-vJ4c52-SJxA.png',
+    'beautiful-model-instagram-appearance-raw_7Hhhbj7IRxKRtkz-TFGxqg_fiVKTGEpRE6OMsJC1Vhvgg.png',
+    'beautiful-model-instagram-appearance-raw_WFGotnY9TQK44WKw3B9q9Q_tCsl-P5JQZ2AiV9b2-6RPg.png',
+    'beautiful-woman-with-rich-afro-curls-lou_RuuSS4gOQP2QMm1tfzrYVg_X8FtMagURnCE3CwQVplgXw.png',
+    'CARMEN FREE 2 1.png',
+    'ComfyUI_temp_fccpl_00209_ 1.png',
+    'ComfyUI_temp_fpuhf_00051_ 1.png',
+    'ComfyUI_temp_mgcei_00006_.png',
+    'ComfyUI_temp_pdoyu_00011_.png',
+    'cute woman with natural curls, oversized hoodie, cozy room with sunlight, smiling gently, pastel ton... 1.png',
+    'Frame 108.png',
+    'fs372CxPQ82nyBXEj91OxQ.webp',
+    'handsome young man, tousled hair, desert rave outfit, headphones around neck, sunset in the backgrou....jpeg',
+    'result_0 (1).png',
+    'result_0.png',
+    'woman-30-y-o-long-blonde-wavy-hair-avera__AAuNDocSLqHEYHbBALNAA_pb40rR-WQhi7dr8zWL-I-g.png',
+    'woman-30-y-o-long-blonde-wavy-hair-avera_gKgrzuotQquKvoycYjECZg_tAXV_mkjRr22KCCn6BTg_w.png',
+    'woman-30-y-o-long-blonde-wavy-hair-avera_L3ijQyrYRSSD92aY6A243A_tAXV_mkjRr22KCCn6BTg_w.png',
+    'woman-30-y-o-long-blonde-wavy-hair-avera_mysMOl2vR8GkXdFs9qTeTw_pb40rR-WQhi7dr8zWL-I-g.png',
+    'woman-30-y-o-long-brunette-straight-hair_IiHuXfoxQH6szEf_mywQfA_E8vszLrtSTydUZEOHSimJg.png',
+    'woman-30-y-o-long-brunette-straight-hair_u9kj-yrRTr-9bZJNF4tNow_uCVt7UhNSHyl5C1rhCX_bg.png'
+  ];
+
+  const galleryImages = galleryFileNames.map((name) => `/Photo%20ZenCreator%20WS/${encodeURIComponent(name)}`);
 
   const products = {
     zencreator: {
@@ -47,55 +86,29 @@ export const Home: React.FC = () => {
         </div>
       </div>
 
-      {/* Scrolling Gallery - Full Width */}
+      {/* Scrolling Gallery - Full Width (populated from /public/Photo ZenCreator WS) */}
       <section className="py-0 overflow-hidden w-full">
         <div className="relative">
-          <div className="flex animate-scroll space-x-8">
-                {/* First set of items */}
-                <div className="flex space-x-8 flex-shrink-0">
-                  <div className="w-48 h-64 bg-gray-100 rounded-xl flex items-center justify-center">
-                    <img src="/Colorfull1.png" alt="Gallery 1" className="w-full h-full object-cover rounded-xl" />
-                  </div>
-                  <div className="w-48 h-64 bg-gray-100 rounded-xl flex items-center justify-center">
-                    <img src="/Colorfull2.png" alt="Gallery 2" className="w-full h-full object-cover rounded-xl" />
-                  </div>
-                  <div className="w-48 h-64 bg-gray-100 rounded-xl flex items-center justify-center">
-                    <img src="/colorfull3.png" alt="Gallery 3" className="w-full h-full object-cover rounded-xl" />
-                  </div>
-                  <div className="w-48 h-64 bg-gray-100 rounded-xl flex items-center justify-center">
-                    <img src="/DatingProfiles.png" alt="Gallery 4" className="w-full h-full object-cover rounded-xl" />
-                  </div>
-                  <div className="w-48 h-64 bg-gray-100 rounded-xl flex items-center justify-center">
-                    <img src="/Speed.png" alt="Gallery 5" className="w-full h-full object-cover rounded-xl" />
-                  </div>
-                  <div className="w-48 h-64 bg-gray-100 rounded-xl flex items-center justify-center">
-                    <img src="/Consistency.png" alt="Gallery 6" className="w-full h-full object-cover rounded-xl" />
-                  </div>
+          <div className="flex animate-scroll space-x-6 md:space-x-8 lg:space-x-10">
+            {/* First loop */}
+            <div className="flex space-x-6 md:space-x-8 lg:space-x-10 flex-shrink-0">
+              {galleryImages.map((src, idx) => (
+                <div key={`g1-${idx}`} className="w-56 h-72 md:w-64 md:h-80 lg:w-72 lg:h-96 bg-gray-100 rounded-xl overflow-hidden">
+                  <img src={src} alt={`Gallery ${idx + 1}`} className="w-full h-full object-cover" />
                 </div>
-                {/* Duplicate set for seamless loop */}
-                <div className="flex space-x-8 flex-shrink-0">
-                  <div className="w-48 h-64 bg-gray-100 rounded-xl flex items-center justify-center">
-                    <img src="/Colorfull1.png" alt="Gallery 1" className="w-full h-full object-cover rounded-xl" />
-                  </div>
-                  <div className="w-48 h-64 bg-gray-100 rounded-xl flex items-center justify-center">
-                    <img src="/Colorfull2.png" alt="Gallery 2" className="w-full h-full object-cover rounded-xl" />
-                  </div>
-                  <div className="w-48 h-64 bg-gray-100 rounded-xl flex items-center justify-center">
-                    <img src="/colorfull3.png" alt="Gallery 3" className="w-full h-full object-cover rounded-xl" />
-                  </div>
-                  <div className="w-48 h-64 bg-gray-100 rounded-xl flex items-center justify-center">
-                    <img src="/DatingProfiles.png" alt="Gallery 4" className="w-full h-full object-cover rounded-xl" />
-                  </div>
-                  <div className="w-48 h-64 bg-gray-100 rounded-xl flex items-center justify-center">
-                    <img src="/Speed.png" alt="Gallery 5" className="w-full h-full object-cover rounded-xl" />
-                  </div>
-                  <div className="w-48 h-64 bg-gray-100 rounded-xl flex items-center justify-center">
-                    <img src="/Consistency.png" alt="Gallery 6" className="w-full h-full object-cover rounded-xl" />
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
-          </section>
+            {/* Duplicate loop for seamless scroll */}
+            <div className="flex space-x-6 md:space-x-8 lg:space-x-10 flex-shrink-0">
+              {galleryImages.map((src, idx) => (
+                <div key={`g2-${idx}`} className="w-56 h-72 md:w-64 md:h-80 lg:w-72 lg:h-96 bg-gray-100 rounded-xl overflow-hidden">
+                  <img src={src} alt={`Gallery duplicate ${idx + 1}`} className="w-full h-full object-cover" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       <div className="container mx-auto px-4 pb-20">
         <div className="max-w-6xl mx-auto">
