@@ -250,11 +250,11 @@ export const Home: React.FC = () => {
                     ) : (tool as any).showCarousel ? (
                       <ImageCarousel
                         images={[
-                          "/Photo%20ZenCreator%20WS/111_00064_%201.png",
-                          "/Photo%20ZenCreator%20WS/beautiful-model-instagram-appearance-raw_4FaGNTiASwuvX-2ZajfW5w_7HswgjCQQ1-vJ4c52-SJxA.png",
-                          "/Photo%20ZenCreator%20WS/woman-30-y-o-long-blonde-wavy-hair-avera_L3ijQyrYRSSD92aY6A243A_tAXV_mkjRr22KCCn6BTg_w.png",
-                          "/Photo%20ZenCreator%20WS/a-confident-black-african-woman-with-vol_8P-yoXoWRWOQgprmeNR3Ag_NbOikeTkR4OzvEVJinvfSA.png",
-                          "/Photo%20ZenCreator%20WS/handsome%20young%20man,%20tousled%20hair,%20desert%20rave%20outfit,%20headphones%20around%20neck,%20sunset%20in%20the%20backgrou....jpeg"
+                          "/Photo ZenCreator WS/111_00064_ 1.png",
+                          "/Photo ZenCreator WS/beautiful-model-instagram-appearance-raw_4FaGNTiASwuvX-2ZajfW5w_7HswgjCQQ1-vJ4c52-SJxA.png",
+                          "/Photo ZenCreator WS/woman-30-y-o-long-blonde-wavy-hair-avera_L3ijQyrYRSSD92aY6A243A_tAXV_mkjRr22KCCn6BTg_w.png",
+                          "/Photo ZenCreator WS/a-confident-black-african-woman-with-vol_8P-yoXoWRWOQgprmeNR3Ag_NbOikeTkR4OzvEVJinvfSA.png",
+                          "/Photo ZenCreator WS/handsome young man, tousled hair, desert rave outfit, headphones around neck, sunset in the backgrou....jpeg"
                         ]}
                         className="absolute inset-0 w-full h-full"
                         autoPlay={true}
