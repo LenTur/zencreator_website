@@ -239,7 +239,7 @@ export const Home: React.FC = () => {
                 <div key={index} className="rounded-3xl border border-gray-200 hover:shadow-xl hover:border-gray-300 transition-all duration-300 overflow-hidden flex flex-col h-full bg-transparent">
                   {/* Full-height background with overlay content */}
                   <div className="relative w-full h-full flex flex-col">
-                    {(tool as any).showBeforeAfter ? (
+                    {tool.name === 'Upscaling' ? (
                       <BeforeAfter
                         beforeImage="/Photo%20ZenCreator%20WS/result_0.png"
                         afterImage="/Photo%20ZenCreator%20WS/result_0%20(1).png"
@@ -247,7 +247,7 @@ export const Home: React.FC = () => {
                         afterAlt="After upscaling"
                         className="absolute inset-0 w-full h-full"
                       />
-                    ) : (tool as any).showCarousel ? (
+                    ) : tool.name === 'Carousel Generation' ? (
                       <ImageCarousel
                         images={[
                           "/Photo ZenCreator WS/111_00064_ 1.png",
