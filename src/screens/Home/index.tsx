@@ -2,6 +2,8 @@ import React from 'react';
 import { PageLayout } from '@/components/layout/PageLayout';
 import { Link } from 'react-router-dom';
 import { Users, Heart, ShoppingBag, Gamepad2, GraduationCap, Building2, Monitor, Film } from 'lucide-react';
+import { BeforeAfter } from '@/components/ui/BeforeAfter';
+import { ImageCarousel } from '@/components/ui/ImageCarousel';
 
 export const Home: React.FC = () => {
 
@@ -187,7 +189,8 @@ export const Home: React.FC = () => {
                   description: 'Enhance image quality and resolution with AI.',
                   link: '/products/zencreator/content-creation/ai-upscaling',
                   tryLink: 'https://app.zencreator.pro/tools',
-                  mockup: 'bg-gradient-to-br from-green-100 to-teal-100'
+                  mockup: 'bg-gradient-to-br from-green-100 to-teal-100',
+                  showBeforeAfter: true
                 },
                 { 
                   name: 'Generation by Prompt', 
@@ -229,43 +232,69 @@ export const Home: React.FC = () => {
                   description: 'Generate engaging carousel posts for social media.',
                   link: '/products/zencreator/content-creation/carousel-generation',
                   tryLink: 'https://app.zencreator.pro/tools',
-                  mockup: 'bg-gradient-to-br from-teal-100 to-blue-100'
+                  mockup: 'bg-gradient-to-br from-teal-100 to-blue-100',
+                  showCarousel: true
                 }
               ].map((tool, index) => (
-                <div key={index} className="bg-white rounded-3xl p-0 border border-gray-200 hover:shadow-xl hover:border-gray-300 transition-all duration-300 overflow-hidden flex flex-col h-full">
-                  {/* Visual area at top with gradient mockup */}
-                  <div className={`w-full h-64 ${tool.mockup} flex items-center justify-center relative`}>
-                    <div className="absolute inset-4 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
-                      <span className="text-gray-600 font-medium">Preview Coming Soon</span>
-                    </div>
-                  </div>
-
-                  {/* Content area */}
-                  <div className="p-6 flex flex-col h-full">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{tool.name}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">{tool.description}</p>
-                    <div className="flex justify-between items-center gap-3 mt-auto">
-                      <a 
-                        href={tool.tryLink} 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-purple-600 text-white px-4 py-2 rounded-xl font-semibold hover:bg-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-2"
-                      >
-                        Try it now
-                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <path d="M7 17L17 7" />
-                          <path d="M7 7h10v10" />
-                        </svg>
-                      </a>
-                      <Link 
-                        to={tool.link} 
-                        className="border-2 border-gray-300 text-gray-700 px-4 py-2 rounded-xl font-semibold hover:border-purple-600 hover:text-purple-600 transition-all duration-200 flex items-center gap-2"
-                      >
-                        Learn More
-                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <path d="M9 18l6-6-6-6" />
-                        </svg>
-                      </Link>
+                <div key={index} className="rounded-3xl border border-gray-200 hover:shadow-xl hover:border-gray-300 transition-all duration-300 overflow-hidden flex flex-col h-full bg-transparent">
+                  {/* Full-height background with overlay content */}
+                  <div className="relative w-full h-full flex flex-col">
+                    {(tool as any).showBeforeAfter ? (
+                      <BeforeAfter
+                        beforeImage="/Photo%20ZenCreator%20WS/result_0.png"
+                        afterImage="/Photo%20ZenCreator%20WS/result_0%20(1).png"
+                        beforeAlt="Before upscaling"
+                        afterAlt="After upscaling"
+                        className="absolute inset-0 w-full h-full"
+                      />
+                    ) : (tool as any).showCarousel ? (
+                      <ImageCarousel
+                        images={[
+                          "/Photo%20ZenCreator%20WS/111_00064_%201.png",
+                          "/Photo%20ZenCreator%20WS/beautiful-model-instagram-appearance-raw_4FaGNTiASwuvX-2ZajfW5w_7HswgjCQQ1-vJ4c52-SJxA.png",
+                          "/Photo%20ZenCreator%20WS/woman-30-y-o-long-blonde-wavy-hair-avera_L3ijQyrYRSSD92aY6A243A_tAXV_mkjRr22KCCn6BTg_w.png",
+                          "/Photo%20ZenCreator%20WS/a-confident-black-african-woman-with-vol_8P-yoXoWRWOQgprmeNR3Ag_NbOikeTkR4OzvEVJinvfSA.png",
+                          "/Photo%20ZenCreator%20WS/handsome%20young%20man,%20tousled%20hair,%20desert%20rave%20outfit,%20headphones%20around%20neck,%20sunset%20in%20the%20backgrou....jpeg"
+                        ]}
+                        className="absolute inset-0 w-full h-full"
+                        autoPlay={true}
+                        interval={2500}
+                      />
+                    ) : (
+                      <div className={`absolute inset-0 w-full h-full ${tool.mockup} flex items-center justify-center`}>
+                        <div className="absolute inset-4 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+                          <span className="text-gray-600 font-medium">Preview Coming Soon</span>
+                        </div>
+                      </div>
+                    )}
+                    
+                    {/* Content overlay at bottom */}
+                    <div className="relative z-10 mt-auto bg-white p-6 rounded-b-3xl">
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">{tool.name}</h3>
+                      <p className="text-gray-600 text-sm leading-relaxed mb-4">{tool.description}</p>
+                      <div className="flex justify-between items-center gap-3">
+                        <a 
+                          href={tool.tryLink} 
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-purple-600 font-semibold hover:text-purple-700 transition-colors flex items-center gap-2"
+                        >
+                          Try it now
+                          <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path d="M7 17L17 7" />
+                            <path d="M7 7h10v10" />
+                          </svg>
+                        </a>
+                        <Link 
+                          to={tool.link} 
+                          className="text-gray-700 font-semibold hover:text-purple-600 transition-colors flex items-center gap-2"
+                        >
+                          Learn More
+                          <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                            <path d="M9 18l6-6-6-6" />
+                          </svg>
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
