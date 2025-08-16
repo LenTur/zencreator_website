@@ -232,20 +232,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
         <div className="overflow-y-auto h-full pb-20">
           {/* Custom mobile menu items */}
           <div className="py-2">
-            <a
-              href="/products/zencreator"
-              onClick={onClose}
-              className="block py-3 px-4 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors font-medium"
-            >
-              ZenCreator
-            </a>
-            <a
-              href="/products/zencomfy"
-              onClick={onClose}
-              className="block py-3 px-4 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors font-medium"
-            >
-              ZenComfy
-            </a>
+            {renderMobileItem(navigationMenu.products)}
             {renderMobileItem(navigationMenu.services)}
             {renderMobileItem(navigationMenu.pricing)}
             {renderMobileItem(navigationMenu.about)}
@@ -279,7 +266,7 @@ export const Header = ({ forceDark = false }: { forceDark?: boolean }) => {
 
   return (
     <>
-      <div className={`fixed top-0 left-0 right-0 z-[9998] transition-all duration-300 ${
+      <div className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled ? 'py-2' : 'py-5'
       }`}>
         <div className="flex justify-center px-4">
@@ -321,7 +308,7 @@ export const Header = ({ forceDark = false }: { forceDark?: boolean }) => {
             
             {/* CTA Buttons */}
             <div className="flex items-center space-x-6">
-              <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer">
+              <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="hidden lg:inline-block">
                 <Button className="bg-black hover:bg-gray-800 text-white px-6 h-10 rounded-lg">
                   Start Creating
                 </Button>

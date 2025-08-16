@@ -203,7 +203,7 @@ export const Home: React.FC = () => {
       <div className="container mx-auto px-4 pb-20">
         <div className="max-w-6xl mx-auto">
           {/* Products */}
-          <section className="py-[150px]">
+          <section className="py-16 md:py-[150px]">
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 text-center">Products</h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-12 text-center leading-relaxed">
               Explore AI tools and cloud workflows that help teams create, deploy and scale visual content without friction.
@@ -253,7 +253,7 @@ export const Home: React.FC = () => {
       </div>
 
       {/* Tools - Full Width */}
-      <section className="py-[150px] bg-ink-900">
+      <section className="py-16 md:py-[150px] bg-ink-900">
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-12 text-center">Tools</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -353,7 +353,7 @@ export const Home: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4">
         <div className="mx-auto">
           {/* Services */}
-          <section className="py-[150px]">
+          <section className="py-16 md:py-[150px]">
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">Services</h2>
             <div className="space-y-12">
               {[
@@ -444,7 +444,7 @@ export const Home: React.FC = () => {
       </div>
 
       {/* Colorful Divider - Full Width */}
-      <section className="py-8 relative overflow-hidden w-full">
+      <section className="py-4 relative overflow-hidden w-full">
         <div className="flex justify-end">
           <img
             src="/colorfull3.png"
@@ -457,7 +457,7 @@ export const Home: React.FC = () => {
       <div className="container mx-auto px-4 pb-20">
         <div className="max-w-6xl mx-auto">
           {/* Industries (moved after Services) */}
-          <section className="py-[150px]">
+          <section className="py-16 md:py-[150px]">
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">For Creators Across All Fields</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
