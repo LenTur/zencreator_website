@@ -46,7 +46,7 @@ export const Home: React.FC = () => {
     'woman-30-y-o-long-brunette-straight-hair_u9kj-yrRTr-9bZJNF4tNow_uCVt7UhNSHyl5C1rhCX_bg.png'
   ];
 
-  const galleryImages = galleryFileNames.map((name) => `/Photo%20ZenCreator%20WS/${encodeURIComponent(name)}`);
+  const galleryImages = galleryFileNames.map((name) => `/images/home/${encodeURIComponent(name)}`);
 
   const products = {
     zencreator: {
@@ -248,46 +248,46 @@ export const Home: React.FC = () => {
                 >
                   {tool.name === 'Upscaling' ? (
                     <BeforeAfter
-                      beforeImage="/Photo ZenCreator WS/upscale1.png"
-                      afterImage="/Photo ZenCreator WS/upscale2.jpg"
+                                          beforeImage="/images/zencreator/tools/upscaling/upscale1.png"
+                    afterImage="/images/zencreator/tools/upscaling/upscale2.jpg"
                       beforeAlt="Before upscaling"
                       afterAlt="After upscaling"
                       className="absolute inset-0 w-full h-full"
                     />
                   ) : tool.name === 'Face Swapping' ? (
                     <BeforeAfter
-                      beforeImage="/Photo ZenCreator WS/faceswap1.png"
-                      afterImage="/Photo ZenCreator WS/faceswap2.png"
+                                          beforeImage="/images/zencreator/tools/face-swap/faceswap1.png"
+                    afterImage="/images/zencreator/tools/face-swap/faceswap2.png"
                       beforeAlt="Before face swapping"
                       afterAlt="After face swapping"
                       className="absolute inset-0 w-full h-full"
                     />
                   ) : tool.name === 'Face Generation' ? (
                     <img
-                      src="/Photo ZenCreator WS/Face Generation.png"
+                      src="/images/zencreator/tools/face-generation/Face Generation.png"
                       alt="Face Generation Preview"
                       className="absolute inset-0 w-full h-full object-cover"
                     />
                   ) : tool.name === 'Generation by Prompt' ? (
                     <img
-                      src="/Photo ZenCreator WS/Generation by Prompt.png"
+                      src="/images/zencreator/tools/generation-prompt/Generation by Prompt.png"
                       alt="Generation by Prompt Preview"
                       className="absolute inset-0 w-full h-full object-cover"
                     />
                   ) : tool.name === 'Generation by Reference' ? (
                     <img
-                      src="/Photo ZenCreator WS/Generator by Reference.png"
+                      src="/images/zencreator/tools/generation-reference/Generator by Reference.png"
                       alt="Generation by Reference Preview"
                       className="absolute inset-0 w-full h-full object-cover"
                     />
                   ) : tool.name === 'Carousel Generation' ? (
                     <ImageCarousel
                       images={[
-                        "/Photo ZenCreator WS/111_00064_ 1.png",
-                        "/Photo ZenCreator WS/beautiful-model-instagram-appearance-raw_4FaGNTiASwuvX-2ZajfW5w_7HswgjCQQ1-vJ4c52-SJxA.png",
-                        "/Photo ZenCreator WS/woman-30-y-o-long-blonde-wavy-hair-avera_L3ijQyrYRSSD92aY6A243A_tAXV_mkjRr22KCCn6BTg_w.png",
-                        "/Photo ZenCreator WS/a-confident-black-african-woman-with-vol_8P-yoXoWRWOQgprmeNR3Ag_NbOikeTkR4OzvEVJinvfSA.png",
-                        "/Photo ZenCreator WS/handsome young man, tousled hair, desert rave outfit, headphones around neck, sunset in the backgrou....jpeg"
+                        "/images/zencreator/tools/carousel/111_00064_ 1.png",
+                        "/images/zencreator/tools/carousel/beautiful-model-instagram-appearance-raw_4FaGNTiASwuvX-2ZajfW5w_7HswgjCQQ1-vJ4c52-SJxA.png",
+                        "/images/zencreator/tools/carousel/woman-30-y-o-long-blonde-wavy-hair-avera_L3ijQyrYRSSD92aY6A243A_tAXV_mkjRr22KCCn6BTg_w.png",
+                        "/images/zencreator/tools/carousel/a-confident-black-african-woman-with-vol_8P-yoXoWRWOQgprmeNR3Ag_NbOikeTkR4OzvEVJinvfSA.png",
+                        "/images/zencreator/tools/carousel/handsome young man, tousled hair, desert rave outfit, headphones around neck, sunset in the backgrou....jpeg"
                       ]}
                       className="absolute inset-0 w-full h-full"
                       autoPlay={false}

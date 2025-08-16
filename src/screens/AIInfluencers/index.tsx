@@ -8,10 +8,10 @@ export const AIInfluencers: React.FC = () => {
       title="We Create the Future of Influence"
       description="We create and manage virtual influencers that audiences love. AI-driven, ultra-realistic, and engagement-focused."
     >
-      {/* Hero Section */}
-      <section className="py-[150px] text-center" style={{ paddingTop: '140px' }}>
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
+      <div className="container mx-auto px-4 pb-20" style={{ paddingTop: '140px' }}>
+        <div className="max-w-6xl mx-auto">
+          {/* Hero */}
+          <section className="pt-24 pb-[40px] text-center">
             <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-6 leading-tight">
               We Create the Future of Influence
             </h1>
@@ -26,12 +26,7 @@ export const AIInfluencers: React.FC = () => {
                 Get a Proposal
               </a>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="container mx-auto px-4 pb-20">
-        <div className="max-w-6xl mx-auto">
+          </section>
 
           {/* Market Research & Strategy */}
           <section className="mt-[150px]">
