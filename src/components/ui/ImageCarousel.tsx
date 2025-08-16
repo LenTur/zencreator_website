@@ -16,9 +16,10 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({
   interval = 3000
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
-    if (!autoPlay || images.length <= 1) return;
+    if (!autoPlay || images.length <= 1 || isPaused) return;
 
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => 
@@ -27,7 +28,7 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({
     }, interval);
 
     return () => clearInterval(timer);
-  }, [autoPlay, interval, images.length]);
+  }, [autoPlay, interval, images.length, isPaused]);
 
   const goToPrevious = () => {
     setCurrentIndex(currentIndex === 0 ? images.length - 1 : currentIndex - 1);
@@ -45,23 +46,42 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({
   console.log('ImageCarousel rendering with', images.length, 'images');
 
   return (
-    <div className={`relative overflow-hidden ${className}`}>
+    <div 
+      className={`relative overflow-hidden ${className}`}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       {/* Images */}
       <div className="relative w-full h-full">
         {images.map((image, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-500 ${
+            className={`absolute inset-0 transition-all duration-500 ${
               index === currentIndex ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            <ResponsiveImage
-              src={image}
-              alt={`Carousel image ${index + 1}`}
-              className="w-full h-full object-cover"
-              loading={index === currentIndex ? 'eager' : 'lazy'}
-              sizes="(max-width: 768px) 300px, 600px"
-            />
+            <div className="w-full h-full overflow-hidden">
+              <ResponsiveImage
+                src={image}
+                alt={`Carousel image ${index + 1}`}
+                className="w-full h-full object-cover transition-all duration-300 hover:scale-110 hover:shadow-lg cursor-pointer"
+                loading={index === currentIndex ? 'eager' : 'lazy'}
+                sizes="(max-width: 768px) 300px, 600px"
+                style={{
+                  filter: 'brightness(1)',
+                  border: '2px solid transparent'
+                }}
+                onClick={goToNext}
+                onMouseEnter={(e: React.MouseEvent<HTMLImageElement>) => {
+                  e.currentTarget.style.border = '2px solid #8B5CF6';
+                  e.currentTarget.style.filter = 'brightness(1.1)';
+                }}
+                onMouseLeave={(e: React.MouseEvent<HTMLImageElement>) => {
+                  e.currentTarget.style.border = '2px solid transparent';
+                  e.currentTarget.style.filter = 'brightness(1)';
+                }}
+              />
+            </div>
           </div>
         ))}
       </div>
@@ -71,28 +91,30 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({
         <>
           <button
             onClick={goToPrevious}
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
+            className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white/90 text-gray-800 p-3 rounded-full hover:bg-white hover:scale-110 transition-all duration-200 shadow-lg z-10 backdrop-blur-sm"
           >
-            <ChevronLeft className="w-4 h-4" />
+            <ChevronLeft className="w-5 h-5" />
           </button>
           <button
             onClick={goToNext}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white/90 text-gray-800 p-3 rounded-full hover:bg-white hover:scale-110 transition-all duration-200 shadow-lg z-10 backdrop-blur-sm"
           >
-            <ChevronRight className="w-4 h-4" />
+            <ChevronRight className="w-5 h-5" />
           </button>
         </>
       )}
 
       {/* Dots indicator */}
       {images.length > 1 && (
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 bg-black/20 backdrop-blur-sm px-3 py-2 rounded-full">
           {images.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-2 h-2 rounded-full transition-colors ${
-                index === currentIndex ? 'bg-white' : 'bg-white/50'
+              className={`w-3 h-3 rounded-full transition-all duration-200 hover:scale-125 ${
+                index === currentIndex 
+                  ? 'bg-white shadow-lg' 
+                  : 'bg-white/50 hover:bg-white/70'
               }`}
             />
           ))}

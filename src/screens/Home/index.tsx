@@ -3,51 +3,37 @@ import { PageLayout } from '@/components/layout/PageLayout';
 import { Link } from 'react-router-dom';
 import { Users, Heart, ShoppingBag, Gamepad2, GraduationCap, Building2, Monitor, Film } from 'lucide-react';
 import { BeforeAfter } from '@/components/ui/BeforeAfter';
-import { ImageCarousel } from '@/components/ui/ImageCarousel';
 import { ToolCard } from '@/components/ui/ToolCard';
 import { ResponsiveImage } from '@/components/ui/ResponsiveImage';
+import { PhotoshootCarousel } from '@/components/ui/PhotoshootCarousel';
 
 export const Home: React.FC = () => {
 
-  const galleryFileNames = [
-    '111_00064_ 1.png',
-    '1e4a3be9b9334767b6d0522708431214.png',
-    '1HtPYlwbQWSmRYkmxzDaWA.jpeg',
-    '1x1_Portrait_of_a_young_woman__casua (1).png',
-    '28-year-old-latina-european-woman-light-_QFovFprPSee9IR3jREjlwA_QIn3H1lIRxuECCBkUCiplg.png',
-    '6JGte3LQSTShDYLEJyuP8w.webp',
-    '919d196e-5dfc-47b5-a8d7-bb66a4cc2155.png',
-    '9W4B7QvdQLStUWto28kmJw.webp',
-    '9x16_Full_body_portrait_of_a_young_wo.png',
-    'a-confident-black-african-woman-with-vol_8P-yoXoWRWOQgprmeNR3Ag_NbOikeTkR4OzvEVJinvfSA.png',
-    'a-hyperrealistic-close-up-portrait-of-a-_oOfoTRacTuuu2Wg4_ZCdkg_LFHybzKnRJe6E-7RcNNeQg.png',
-    'a-luminous-beauty-editorial-portrait-sho_Br68z7gZSquot9ikUo3Djg_7OssQuGmQzG5lLQF1xkb8A (1).png',
-    'a-soft-cinematic-macro-portrait-photogra_Thy_mcTmQHGGRMnfh1h9Qw_P7zi2BzwRH2HXubE70K1IA.png',
-    'b82bae1e-3c44-4a6b-bfec-60a0943aa8b7.png',
-    'beautiful-model-instagram-appearance-raw_4FaGNTiASwuvX-2ZajfW5w_7HswgjCQQ1-vJ4c52-SJxA.png',
-    'beautiful-model-instagram-appearance-raw_7Hhhbj7IRxKRtkz-TFGxqg_fiVKTGEpRE6OMsJC1Vhvgg.png',
-    'beautiful-model-instagram-appearance-raw_WFGotnY9TQK44WKw3B9q9Q_tCsl-P5JQZ2AiV9b2-6RPg.png',
-    'beautiful-woman-with-rich-afro-curls-lou_RuuSS4gOQP2QMm1tfzrYVg_X8FtMagURnCE3CwQVplgXw.png',
-    'CARMEN FREE 2 1.png',
-    'ComfyUI_temp_fccpl_00209_ 1.png',
-    'ComfyUI_temp_fpuhf_00051_ 1.png',
-    'ComfyUI_temp_mgcei_00006_.png',
-    'ComfyUI_temp_pdoyu_00011_.png',
-    'cute woman with natural curls, oversized hoodie, cozy room with sunlight, smiling gently, pastel ton... 1.png',
-    'Frame 108.png',
-    'fs372CxPQ82nyBXEj91OxQ.webp',
-    'handsome young man, tousled hair, desert rave outfit, headphones around neck, sunset in the backgrou....jpeg',
-    'result_0 (1).png',
-    'result_0.png',
-    'woman-30-y-o-long-blonde-wavy-hair-avera__AAuNDocSLqHEYHbBALNAA_pb40rR-WQhi7dr8zWL-I-g.png',
-    'woman-30-y-o-long-blonde-wavy-hair-avera_gKgrzuotQquKvoycYjECZg_tAXV_mkjRr22KCCn6BTg_w.png',
-    'woman-30-y-o-long-blonde-wavy-hair-avera_L3ijQyrYRSSD92aY6A243A_tAXV_mkjRr22KCCn6BTg_w.png',
-    'woman-30-y-o-long-blonde-wavy-hair-avera_mysMOl2vR8GkXdFs9qTeTw_pb40rR-WQhi7dr8zWL-I-g.png',
-    'woman-30-y-o-long-brunette-straight-hair_IiHuXfoxQH6szEf_mywQfA_E8vszLrtSTydUZEOHSimJg.png',
-    'woman-30-y-o-long-brunette-straight-hair_u9kj-yrRTr-9bZJNF4tNow_uCVt7UhNSHyl5C1rhCX_bg.png'
-  ];
 
-  const galleryImages = galleryFileNames.map((name) => `home/${encodeURIComponent(name)}`);
+
+
+
+
+
+  // Используем новые изображения карусели для главной галереи
+  const galleryImages = [
+    'home/carousel/carousel1.png',
+    'home/carousel/carousel2.png', 
+    'home/carousel/carousel3.jpeg',
+    'home/carousel/carousel4.png',
+    'home/carousel/carousel5.png',
+    'home/carousel/carousel6.png',
+    'home/carousel/carousel7.png',
+    'home/carousel/carousel8.png',
+    'home/carousel/carousel9.png',
+    'home/carousel/carousel10.png',
+    'home/carousel/carousel11.png',
+    'home/carousel/carousel12.png',
+    'home/carousel/carousel13.png',
+    'home/carousel/carousel14.png',
+    'home/carousel/carousel15.png',
+    'home/carousel/carousel16.png'
+  ];
 
   const products = {
     zencreator: {
@@ -259,53 +245,63 @@ export const Home: React.FC = () => {
                   link={tool.link}
                   tryLink={tool.tryLink}
                 >
-                  {tool.name === 'Upscaling' ? (
+                                    {tool.name === 'Upscaling' ? (
                     <BeforeAfter
-                                          beforeImage="/images/zencreator/tools/upscaling/upscale1.png"
-                    afterImage="/images/zencreator/tools/upscaling/upscale2.jpg"
+                      beforeImage="/images/optimized/desktop/home/tools/upscale1.png"
+                      afterImage="/images/optimized/desktop/home/tools/upscale2.jpg"
                       beforeAlt="Before upscaling"
                       afterAlt="After upscaling"
                       className="absolute inset-0 w-full h-full"
                     />
                   ) : tool.name === 'Face Swapping' ? (
                     <BeforeAfter
-                                          beforeImage="/images/zencreator/tools/face-swap/faceswap1.png"
-                    afterImage="/images/zencreator/tools/face-swap/faceswap2.png"
+                      beforeImage="/images/optimized/desktop/home/tools/faceswap1.png"
+                      afterImage="/images/optimized/desktop/home/tools/faceswap2.png"
                       beforeAlt="Before face swapping"
                       afterAlt="After face swapping"
                       className="absolute inset-0 w-full h-full"
                     />
                   ) : tool.name === 'Face Generation' ? (
-                    <img
-                      src="/images/zencreator/tools/face-generation/Face Generation.png"
+                    <ResponsiveImage
+                      src="home/tools/Face Generation.png"
                       alt="Face Generation Preview"
                       className="absolute inset-0 w-full h-full object-cover"
                     />
                   ) : tool.name === 'Generation by Prompt' ? (
-                    <img
-                      src="/images/zencreator/tools/generation-prompt/Generation by Prompt.png"
+                    <ResponsiveImage
+                      src="home/tools/Generation by Prompt.png"
                       alt="Generation by Prompt Preview"
                       className="absolute inset-0 w-full h-full object-cover"
                     />
                   ) : tool.name === 'Generation by Reference' ? (
-                    <img
-                      src="/images/zencreator/tools/generation-reference/Generator by Reference.png"
+                    <ResponsiveImage
+                      src="home/tools/Generator by Reference.png"
                       alt="Generation by Reference Preview"
                       className="absolute inset-0 w-full h-full object-cover"
                     />
-                  ) : tool.name === 'Carousel Generation' ? (
-                    <ImageCarousel
-                      images={[
-                        "zencreator/tools/carousel/111_00064_ 1.png",
-                        "zencreator/tools/carousel/beautiful-model-instagram-appearance-raw_4FaGNTiASwuvX-2ZajfW5w_7HswgjCQQ1-vJ4c52-SJxA.png",
-                        "zencreator/tools/carousel/woman-30-y-o-long-blonde-wavy-hair-avera_L3ijQyrYRSSD92aY6A243A_tAXV_mkjRr22KCCn6BTg_w.png",
-                        "zencreator/tools/carousel/a-confident-black-african-woman-with-vol_8P-yoXoWRWOQgprmeNR3Ag_NbOikeTkR4OzvEVJinvfSA.png",
-                        "zencreator/tools/carousel/handsome young man, tousled hair, desert rave outfit, headphones around neck, sunset in the backgrou....jpeg"
-                      ]}
+                  ) : tool.name === 'Photo Shoot Generation' ? (
+                    <PhotoshootCarousel
                       className="absolute inset-0 w-full h-full"
                       autoPlay={true}
-                      interval={2500}
+                      interval={3000}
                     />
+                  ) : tool.name === 'Video Generation' ? (
+                    <div className="absolute inset-0 w-full h-full">
+                      <video
+                        src="/images/home/tools/video.mp4"
+                        className="w-full h-full object-cover"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                      />
+                    </div>
+                  ) : tool.name === 'Carousel Generation' ? (
+                    <div className={`absolute inset-0 w-full h-full ${tool.mockup} flex items-center justify-center`}>
+                      <div className="absolute inset-4 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+                        <span className="text-gray-600 font-medium">Carousel Preview</span>
+                      </div>
+                    </div>
                   ) : (
                     <div className={`absolute inset-0 w-full h-full ${tool.mockup} flex items-center justify-center`}>
                       <div className="absolute inset-4 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">

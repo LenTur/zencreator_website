@@ -6,6 +6,10 @@ interface ResponsiveImageProps {
   className?: string;
   loading?: 'lazy' | 'eager';
   sizes?: string;
+  style?: React.CSSProperties;
+  onClick?: () => void;
+  onMouseEnter?: (e: React.MouseEvent<HTMLImageElement>) => void;
+  onMouseLeave?: (e: React.MouseEvent<HTMLImageElement>) => void;
 }
 
 /**
@@ -26,7 +30,11 @@ export const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
   alt,
   className = '',
   loading = 'lazy',
-  sizes = '(max-width: 768px) 300px, 600px'
+  sizes = '(max-width: 768px) 300px, 600px',
+  style,
+  onClick,
+  onMouseEnter,
+  onMouseLeave
 }) => {
   // Преобразуем путь к изображению для получения оптимизированных версий
   const getOptimizedPath = (originalPath: string, size: 'mobile' | 'desktop') => {
@@ -46,6 +54,10 @@ export const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
       alt={alt}
       className={className}
       loading={loading}
+      style={style}
+      onClick={onClick}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     />
   );
 };

@@ -29,6 +29,26 @@ for img in public/images/home/*.{png,jpg,jpeg,webp}; do
     fi
 done
 
+# Оптимизация изображений карусели
+echo "🎠 Оптимизируем изображения карусели..."
+mkdir -p public/images/optimized/mobile/home/carousel public/images/optimized/desktop/home/carousel
+for img in public/images/home/carousel/*.{png,jpg,jpeg,webp}; do
+    if [ -f "$img" ]; then
+        filename=$(basename "$img")
+        optimize_image "$img" "public/images/optimized/mobile/home/carousel/$filename" "public/images/optimized/desktop/home/carousel/$filename"
+    fi
+done
+
+# Оптимизация изображений инструментов на главной
+echo "🛠️  Оптимизируем изображения инструментов на главной..."
+mkdir -p public/images/optimized/mobile/home/tools public/images/optimized/desktop/home/tools
+for img in public/images/home/tools/*.{png,jpg,jpeg,webp}; do
+    if [ -f "$img" ]; then
+        filename=$(basename "$img")
+        optimize_image "$img" "public/images/optimized/mobile/home/tools/$filename" "public/images/optimized/desktop/home/tools/$filename"
+    fi
+done
+
 # Оптимизация изображений галереи carousel
 echo "🎠 Оптимизируем изображения галереи..."
 for img in public/images/zencreator/tools/carousel/*.{png,jpg,jpeg,webp}; do
