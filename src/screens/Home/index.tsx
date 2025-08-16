@@ -375,11 +375,32 @@ export const Home: React.FC = () => {
                     {/* Visual */}
                     <div className={service.reverse ? 'lg:col-start-1' : ''}>
                       {service.title === 'Dating Profile Generation' ? (
-                        <div className="bg-gradient-to-br from-teal-400 to-blue-500 rounded-3xl p-8 min-h-80 flex items-center justify-center overflow-hidden">
+                        <div className="rounded-3xl overflow-hidden min-h-80">
                           <img
-                            src="/images/home/tools/Daiting.png"
+                            src="/images/home/Swipe right.png"
                             alt="Dating Profile Service Preview"
-                            className="w-full h-full object-cover rounded-2xl"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      ) : service.title === 'AI Photo Shoot Generator' ? (
+                        <div className="rounded-3xl overflow-hidden min-h-80">
+                          <img
+                            src="/images/home/Photo Shoot.png"
+                            alt="AI Photo Shoot Generator Preview"
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      ) : service.title === 'AI Influencers' ? (
+                        <div className="rounded-3xl overflow-hidden min-h-64">
+                          <video
+                            src="/images/home/Influ.mp4?v=1"
+                            className="w-full h-full object-cover"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            preload="auto"
+                            controls={false}
                           />
                         </div>
                       ) : (
@@ -401,7 +422,22 @@ export const Home: React.FC = () => {
               ))}
             </div>
           </section>
+        </div>
+      </div>
 
+      {/* Colorful Divider - Full Width */}
+      <section className="py-16 relative overflow-hidden w-full">
+        <div className="flex justify-end">
+          <img
+            src="/colorfull3.png"
+            alt="Colorful Divider"
+            className="h-24 w-auto object-contain"
+          />
+        </div>
+      </section>
+
+      <div className="container mx-auto px-4 pb-20">
+        <div className="max-w-6xl mx-auto">
           {/* Industries (moved after Services) */}
           <section className="py-[150px]">
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">For Creators Across All Fields</h2>
