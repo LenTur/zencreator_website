@@ -183,15 +183,15 @@ export const Home: React.FC = () => {
           
           {/* Mobile: Manual scroll gallery */}
           <div className="md:hidden overflow-x-auto">
-            <div className="flex space-x-4 px-4">
+            <div className="flex space-x-3 px-4">
               {galleryImages.map((src, idx) => (
-                <div key={`mobile-${idx}`} className="w-48 h-60 bg-gray-100 rounded-xl overflow-hidden flex-shrink-0">
+                <div key={`mobile-${idx}`} className="w-32 h-40 bg-gray-100 rounded-xl overflow-hidden flex-shrink-0">
                   <ResponsiveImage 
                     src={src} 
                     alt={`Gallery ${idx + 1}`} 
                     className="w-full h-full object-cover"
                     loading="lazy"
-                    sizes="192px"
+                    sizes="128px"
                   />
                 </div>
               ))}

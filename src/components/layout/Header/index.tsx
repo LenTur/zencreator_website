@@ -174,48 +174,34 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
     const hasChildren = item.children && item.children.length > 0;
     const isOpen = openSections.includes(item.title);
     const paddingLeft = depth * 16;
-    const isDisabled = item.title === 'Services' || item.title === 'About Us';
 
     return (
       <div key={item.title}>
         {hasChildren ? (
           <button
-            onClick={isDisabled ? undefined : () => toggleSection(item.title)}
-            className={`w-full flex items-center justify-between py-3 text-left transition-colors ${
-              isDisabled 
-                ? 'text-gray-400 cursor-not-allowed opacity-50' 
-                : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
-            }`}
+            onClick={() => toggleSection(item.title)}
+            className="w-full flex items-center justify-between py-3 text-left transition-colors text-gray-700 hover:bg-gray-100 hover:text-gray-900"
             style={{ paddingLeft: `${paddingLeft + 16}px` }}
-            disabled={isDisabled}
           >
             <span className="font-medium">{item.title}</span>
             <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
           </button>
         ) : (
           <div
-            className={`block py-3 ${
-              isDisabled 
-                ? 'text-gray-400 cursor-not-allowed opacity-50' 
-                : 'text-gray-700'
-            }`}
+            className="block py-3 text-gray-700"
             style={{ paddingLeft: `${paddingLeft + 16}px` }}
           >
-            {isDisabled ? (
-              <span>{item.title}</span>
-            ) : (
-              <a
-                href={item.href}
-                onClick={onClose}
-                className="hover:bg-gray-100 hover:text-gray-900 transition-colors"
-              >
-                {item.title}
-              </a>
-            )}
+            <a
+              href={item.href}
+              onClick={onClose}
+              className="hover:bg-gray-100 hover:text-gray-900 transition-colors"
+            >
+              {item.title}
+            </a>
           </div>
         )}
         
-        {hasChildren && isOpen && !isDisabled && (
+        {hasChildren && isOpen && (
           <div className="bg-gray-50">
             {item.children?.map(child => renderMobileItem(child, depth + 1))}
           </div>
@@ -306,8 +292,8 @@ export const Header = ({ forceDark = false }: { forceDark?: boolean }) => {
             style={{ 
               width: "1200px",
               maxWidth: "100%",
-              padding: "16px 20px",
-              borderRadius: "16px",
+              padding: "12px 16px",
+              borderRadius: "12px",
             }}
           >
             {/* Logo */}
