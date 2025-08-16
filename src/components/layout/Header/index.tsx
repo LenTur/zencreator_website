@@ -271,17 +271,11 @@ export const Header = ({ forceDark = false }: { forceDark?: boolean }) => {
       }`}>
         <div className="flex justify-center px-4">
           <nav
-            className={`backdrop-blur-xl mx-auto flex items-center justify-between transition-all duration-300 ${
+            className={`backdrop-blur-xl mx-auto flex items-center justify-between transition-all duration-300 w-full max-w-6xl px-4 md:px-6 lg:px-8 py-4 md:py-6 lg:py-8 rounded-2xl md:rounded-3xl ${
               (isScrolled || forceDark) 
-                ? 'bg-white/60 shadow-lg border border-white/60 shadow-gray-200/20' 
-                : 'bg-white/20 border border-white/60 shadow-gray-200/20'
+                ? 'bg-white/60 shadow-xl border border-white/60 shadow-purple-200/50' 
+                : 'bg-white/20 border border-white/60 shadow-xl shadow-purple-200/50'
             }`}
-            style={{ 
-              width: "1200px",
-              maxWidth: "100%",
-              padding: "12px 16px",
-              borderRadius: "12px",
-            }}
           >
             {/* Logo */}
             <div className="flex items-center">

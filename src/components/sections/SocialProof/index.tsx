@@ -57,22 +57,22 @@ export const SocialProof = () => {
             <div className="mt-16 overflow-hidden w-full">
               <div className="flex space-x-8 justify-center">
                 <div className="w-48 h-64 bg-gray-100 rounded-xl flex items-center justify-center">
-                  <img src="/Colorfull1.png" alt="Gallery 1" className="w-full h-full object-cover rounded-xl" />
+                  <img src="/images/home/carousel/carousel1.png" alt="Gallery 1" className="w-full h-full object-cover rounded-xl" />
                 </div>
                 <div className="w-48 h-64 bg-gray-100 rounded-xl flex items-center justify-center">
-                  <img src="/Colorfull2.png" alt="Gallery 2" className="w-full h-full object-cover rounded-xl" />
+                  <img src="/images/home/carousel/carousel2.png" alt="Gallery 2" className="w-full h-full object-cover rounded-xl" />
                 </div>
                 <div className="w-48 h-64 bg-gray-100 rounded-xl flex items-center justify-center">
-                  <img src="/colorfull3.png" alt="Gallery 3" className="w-full h-full object-cover rounded-xl" />
+                  <img src="/images/home/carousel/carousel3.jpeg" alt="Gallery 3" className="w-full h-full object-cover rounded-xl" />
                 </div>
                 <div className="w-48 h-64 bg-gray-100 rounded-xl flex items-center justify-center">
-                  <img src="/DatingProfiles.png" alt="Gallery 4" className="w-full h-full object-cover rounded-xl" />
+                  <img src="/images/home/carousel/carousel4.png" alt="Gallery 4" className="w-full h-full object-cover rounded-xl" />
                 </div>
                 <div className="w-48 h-64 bg-gray-100 rounded-xl flex items-center justify-center">
-                  <img src="/Speed.png" alt="Gallery 5" className="w-full h-full object-cover rounded-xl" />
+                  <img src="/images/home/carousel/carousel5.png" alt="Gallery 5" className="w-full h-full object-cover rounded-xl" />
                 </div>
                 <div className="w-48 h-64 bg-gray-100 rounded-xl flex items-center justify-center">
-                  <img src="/Consistency.png" alt="Gallery 6" className="w-full h-full object-cover rounded-xl" />
+                  <img src="/images/home/carousel/carousel6.png" alt="Gallery 6" className="w-full h-full object-cover rounded-xl" />
                 </div>
               </div>
             </div>
