@@ -298,10 +298,10 @@ export const Header = ({ forceDark = false }: { forceDark?: boolean }) => {
       }`}>
         <div className="flex justify-center px-4">
           <nav
-            className={`backdrop-blur-md mx-auto flex items-center justify-between transition-all duration-300 ${
+            className={`backdrop-blur-xl mx-auto flex items-center justify-between transition-all duration-300 ${
               (isScrolled || forceDark) 
-                ? 'bg-white/95 shadow-lg border border-gray-200' 
-                : 'bg-white/10 border border-white/10'
+                ? 'bg-white/60 shadow-lg border border-white/60 shadow-gray-200/20' 
+                : 'bg-white/20 border border-white/60 shadow-gray-200/20'
             }`}
             style={{ 
               width: "1200px",

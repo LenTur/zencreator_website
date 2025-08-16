@@ -125,7 +125,8 @@ export const Home: React.FC = () => {
 
   return (
     <PageLayout>
-      <div className="container mx-auto px-4 pb-20" style={{ paddingTop: '140px' }}>
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
+        <div className="container mx-auto px-4 pb-20" style={{ paddingTop: '140px' }}>
         <div className="max-w-6xl mx-auto">
           {/* Hero */}
           <section className="pt-24 pb-[40px] text-center">
@@ -137,7 +138,7 @@ export const Home: React.FC = () => {
               <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-all duration-200 shadow-lg hover:shadow-xl">
                 Sign Up and Try
               </a>
-              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 border-2 border-gray-300 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-purple-50 hover:border-purple-400 hover:text-purple-900 transition-all duration-200">
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-purple-100 text-purple-700 border border-purple-200 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-purple-600 hover:text-white hover:border-purple-600 transition-all duration-200">
                 Book a Demo
               </a>
             </div>
@@ -490,6 +491,7 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </section>
+      </div>
     </PageLayout>
   );
 };
