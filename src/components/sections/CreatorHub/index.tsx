@@ -86,7 +86,7 @@ export const CreatorHub = () => {
                       fontWeight: '400',
                       lineHeight: '16.94px'
                     }}>
-                      Face Gen, Photo-Shoot, Prompt & Reference Generators, Face Swap, 4-mode Upscale, Video, Carousel, Dating-Profile Builder.
+                      Face Gen, Photo Shoot, Prompt & Reference Generators, Face Swap, 4-mode Upscale, Video, Carousel, Dating-Profile Builder.
                     </div>
                   </div>
                 </div>

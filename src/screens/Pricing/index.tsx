@@ -208,7 +208,7 @@ export const Pricing = () => {
                   ['', 'Kling 2.0 5 s / 10 s','2 / 4'],
                   ['', 'WAN 5 s','5'],
                   ['Carousel','1 angle','2'],
-                  ['Photo-Shoot','1 image','2'],
+                  ['Photo Shoot','1 image','2'],
                   ['Dating Profile','1 moderated image','2'],
                   ['', '1 intro video','15']
                 ].map(([module, unit, credits], idx) => (
@@ -393,7 +393,7 @@ export const Pricing = () => {
                 </div>
                 <div className="px-6 py-4">
                   <div className="grid grid-cols-3 gap-4">
-                    <div className="font-medium text-gray-900">Photo-Shoot Generation</div>
+                    <div className="font-medium text-gray-900">Photo Shoot Generation</div>
                     <div className="font-bold text-red-700 text-lg">$ 1 000</div>
                     <div className="text-gray-700">moderated images</div>
                   </div>

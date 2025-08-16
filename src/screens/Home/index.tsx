@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Users, Heart, ShoppingBag, Gamepad2, GraduationCap, Building2, Monitor, Film } from 'lucide-react';
 import { BeforeAfter } from '@/components/ui/BeforeAfter';
 import { ImageCarousel } from '@/components/ui/ImageCarousel';
+import { ToolCard } from '@/components/ui/ToolCard';
 
 export const Home: React.FC = () => {
 
@@ -65,6 +66,74 @@ export const Home: React.FC = () => {
       hoverColor: 'hover:border-blue-200'
     }
   };
+
+  const tools = [
+    { 
+      name: 'Face Generation', 
+      description: 'Generate realistic faces with AI technology.',
+      link: '/products/zencreator/content-creation/ai-face-generation',
+      tryLink: 'https://app.zencreator.pro/tools',
+      mockup: 'bg-gradient-to-br from-red-100 to-blue-100'
+    },
+    { 
+      name: 'Face Swapping', 
+      description: 'Swap faces in images with perfect AI precision.',
+      link: '/products/zencreator/content-creation/ai-face-swapping',
+      tryLink: 'https://app.zencreator.pro/tools',
+      mockup: 'bg-gradient-to-br from-blue-100 to-gray-100'
+    },
+    { 
+      name: 'Upscaling', 
+      description: 'Enhance image quality and resolution with AI.',
+      link: '/products/zencreator/content-creation/ai-upscaling',
+      tryLink: 'https://app.zencreator.pro/tools',
+      mockup: 'bg-gradient-to-br from-green-100 to-teal-100',
+      showBeforeAfter: true
+    },
+    { 
+      name: 'Generation by Prompt', 
+      description: 'Create images from text descriptions.',
+      link: '/products/zencreator/content-creation/ai-generation-prompt',
+      tryLink: 'https://app.zencreator.pro/tools',
+      mockup: 'bg-gradient-to-br from-purple-100 to-indigo-100'
+    },
+    { 
+      name: 'Generation by Reference', 
+      description: 'Generate images based on reference photos.',
+      link: '/products/zencreator/content-creation/ai-generation-reference',
+      tryLink: 'https://app.zencreator.pro/tools',
+      mockup: 'bg-gradient-to-br from-yellow-100 to-orange-100'
+    },
+    { 
+      name: 'Photo Shoot Generation', 
+      description: 'Create professional photo shoots with AI.',
+      link: '/services/photo-shoots-generation',
+      tryLink: 'https://app.zencreator.pro/tools',
+      mockup: 'bg-gradient-to-br from-pink-100 to-red-100'
+    },
+    { 
+      name: 'Dating Profile Generation', 
+      description: 'Generate attractive dating profiles automatically.',
+      link: '/services/dating-profiles-generation',
+      tryLink: 'https://app.zencreator.pro/tools',
+      mockup: 'bg-gradient-to-br from-rose-100 to-pink-100'
+    },
+    { 
+      name: 'Video Generation', 
+      description: 'Create stunning videos from text and images.',
+      link: '/products/zencreator/content-creation/video-generation',
+      tryLink: 'https://app.zencreator.pro/tools',
+      mockup: 'bg-gradient-to-br from-indigo-100 to-purple-100'
+    },
+    { 
+      name: 'Carousel Generation', 
+      description: 'Generate engaging carousel posts for social media.',
+      link: '/products/zencreator/content-creation/carousel-generation',
+      tryLink: 'https://app.zencreator.pro/tools',
+      mockup: 'bg-gradient-to-br from-teal-100 to-blue-100',
+      showCarousel: true
+    }
+  ];
 
   return (
     <PageLayout>
@@ -169,137 +238,71 @@ export const Home: React.FC = () => {
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-12 text-center">Tools</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                { 
-                  name: 'Face Generation', 
-                  description: 'Generate realistic faces with AI technology.',
-                  link: '/products/zencreator/content-creation/ai-face-generation',
-                  tryLink: 'https://app.zencreator.pro/tools',
-                  mockup: 'bg-gradient-to-br from-red-100 to-blue-100'
-                },
-                { 
-                  name: 'Face Swapping', 
-                  description: 'Swap faces in images with perfect AI precision.',
-                  link: '/products/zencreator/content-creation/ai-face-swapping',
-                  tryLink: 'https://app.zencreator.pro/tools',
-                  mockup: 'bg-gradient-to-br from-blue-100 to-gray-100'
-                },
-                { 
-                  name: 'Upscaling', 
-                  description: 'Enhance image quality and resolution with AI.',
-                  link: '/products/zencreator/content-creation/ai-upscaling',
-                  tryLink: 'https://app.zencreator.pro/tools',
-                  mockup: 'bg-gradient-to-br from-green-100 to-teal-100',
-                  showBeforeAfter: true
-                },
-                { 
-                  name: 'Generation by Prompt', 
-                  description: 'Create images from text descriptions.',
-                  link: '/products/zencreator/content-creation/ai-generation-prompt',
-                  tryLink: 'https://app.zencreator.pro/tools',
-                  mockup: 'bg-gradient-to-br from-purple-100 to-pink-100'
-                },
-                { 
-                  name: 'Generation by Reference', 
-                  description: 'Generate images based on reference photos.',
-                  link: '/products/zencreator/content-creation/ai-generation-reference',
-                  tryLink: 'https://app.zencreator.pro/tools',
-                  mockup: 'bg-gradient-to-br from-yellow-100 to-orange-100'
-                },
-                { 
-                  name: 'Photo Shoot Generation', 
-                  description: 'Create professional photo shoots with AI.',
-                  link: '/services/photo-shoots-generation',
-                  tryLink: 'https://app.zencreator.pro/tools',
-                  mockup: 'bg-gradient-to-br from-pink-100 to-red-100'
-                },
-                { 
-                  name: 'Dating Profile Generation', 
-                  description: 'Generate attractive dating profiles automatically.',
-                  link: '/services/dating-profiles-generation',
-                  tryLink: 'https://app.zencreator.pro/tools',
-                  mockup: 'bg-gradient-to-br from-rose-100 to-pink-100'
-                },
-                { 
-                  name: 'Video Generation', 
-                  description: 'Create stunning videos from text and images.',
-                  link: '/products/zencreator/content-creation/video-generation',
-                  tryLink: 'https://app.zencreator.pro/tools',
-                  mockup: 'bg-gradient-to-br from-indigo-100 to-purple-100'
-                },
-                { 
-                  name: 'Carousel Generation', 
-                  description: 'Generate engaging carousel posts for social media.',
-                  link: '/products/zencreator/content-creation/carousel-generation',
-                  tryLink: 'https://app.zencreator.pro/tools',
-                  mockup: 'bg-gradient-to-br from-teal-100 to-blue-100',
-                  showCarousel: true
-                }
-              ].map((tool, index) => (
-                <div key={index} className="rounded-3xl border border-gray-200 hover:shadow-xl hover:border-gray-300 transition-all duration-300 overflow-hidden flex flex-col h-full bg-transparent">
-                  {/* Full-height background with overlay content */}
-                  <div className="relative w-full h-full flex flex-col">
-                    {tool.name === 'Upscaling' ? (
-                      <BeforeAfter
-                        beforeImage="/Photo%20ZenCreator%20WS/result_0.png"
-                        afterImage="/Photo%20ZenCreator%20WS/result_0%20(1).png"
-                        beforeAlt="Before upscaling"
-                        afterAlt="After upscaling"
-                        className="absolute inset-0 w-full h-full"
-                      />
-                    ) : tool.name === 'Carousel Generation' ? (
-                      <ImageCarousel
-                        images={[
-                          "/Photo ZenCreator WS/111_00064_ 1.png",
-                          "/Photo ZenCreator WS/beautiful-model-instagram-appearance-raw_4FaGNTiASwuvX-2ZajfW5w_7HswgjCQQ1-vJ4c52-SJxA.png",
-                          "/Photo ZenCreator WS/woman-30-y-o-long-blonde-wavy-hair-avera_L3ijQyrYRSSD92aY6A243A_tAXV_mkjRr22KCCn6BTg_w.png",
-                          "/Photo ZenCreator WS/a-confident-black-african-woman-with-vol_8P-yoXoWRWOQgprmeNR3Ag_NbOikeTkR4OzvEVJinvfSA.png",
-                          "/Photo ZenCreator WS/handsome young man, tousled hair, desert rave outfit, headphones around neck, sunset in the backgrou....jpeg"
-                        ]}
-                        className="absolute inset-0 w-full h-full"
-                        autoPlay={true}
-                        interval={2500}
-                      />
-                    ) : (
-                      <div className={`absolute inset-0 w-full h-full ${tool.mockup} flex items-center justify-center`}>
-                        <div className="absolute inset-4 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
-                          <span className="text-gray-600 font-medium">Preview Coming Soon</span>
-                        </div>
-                      </div>
-                    )}
-                    
-                    {/* Content overlay at bottom */}
-                    <div className="relative z-10 mt-auto bg-white p-6 rounded-b-3xl">
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">{tool.name}</h3>
-                      <p className="text-gray-600 text-sm leading-relaxed mb-4">{tool.description}</p>
-                      <div className="flex justify-between items-center gap-3">
-                        <a 
-                          href={tool.tryLink} 
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-purple-600 font-semibold hover:text-purple-700 transition-colors flex items-center gap-2"
-                        >
-                          Try it now
-                          <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path d="M7 17L17 7" />
-                            <path d="M7 7h10v10" />
-                          </svg>
-                        </a>
-                        <Link 
-                          to={tool.link} 
-                          className="text-gray-700 font-semibold hover:text-purple-600 transition-colors flex items-center gap-2"
-                        >
-                          Learn More
-                          <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path d="M9 18l6-6-6-6" />
-                          </svg>
-                        </Link>
+              {tools.map((tool) => (
+                <ToolCard
+                  key={tool.name}
+                  name={tool.name}
+                  description={tool.description}
+                  link={tool.link}
+                  tryLink={tool.tryLink}
+                >
+                  {tool.name === 'Upscaling' ? (
+                    <BeforeAfter
+                      beforeImage="/Photo ZenCreator WS/upscale1.png"
+                      afterImage="/Photo ZenCreator WS/upscale2.jpg"
+                      beforeAlt="Before upscaling"
+                      afterAlt="After upscaling"
+                      className="absolute inset-0 w-full h-full"
+                    />
+                  ) : tool.name === 'Face Swapping' ? (
+                    <BeforeAfter
+                      beforeImage="/Photo ZenCreator WS/faceswap1.png"
+                      afterImage="/Photo ZenCreator WS/faceswap2.png"
+                      beforeAlt="Before face swapping"
+                      afterAlt="After face swapping"
+                      className="absolute inset-0 w-full h-full"
+                    />
+                  ) : tool.name === 'Face Generation' ? (
+                    <img
+                      src="/Photo ZenCreator WS/Face Generation.png"
+                      alt="Face Generation Preview"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  ) : tool.name === 'Generation by Prompt' ? (
+                    <img
+                      src="/Photo ZenCreator WS/Generation by Prompt.png"
+                      alt="Generation by Prompt Preview"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  ) : tool.name === 'Generation by Reference' ? (
+                    <img
+                      src="/Photo ZenCreator WS/Generator by Reference.png"
+                      alt="Generation by Reference Preview"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  ) : tool.name === 'Carousel Generation' ? (
+                    <ImageCarousel
+                      images={[
+                        "/Photo ZenCreator WS/111_00064_ 1.png",
+                        "/Photo ZenCreator WS/beautiful-model-instagram-appearance-raw_4FaGNTiASwuvX-2ZajfW5w_7HswgjCQQ1-vJ4c52-SJxA.png",
+                        "/Photo ZenCreator WS/woman-30-y-o-long-blonde-wavy-hair-avera_L3ijQyrYRSSD92aY6A243A_tAXV_mkjRr22KCCn6BTg_w.png",
+                        "/Photo ZenCreator WS/a-confident-black-african-woman-with-vol_8P-yoXoWRWOQgprmeNR3Ag_NbOikeTkR4OzvEVJinvfSA.png",
+                        "/Photo ZenCreator WS/handsome young man, tousled hair, desert rave outfit, headphones around neck, sunset in the backgrou....jpeg"
+                      ]}
+                      className="absolute inset-0 w-full h-full"
+                      autoPlay={false}
+                      interval={2500}
+                    />
+                  ) : (
+                    <div className={`absolute inset-0 w-full h-full ${tool.mockup} flex items-center justify-center`}>
+                      <div className="absolute inset-4 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
+                        <span className="text-gray-600 font-medium">Preview Coming Soon</span>
                       </div>
                     </div>
-                  </div>
-                </div>
+                  )}
+                </ToolCard>
               ))}
-            </div>
+          </div>
             <div className="text-center mt-12">
               <Link to="/products/zencreator" className="inline-flex items-center gap-2 bg-white text-gray-900 hover:bg-purple-600 hover:text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200">
                 View All Tools
@@ -332,7 +335,7 @@ export const Home: React.FC = () => {
                   reverse: true
                 },
                 {
-                  title: 'AI Photo-Shoot Generator',
+                  title: 'AI Photo Shoot Generator',
                   description: 'Studio-quality images from two reference photos.',
                   link: '/services/photo-shoot',
                   reverse: false
@@ -385,7 +388,7 @@ export const Home: React.FC = () => {
                 { 
                   name: 'E‑commerce', 
                   icon: ShoppingBag, 
-                  description: 'Generate product photos, lifestyle images, and marketing visuals without expensive photoshoots.' 
+                  description: 'Generate product photos, lifestyle images, and marketing visuals without expensive photo shoots.' 
                 },
                 { 
                   name: 'Gaming', 

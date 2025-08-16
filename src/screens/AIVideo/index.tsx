@@ -1,18 +1,55 @@
 import React from 'react';
 import { PageLayout } from '@/components/layout/PageLayout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { FAQAccordion } from '@/components/sections/FAQAccordion';
 
 export const AIVideo: React.FC = () => {
+  const faqData = [
+    {
+      question: "Which engine is best for me?",
+      answer: "Use Kling 1.6 for quick stylised drafts, Kling 2.0 for realistic footage, and WAN when you need uncensored or experimental content."
+    },
+    {
+      question: "How long can a clip be?",
+      answer: "Currently, 10-20 seconds. Longer formats roll out soon."
+    },
+    {
+      question: "Can I batch-generate 1 000 clips?",
+      answer: "Yes. The batch queue spins up additional GPUs automatically; you pay only for compute you consume."
+    },
+    {
+      question: "Does uncensored mode break platform policies?",
+      answer: "Clips stay in your private workspace. You decide where to publish; we supply compliance guidelines."
+    },
+    {
+      question: "What resolutions are supported?",
+      answer: "Default 720 p."
+    }
+  ];
+
   return (
     <PageLayout
       title="AI Video Generator — From Image to Motion"
       description="Cinematic, social-ready videos — no camera, no render farm, no waiting."
     >
-      <div className="container mx-auto px-4 pb-16">
+      <div className="container mx-auto px-4 pb-20" style={{ paddingTop: '140px' }}>
         <div className="max-w-6xl mx-auto">
-          {/* Lead */}
-          <section className="py-6">
-            <a href="/products/zencreator/content-creation/video-generation" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Try Video Generator</a>
+          {/* Hero */}
+          <section className="pt-24 pb-[40px] text-center">
+            <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-6 leading-tight">
+              AI Video Generator — From Image to Motion
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
+              <strong>Cinematic, social-ready videos — no camera, no render farm, no waiting.</strong>
+            </p>
+            <div className="flex flex-wrap gap-6 justify-center">
+              <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-all duration-200">
+                Try Video Generator
+              </a>
+            </div>
+            <p className="text-gray-500 mt-8 italic">
+              *(Interactive player mock-up: reference frame ➜ 4-sec generated clip loop)*
+            </p>
           </section>
 
           {/* How It Works */}

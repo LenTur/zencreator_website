@@ -36,7 +36,12 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({
     setCurrentIndex(currentIndex === images.length - 1 ? 0 : currentIndex + 1);
   };
 
-  if (images.length === 0) return null;
+  if (images.length === 0) {
+    console.log('ImageCarousel: No images provided');
+    return <div className={`bg-red-500 text-white p-4 ${className}`}>No images</div>;
+  }
+
+  console.log('ImageCarousel rendering with', images.length, 'images');
 
   return (
     <div className={`relative overflow-hidden ${className}`}>

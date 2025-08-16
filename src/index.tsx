@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home, MacbookAir, Products, CreatorOS as ZenCreator, ZenComfy, Services, Technologies, Pricing, ContentCreationSuite, PublishingHub, /*PublishingInstagram, PublishingThreads, PublishingTwitter, PublishingFacebook, PublishingYouTube,*/ Analytics, AccountManagement, RunComfyUIOnline, WorkflowAsWebApp, /*AIFaceGeneration, AIFaceSwapping, AIUpscaling, AIGenerationPrompt, AIGenerationReference, AIVideo, AICarousel,*/ DatingProfilesService, PhotoShootsService, FullFunnelMarketing, PerformanceMarketing, ExperientialMarketing, CreativeProjects, BrandAmbassador, AIInfluencers, AboutUs } from "./screens";
+import { Home, MacbookAir, Products, CreatorOS as ZenCreator, ZenComfy, Services, Technologies, Pricing, ContentCreationSuite, PublishingHub, PublishingInstagram, PublishingThreads, PublishingTwitter, PublishingFacebook, PublishingYouTube, Analytics, AccountManagement, RunComfyUIOnline, WorkflowAsWebApp, AIFaceGeneration, AIFaceSwapping, AIUpscaling, AIGenerationPrompt, AIGenerationReference, AIVideo, AICarousel, DatingProfilesService, PhotoShootsService, FullFunnelMarketing, PerformanceMarketing, ExperientialMarketing, CreativeProjects, BrandAmbassador, AIInfluencers, AboutUs } from "./screens";
 
 createRoot(document.getElementById("app") as HTMLElement).render(
   <StrictMode>
@@ -13,20 +13,22 @@ createRoot(document.getElementById("app") as HTMLElement).render(
         <Route path="/products/zencreator/overview" element={<ZenCreator />} />
         <Route path="/products/zencreator/content-creation" element={<ContentCreationSuite />} />
         {/* Disabled Content Creation Tools */}
-        {/* <Route path="/products/zencreator/content-creation/ai-face-generation" element={<AIFaceGeneration />} /> */}
-        {/* <Route path="/products/zencreator/content-creation/ai-face-swapping" element={<AIFaceSwapping />} /> */}
-        {/* <Route path="/products/zencreator/content-creation/ai-upscaling" element={<AIUpscaling />} /> */}
-        {/* <Route path="/products/zencreator/content-creation/ai-generation-prompt" element={<AIGenerationPrompt />} /> */}
-        {/* <Route path="/products/zencreator/content-creation/ai-generation-reference" element={<AIGenerationReference />} /> */}
-        {/* <Route path="/products/zencreator/content-creation/video-generation" element={<AIVideo />} /> */}
-        {/* <Route path="/products/zencreator/content-creation/carousel-generation" element={<AICarousel />} /> */}
+        <Route path="/products/zencreator/content-creation/ai-face-generation" element={<AIFaceGeneration />} />
+        <Route path="/products/zencreator/content-creation/ai-face-swapping" element={<AIFaceSwapping />} />
+        <Route path="/products/zencreator/content-creation/ai-upscaling" element={<AIUpscaling />} />
+        <Route path="/products/zencreator/content-creation/ai-generation-prompt" element={<AIGenerationPrompt />} />
+        <Route path="/products/zencreator/content-creation/ai-generation-reference" element={<AIGenerationReference />} />
+        <Route path="/products/zencreator/content-creation/dating-profiles" element={<DatingProfilesService />} />
+        <Route path="/products/zencreator/content-creation/video-generation" element={<AIVideo />} />
+        <Route path="/products/zencreator/content-creation/carousel-generation" element={<AICarousel />} />
+        <Route path="/products/zencreator/content-creation/photo-shoot" element={<PhotoShootsService />} />
         <Route path="/products/zencreator/publishing-hub" element={<PublishingHub />} />
         {/* Disabled Content Publishing Tools */}
-        {/* <Route path="/products/zencreator/publishing-hub/instagram" element={<PublishingInstagram />} /> */}
-        {/* <Route path="/products/zencreator/publishing-hub/threads" element={<PublishingThreads />} /> */}
-        {/* <Route path="/products/zencreator/publishing-hub/twitter" element={<PublishingTwitter />} /> */}
-        {/* <Route path="/products/zencreator/publishing-hub/facebook" element={<PublishingFacebook />} /> */}
-        {/* <Route path="/products/zencreator/publishing-hub/youtube" element={<PublishingYouTube />} /> */}
+        <Route path="/products/zencreator/publishing-hub/instagram" element={<PublishingInstagram />} />
+        <Route path="/products/zencreator/publishing-hub/threads" element={<PublishingThreads />} />
+        <Route path="/products/zencreator/publishing-hub/twitter" element={<PublishingTwitter />} />
+        <Route path="/products/zencreator/publishing-hub/facebook" element={<PublishingFacebook />} />
+        <Route path="/products/zencreator/publishing-hub/youtube" element={<PublishingYouTube />} />
         <Route path="/products/zencreator/analytics" element={<Analytics />} />
         <Route path="/products/zencreator/account-management" element={<AccountManagement />} />
         <Route path="/products/zencomfy" element={<ZenComfy />} />

@@ -5,35 +5,84 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 export const AIInfluencers: React.FC = () => {
   return (
     <PageLayout
-      title="AI-Powered Virtual Influencers"
-      description="Launch ultra-realistic virtual influencers in one week. Character design, AI-generated content, 24/7 publishing & data-driven growth — outperforming 94% of human creators."
+      title="We Create the Future of Influence"
+      description="We create and manage virtual influencers that audiences love. AI-driven, ultra-realistic, and engagement-focused."
     >
+      {/* Hero Section */}
+      <section className="py-[150px] text-center" style={{ paddingTop: '140px' }}>
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-6 leading-tight">
+              We Create the Future of Influence
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
+              We create and manage virtual influencers that audiences love. AI-driven, ultra-realistic, and engagement-focused.
+            </p>
+            <div className="flex flex-wrap gap-6 justify-center">
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-all duration-200">
+                Book a Demo
+              </a>
+              <a href="mailto:info@zencreator.pro?subject=AI%20Influencers%20Proposal" className="border border-gray-300 text-gray-800 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-all duration-200">
+                Get a Proposal
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <div className="container mx-auto px-4 pb-20">
         <div className="max-w-6xl mx-auto">
-          {/* Lead CTA */}
-          <section className="py-6">
-            <div className="flex flex-wrap gap-3">
-              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800">Book a Demo</a>
-              <a href="mailto:info@zencreator.pro?subject=AI%20Influencers%20Proposal" className="border border-gray-300 text-gray-800 px-6 py-3 rounded-lg font-medium hover:bg-gray-50">Get a Proposal</a>
+
+          {/* Market Research & Strategy */}
+          <section className="mt-[150px]">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">
+              Research → Strategy → Execution
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="rounded-3xl p-8 border border-gray-200 hover:shadow-xl transition-all duration-300">
+                <div className="text-4xl font-black text-purple-600 mb-6">01</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Market Analysis</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  We analyze your market, competitors, audience behavior, and trending formats using our proprietary tools to understand what works.
+                </p>
+              </div>
+              <div className="rounded-3xl p-8 border border-gray-200 hover:shadow-xl transition-all duration-300">
+                <div className="text-4xl font-black text-purple-600 mb-6">02</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Strategic Planning</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  4–8 week content strategy with topics, hook formulas, posting cadence, and brand integration based on data insights.
+                </p>
+              </div>
+              <div className="rounded-3xl p-8 border border-gray-200 hover:shadow-xl transition-all duration-300">
+                <div className="text-4xl font-black text-purple-600 mb-6">03</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Multi-Platform Publishing</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Auto-posting across Instagram, Threads, X (Twitter), Facebook, TikTok, and YouTube Shorts with smart scheduling.
+                </p>
+              </div>
             </div>
           </section>
 
           {/* Create your unique characters */}
-          <section className="py-10 border-t border-gray-200">
-            <h2 className="heading-2 text-gray-900 mb-6">Create your unique characters</h2>
-            <div className="grid md:grid-cols-3 gap-4">
+          <section className="mt-[150px]">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">
+              Create your unique characters
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
               {[
                 ['Grandma Brand-Story', 'Warm charisma + home tips; persuasive household product integrations.'],
                 ['Brand Ambassador', 'A role model for your niche — from beauty to fintech. Native ads and product reviews.'],
                 ['Gamer/Streamer', 'Gameplay, challenges, integrations with games and peripherals; creative video ads.'],
               ].map(([t, d]) => (
-                <Card key={t as string}>
-                  <CardHeader className="p-5 pb-3"><CardTitle className="text-base text-gray-900">{t as string}</CardTitle></CardHeader>
-                  <CardContent className="pt-0 px-5 pb-5"><CardDescription className="text-gray-700">{d as string}</CardDescription></CardContent>
-                </Card>
+                <div key={t as string} className="rounded-3xl p-8 border border-gray-200 hover:shadow-xl transition-all duration-300">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">{t as string}</h3>
+                  <p className="text-gray-600 leading-relaxed">{d as string}</p>
+                </div>
               ))}
             </div>
-            <p className="text-sm text-gray-600 mt-3">Video samples with product placement are included in the pilot (per brief).</p>
+            <p className="text-center text-gray-600 mt-8 text-lg">
+              Video samples with product placement are included in the pilot (per brief).
+            </p>
           </section>
 
           {/* Our AI Influencers (portfolio short) */}

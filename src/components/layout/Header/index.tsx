@@ -99,23 +99,6 @@ const NavItem: React.FC<NavItemProps> = ({ item, isDark }) => {
     );
   }
 
-  // Special handling for Services — disabled/semi-transparent
-  if (item.children && item.title === 'Services') {
-    return (
-      <div className="relative opacity-50 cursor-not-allowed">
-        <span 
-          className={`font-medium px-3 py-2 rounded-lg ${
-            isDark 
-              ? 'text-gray-900'
-              : 'text-white'
-          }`}
-        >
-          {item.title}
-        </span>
-      </div>
-    );
-  }
-
   // Default menu for other sections
   if (item.children) {
     return (
@@ -153,23 +136,6 @@ const NavItem: React.FC<NavItemProps> = ({ item, isDark }) => {
             </div>
           </div>
         )}
-      </div>
-    );
-  }
-
-  // Special handling for About Us — disabled/semi-transparent
-  if (item.title === 'About Us') {
-    return (
-      <div className="relative opacity-50 cursor-not-allowed">
-        <span 
-          className={`font-medium px-3 py-2 rounded-lg ${
-            isDark 
-              ? 'text-gray-900'
-              : 'text-white'
-          }`}
-        >
-          {item.title}
-        </span>
       </div>
     );
   }

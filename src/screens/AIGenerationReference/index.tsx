@@ -8,23 +8,66 @@ export const AIGenerationReference: React.FC = () => {
       title="AI Image Generator — Reference-to-Render"
       description="Use a single photo as inspiration to create an entire, on-brand series — no copy-paste, just consistent re-creations."
     >
-      <div className="container mx-auto px-4 pb-16">
+      <div className="container mx-auto px-4 pb-20" style={{ paddingTop: '140px' }}>
         <div className="max-w-6xl mx-auto">
-          {/* Lead */}
-          <section className="py-6">
-            <a href="/products/zencreator/content-creation/ai-generation-reference" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Try Generator by Reference</a>
+          {/* Hero */}
+          <section className="pt-24 pb-[40px] text-center">
+            <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-6 leading-tight">
+              AI Image Generator — Reference-to-Render
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
+              <strong>Use a single photo as inspiration to create an entire, on-brand series — no copy-paste, just consistent re-creations.</strong>
+            </p>
+            <div className="flex flex-wrap gap-6 justify-center">
+              <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-all duration-200">
+                Try Generator by Reference
+              </a>
+            </div>
+            <p className="text-gray-500 mt-8 italic">
+              *(Interactive gallery: reference photo ➜ one variant outputs shown side-by-side with other face)*
+            </p>
           </section>
 
           {/* How It Works */}
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">How It Works</h3>
-            <ol className="list-decimal list-inside space-y-4 text-gray-700">
-              <li><strong>Pick Your Engine</strong> — <strong>Flux</strong> for cinematic detail · <strong>SDXL</strong> for lifelike photography.</li>
-              <li><strong>Drop a Reference Image</strong> — Any JPG/PNG up to 8K. Extracts pose, palette, and core identity cues.</li>
-              <li><strong>Set Options</strong> — Toggle <strong>Uncensored</strong> · Attach <strong>LoRa modifiers</strong> to personalise physique & content policy level.</li>
-              <li><strong>Adjust Creativity Slider</strong> — 0% keeps composition close; 100% goes fully imaginative.</li>
-              <li><strong>Generate & Auto-Pipeline</strong> — Up to 8 variants per run; results pass through Upscale + optional Face Swap, ready to publish.</li>
-            </ol>
+          <section className="mt-[150px]">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">How It Works</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="rounded-3xl p-8 border border-gray-200 hover:shadow-xl transition-all duration-300">
+                <div className="text-4xl font-black text-purple-600 mb-6">1</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Pick Your Engine</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  <strong>Flux</strong> for dramatic cinematic detail · <strong>SDXL</strong> for lifelike photography. Model optimised for your style preference.
+                </p>
+              </div>
+              <div className="rounded-3xl p-8 border border-gray-200 hover:shadow-xl transition-all duration-300">
+                <div className="text-4xl font-black text-purple-600 mb-6">2</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Drop a Reference Image</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Any JPG/PNG up to 8 K. Extracts pose, palette, and core identity cues.
+                </p>
+              </div>
+              <div className="rounded-3xl p-8 border border-gray-200 hover:shadow-xl transition-all duration-300">
+                <div className="text-4xl font-black text-purple-600 mb-6">3</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Set Options</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Toggle <strong>Uncensored</strong> · Attach <strong>LoRa modifiers</strong> (e.g., toned abs, fuller curves). Personalises physique & content policy level.
+                </p>
+              </div>
+              <div className="rounded-3xl p-8 border border-gray-200 hover:shadow-xl transition-all duration-300">
+                <div className="text-4xl font-black text-purple-600 mb-6">4</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Adjust Creativity Slider</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  0% keeps composition close; 100% goes fully imaginative. Control how far we diverge from the reference.
+                </p>
+              </div>
+              <div className="rounded-3xl p-8 border border-gray-200 hover:shadow-xl transition-all duration-300 md:col-span-2 lg:col-span-1">
+                <div className="text-4xl font-black text-purple-600 mb-6">5</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Generate & Auto-Pipeline</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Up to 8 variants per run. Results pass through Upscale + optional Face Swap, ready for one-click publishing.
+                </p>
+              </div>
+            </div>
           </section>
 
           {/* Key Features */}

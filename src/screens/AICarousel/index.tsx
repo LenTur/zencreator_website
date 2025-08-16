@@ -1,18 +1,55 @@
 import React from 'react';
 import { PageLayout } from '@/components/layout/PageLayout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { FAQAccordion } from '@/components/ui/FAQAccordion';
 
 export const AICarousel: React.FC = () => {
+  const faqData = [
+    {
+      question: "What image formats are supported?",
+      answer: "JPG, PNG, WebP up to 8K resolution."
+    },
+    {
+      question: "How many angles can I generate?",
+      answer: "Anywhere from 1 to 10 per source image."
+    },
+    {
+      question: "Will the background stay the same?",
+      answer: "Yes, the environment remains consistent."
+    },
+    {
+      question: "Is batch processing really unlimited?",
+      answer: "We auto-scale GPUs for queues of 1 to 1,000+ sources."
+    },
+    {
+      question: "Can I turn a carousel into a video?",
+      answer: "Absolutely — select \"Send to AI Video Generator\" after creation."
+    }
+  ];
+
   return (
     <PageLayout
       title="AI Carousel Generator — One Photo, Every Angle"
       description="Rapidly produce multiple viewpoints of the same subject for scroll-stopping carousels or 360° product galleries."
     >
-      <div className="container mx-auto px-4 pb-16">
+      <div className="container mx-auto px-4 pb-20" style={{ paddingTop: '140px' }}>
         <div className="max-w-6xl mx-auto">
-          {/* Lead */}
-          <section className="py-6">
-            <a href="/products/zencreator/content-creation/carousel-generation" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Try Carousel Generator</a>
+          {/* Hero */}
+          <section className="pt-24 pb-[40px] text-center">
+            <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-6 leading-tight">
+              AI Carousel Generator — One Photo, Every Angle
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
+              <strong>Rapidly produce multiple viewpoints of the same subject for scroll-stopping carousels or 360° product galleries.</strong>
+            </p>
+            <div className="flex flex-wrap gap-6 justify-center">
+              <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-all duration-200">
+                Try Carousel Generator
+              </a>
+            </div>
+            <p className="text-gray-500 mt-8 italic">
+              *(Interactive mock-up: original image ➜ 5-frame horizontal carousel of generated angles)*
+            </p>
           </section>
 
           {/* How It Works */}

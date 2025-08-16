@@ -6,7 +6,7 @@ export const Services: React.FC = () => {
   return (
     <PageLayout
       title="ZenCreator Services"
-      description="Explore ZenCreator’s full suite of AI-driven services — from virtual influencers and performance campaigns to scalable dating-profile and photo-shoot generation. One partner, limitless creative scale."
+      description="Explore ZenCreator’s full suite of AI-driven services — from virtual influencers and performance campaigns to scalable dating-profile and photo shoot generation. One partner, limitless creative scale."
     >
       <div className="container mx-auto px-4 pb-20">
         <div className="max-w-5xl mx-auto">
@@ -22,7 +22,7 @@ export const Services: React.FC = () => {
                 <a className="text-purple-600 hover:underline font-medium" href="https://www.notion.so/Dating-Profiles-Generation-24398d8a3c9b80ad8328d8c950e8d4af?pvs=21" target="_blank" rel="noreferrer">Dating Profiles Generation</a>
               </li>
               <li>
-                <a className="text-purple-600 hover:underline font-medium" href="https://www.notion.so/Photo-Shoots-Generation-24398d8a3c9b80b884f5e399e7ee1a5b?pvs=21" target="_blank" rel="noreferrer">Photo Shoots Generation</a>
+                <a className="text-purple-600 hover:underline font-medium" href="https://www.notion.so/Photo-Shoots-Generation-24398d8a3c9b80b884f5e399e7ee1a5b?pvs=21" target="_blank" rel="noreferrer">Photo Shoot Generation</a>
               </li>
             </ul>
           </section>
@@ -77,9 +77,9 @@ export const Services: React.FC = () => {
             </div>
           </section>
 
-          {/* 3 | Photo Shoots Generation */}
+          {/* 3 | Photo Shoot Generation */}
           <section className="py-12 border-t border-gray-200">
-            <h3 className="heading-3 text-gray-900 mb-2">3 | Photo Shoots Generation</h3>
+            <h3 className="heading-3 text-gray-900 mb-2">3 | Photo Shoot Generation</h3>
             <p className="italic text-gray-700 mb-6">Realistic or Studio-quality shoots from just two reference images — delivered in hours, not days.</p>
             <ul className="space-y-3 text-gray-700">
               <li>10 000 + themed prompts (selfie, casual, seasonal, profession, travel, etc.)</li>

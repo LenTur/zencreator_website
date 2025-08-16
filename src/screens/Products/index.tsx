@@ -14,7 +14,7 @@ export const Products = () => {
   const creatorModules: Record<CreatorModuleKey, ModuleDef> = {
     'creator-hub': {
       title: 'Creator Hub',
-      description: 'Face generation, photo-shoots, upscaling, video & more—batch-ready.',
+      description: 'Face generation, photo shoots, upscaling, video & more—batch-ready.',
       visual: 'Creator Hub Preview'
     },
     'publishing-hub': {

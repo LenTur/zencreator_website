@@ -78,7 +78,7 @@ export const navigationMenu = {
                 ]
             },
             { title: "Dating Profiles Generation", href: "/services/dating-profiles-generation", description: "Professional dating profile creation services." },
-            { title: "Photo Shoots Generation", href: "/services/photo-shoots-generation", description: "AI-powered photoshoots for various marketing needs." }
+            { title: "Photo Shoot Generation", href: "/services/photo-shoots-generation", description: "AI-powered photo shoots for various marketing needs." }
         ]
     },
     technologies: {

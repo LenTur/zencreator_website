@@ -7,7 +7,7 @@ export const UseCaseHighlights = () => {
     },
     {
       title: 'E-Com Lookbook', 
-      description: '300 photo-shoot images → Upscale → IG & Twitter (X) rollout in one afternoon.',
+      description: '300 photo shoot images → Upscale → IG & Twitter (X) rollout in one afternoon.',
       reverse: true
     },
     {

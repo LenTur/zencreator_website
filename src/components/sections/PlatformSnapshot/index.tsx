@@ -17,11 +17,11 @@ export const PlatformSnapshot = () => {
   const modules: Module[] = [
     {
       title: "Creator Hub",
-      description: "Face generation, photo-shoots, upscaling, video & more—batch-ready.",
+      description: "Face generation, photo shoots, upscaling, video & more—batch-ready.",
       features: [
         {
           title: "Specialised tools",
-          description: "Face Gen, Photo-Shoot, Prompt & Reference Generators, Face Swap, 4-mode Upscale, Video, Carousel, Dating-Profile Builder."
+          description: "Face Gen, Photo Shoot, Prompt & Reference Generators, Face Swap, 4-mode Upscale, Video, Carousel, Dating-Profile Builder."
         },
         {
           title: "Batch Mode Everywhere",

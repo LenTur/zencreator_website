@@ -1,50 +1,145 @@
 import React from 'react';
 import { PageLayout } from '@/components/layout/PageLayout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { FAQAccordion } from '@/components/sections/FAQAccordion';
 
 export const AIUpscaling: React.FC = () => {
+  const faqData = [
+    {
+      question: "Why four different modes?",
+      answer: "No single model nails every scenario. We give you targeted engines optimised for speed, facial fidelity, texture depth, or full restoration."
+    },
+    {
+      question: "Does Upscale change faces?",
+      answer: "Not in Face-Safe or Basic modes. Textured may add stylistic grain; Full Restored preserves structure while boosting detail."
+    },
+    {
+      question: "What's the max resolution?",
+      answer: "Inputs up to 8K; outputs up to 4× the original size, capped at 16K."
+    },
+    {
+      question: "How fast is it?",
+      answer: "Rough guide: 100 images (2K→4K) in ~2 minutes on a standard GPU instance."
+    },
+    {
+      question: "Can I batch-process folders?",
+      answer: "Yes — upload hundreds of photos; Creator OS handles queueing and retry logic automatically."
+    }
+  ];
+
   return (
     <PageLayout
       title="AI Image Upscale"
-      description="Four specialised models — because one-size-fits-all upscalers don’t exist."
+      description="Four specialised models — because one-size-fits-all upscalers don't exist."
     >
-      <div className="container mx-auto px-4 pb-16">
+      <div className="container mx-auto px-4 pb-20" style={{ paddingTop: '140px' }}>
         <div className="max-w-6xl mx-auto">
-          {/* Lead */}
-          <section className="py-6">
-            <a href="/products/zencreator/content-creation/ai-upscaling" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Try Upscale</a>
+          {/* Hero */}
+          <section className="pt-24 pb-[40px] text-center">
+            <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-6 leading-tight">
+              AI Image Upscale
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
+              <strong>Four specialised models — because one-size-fits-all upscalers don't exist.</strong>
+            </p>
+            <div className="flex flex-wrap gap-6 justify-center">
+              <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-all duration-200">
+                Try Upscale
+              </a>
+            </div>
+            <p className="text-gray-500 mt-8 italic">
+              *(Interactive before/after carousel placeholder)*
+            </p>
           </section>
 
           {/* How It Works */}
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">How It Works</h3>
-            <ol className="list-decimal list-inside space-y-3 text-gray-700">
-              <li><strong>Upload Media</strong> — Drop in any JPG, PNG or WEBP (up to 8K). Images queued for fast GPU processing.</li>
-              <li><strong>Pick Your Upscale Mode</strong> — Basic · Face-Safe · Textured · Full Restored.</li>
-              <li><strong>Launch & Download</strong> — Process single shots or entire folders. Export, send to another tool, or publish directly.</li>
-            </ol>
+          <section className="mt-[150px]">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">How It Works</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="rounded-3xl p-8 border border-gray-200 hover:shadow-xl transition-all duration-300">
+                <div className="text-4xl font-black text-purple-600 mb-6">1</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Upload Media</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Drop in any JPG, PNG or WEBP (up to 8 K). Images queued for fast GPU processing.
+                </p>
+              </div>
+              <div className="rounded-3xl p-8 border border-gray-200 hover:shadow-xl transition-all duration-300">
+                <div className="text-4xl font-black text-purple-600 mb-6">2</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Pick Your Upscale Mode</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Basic · Face-Safe · Textured · Full Restored. Tailors enhancement to your quality vs. fidelity needs.
+                </p>
+              </div>
+              <div className="rounded-3xl p-8 border border-gray-200 hover:shadow-xl transition-all duration-300">
+                <div className="text-4xl font-black text-purple-600 mb-6">3</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Launch & Download</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Click <strong>Upscale</strong> — process single shots or entire folders. Export, send to another Creator OS tool, or publish directly.
+                </p>
+              </div>
+            </div>
           </section>
 
-          {/* Modes Table (cards) */}
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Four Upscale Modes</h3>
-            <div className="grid md:grid-cols-2 gap-6">
+          {/* Four Upscale Modes Table */}
+          <section className="mt-[150px]">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">Four Upscale Modes</h2>
+            
+            {/* Table for desktop */}
+            <div className="hidden md:block">
+              <div className="overflow-hidden rounded-3xl border border-gray-200">
+                <table className="w-full">
+                  <thead className="bg-gray-50">
+                    <tr>
+                      <th className="px-6 py-4 text-left text-sm font-bold text-gray-900">Mode</th>
+                      <th className="px-6 py-4 text-left text-sm font-bold text-gray-900">Best For</th>
+                      <th className="px-6 py-4 text-left text-sm font-bold text-gray-900">What It Does</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-200">
+                    <tr className="hover:bg-gray-50">
+                      <td className="px-6 py-4 text-sm font-semibold text-gray-900">Basic Upscale</td>
+                      <td className="px-6 py-4 text-sm text-gray-600">Web speed • Thumbnails • Memes</td>
+                      <td className="px-6 py-4 text-sm text-gray-600">2×–4× resolution, light denoise, almost zero facial change.</td>
+                    </tr>
+                    <tr className="hover:bg-gray-50">
+                      <td className="px-6 py-4 text-sm font-semibold text-gray-900">Face-Safe Upscale</td>
+                      <td className="px-6 py-4 text-sm text-gray-600">Portraits • Influencer grids</td>
+                      <td className="px-6 py-4 text-sm text-gray-600">Enhances sharpness & colour while <strong>locking facial identity</strong>.</td>
+                    </tr>
+                    <tr className="hover:bg-gray-50">
+                      <td className="px-6 py-4 text-sm font-semibold text-gray-900">Textured Upscale</td>
+                      <td className="px-6 py-4 text-sm text-gray-600">Product shots • Landscapes</td>
+                      <td className="px-6 py-4 text-sm text-gray-600">Injects realistic grain, depth and micro-contrast—may subtly alter faces.</td>
+                    </tr>
+                    <tr className="hover:bg-gray-50">
+                      <td className="px-6 py-4 text-sm font-semibold text-gray-900">Full Restored Upscale</td>
+                      <td className="px-6 py-4 text-sm text-gray-600">Archival scans • Print assets</td>
+                      <td className="px-6 py-4 text-sm text-gray-600">Maximum detail recovery, artefact removal, and texture synthesis while preserving core features.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Cards for mobile */}
+            <div className="md:hidden space-y-6">
               {[
                 ['Basic Upscale','Web speed • Thumbnails • Memes','2×–4× resolution, light denoise, almost zero facial change.'],
                 ['Face-Safe Upscale','Portraits • Influencer grids','Enhances sharpness & colour while locking facial identity.'],
                 ['Textured Upscale','Product shots • Landscapes','Injects realistic grain, depth and micro-contrast—may subtly alter faces.'],
                 ['Full Restored Upscale','Archival scans • Print assets','Maximum detail recovery, artefact removal, and texture synthesis while preserving core features.'],
               ].map(([mode, bestFor, desc]) => (
-                <Card key={mode as string}>
-                  <CardHeader className="p-5 pb-2"><CardTitle>{mode as string}</CardTitle></CardHeader>
-                  <CardContent className="pt-0 px-5 pb-1 text-gray-700">
-                    <p className="text-sm text-gray-500 mb-2">Best For: {bestFor as string}</p>
-                    <p>{desc as string}</p>
-                  </CardContent>
-                </Card>
+                <div key={mode as string} className="rounded-3xl p-6 border border-gray-200 hover:shadow-xl transition-all duration-300">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{mode as string}</h3>
+                  <p className="text-sm text-purple-600 font-medium mb-3">Best For: {bestFor as string}</p>
+                  <p className="text-gray-600 leading-relaxed">{desc as string}</p>
+                </div>
               ))}
             </div>
-            <p className="text-gray-600 text-sm mt-4">Switch modes on the fly; pay only for processed pixels.</p>
+            
+            <p className="text-center text-gray-600 mt-8 text-lg">
+              (Switch modes on the fly; pay only for processed pixels.)
+            </p>
           </section>
 
           {/* Key Features */}

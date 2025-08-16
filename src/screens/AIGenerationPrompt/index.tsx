@@ -5,33 +5,64 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 export const AIGenerationPrompt: React.FC = () => {
   return (
     <PageLayout
-      title="AI Image Generator — Prompt-to-Picture"
+      title="AI Image Generator — Prompt-to-Picture in One Click"
       description="Flux-level realism or SDXL photography, with optional uncensored output and LoRa body tuning."
     >
-      <div className="container mx-auto px-4 pb-16">
+      <div className="container mx-auto px-4 pb-20" style={{ paddingTop: '140px' }}>
         <div className="max-w-6xl mx-auto">
-          {/* Lead */}
-          <section className="py-6">
-            <a href="/products/zencreator/content-creation/ai-generation-prompt" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Try Image Generator</a>
+          {/* Hero */}
+          <section className="pt-24 pb-[40px] text-center">
+            <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-6 leading-tight">
+              AI Image Generator — Prompt-to-Picture in One Click
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
+              <strong>Flux-level realism or SDXL photography, with optional uncensored output and LoRa body tuning.</strong>
+            </p>
+            <div className="flex flex-wrap gap-6 justify-center">
+              <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-all duration-200">
+                Try Image Generator
+              </a>
+            </div>
+            <p className="text-gray-500 mt-8 italic">
+              *(Interactive gallery: 3-image before/after carousel showing raw keywords → refined "Magic Prompt" → final images)*
+            </p>
           </section>
 
           {/* How It Works */}
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">How It Works</h3>
-            <ol className="list-decimal list-inside space-y-4 text-gray-700">
-              <li>
-                <strong>Pick Your Model</strong> — <strong>Flux</strong> for cinematic detail · <strong>SDXL</strong> for photographic realism. Engine optimised for your style.
-              </li>
-              <li>
-                <strong>Set Options</strong> — Toggle <strong>Uncensored</strong> · Attach <strong>LoRa modifiers</strong> (e.g., athletic abs, curvy silhouette). Rules & weights applied.
-              </li>
-              <li>
-                <strong>Type an Idea</strong> — Write a few keywords or a full sentence. <strong>Magic Prompt</strong> expands it into a pro-level prompt automatically.
-              </li>
-              <li>
-                <strong>Generate & Iterate</strong> — Up to 8 images per run; lock seed for series consistency. Save, upscale, swap faces, or publish directly.
-              </li>
-            </ol>
+          <section className="mt-[150px]">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">How It Works</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="rounded-3xl p-8 border border-gray-200 hover:shadow-xl transition-all duration-300">
+                <div className="text-4xl font-black text-purple-600 mb-6">1</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Pick Your Model</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  <strong>Flux</strong> for cinematic detail · <strong>SDXL</strong> for photographic realism.
+                  Engine optimised for your style.
+                </p>
+              </div>
+              <div className="rounded-3xl p-8 border border-gray-200 hover:shadow-xl transition-all duration-300">
+                <div className="text-4xl font-black text-purple-600 mb-6">2</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Set Options</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Toggle <strong>Uncensored</strong> · Attach <strong>LoRa modifiers</strong> (e.g., athletic abs, curvy silhouette).
+                  Rules & weights applied.
+                </p>
+              </div>
+              <div className="rounded-3xl p-8 border border-gray-200 hover:shadow-xl transition-all duration-300">
+                <div className="text-4xl font-black text-purple-600 mb-6">3</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Type an Idea</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Write a few keywords or a full sentence. <strong>Magic Prompt</strong> expands it into a pro-level prompt automatically.
+                </p>
+              </div>
+              <div className="rounded-3xl p-8 border border-gray-200 hover:shadow-xl transition-all duration-300">
+                <div className="text-4xl font-black text-purple-600 mb-6">4</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Generate & Iterate</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Up to 8 images per run; lock seed for series consistency. Save, upscale, swap faces, or publish directly.
+                </p>
+              </div>
+            </div>
           </section>
 
           {/* Key Features */}

@@ -43,7 +43,7 @@ export const AboutUs: React.FC = () => {
               </div>
               <div>
                 <p className="font-bold text-gray-900 mb-1">Full-Stack Capability</p>
-                <p className="text-gray-700">From concept to analytics, our in-house tech (CreatorOS) covers ideation, generation, scheduling, and performance tuning.</p>
+                <p className="text-gray-700">From concept to analytics, our in-house tech (ZenCreator) covers ideation, generation, scheduling, and performance tuning.</p>
               </div>
               <div>
                 <p className="font-bold text-gray-900 mb-1">Partnership Mindset</p>
@@ -81,8 +81,8 @@ export const AboutUs: React.FC = () => {
             <ol className="list-decimal pl-6 space-y-3 text-gray-700">
               <li><span className="font-semibold">AI Influencers</span> – End-to-end creation and management of virtual creators who post, engage, and convert 24/7.</li>
               <li><span className="font-semibold">Dating Profile Generation</span> – Thousands of realistic, exclusive profiles to solve the “cold-start” challenge for new platforms.</li>
-              <li><span className="font-semibold">AI Photo-Shoot Generator</span> – Studio-quality images from just two reference photos, ready in hours.</li>
-              <li><span className="font-semibold">CreatorOS Platform</span> – The engine that powers it all, unifying generation, scheduling, and analytics in one dashboard.</li>
+              <li><span className="font-semibold">AI Photo Shoot Generator</span> – Studio-quality images from just two reference photos, ready in hours.</li>
+              <li><span className="font-semibold">ZenCreator Platform</span> – The engine that powers it all, unifying generation, scheduling, and analytics in one dashboard.</li>
             </ol>
           </section>
 

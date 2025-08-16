@@ -71,7 +71,7 @@ export const ContentCreationSuite = () => {
                     mockup: 'bg-gradient-to-br from-yellow-100 to-orange-100'
                   },
                   { 
-                    name: 'Photo-Shoot Generator', 
+                    name: 'Photo Shoot Generator', 
                     description: 'Full themed sets from one face + body reference.',
                     link: '/products/zencreator/content-creation/photo-shoot',
                     tryLink: 'https://app.zencreator.pro/',
@@ -229,7 +229,7 @@ export const ContentCreationSuite = () => {
                 <div className="rounded-3xl p-8 border border-white/10 bg-gradient-to-br from-[#0B1220] to-[#020817] hover:shadow-xl transition-all duration-300 flex flex-col h-full text-white">
                   <div className="text-3xl font-black text-purple-400 mb-6">01</div>
                   <h3 className="text-xl font-bold text-white mb-2">Pick a Module</h3>
-                  <p className="text-white/80">Face Gen, Photo-Shoot, Video…</p>
+                  <p className="text-white/80">Face Gen, Photo Shoot, Video…</p>
                 </div>
 
                 <div className="rounded-3xl p-8 border border-white/10 bg-gradient-to-br from-[#0B1220] to-[#020817] hover:shadow-xl transition-all duration-300 flex flex-col h-full text-white">
