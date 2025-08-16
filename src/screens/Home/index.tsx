@@ -6,6 +6,7 @@ import { BeforeAfter } from '@/components/ui/BeforeAfter';
 import { ToolCard } from '@/components/ui/ToolCard';
 import { ResponsiveImage } from '@/components/ui/ResponsiveImage';
 import { PhotoshootCarousel } from '@/components/ui/PhotoshootCarousel';
+import { CarouselPreview } from '@/components/ui/CarouselPreview';
 
 export const Home: React.FC = () => {
 
@@ -297,11 +298,17 @@ export const Home: React.FC = () => {
                       />
                     </div>
                   ) : tool.name === 'Carousel Generation' ? (
-                    <div className={`absolute inset-0 w-full h-full ${tool.mockup} flex items-center justify-center`}>
-                      <div className="absolute inset-4 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
-                        <span className="text-gray-600 font-medium">Carousel Preview</span>
-                      </div>
-                    </div>
+                    <CarouselPreview
+                      className="absolute inset-0 w-full h-full"
+                      autoPlay={false}
+                      interval={3000}
+                    />
+                  ) : tool.name === 'Dating Profile Generation' ? (
+                    <img
+                      src="/images/home/tools/Daiting.png"
+                      alt="Dating Profile Preview"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
                   ) : (
                     <div className={`absolute inset-0 w-full h-full ${tool.mockup} flex items-center justify-center`}>
                       <div className="absolute inset-4 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
@@ -366,17 +373,27 @@ export const Home: React.FC = () => {
                     
                     {/* Visual */}
                     <div className={service.reverse ? 'lg:col-start-1' : ''}>
-                      <div className="bg-gradient-to-br from-teal-400 to-blue-500 rounded-3xl p-8 min-h-80 flex items-center justify-center">
-                        <div className="bg-white/20 backdrop-blur-sm rounded-xl p-6 w-full max-w-sm">
-                          <div className="text-center">
-                            <div className="bg-white rounded-lg p-4 mb-4">
-                              <div className="text-gray-900 font-semibold">{service.title}</div>
-                              <div className="text-sm text-gray-600">Preview Coming Soon</div>
+                      {service.title === 'Dating Profile Generation' ? (
+                        <div className="bg-gradient-to-br from-teal-400 to-blue-500 rounded-3xl p-8 min-h-80 flex items-center justify-center overflow-hidden">
+                          <img
+                            src="/images/home/tools/Daiting.png"
+                            alt="Dating Profile Service Preview"
+                            className="w-full h-full object-cover rounded-2xl"
+                          />
+                        </div>
+                      ) : (
+                        <div className="bg-gradient-to-br from-teal-400 to-blue-500 rounded-3xl p-8 min-h-80 flex items-center justify-center">
+                          <div className="bg-white/20 backdrop-blur-sm rounded-xl p-6 w-full max-w-sm">
+                            <div className="text-center">
+                              <div className="bg-white rounded-lg p-4 mb-4">
+                                <div className="text-gray-900 font-semibold">{service.title}</div>
+                                <div className="text-sm text-gray-600">Preview Coming Soon</div>
+                              </div>
+                              <div className="text-white font-medium">Service Preview</div>
                             </div>
-                            <div className="text-white font-medium">Service Preview</div>
                           </div>
                         </div>
-                      </div>
+                      )}
                     </div>
                   </div>
                 </div>
