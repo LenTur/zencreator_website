@@ -306,8 +306,8 @@ export const Header = ({ forceDark = false }: { forceDark?: boolean }) => {
             style={{ 
               width: "1200px",
               maxWidth: "100%",
-              padding: "24px 40px",
-              borderRadius: "24px",
+              padding: "16px 20px",
+              borderRadius: "16px",
             }}
           >
             {/* Logo */}

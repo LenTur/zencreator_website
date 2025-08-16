@@ -149,7 +149,8 @@ export const Home: React.FC = () => {
       {/* Scrolling Gallery - Full Width (populated from /public/Photo ZenCreator WS) */}
       <section className="py-0 overflow-hidden w-full">
         <div className="relative">
-          <div className="flex animate-scroll space-x-6 md:space-x-8 lg:space-x-10">
+          {/* Desktop: Auto-scrolling gallery */}
+          <div className="hidden md:flex animate-scroll space-x-6 md:space-x-8 lg:space-x-10">
             {/* First loop */}
             <div className="flex space-x-6 md:space-x-8 lg:space-x-10 flex-shrink-0">
               {galleryImages.map((src, idx) => (
@@ -174,6 +175,23 @@ export const Home: React.FC = () => {
                     className="w-full h-full object-cover"
                     loading="lazy"
                     sizes="(max-width: 768px) 256px, (max-width: 1024px) 288px, 320px"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          {/* Mobile: Manual scroll gallery */}
+          <div className="md:hidden overflow-x-auto">
+            <div className="flex space-x-4 px-4">
+              {galleryImages.map((src, idx) => (
+                <div key={`mobile-${idx}`} className="w-48 h-60 bg-gray-100 rounded-xl overflow-hidden flex-shrink-0">
+                  <ResponsiveImage 
+                    src={src} 
+                    alt={`Gallery ${idx + 1}`} 
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    sizes="192px"
                   />
                 </div>
               ))}
@@ -426,12 +444,12 @@ export const Home: React.FC = () => {
       </div>
 
       {/* Colorful Divider - Full Width */}
-      <section className="py-16 relative overflow-hidden w-full">
+      <section className="py-8 relative overflow-hidden w-full">
         <div className="flex justify-end">
           <img
             src="/colorfull3.png"
             alt="Colorful Divider"
-            className="h-24 w-auto object-contain"
+            className="h-16 w-auto object-contain"
           />
         </div>
       </section>

@@ -24,13 +24,28 @@ export const BeforeAfter: React.FC<BeforeAfterProps> = ({
     updateSliderPosition(e);
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setIsDragging(true);
+    updateSliderPositionFromTouch(e);
+  };
+
   const handleMouseMove = (e: MouseEvent) => {
     if (isDragging) {
       updateSliderPosition(e);
     }
   };
 
+  const handleTouchMove = (e: TouchEvent) => {
+    if (isDragging) {
+      updateSliderPositionFromTouch(e);
+    }
+  };
+
   const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleTouchEnd = () => {
     setIsDragging(false);
   };
 
@@ -43,13 +58,27 @@ export const BeforeAfter: React.FC<BeforeAfterProps> = ({
     setSliderPosition(percentage);
   };
 
+  const updateSliderPositionFromTouch = (e: TouchEvent | React.TouchEvent) => {
+    if (!containerRef.current) return;
+    
+    const rect = containerRef.current.getBoundingClientRect();
+    const touch = e.touches[0];
+    const x = touch.clientX - rect.left;
+    const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+    setSliderPosition(percentage);
+  };
+
   useEffect(() => {
     if (isDragging) {
       document.addEventListener('mousemove', handleMouseMove);
       document.addEventListener('mouseup', handleMouseUp);
+      document.addEventListener('touchmove', handleTouchMove, { passive: false });
+      document.addEventListener('touchend', handleTouchEnd);
       return () => {
         document.removeEventListener('mousemove', handleMouseMove);
         document.removeEventListener('mouseup', handleMouseUp);
+        document.removeEventListener('touchmove', handleTouchMove);
+        document.removeEventListener('touchend', handleTouchEnd);
       };
     }
   }, [isDragging]);
@@ -59,6 +88,7 @@ export const BeforeAfter: React.FC<BeforeAfterProps> = ({
       ref={containerRef}
       className={`relative overflow-hidden cursor-col-resize select-none ${className}`}
       onMouseDown={handleMouseDown}
+      onTouchStart={handleTouchStart}
     >
       {/* After Image (background) */}
       <div className="w-full h-full">
