@@ -1,6 +1,11 @@
 import { PageLayout } from '@/components/layout/PageLayout';
 import { Layers, ArrowRight, Share2, Zap, CreditCard, Shield } from 'lucide-react';
 import { WhyTeamsLove } from '@/components/sections/WhyTeamsLove';
+import { BeforeAfter } from '@/components/ui/BeforeAfter';
+import { ToolCard } from '@/components/ui/ToolCard';
+import { ResponsiveImage } from '@/components/ui/ResponsiveImage';
+import { PhotoshootCarousel } from '@/components/ui/PhotoshootCarousel';
+import { CarouselPreview } from '@/components/ui/CarouselPreview';
 
 export const ContentCreationSuite = () => {
   return (
@@ -31,112 +36,156 @@ export const ContentCreationSuite = () => {
       </div>
 
       {/* Tools Section */}
-      <section className="pt-0 pb-[150px] bg-gray-900">
+      <section className="py-[150px] bg-ink-900">
         <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-12 text-center">Tools</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {[
-                  { 
-                    name: 'Face Generation', 
-                    description: 'Four realistic faces per click—dial in gender, age, ethnicity, more.',
-                    link: '/products/zencreator/content-creation/ai-face-generation',
-                    tryLink: 'https://app.zencreator.pro/',
-                    mockup: 'bg-gradient-to-br from-red-100 to-blue-100'
-                  },
-                  { 
-                    name: 'Face Swapping', 
-                    description: 'Ultra-seamless swaps for images & video, bulk-ready.',
-                    link: '/products/zencreator/content-creation/ai-face-swapping',
-                    tryLink: 'https://app.zencreator.pro/',
-                    mockup: 'bg-gradient-to-br from-blue-100 to-gray-100'
-                  },
-                  { 
-                    name: 'Upscaling', 
-                    description: 'Four specialised models (Basic, Face-Safe, Textured, Full Restored) up to 4K+.',
-                    link: '/products/zencreator/content-creation/ai-upscaling',
-                    tryLink: 'https://app.zencreator.pro/',
-                    mockup: 'bg-gradient-to-br from-green-100 to-teal-100'
-                  },
-                  { 
-                    name: 'Prompt Generation', 
-                    description: 'Flux or SDXL images from keyword prompts, LoRa physique tuning, uncensored option.',
-                    link: '/products/zencreator/content-creation/ai-generation-prompt',
-                    tryLink: 'https://app.zencreator.pro/',
-                    mockup: 'bg-gradient-to-br from-purple-100 to-pink-100'
-                  },
-                  { 
-                    name: 'Reference Generation', 
-                    description: 'Re-imagine any photo into new scenes while preserving identity.',
-                    link: '/products/zencreator/content-creation/ai-generation-reference',
-                    tryLink: 'https://app.zencreator.pro/',
-                    mockup: 'bg-gradient-to-br from-yellow-100 to-orange-100'
-                  },
-                  { 
-                    name: 'Photo Shoot Generator', 
-                    description: 'Full themed sets from one face + body reference.',
-                    link: '/products/zencreator/content-creation/photo-shoot',
-                    tryLink: 'https://app.zencreator.pro/',
-                    mockup: 'bg-gradient-to-br from-pink-100 to-red-100'
-                  },
-                  { 
-                    name: 'Dating-Profile Generator', 
-                    description: 'Complete bios + photo/video packs, JSON export.',
-                    link: '/products/zencreator/content-creation/dating-profiles',
-                    tryLink: 'https://app.zencreator.pro/',
-                    mockup: 'bg-gradient-to-br from-rose-100 to-pink-100'
-                  },
-                  { 
-                    name: 'Video Generation', 
-                    description: '5–10 s clips via Kling 1.6, Kling 2.0, or WAN (uncensored).',
-                    link: '/products/zencreator/content-creation/video-generation',
-                    tryLink: 'https://app.zencreator.pro/',
-                    mockup: 'bg-gradient-to-br from-indigo-100 to-purple-100'
-                  },
-                  { 
-                    name: 'Carousel Generator', 
-                    description: 'Multi-angle image sets for social carousels & catalogs.',
-                    link: '/products/zencreator/content-creation/carousel-generation',
-                    tryLink: 'https://app.zencreator.pro/',
-                    mockup: 'bg-gradient-to-br from-teal-100 to-blue-100'
-                  }
-                ].map((tool, index) => (
-                  <div key={index} className="bg-white rounded-3xl border border-gray-200 hover:shadow-xl hover:border-gray-300 transition-all duration-300 overflow-hidden flex flex-col h-full relative">
-                    {/* Visual area covering full card height */}
-                    <div className={`absolute inset-0 ${tool.mockup} flex items-center justify-center`}>
+              {[
+                { 
+                  name: 'Face Generation', 
+                  description: 'Four realistic faces per click—dial in gender, age, ethnicity, more.',
+                  link: '/products/zencreator/content-creation/ai-face-generation',
+                  tryLink: 'https://app.zencreator.pro/tools',
+                  mockup: 'bg-gradient-to-br from-red-100 to-blue-100'
+                },
+                { 
+                  name: 'Face Swapping', 
+                  description: 'Ultra-seamless swaps for images & video, bulk-ready.',
+                  link: '/products/zencreator/content-creation/ai-face-swapping',
+                  tryLink: 'https://app.zencreator.pro/tools',
+                  mockup: 'bg-gradient-to-br from-blue-100 to-gray-100'
+                },
+                { 
+                  name: 'Upscaling', 
+                  description: 'Four specialised models (Basic, Face-Safe, Textured, Full Restored) up to 4K+.',
+                  link: '/products/zencreator/content-creation/ai-upscaling',
+                  tryLink: 'https://app.zencreator.pro/tools',
+                  mockup: 'bg-gradient-to-br from-green-100 to-teal-100',
+                  showBeforeAfter: true
+                },
+                { 
+                  name: 'Generation by Prompt', 
+                  description: 'Flux or SDXL images from keyword prompts, LoRa physique tuning, uncensored option.',
+                  link: '/products/zencreator/content-creation/ai-generation-prompt',
+                  tryLink: 'https://app.zencreator.pro/tools',
+                  mockup: 'bg-gradient-to-br from-purple-100 to-indigo-100'
+                },
+                { 
+                  name: 'Generation by Reference', 
+                  description: 'Re-imagine any photo into new scenes while preserving identity.',
+                  link: '/products/zencreator/content-creation/ai-generation-reference',
+                  tryLink: 'https://app.zencreator.pro/tools',
+                  mockup: 'bg-gradient-to-br from-yellow-100 to-orange-100'
+                },
+                { 
+                  name: 'Photo Shoot Generation', 
+                  description: 'Full themed sets from one face + body reference.',
+                  link: '/products/zencreator/content-creation/photo-shoot',
+                  tryLink: 'https://app.zencreator.pro/tools',
+                  mockup: 'bg-gradient-to-br from-pink-100 to-red-100'
+                },
+                { 
+                  name: 'Dating Profile Generation', 
+                  description: 'Complete bios + photo/video packs, JSON export.',
+                  link: '/products/zencreator/content-creation/dating-profiles',
+                  tryLink: 'https://app.zencreator.pro/tools',
+                  mockup: 'bg-gradient-to-br from-rose-100 to-pink-100'
+                },
+                { 
+                  name: 'Video Generation', 
+                  description: '5–10 s clips via Kling 1.6, Kling 2.0, or WAN (uncensored).',
+                  link: '/products/zencreator/content-creation/video-generation',
+                  tryLink: 'https://app.zencreator.pro/tools',
+                  mockup: 'bg-gradient-to-br from-indigo-100 to-purple-100'
+                },
+                { 
+                  name: 'Carousel Generation', 
+                  description: 'Multi-angle image sets for social carousels & catalogs.',
+                  link: '/products/zencreator/content-creation/carousel-generation',
+                  tryLink: 'https://app.zencreator.pro/tools',
+                  mockup: 'bg-gradient-to-br from-teal-100 to-blue-100',
+                  showCarousel: true
+                }
+              ].map((tool) => (
+                <ToolCard
+                  key={tool.name}
+                  name={tool.name}
+                  description={tool.description}
+                  link={tool.link}
+                  tryLink={tool.tryLink}
+                >
+                  {tool.name === 'Upscaling' ? (
+                    <BeforeAfter
+                      beforeImage="/images/optimized/desktop/home/tools/upscale1.png"
+                      afterImage="/images/optimized/desktop/home/tools/upscale2.jpg"
+                      beforeAlt="Before upscaling"
+                      afterAlt="After upscaling"
+                      className="absolute inset-0 w-full h-full"
+                    />
+                  ) : tool.name === 'Face Swapping' ? (
+                    <BeforeAfter
+                      beforeImage="/images/optimized/desktop/home/tools/faceswap1.png"
+                      afterImage="/images/optimized/desktop/home/tools/faceswap2.png"
+                      beforeAlt="Before face swapping"
+                      afterAlt="After face swapping"
+                      className="absolute inset-0 w-full h-full"
+                    />
+                  ) : tool.name === 'Face Generation' ? (
+                    <ResponsiveImage
+                      src="home/tools/Face Generation.png"
+                      alt="Face Generation Preview"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  ) : tool.name === 'Generation by Prompt' ? (
+                    <ResponsiveImage
+                      src="home/tools/Generation by Prompt.png"
+                      alt="Generation by Prompt Preview"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  ) : tool.name === 'Generation by Reference' ? (
+                    <ResponsiveImage
+                      src="home/tools/Generator by Reference.png"
+                      alt="Generation by Reference Preview"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  ) : tool.name === 'Photo Shoot Generation' ? (
+                    <PhotoshootCarousel
+                      className="absolute inset-0 w-full h-full"
+                      autoPlay={true}
+                      interval={3000}
+                    />
+                  ) : tool.name === 'Video Generation' ? (
+                    <div className="absolute inset-0 w-full h-full">
+                      <video
+                        src="/images/home/tools/video.mp4"
+                        className="w-full h-full object-cover"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                      />
+                    </div>
+                  ) : tool.name === 'Carousel Generation' ? (
+                    <CarouselPreview
+                      className="absolute inset-0 w-full h-full"
+                      autoPlay={false}
+                      interval={3000}
+                    />
+                  ) : tool.name === 'Dating Profile Generation' ? (
+                    <img
+                      src="/images/home/tools/Daiting.png"
+                      alt="Dating Profile Preview"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className={`absolute inset-0 w-full h-full ${tool.mockup} flex items-center justify-center`}>
                       <div className="absolute inset-4 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center">
                         <span className="text-gray-600 font-medium">Preview Coming Soon</span>
                       </div>
                     </div>
-
-                    {/* Content area overlay at bottom */}
-                    <div className="relative z-10 mt-auto p-6 bg-white/95 backdrop-blur-sm">
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">{tool.name}</h3>
-                      <p className="text-gray-600 text-sm leading-relaxed mb-4">{tool.description}</p>
-                      <div className="flex justify-between items-center gap-4">
-                        <a 
-                          href={tool.tryLink} 
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-purple-600 font-semibold hover:text-purple-700 transition-colors duration-200 flex items-center gap-1"
-                        >
-                          Try it now
-                          <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path d="M7 17L17 7" />
-                            <path d="M7 7h10v10" />
-                          </svg>
-                        </a>
-                        <a 
-                          href={tool.link} 
-                          className="text-gray-600 font-medium hover:text-gray-800 transition-colors duration-200 flex items-center gap-1"
-                        >
-                          Learn More
-                          <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path d="M9 18l6-6-6-6" />
-                          </svg>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                  )}
+                </ToolCard>
+              ))}
           </div>
           <p className="text-center mt-14" style={{background: 'linear-gradient(135deg, #7BA1F8, #C084FC)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', fontSize: '16px', fontWeight: '500'}}>
             New tools land every month—your dashboard updates automatically.
