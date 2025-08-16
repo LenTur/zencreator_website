@@ -5,6 +5,7 @@ import { Users, Heart, ShoppingBag, Gamepad2, GraduationCap, Building2, Monitor,
 import { BeforeAfter } from '@/components/ui/BeforeAfter';
 import { ImageCarousel } from '@/components/ui/ImageCarousel';
 import { ToolCard } from '@/components/ui/ToolCard';
+import { ResponsiveImage } from '@/components/ui/ResponsiveImage';
 
 export const Home: React.FC = () => {
 
@@ -46,7 +47,7 @@ export const Home: React.FC = () => {
     'woman-30-y-o-long-brunette-straight-hair_u9kj-yrRTr-9bZJNF4tNow_uCVt7UhNSHyl5C1rhCX_bg.png'
   ];
 
-  const galleryImages = galleryFileNames.map((name) => `/images/home/${encodeURIComponent(name)}`);
+  const galleryImages = galleryFileNames.map((name) => `home/${encodeURIComponent(name)}`);
 
   const products = {
     zencreator: {
@@ -165,7 +166,13 @@ export const Home: React.FC = () => {
             <div className="flex space-x-6 md:space-x-8 lg:space-x-10 flex-shrink-0">
               {galleryImages.map((src, idx) => (
                 <div key={`g1-${idx}`} className="w-56 h-72 md:w-64 md:h-80 lg:w-72 lg:h-96 bg-gray-100 rounded-xl overflow-hidden">
-                  <img src={src} alt={`Gallery ${idx + 1}`} className="w-full h-full object-cover" />
+                  <ResponsiveImage 
+                    src={src} 
+                    alt={`Gallery ${idx + 1}`} 
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 256px, (max-width: 1024px) 288px, 320px"
+                  />
                 </div>
               ))}
             </div>
@@ -173,7 +180,13 @@ export const Home: React.FC = () => {
             <div className="flex space-x-6 md:space-x-8 lg:space-x-10 flex-shrink-0">
               {galleryImages.map((src, idx) => (
                 <div key={`g2-${idx}`} className="w-56 h-72 md:w-64 md:h-80 lg:w-72 lg:h-96 bg-gray-100 rounded-xl overflow-hidden">
-                  <img src={src} alt={`Gallery duplicate ${idx + 1}`} className="w-full h-full object-cover" />
+                  <ResponsiveImage 
+                    src={src} 
+                    alt={`Gallery duplicate ${idx + 1}`} 
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 256px, (max-width: 1024px) 288px, 320px"
+                  />
                 </div>
               ))}
             </div>
@@ -283,14 +296,14 @@ export const Home: React.FC = () => {
                   ) : tool.name === 'Carousel Generation' ? (
                     <ImageCarousel
                       images={[
-                        "/images/zencreator/tools/carousel/111_00064_ 1.png",
-                        "/images/zencreator/tools/carousel/beautiful-model-instagram-appearance-raw_4FaGNTiASwuvX-2ZajfW5w_7HswgjCQQ1-vJ4c52-SJxA.png",
-                        "/images/zencreator/tools/carousel/woman-30-y-o-long-blonde-wavy-hair-avera_L3ijQyrYRSSD92aY6A243A_tAXV_mkjRr22KCCn6BTg_w.png",
-                        "/images/zencreator/tools/carousel/a-confident-black-african-woman-with-vol_8P-yoXoWRWOQgprmeNR3Ag_NbOikeTkR4OzvEVJinvfSA.png",
-                        "/images/zencreator/tools/carousel/handsome young man, tousled hair, desert rave outfit, headphones around neck, sunset in the backgrou....jpeg"
+                        "zencreator/tools/carousel/111_00064_ 1.png",
+                        "zencreator/tools/carousel/beautiful-model-instagram-appearance-raw_4FaGNTiASwuvX-2ZajfW5w_7HswgjCQQ1-vJ4c52-SJxA.png",
+                        "zencreator/tools/carousel/woman-30-y-o-long-blonde-wavy-hair-avera_L3ijQyrYRSSD92aY6A243A_tAXV_mkjRr22KCCn6BTg_w.png",
+                        "zencreator/tools/carousel/a-confident-black-african-woman-with-vol_8P-yoXoWRWOQgprmeNR3Ag_NbOikeTkR4OzvEVJinvfSA.png",
+                        "zencreator/tools/carousel/handsome young man, tousled hair, desert rave outfit, headphones around neck, sunset in the backgrou....jpeg"
                       ]}
                       className="absolute inset-0 w-full h-full"
-                      autoPlay={false}
+                      autoPlay={true}
                       interval={2500}
                     />
                   ) : (

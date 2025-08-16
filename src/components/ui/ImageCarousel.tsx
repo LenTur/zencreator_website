@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ResponsiveImage } from './ResponsiveImage';
 
 interface ImageCarouselProps {
   images: string[];
@@ -54,10 +55,12 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({
               index === currentIndex ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            <img
+            <ResponsiveImage
               src={image}
               alt={`Carousel image ${index + 1}`}
               className="w-full h-full object-cover"
+              loading={index === currentIndex ? 'eager' : 'lazy'}
+              sizes="(max-width: 768px) 300px, 600px"
             />
           </div>
         ))}
