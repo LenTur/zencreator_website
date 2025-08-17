@@ -30,15 +30,16 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({ onClose }) => {
     <div
       className="fixed bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden z-[9999] lg:block hidden"
       style={{
-        width: '1200px',
-        top: '100px',
+        width: '100%',
+        maxWidth: '1200px',
+        top: '90px',
         left: '50%',
         transform: 'translateX(-50%)',
         boxShadow: '0 20px 25px -5px rgba(0,0,0,0.08), 0 10px 10px -5px rgba(0,0,0,0.04)'
       }}
       onMouseLeave={onClose}
     >
-      <div className="grid grid-cols-12 gap-8 p-8 text-left">
+      <div className="grid grid-cols-12 gap-6 p-6 text-left">
         {/* Col 1: Products */}
         <div className="col-span-12 lg:col-span-3">
           <div className="text-xs font-semibold uppercase tracking-wide text-[#D8B4FE] mb-3">Products</div>

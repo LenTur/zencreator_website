@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Menu, X } from 'lucide-react';
+import { ChevronDown, Menu, X, ArrowUp } from 'lucide-react';
 import { navigationMenu, MenuSection } from '@/config/menu';
 import { MegaMenu } from './MegaMenu';
 
@@ -121,7 +121,7 @@ const NavItem: React.FC<NavItemProps> = ({ item, isDark }) => {
         </a>
         
         {isOpen && item.children && (
-          <div className="absolute top-full left-0 mt-2 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50 min-w-64">
+          <div className="absolute top-full left-0 mt-2 bg-white/60 backdrop-blur-xl rounded-2xl shadow-xl border border-white/60 overflow-hidden z-50 min-w-64">
             <div className="py-2">
               {item.children.map((child) => (
                 <a
@@ -254,15 +254,24 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
 export const Header = ({ forceDark = false }: { forceDark?: boolean }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      setShowScrollTop(window.scrollY > 300);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
 
   return (
     <>
@@ -271,17 +280,11 @@ export const Header = ({ forceDark = false }: { forceDark?: boolean }) => {
       }`}>
         <div className="flex justify-center px-4">
           <nav
-            className={`backdrop-blur-xl mx-auto flex items-center justify-between transition-all duration-300 ${
-              (isScrolled || forceDark) 
-                ? 'bg-white/60 shadow-lg border border-white/60 shadow-gray-200/20' 
-                : 'bg-white/20 border border-white/60 shadow-gray-200/20'
+            className={`backdrop-blur-xl mx-auto flex items-center justify-between transition-all duration-300 w-full max-w-6xl px-4 md:px-6 lg:px-8 py-4 md:py-6 lg:py-8 rounded-2xl md:rounded-3xl ${
+              isScrolled 
+                ? 'bg-white/60 border border-white/60' 
+                : 'bg-white/20 border border-white/60 shadow-2xl shadow-purple-200/100'
             }`}
-            style={{ 
-              width: "1200px",
-              maxWidth: "100%",
-              padding: "12px 16px",
-              borderRadius: "12px",
-            }}
           >
             {/* Logo */}
             <div className="flex items-center">
@@ -335,6 +338,17 @@ export const Header = ({ forceDark = false }: { forceDark?: boolean }) => {
         isOpen={isMobileMenuOpen} 
         onClose={() => setIsMobileMenuOpen(false)} 
       />
+
+      {/* Scroll to Top Button */}
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 z-50 p-3 bg-purple-600 hover:bg-purple-700 text-white rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+          aria-label="Scroll to top"
+        >
+          <ArrowUp className="h-5 w-5" />
+        </button>
+      )}
     </>
   );
 };
