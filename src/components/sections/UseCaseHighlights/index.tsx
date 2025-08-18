@@ -18,20 +18,20 @@ export const UseCaseHighlights = () => {
   ];
 
   return (
-    <section className="py-24 md:py-28">
+    <section className="py-12 md:py-14">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14 md:mb-16">
+          <div className="text-center mb-8 md:mb-10">
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
               Use-Case Highlights
             </h2>
           </div>
           
           {/* Use Cases in Services Style */}
-          <div className="flex flex-col gap-[60px]">
+          <div className="flex flex-col gap-[30px]">
             {useCases.map((useCase, index) => (
-              <div key={index} className="p-12 md:p-16">
-                <div className={`grid lg:grid-cols-2 gap-12 items-center ${useCase.reverse ? 'lg:grid-flow-col-dense' : ''}`}>
+              <div key={index} className="p-6 md:p-8">
+                <div className={`grid lg:grid-cols-2 gap-8 items-center ${useCase.reverse ? 'lg:grid-flow-col-dense' : ''}`}>
                   {/* Content */}
                   <div className={useCase.reverse ? 'lg:col-start-2' : ''}>
                     <h3 className="text-3xl md:text-4xl font-black text-gray-900 mb-6 leading-tight">{useCase.title}</h3>
@@ -40,16 +40,42 @@ export const UseCaseHighlights = () => {
                   
                   {/* Visual */}
                   <div className={useCase.reverse ? 'lg:col-start-1' : ''}>
-                    <div className="bg-gradient-to-br from-purple-400 to-indigo-500 rounded-3xl p-8 min-h-80 flex items-center justify-center">
-                      <div className="bg-white/20 backdrop-blur-sm rounded-xl p-6 w-full max-w-sm">
-                        <div className="text-center">
-                          <div className="bg-white rounded-lg p-4 mb-4">
-                            <div className="text-gray-900 font-semibold">{useCase.title}</div>
-                            <div className="text-sm text-gray-600">Case Study Preview</div>
+                    <div className="bg-white rounded-3xl min-h-80 flex items-center justify-center overflow-hidden">
+                      {useCase.title === 'Dating-App Launch' ? (
+                        <img 
+                          src="/images/home/Swipe right.png" 
+                          alt="Dating App Launch" 
+                          className="w-full h-full object-cover rounded-3xl"
+                        />
+                      ) : useCase.title === 'Virtual-Influencer Studio' ? (
+                        <video
+                          src="/images/home/Influ.mp4"
+                          className="w-full h-full object-cover rounded-3xl"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          preload="auto"
+                        />
+                      ) : useCase.title === 'E-Com Lookbook' ? (
+                        <img 
+                          src="/images/zencreator/E-Com Lookbook.png" 
+                          alt="E-Com Lookbook" 
+                          className="w-full h-full object-cover rounded-3xl"
+                        />
+                      ) : (
+                        <div className="bg-gradient-to-br from-purple-400 to-indigo-500 rounded-3xl p-8 min-h-80 flex items-center justify-center w-full h-full">
+                          <div className="bg-white/20 backdrop-blur-sm rounded-xl p-6 w-full max-w-sm">
+                            <div className="text-center">
+                              <div className="bg-white rounded-lg p-4 mb-4">
+                                <div className="text-gray-900 font-semibold">{useCase.title}</div>
+                                <div className="text-sm text-gray-600">Case Study Preview</div>
+                              </div>
+                              <div className="text-white font-medium">Success Story</div>
+                            </div>
                           </div>
-                          <div className="text-white font-medium">Success Story</div>
                         </div>
-                      </div>
+                      )}
                     </div>
                   </div>
                 </div>

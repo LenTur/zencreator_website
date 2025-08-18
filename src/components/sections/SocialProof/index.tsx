@@ -1,3 +1,7 @@
+import { useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ResponsiveImage } from '@/components/ui/ResponsiveImage';
+
 export const SocialProof = () => {
   const stats = [
     {
@@ -17,6 +21,43 @@ export const SocialProof = () => {
       description: "campaigns delivered"
     }
   ];
+
+  // Gallery images from homepage
+  const galleryImages = [
+    'home/carousel/carousel1.png',
+    'home/carousel/carousel2.png', 
+    'home/carousel/carousel3.jpeg',
+    'home/carousel/carousel4.png',
+    'home/carousel/carousel5.png',
+    'home/carousel/carousel6.png',
+    'home/carousel/carousel7.png',
+    'home/carousel/carousel8.png',
+    'home/carousel/carousel9.png',
+    'home/carousel/carousel10.png',
+    'home/carousel/carousel11.png',
+    'home/carousel/carousel12.png',
+    'home/carousel/carousel13.png',
+    'home/carousel/carousel14.png',
+    'home/carousel/carousel15.png',
+    'home/carousel/carousel16.png'
+  ];
+
+  // Carousel state
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const imagesPerSlide = 4; // Show 4 images at once
+  const totalSlides = Math.ceil(galleryImages.length / imagesPerSlide);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % totalSlides);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+  };
+
+  const goToSlide = (slideIndex: number) => {
+    setCurrentSlide(slideIndex);
+  };
 
   return (
     <section className="py-24 md:py-28">
@@ -52,31 +93,71 @@ export const SocialProof = () => {
                 <span style={{ fontWeight: '700', color: '#0F172A' }}>five continents</span>.
               </p>
             </div>
-            
-            {/* Photo Gallery in One Row - Like Hero Gallery */}
-            <div className="mt-16 overflow-hidden w-full">
-              <div className="flex space-x-8 justify-center">
-                <div className="w-48 h-64 bg-gray-100 rounded-xl flex items-center justify-center">
-                  <img src="/Colorfull1.png" alt="Gallery 1" className="w-full h-full object-cover rounded-xl" />
-                </div>
-                <div className="w-48 h-64 bg-gray-100 rounded-xl flex items-center justify-center">
-                  <img src="/Colorfull2.png" alt="Gallery 2" className="w-full h-full object-cover rounded-xl" />
-                </div>
-                <div className="w-48 h-64 bg-gray-100 rounded-xl flex items-center justify-center">
-                  <img src="/colorfull3.png" alt="Gallery 3" className="w-full h-full object-cover rounded-xl" />
-                </div>
-                <div className="w-48 h-64 bg-gray-100 rounded-xl flex items-center justify-center">
-                  <img src="/DatingProfiles.png" alt="Gallery 4" className="w-full h-full object-cover rounded-xl" />
-                </div>
-                <div className="w-48 h-64 bg-gray-100 rounded-xl flex items-center justify-center">
-                  <img src="/Speed.png" alt="Gallery 5" className="w-full h-full object-cover rounded-xl" />
-                </div>
-                <div className="w-48 h-64 bg-gray-100 rounded-xl flex items-center justify-center">
-                  <img src="/Consistency.png" alt="Gallery 6" className="w-full h-full object-cover rounded-xl" />
-                </div>
-              </div>
-            </div>
+
           </div>
+        </div>
+      </div>
+
+      {/* Carousel Gallery */}
+      <div className="w-full mt-16 relative">
+        {/* Navigation Buttons */}
+        <button
+          onClick={prevSlide}
+          disabled={currentSlide === 0}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm hover:bg-white border border-gray-200 rounded-full p-3 shadow-lg transition-all duration-200 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          <ChevronLeft className="h-5 w-5 text-gray-700" />
+        </button>
+        
+        <button
+          onClick={nextSlide}
+          disabled={currentSlide === totalSlides - 1}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm hover:bg-white border border-gray-200 rounded-full p-3 shadow-lg transition-all duration-200 hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          <ChevronRight className="h-5 w-5 text-gray-700" />
+        </button>
+
+        {/* Images Container */}
+        <div className="overflow-hidden px-16">
+          <div 
+            className="flex transition-transform duration-500 ease-out"
+            style={{ 
+              transform: `translateX(-${currentSlide * 100}%)`,
+            }}
+          >
+            {Array.from({ length: totalSlides }).map((_, slideIndex) => (
+              <div key={slideIndex} className="w-full flex-shrink-0 flex space-x-6 md:space-x-8 lg:space-x-10 justify-center">
+                {galleryImages
+                  .slice(slideIndex * imagesPerSlide, (slideIndex + 1) * imagesPerSlide)
+                  .map((src, idx) => (
+                    <div key={`${slideIndex}-${idx}`} className="w-56 h-72 md:w-64 md:h-80 lg:w-72 lg:h-96 bg-gray-100 rounded-xl overflow-hidden">
+                      <ResponsiveImage 
+                        src={src} 
+                        alt={`Gallery ${slideIndex * imagesPerSlide + idx + 1}`} 
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        sizes="(max-width: 768px) 256px, (max-width: 1024px) 288px, 320px"
+                      />
+                    </div>
+                  ))}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Dot Indicators */}
+        <div className="flex justify-center mt-8 space-x-2">
+          {Array.from({ length: totalSlides }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                index === currentSlide 
+                  ? 'bg-purple-600 scale-110' 
+                  : 'bg-gray-300 hover:bg-gray-400'
+              }`}
+            />
+          ))}
         </div>
       </div>
     </section>

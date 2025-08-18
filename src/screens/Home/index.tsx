@@ -245,6 +245,12 @@ export const Home: React.FC = () => {
                         alt="ZenCreator Interface" 
                         className="w-full h-full object-cover rounded-2xl"
                       />
+                    ) : key === 'zencomfy' ? (
+                      <img 
+                        src="/images/home/ZenComfy.png" 
+                        alt="ZenComfy Interface" 
+                        className="w-full h-full object-cover rounded-2xl"
+                      />
                     ) : (
                       <span className="text-gray-400 text-lg">Visual for {product.title}</span>
                     )}

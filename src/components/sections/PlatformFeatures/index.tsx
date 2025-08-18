@@ -35,7 +35,7 @@ export const PlatformFeatures = () => {
       ],
       buttonText: "Try ComfyUI Cloud →",
       buttonLink: "/products/zencomfy/comfyui-cloud",
-      visual: "/ComfyUICloud.png"
+      visual: "/images/zencomfy/ComfyUI in the Cloud2.png"
     },
     {
       title: "Workflow → Web App",
@@ -143,12 +143,11 @@ export const PlatformFeatures = () => {
                 {/* Right Visual */}
                 <div className="lg:col-span-3 flex items-center justify-center">
                   <div className="w-full max-w-lg">
-                    <div className="w-full h-auto rounded-2xl min-h-[400px] bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center">
-                      <div className="text-white text-center">
-                        <div className="text-lg font-semibold mb-2">{feature.title}</div>
-                        <div className="text-sm opacity-80">Preview Coming Soon</div>
-                      </div>
-                    </div>
+                    <img 
+                      src={feature.visual} 
+                      alt={feature.title} 
+                      className="w-full h-auto rounded-2xl"
+                    />
                   </div>
                 </div>
               </div>

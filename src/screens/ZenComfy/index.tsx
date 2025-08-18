@@ -30,7 +30,7 @@ export const ZenComfy: React.FC = () => {
           <div className="container mx-auto px-4" style={{ paddingTop: '0px' }}>
             <div className="max-w-6xl mx-auto">
               <img
-                src="/comfyui-interface.png"
+                src="/images/zencomfy/ComfyUI in the Cloud.png"
                 alt="ZenComfy Platform Interface"
                 className="w-full h-auto rounded-3xl border border-gray-200"
                 style={{
@@ -59,19 +59,32 @@ export const ZenComfy: React.FC = () => {
             </div>
             
             <div className="mt-[150px]">
-              <FAQAccordion
-                cta={(
-                  <div className="max-w-3xl mx-auto text-center">
-                    <h3 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">Ready to Create Without Limits?</h3>
-                    <p className="text-gray-700 mb-8 text-lg">Build, run, and deploy ComfyUI workflows at cloud scale.</p>
-                    <div className="flex flex-wrap gap-4 justify-center">
-                      <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-colors">Book a Demo</a>
-                      <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-colors">Talk to Sales</a>
+              <FAQAccordion />
+            </div>
+            
+            {/* Final CTA */}
+            <section className="py-24 bg-gray-900">
+              <div className="container mx-auto px-4">
+                <div className="max-w-4xl mx-auto">
+                  <div className="text-white rounded-3xl p-12 text-center" style={{background: 'linear-gradient(141deg, #D8B4FE -1.09%, #C084FC 18.52%, #A855F7 38.13%, #9333EA 57.74%, #7C3AED 77.35%, #5A17CE 108.36%)'}}>
+                    <h3 className="text-3xl md:text-4xl font-bold mb-6">
+                      Ready to Create Without Limits?
+                    </h3>
+                    <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
+                      Build, run, and deploy ComfyUI workflows at cloud scale — no setup, no DevOps, no wasted spend.
+                    </p>
+                    <div className="flex flex-wrap gap-6 justify-center">
+                      <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-200">
+                        Book a Demo
+                      </a>
+                      <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-gray-900 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-all duration-200">
+                        Try ZenComfy
+                      </a>
                     </div>
                   </div>
-                )}
-              />
-            </div>
+                </div>
+              </div>
+            </section>
             
             {/* Footer comes from PageLayout */}
           </div>

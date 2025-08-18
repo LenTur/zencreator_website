@@ -67,7 +67,7 @@ export const MacbookAir = (): JSX.Element => {
         <div className="container mx-auto px-4" style={{ paddingTop: '0px' }}>
           <div className="max-w-6xl mx-auto">
             <img 
-              src="/platform-interface.png" 
+              src="/images/zencreator/platform-interface.png" 
               alt="ZenCreator Platform Interface" 
               className="w-full h-auto rounded-3xl border border-gray-200"
               style={{
