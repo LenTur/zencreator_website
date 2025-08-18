@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown, Menu, X, ArrowUp } from 'lucide-react';
 import { navigationMenu, MenuSection } from '@/config/menu';
 import { MegaMenu } from './MegaMenu';
+import { ServicesMegaMenu } from './ServicesMegaMenu';
 
 
 
@@ -91,6 +92,46 @@ const NavItem: React.FC<NavItemProps> = ({ item, isDark }) => {
               <div className="py-2">
                 <a href="/products/zencreator" onClick={closeMenu} className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors font-medium">ZenCreator</a>
                 <a href="/products/zencomfy" onClick={closeMenu} className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors font-medium">ZenComfy</a>
+              </div>
+            </div>
+          </>
+        )}
+      </div>
+    );
+  }
+
+  // Special handling for Services — use mega menu
+  if (item.children && item.title === 'Services') {
+    return (
+      <div
+        ref={itemRef}
+        className="relative"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <a 
+          href={item.href}
+          className={`font-medium transition-all duration-200 px-3 py-2 rounded-lg flex items-center space-x-1 ${
+            isDark 
+              ? `text-gray-900 ${isOpen ? 'bg-gray-100' : 'hover:bg-gray-50 hover:text-gray-900'}`
+              : `text-white ${isOpen ? 'bg-white/20' : 'hover:bg-white/10 hover:text-white/90'}`
+          }`}
+        >
+          <span>{item.title}</span>
+          <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+        </a>
+        
+        {isOpen && (
+          <>
+            {/* Desktop Services Mega Menu */}
+            <ServicesMegaMenu onClose={closeMenu} />
+            
+            {/* Mobile Simple Menu for Services */}
+            <div className="lg:hidden absolute top-full left-0 mt-2 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50 min-w-64">
+              <div className="py-2">
+                <a href="/services/ai-influencers" onClick={closeMenu} className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors font-medium">AI Influencers</a>
+                <a href="/services/dating-profiles-generation" onClick={closeMenu} className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors font-medium">Dating Profiles</a>
+                <a href="/services/photo-shoots-generation" onClick={closeMenu} className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors font-medium">Photo Shoots</a>
               </div>
             </div>
           </>
@@ -280,11 +321,12 @@ export const Header = ({ forceDark = false }: { forceDark?: boolean }) => {
       }`}>
         <div className="flex justify-center px-4">
           <nav
-            className={`backdrop-blur-xl mx-auto flex items-center justify-between transition-all duration-300 w-full max-w-6xl px-4 md:px-6 lg:px-8 py-4 md:py-6 lg:py-8 rounded-2xl md:rounded-3xl ${
+            className={`backdrop-blur-xl mx-auto flex items-center justify-between transition-all duration-300 w-full px-4 md:px-6 lg:px-8 py-4 md:py-6 lg:py-8 rounded-2xl md:rounded-3xl ${
               isScrolled 
                 ? 'bg-white/60 border border-white/60' 
                 : 'bg-white/20 border border-white/60 shadow-2xl shadow-purple-200/100'
             }`}
+            style={{ maxWidth: '1200px' }}
           >
             {/* Logo */}
             <div className="flex items-center">

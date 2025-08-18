@@ -28,14 +28,14 @@ interface MegaMenuProps { onClose: () => void }
 export const MegaMenu: React.FC<MegaMenuProps> = ({ onClose }) => {
   return (
     <div
-      className="fixed bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden z-[9999] lg:block hidden"
+      className="fixed bg-white rounded-b-2xl shadow-2xl overflow-hidden z-[9999] lg:block hidden"
       style={{
         width: '100%',
         maxWidth: '1200px',
         top: '90px',
         left: '50%',
         transform: 'translateX(-50%)',
-        boxShadow: '0 20px 25px -5px rgba(0,0,0,0.08), 0 10px 10px -5px rgba(0,0,0,0.04)'
+        boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'
       }}
       onMouseLeave={onClose}
     >
