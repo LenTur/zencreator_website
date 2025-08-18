@@ -6,7 +6,7 @@ interface FinalFooterProps {
 }
 
 const FooterLink = ({ href = "#", children }: { href?: string, children: React.ReactNode }) => (
-    <span className="text-gray-500 cursor-not-allowed opacity-50">{children}</span>
+    <a href={href} className="text-gray-400 hover:text-white transition-colors cursor-pointer">{children}</a>
 );
 
 const FooterColumn = ({ title, children }: { title: string, children: React.ReactNode }) => (
@@ -54,29 +54,29 @@ export const FinalFooter = ({ className }: FinalFooterProps) => {
 
             {/* Column 3: Tools */}
             <FooterColumn title="Tools">
-                <FooterLink>Face generation</FooterLink>
-                <FooterLink>Face Swapping</FooterLink>
-                <FooterLink>Upscaling</FooterLink>
-                <FooterLink>Prompt Generation</FooterLink>
-                <FooterLink>Generation by Reference</FooterLink>
-                <FooterLink>Photo Shoot generation</FooterLink>
-                <FooterLink>User Profile generation</FooterLink>
-                <FooterLink>Video generation</FooterLink>
-                <FooterLink>Carousel generation</FooterLink>
+                <FooterLink href="/products/zencreator/content-creation/ai-face-generation">Face generation</FooterLink>
+                <FooterLink href="/products/zencreator/content-creation/ai-face-swapping">Face Swapping</FooterLink>
+                <FooterLink href="/products/zencreator/content-creation/ai-upscaling">Upscaling</FooterLink>
+                <FooterLink href="/products/zencreator/content-creation/ai-generation-prompt">Prompt Generation</FooterLink>
+                <FooterLink href="/products/zencreator/content-creation/ai-generation-reference">Generation by Reference</FooterLink>
+                <FooterLink href="/products/zencreator/content-creation/photo-shoot">Photo Shoot generation</FooterLink>
+                <FooterLink href="/products/zencreator/content-creation/dating-profiles">User Profile generation</FooterLink>
+                <FooterLink href="/products/zencreator/content-creation/video-generation">Video generation</FooterLink>
+                <FooterLink href="/products/zencreator/content-creation/carousel-generation">Carousel generation</FooterLink>
             </FooterColumn>
 
             {/* Column 4: Free Resources */}
             <FooterColumn title="Free Resources">
-                <FooterLink>ZenCreator Documentation</FooterLink>
-                <FooterLink>Best Trend Reels</FooterLink>
+                <FooterLink href="/products/zencreator">ZenCreator Documentation</FooterLink>
+                <FooterLink href="/services">Best Trend Reels</FooterLink>
             </FooterColumn>
 
             {/* Column 5: Terms of Use */}
             <FooterColumn title="Terms of Use">
-                <FooterLink>Privacy Policy</FooterLink>
-                <FooterLink>Cookies Policy</FooterLink>
-                <FooterLink>Terms and Conditions</FooterLink>
-                <FooterLink>Data Deletion</FooterLink>
+                <FooterLink href="/privacy-policy">Privacy Policy</FooterLink>
+                <FooterLink href="/cookies-policy">Cookies Policy</FooterLink>
+                <FooterLink href="/terms-and-conditions">Terms and Conditions</FooterLink>
+                <FooterLink href="/data-deletion">Data Deletion</FooterLink>
             </FooterColumn>
 
         </div>

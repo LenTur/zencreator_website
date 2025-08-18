@@ -238,8 +238,16 @@ export const Home: React.FC = () => {
                   </div>
 
                   {/* Visual Area */}
-                  <div className="w-full h-80 bg-white rounded-2xl flex items-center justify-center">
-                    <span className="text-gray-400 text-lg">Visual for {product.title}</span>
+                  <div className="w-full h-80 bg-white rounded-2xl flex items-center justify-center overflow-hidden">
+                    {key === 'zencreator' ? (
+                      <img 
+                        src="/images/home/ZenCreator.png" 
+                        alt="ZenCreator Interface" 
+                        className="w-full h-full object-cover rounded-2xl"
+                      />
+                    ) : (
+                      <span className="text-gray-400 text-lg">Visual for {product.title}</span>
+                    )}
                   </div>
                 </div>
               ))}
