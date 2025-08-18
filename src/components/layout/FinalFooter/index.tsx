@@ -54,15 +54,15 @@ export const FinalFooter = ({ className }: FinalFooterProps) => {
 
             {/* Column 3: Tools */}
             <FooterColumn title="Tools">
-                <FooterLink href="/products/zencreator/content-creation/ai-face-generation">Face generation</FooterLink>
-                <FooterLink href="/products/zencreator/content-creation/ai-face-swapping">Face Swapping</FooterLink>
-                <FooterLink href="/products/zencreator/content-creation/ai-upscaling">Upscaling</FooterLink>
-                <FooterLink href="/products/zencreator/content-creation/ai-generation-prompt">Prompt Generation</FooterLink>
-                <FooterLink href="/products/zencreator/content-creation/ai-generation-reference">Generation by Reference</FooterLink>
-                <FooterLink href="/products/zencreator/content-creation/photo-shoot">Photo Shoot generation</FooterLink>
-                <FooterLink href="/products/zencreator/content-creation/dating-profiles">User Profile generation</FooterLink>
-                <FooterLink href="/products/zencreator/content-creation/video-generation">Video generation</FooterLink>
-                <FooterLink href="/products/zencreator/content-creation/carousel-generation">Carousel generation</FooterLink>
+                <span className="text-gray-500 cursor-not-allowed">Face generation (Soon)</span>
+                <span className="text-gray-500 cursor-not-allowed">Face Swapping (Soon)</span>
+                <span className="text-gray-500 cursor-not-allowed">Upscaling (Soon)</span>
+                <span className="text-gray-500 cursor-not-allowed">Prompt Generation (Soon)</span>
+                <span className="text-gray-500 cursor-not-allowed">Generation by Reference (Soon)</span>
+                <span className="text-gray-500 cursor-not-allowed">Photo Shoot generation (Soon)</span>
+                <span className="text-gray-500 cursor-not-allowed">User Profile generation (Soon)</span>
+                <span className="text-gray-500 cursor-not-allowed">Video generation (Soon)</span>
+                <span className="text-gray-500 cursor-not-allowed">Carousel generation (Soon)</span>
             </FooterColumn>
 
             {/* Column 4: Free Resources */}

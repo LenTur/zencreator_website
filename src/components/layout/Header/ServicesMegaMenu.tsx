@@ -49,9 +49,9 @@ export const ServicesMegaMenu: React.FC<ServicesMegaMenuProps> = ({ onClose }) =
               { title: 'Creative Influencer Projects', href: '/services/creative-projects' },
               { title: 'Brand Ambassador Programs', href: '/services/brand-ambassador' },
             ].map((item) => (
-              <a key={item.title} href={item.href} onClick={onClose} className="block rounded-xl p-3 hover:bg-gray-50 transition">
-                <span className="text-gray-900 font-medium">{item.title}</span>
-              </a>
+              <div key={item.title} className="block rounded-xl p-3 opacity-50 cursor-not-allowed">
+                <span className="text-gray-500 font-medium">{item.title}</span>
+              </div>
             ))}
           </div>
         </div>

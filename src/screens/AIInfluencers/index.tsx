@@ -127,12 +127,12 @@ export const AIInfluencers: React.FC = () => {
                 ['Creative Influencer Projects','/services/creative-projects','Storytelling, collaborations, and interactive campaigns that break engagement records.'],
                 ['Brand Ambassador Programs','/services/brand-ambassador','Long-term programs that build credibility, loyalty, and consistent engagement.'],
               ].map(([t, href, d]) => (
-                <a key={t as string} href={href as string}>
-                  <Card className="h-full hover:shadow-md transition-shadow">
+                <div key={t as string} className="opacity-50 cursor-not-allowed">
+                  <Card className="h-full">
                     <CardHeader className="p-5 pb-3"><CardTitle className="text-base text-gray-900">{t as string}</CardTitle></CardHeader>
                     <CardContent className="pt-0 px-5 pb-5"><CardDescription className="text-gray-700">{d as string}</CardDescription></CardContent>
                   </Card>
-                </a>
+                </div>
               ))}
             </div>
           </section>
