@@ -9,11 +9,11 @@ export const RunComfyUIOnline: React.FC = () => {
       description="Share, run, and deploy complex ComfyUI workflows in minutes — no local GPU, no setup."
     >
       {/* Hero */}
-      <div className="bg-gray-900 pb-20" style={{ paddingTop: '140px' }}>
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <section className="pt-24 pb-[40px] text-center">
-              <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
+      <div className="container mx-auto px-4" style={{ paddingTop: '180px' }}>
+        <div className="max-w-[1200px] mx-auto">
+          <div className="bg-[#0F172A] rounded-3xl border border-white/10 min-h-[60vh] flex items-center justify-center">
+            <section className="pt-24 pb-[40px] text-center text-white w-full px-6">
+              <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
                 Run ComfyUI in the Cloud
               </h1>
               <p className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">

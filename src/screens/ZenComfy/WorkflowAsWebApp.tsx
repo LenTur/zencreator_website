@@ -25,11 +25,11 @@ export const WorkflowAsWebApp: React.FC = () => {
       description="Turn your creative pipelines into production-ready AI apps — fast."
     >
       {/* Hero */}
-      <div className="bg-gray-900 pb-20" style={{ paddingTop: '140px' }}>
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <section className="pt-24 pb-[40px] text-center">
-              <h1 className="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">Run ComfyUI Workflows as Web Apps</h1>
+      <div className="container mx-auto px-4" style={{ paddingTop: '180px' }}>
+        <div className="max-w-[1200px] mx-auto">
+          <div className="bg-[#0F172A] rounded-3xl border border-white/10 min-h-[60vh] flex items-center justify-center">
+            <section className="pt-24 pb-[40px] text-center text-white w-full px-6">
+              <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">Run ComfyUI Workflows as Web Apps</h1>
               <p className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
                 <strong>Turn your creative pipelines into production-ready AI apps — fast.</strong>
               </p>
@@ -37,7 +37,7 @@ export const WorkflowAsWebApp: React.FC = () => {
                 ZenComfy converts complex ComfyUI workflows into polished web applications that scale on demand in our serverless GPU cloud. No setup, engineering, or infrastructure headaches.
               </p>
               <div className="flex gap-4 justify-center mt-10">
-                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl">Book a Demo</a>
+                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-2xl">Book a Demo</a>
                 <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all duration-200">Talk to Sales</a>
               </div>
               <p className="text-white/70 mt-10">(Illustration: live app interface)</p>
