@@ -1,6 +1,6 @@
 import React from 'react';
 import { PageLayout } from '@/components/layout/PageLayout';
-import { Instagram, MessageSquare, Twitter, Facebook, Youtube, Music4 as TikTok } from 'lucide-react';
+import { Instagram, MessageSquare, Twitter, Facebook, Youtube, Music4 as TikTok, Shield, Lock, ShieldCheck, Ban, Scan, ClipboardCheck } from 'lucide-react';
 import { FAQAccordion } from '@/components/sections/FAQAccordion';
 
 export const PublishingHub: React.FC = () => {
@@ -66,6 +66,8 @@ export const PublishingHub: React.FC = () => {
     if (title.toLowerCase().includes('tiktok')) return <TikTok className={cls} />;
     return <Instagram className={cls} />;
   };
+
+  const securityIconMap: Record<string, any> = { Shield, Lock, ShieldCheck, Ban, Scan, ClipboardCheck };
 
   return (
     <PageLayout
@@ -142,18 +144,20 @@ export const PublishingHub: React.FC = () => {
           <div className="max-w-6xl mx-auto">
             <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 text-center">Supported Channels & Highlights</h3>
             <div className="grid md:grid-cols-2 gap-6">
-              {channels.map(([title, desc]) => (
-                <div key={title as string} className="relative group opacity-50 cursor-not-allowed">
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
-                    <div className="relative p-7 bg-white/90 backdrop-blur-md rounded-3xl border border-white/20 shadow-xl transition-all duration-500">
-                      <div className="flex items-center gap-3 mb-2">
-                        {getChannelIcon(title as string)}
-                        <h4 className="text-lg font-bold text-gray-900">{title as string}</h4>
-                      </div>
-                      <p className="text-gray-600 leading-relaxed">{desc as string}</p>
-                      <div className="mt-4 inline-flex items-center text-sm font-medium text-gray-400">Learn More →</div>
+              {channels.map(([title, desc, href]) => (
+                <div key={title as string} className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
+                  <div className="relative p-7 bg-white/90 backdrop-blur-md rounded-3xl border border-white/20 shadow-xl transition-all duration-500 group-hover:scale-[1.02] group-hover:border-purple-200/50">
+                    <div className="flex items-center gap-3 mb-2">
+                      {getChannelIcon(title as string)}
+                      <h4 className="text-lg font-bold text-gray-900 group-hover:text-purple-600 transition-colors">{title as string}</h4>
                     </div>
+                    <p className="text-gray-600 leading-relaxed">{desc as string}</p>
+                    <a href={href as string} onClick={(e)=>e.preventDefault()} className="mt-4 inline-flex items-center text-sm font-medium text-gray-400 cursor-not-allowed">
+                      Learn More →
+                    </a>
                   </div>
+                </div>
               ))}
             </div>
             <p className="text-sm text-gray-600 italic mt-4 text-center">(New networks become available soon)</p>
@@ -209,32 +213,28 @@ export const PublishingHub: React.FC = () => {
         </div>
       </section>
 
-      {/* Security & Compliance — enhanced visuals */}
+      {/* Security & Compliance — premium dark cards */}
       <section className="py-[100px] bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 text-center">Security & Compliance</h3>
-            <div className="grid sm:grid-cols-2 gap-6">
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
-                <div className="relative bg-white rounded-3xl p-8 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500">
-                  <ul className="space-y-2 text-gray-700">
-                  <li>• OAuth only; revoke access anytime.</li>
-                  <li>• Zero retention of tokens outside encrypted vaults.</li>
-                  <li>• SOC-2 hosting, optional VPC peering for enterprise.</li>
-                  </ul>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                ['OAuth Only', 'Revoke access anytime.', Shield, 'from-indigo-400 to-purple-400'],
+                ['Zero Retention', 'Tokens kept only in encrypted vaults.', Lock, 'from-emerald-400 to-teal-400'],
+                ['SOC‑2 + VPC', 'Enterprise-grade hosting, optional VPC peering.', ShieldCheck, 'from-sky-400 to-blue-400'],
+                ['Policy Filters', 'Banned keywords and over‑text checks before posting.', Ban, 'from-rose-400 to-pink-400'],
+                ['Risk Scanning', 'Copyright risk and nudity mismatch scanning.', Scan, 'from-violet-400 to-purple-500'],
+                ['Audit Trail', 'Role‑based approvals with full audit trail.', ClipboardCheck, 'from-amber-400 to-yellow-400'],
+              ].map(([title, desc, Icon, grad]) => (
+                <div key={title as string} className="bg-[#0F172A] rounded-3xl p-7 border border-white/10 shadow-xl text-white">
+                  <div className={`w-10 h-10 rounded-2xl bg-gradient-to-br ${grad as string} bg-opacity-20 flex items-center justify-center mb-4`}> 
+                    {Icon ? (() => { const C = Icon as any; return <C className="w-5 h-5 text-white" />; })() : null}
+                  </div>
+                  <h4 className="text-lg font-bold mb-2">{title as string}</h4>
+                  <p className="text-white/80 leading-relaxed">{desc as string}</p>
                 </div>
-              </div>
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
-                <div className="relative bg-white rounded-3xl p-8 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500">
-                  <ul className="space-y-2 text-gray-700">
-                  <li>• Banned keywords and over-text checks before posting.</li>
-                  <li>• Copyright risk and nudity mismatch scanning.</li>
-                  <li>• Audit trail with role-based approvals.</li>
-                  </ul>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -244,20 +244,25 @@ export const PublishingHub: React.FC = () => {
       <FAQAccordion
         cta={(
           <section className="relative overflow-hidden">
-            <div className="text-center py-16">
-              <div className="relative z-10 max-w-4xl mx-auto px-4">
-                <div className="inline-block bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
-                  Start in minutes
+            <div className="container mx-auto px-4">
+              <div className="max-w-[1200px] mx-auto">
+                <div className="bg-[#0F172A] text-white rounded-3xl p-12 md:p-16 pt-[40px] text-center border border-white/10">
+                  <div className="inline-block bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+                    Start in minutes
+                  </div>
+                  <h2 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">
+                    Ready to Replace Six Dashboards <br className="hidden sm:block" /> With One?
+                  </h2>
+                  <p className="text-white/80 text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
+                    Connect a channel and schedule your first Smart Publish in under two minutes.
+                  </p>
+                  <div className="flex flex-wrap gap-4 justify-center mb-2">
+                    <a href="/products/zencreator/publishing-hub/instagram" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors">Try Smart Publishing</a>
+                    <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-colors">Book a Demo</a>
+                    <a href="mailto:info@zencreator.pro?subject=Publishing%20Hub%20question" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-colors">Contact us</a>
+                  </div>
+                  
                 </div>
-                <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-6 leading-tight">Ready to Replace Six Dashboards With One?</h2>
-                <p className="text-gray-700 text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
-                  Connect a channel and schedule your first Smart Publish in under two minutes.
-                </p>
-                <div className="flex flex-wrap gap-4 justify-center mb-2">
-                  <a href="/products/zencreator/publishing-hub/instagram" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-colors">Try Smart Publishing</a>
-                  <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border-2 border-gray-300 text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-colors">Book a Demo</a>
-                </div>
-                <p className="text-gray-700">Questions? Email us at <strong>info@zencreator.pro</strong> — our team answers within a business day.</p>
               </div>
             </div>
           </section>
