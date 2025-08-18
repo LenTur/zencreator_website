@@ -110,11 +110,11 @@ export const PublishingHub: React.FC = () => {
       </div>
 
       {/* Why Teams Choose — advanced cards like WorkflowTemplates */}
-      <section className="py-[150px] bg-white">
+      <section className="py-[100px] bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">Why Teams Choose<br /> the Publishing Hub</h3>
-            <div className="grid md:grid-cols-2 gap-8">
+            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 text-center">Why Teams Choose<br /> the Publishing Hub</h3>
+            <div className="grid md:grid-cols-2 gap-6">
               {whyItems.map((item, idx) => (
                 <div key={idx} className="relative group">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
@@ -137,114 +137,103 @@ export const PublishingHub: React.FC = () => {
       </section>
 
       {/* Supported Channels — modern cards */}
-      <section className="py-[150px] bg-white">
+      <section className="py-[100px] bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">Supported Channels & Highlights</h3>
+            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 text-center">Supported Channels & Highlights</h3>
             <div className="grid md:grid-cols-2 gap-6">
-              {channels.map(([title, desc, href]) => (
-                <a key={title as string} href={href as string}>
-                  <div className="relative group">
+              {channels.map(([title, desc]) => (
+                <div key={title as string} className="relative group opacity-50 cursor-not-allowed">
                     <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
-                    <div className="relative p-7 bg-white/90 backdrop-blur-md rounded-3xl border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] group-hover:border-purple-200/50">
+                    <div className="relative p-7 bg-white/90 backdrop-blur-md rounded-3xl border border-white/20 shadow-xl transition-all duration-500">
                       <div className="flex items-center gap-3 mb-2">
                         {getChannelIcon(title as string)}
-                        <h4 className="text-lg font-bold text-gray-900 group-hover:text-purple-600 transition-colors">{title as string}</h4>
+                        <h4 className="text-lg font-bold text-gray-900">{title as string}</h4>
                       </div>
                       <p className="text-gray-600 leading-relaxed">{desc as string}</p>
-                      {(href as string) !== '#' && (
-                        <div className="mt-4 inline-flex items-center text-sm font-medium text-purple-700">Learn More →</div>
-                      )}
+                      <div className="mt-4 inline-flex items-center text-sm font-medium text-gray-400">Learn More →</div>
                     </div>
                   </div>
-                </a>
               ))}
             </div>
-            <p className="text-sm text-gray-600 italic mt-6 text-center">(New networks become available soon)</p>
+            <p className="text-sm text-gray-600 italic mt-4 text-center">(New networks become available soon)</p>
           </div>
         </div>
       </section>
 
-      {/* End-to-End Workflow — site style (Get Started pattern) */}
-      <section className="py-[150px] bg-white">
+      {/* End-to-End Workflow — now 8 cards */}
+      <section className="py-[100px] bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">End-to-End Workflow</h3>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
-              {/* Left column: Steps 01 and 02 */}
-              <div className="flex flex-col gap-6">
-                <div className="rounded-3xl p-8 border border-white/10 bg-gradient-to-br from-[#0B1220] to-[#020817] hover:shadow-xl transition-all duration-300 flex flex-col h-full text-white">
-                  <div className="text-3xl font-black text-purple-400 mb-6">01</div>
-                  <h4 className="text-xl font-bold text-white mb-2">Generate</h4>
-                  <p className="text-white/80">Create images, videos or entire sets in the Content Creation suite.</p>
+            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 text-center">End-to-End Workflow</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                ['Generate', 'Create images, videos or entire sets in the Content Creation suite.'],
+                ['Push to Publishing', 'One click moves assets (and metadata) into the Publishing queue.'],
+                ['Set Strategy', 'Pick channels, fill or auto-generate copy, choose Now / Schedule / Smart Publish.'],
+                ['Approve & Launch', 'Role-based sign-off; automatic posting with compliance checks.'],
+                ['Analyse & Iterate', 'Dashboards surface winners; recycle or boost in seconds.'],
+                ['Pick a Module', 'Choose Face Gen, Photo Shoot or Video.'],
+                ['Generate & Refine', 'Batch, review, approve.'],
+                ['Publish or Pipeline', 'Post to social or send downstream for more magic.'],
+              ].map(([title, desc], i) => (
+                <div key={title as string} className="rounded-3xl p-6 border border-gray-200 bg-white shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <div className="text-purple-600 font-black mb-2">{String(i + 1).padStart(2,'0')}</div>
+                  <h4 className="text-lg font-bold text-gray-900 mb-1">{title as string}</h4>
+                  <p className="text-gray-700 text-sm leading-relaxed">{desc as string}</p>
                 </div>
-
-                <div className="rounded-3xl p-8 border border-white/10 bg-gradient-to-br from-[#0B1220] to-[#020817] hover:shadow-xl transition-all duration-300 flex flex-col h-full text-white">
-                  <div className="text-3xl font-black text-purple-400 mb-6">02</div>
-                  <h4 className="text-xl font-bold text-white mb-2">Push to Publishing</h4>
-                  <p className="text-white/80">One click moves assets (and metadata) into the Publishing queue.</p>
-                </div>
-              </div>
-
-              {/* Right column: Step 03 wide card */}
-              <div className="rounded-3xl p-8 lg:col-span-2 text-white relative overflow-hidden bg-gradient-to-br from-[#5400A7] to-[#020817] flex flex-col justify-between">
-                <div>
-                  <div className="text-3xl font-black mb-6">03</div>
-                  <h4 className="text-2xl md:text-3xl font-black leading-snug mb-3">Approve, Launch & Analyse</h4>
-                  <p className="text-white/90 mb-8 max-w-2xl">Role-based sign-off, then automatic posting with compliance checks. Built-in dashboards surface winners; recycle or boost in seconds.</p>
-                </div>
-                <div className="flex flex-wrap gap-4">
-                  <a href="/products/zencreator/publishing-hub/instagram" className="bg-white text-gray-900 px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl">Try Smart Publishing</a>
-                  <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-transparent text-white border-2 border-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-gray-900 transition-all duration-200">Book a 15-Minute Demo</a>
-                </div>
-                <div className="pointer-events-none absolute -top-20 -right-20 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
-              </div>
+              ))}
             </div>
-
-            {/* Textual 5-step outline */}
-            <ol className="mt-10 space-y-2 list-decimal pl-6 text-gray-800">
-              <li><strong>Generate</strong> – Create images, videos or entire sets in the Content Creation suite.</li>
-              <li><strong>Push to Publishing</strong> – One click moves assets (and metadata) into the Publishing queue.</li>
-              <li><strong>Set Strategy</strong> – Pick channels, fill or auto-generate copy, choose Now / Schedule / Smart Publish.</li>
-              <li><strong>Approve & Launch</strong> – Role-based sign-off, then automatic posting with compliance checks.</li>
-              <li><strong>Analyse & Iterate</strong> – Built-in dashboards surface winners; recycle or boost in seconds.</li>
-            </ol>
           </div>
         </div>
       </section>
 
       {/* Batch & Scale Without Bottlenecks */}
-      <section className="py-[150px] bg-white">
+      <section className="py-[100px] bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">Batch & Scale Without Bottlenecks</h3>
-            <ul className="space-y-3 text-gray-800">
-              <li>• <strong>Bulk Upload</strong> hundreds of assets, apply templates, and let Smart Publish drip content over days or weeks.</li>
-              <li>• <strong>Parallel Posting</strong> engine pushes to multiple channels simultaneously — no rate-limit surprises.</li>
-            </ul>
+            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 text-center">Batch & Scale<br />Without Bottlenecks</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-white rounded-3xl p-6 border border-gray-200 shadow-md">
+                <div className="h-40 bg-gray-100 rounded-xl mb-4"></div>
+                <h4 className="text-xl font-bold text-gray-900 mb-2">Bulk Upload</h4>
+                <p className="text-gray-700">Hundreds of assets, apply templates, and let Smart Publish drip content over days or weeks.</p>
+              </div>
+              <div className="bg-white rounded-3xl p-6 border border-gray-200 shadow-md">
+                <div className="h-40 bg-gray-100 rounded-xl mb-4"></div>
+                <h4 className="text-xl font-bold text-gray-900 mb-2">Parallel Posting</h4>
+                <p className="text-gray-700">Engine pushes to multiple channels simultaneously — no rate-limit surprises.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Security & Compliance — compact cards */}
-      <section className="py-[150px] bg-white">
+      {/* Security & Compliance — enhanced visuals */}
+      <section className="py-[100px] bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">Security & Compliance</h3>
+            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 text-center">Security & Compliance</h3>
             <div className="grid sm:grid-cols-2 gap-6">
-              <div className="bg-white rounded-3xl p-8 border border-gray-200 hover:shadow-xl hover:border-gray-300 transition-all duration-300">
-                <ul className="space-y-2 text-gray-700">
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
+                <div className="relative bg-white rounded-3xl p-8 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500">
+                  <ul className="space-y-2 text-gray-700">
                   <li>• OAuth only; revoke access anytime.</li>
                   <li>• Zero retention of tokens outside encrypted vaults.</li>
                   <li>• SOC-2 hosting, optional VPC peering for enterprise.</li>
-                </ul>
+                  </ul>
+                </div>
               </div>
-              <div className="bg-white rounded-3xl p-8 border border-gray-200 hover:shadow-xl hover:border-gray-300 transition-all duration-300">
-                <ul className="space-y-2 text-gray-700">
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
+                <div className="relative bg-white rounded-3xl p-8 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500">
+                  <ul className="space-y-2 text-gray-700">
                   <li>• Banned keywords and over-text checks before posting.</li>
                   <li>• Copyright risk and nudity mismatch scanning.</li>
                   <li>• Audit trail with role-based approvals.</li>
-                </ul>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
