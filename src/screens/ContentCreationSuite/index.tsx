@@ -1,6 +1,5 @@
 import { PageLayout } from '@/components/layout/PageLayout';
 import { Layers, ArrowRight, Share2, Zap, CreditCard, Shield } from 'lucide-react';
-import { WhyTeamsLove } from '@/components/sections/WhyTeamsLove';
 import { BeforeAfter } from '@/components/ui/BeforeAfter';
 import { ToolCard } from '@/components/ui/ToolCard';
 import { ResponsiveImage } from '@/components/ui/ResponsiveImage';
@@ -36,9 +35,8 @@ export const ContentCreationSuite = () => {
       </div>
 
       {/* Tools Section */}
-      <section className="py-[150px] bg-ink-900">
+      <section className="py-[100px] bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-12 text-center">Tools</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { 
@@ -187,20 +185,20 @@ export const ContentCreationSuite = () => {
                 </ToolCard>
               ))}
           </div>
-          <p className="text-center mt-14" style={{background: 'linear-gradient(135deg, #7BA1F8, #C084FC)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', fontSize: '16px', fontWeight: '500'}}>
+          <p className="text-center mt-8" style={{background: 'linear-gradient(135deg, #7BA1F8, #C084FC)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', fontSize: '16px', fontWeight: '500'}}>
             New tools land every month—your dashboard updates automatically.
           </p>
         </div>
       </section>
 
       {/* Shared Power Features */}
-      <section className="py-[150px] bg-white">
+      <section className="py-[100px] bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">Shared Power Features</h2>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 text-center">Shared Power Features</h2>
 
             {/* Advanced card layout like Workflow Templates */}
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
               {[
                 { 
                   name: 'Batch Mode Everywhere', 
@@ -268,10 +266,10 @@ export const ContentCreationSuite = () => {
       </section>
 
       {/* Get Started in Three Steps */}
-      <section className="py-[150px] bg-white">
+      <section className="py-[100px] bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">Get Started in Three Steps</h2>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 text-center">Get Started in Three Steps</h2>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
               {/* Left column: Steps 01 and 02 stacked vertically */}
               <div className="flex flex-col gap-6">
@@ -308,39 +306,62 @@ export const ContentCreationSuite = () => {
         </div>
       </section>
 
-      {/* Why Teams Love the Suite */}
-      <WhyTeamsLove
-        items={[
-          {
-            title: 'Speed to Market',
-            description: 'Prototype, iterate, and launch creative in a single afternoon.',
-          },
-          {
-            title: 'Consistent Quality',
-            description: 'Identity locking keeps faces, tones, and styles aligned across every asset.',
-          },
-          {
-            title: 'Lower Cost',
-            description: 'Replace multiple subscriptions, studio fees, and manual labour with an integrated workflow.',
-          },
-          {
-            title: 'Scales With You',
-            description: 'From a solo marketer to enterprise volumes—same UI, bigger backend.',
-          },
-        ]}
-      />
+      {/* Why Teams Love the Suite (Metrics + Cards) */}
+      <section className="py-[100px] bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 text-center">Why Teams Love the Suite</h2>
+
+            {/* Metrics strip */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+              {[
+                ['10K+', 'assets/day'],
+                ['99.9%', 'uptime'],
+                ['4.9/5', 'satisfaction'],
+                ['50K+', 'workflows'],
+              ].map(([num, label]) => (
+                <div key={num as string} className="rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-sm">
+                  <div className="text-2xl md:text-3xl font-black text-gray-900">{num as string}</div>
+                  <div className="text-gray-600 text-sm">{label as string}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Benefit cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                ['Speed to Market', 'Prototype, iterate, and launch creative in a single afternoon.'],
+                ['Consistent Quality', 'Identity locking keeps faces, tones, and styles aligned across every asset.'],
+                ['Lower Cost', 'Replace multiple subscriptions, studio fees, and manual labour with an integrated workflow.'],
+                ['Scales With You', 'From a solo marketer to enterprise volumes—same UI, bigger backend.'],
+              ].map(([title, desc]) => (
+                <div key={title as string} className="rounded-3xl border border-gray-200 bg-white p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{title as string}</h3>
+                  <p className="text-gray-700 leading-relaxed">{desc as string}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Final CTA - Full Width (like Home) */}
       <section className="relative overflow-hidden">
-        <div className="bg-ink-900 text-white text-center py-24 relative">
+        <div className="bg-ink-900 text-white text-center py-32 relative">
           <div className="relative z-10 max-w-4xl mx-auto px-4">
             <div className="inline-block bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
               Have questions?
             </div>
             <h2 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">Have questions or need a custom workflow?</h2>
-            <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-              <span className="font-semibold">Contact us</span> at <a href="mailto:info@zencreator.pro" className="text-white underline decoration-white/40 hover:decoration-white">info@zencreator.pro</a> — we’ll design the perfect content pipeline for your team.
+            <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed">
+              We’ll help design the perfect content pipeline for your team — from idea to publishing.
             </p>
+            <a
+              href="mailto:info@zencreator.pro?subject=ZenCreator%20question"
+              className="inline-flex items-center justify-center bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors"
+            >
+              Contact us
+            </a>
           </div>
           <div className="absolute bottom-0 left-0 right-0 h-32">
             <div className="absolute bottom-0 left-0 w-1/4 h-6 bg-gradient-to-r from-red-500 to-orange-500"></div>
