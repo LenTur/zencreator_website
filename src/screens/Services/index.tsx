@@ -81,22 +81,15 @@ export const Services: React.FC = () => {
           
           {/* Hero Section */}
           <section className="pt-24 pb-[40px] text-center">
-            <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-6 leading-tight">
-              Our Services
+            <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-8 leading-tight">
+              ZenCreator Services
             </h1>
-            <h2 className="text-2xl md:text-4xl font-black text-gray-900 mb-8 leading-tight">
-              AI solutions that create, scale and optimize<br />
-              <span style={{background: 'linear-gradient(141deg, #D8B4FE -1.09%, #5A17CE 108.36%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}}>visual content and influence</span>
-            </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
-              So you meet growth targets faster with one partner, limitless creative scale.
+              <strong>AI solutions that create, scale and optimize visual content and influence — so you meet growth targets faster.</strong>
             </p>
-            <div className="flex flex-wrap gap-6 justify-center">
-              <a href="mailto:info@zencreator.pro?subject=Consultation" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-all duration-200 shadow-lg hover:shadow-xl">
-                Book a Consultation
-              </a>
-              <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 border-2 border-gray-300 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-purple-50 hover:border-purple-400 hover:text-purple-900 transition-all duration-200">
-                Try Our Tools
+            <div className="flex justify-center">
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-all duration-200 shadow-lg hover:shadow-xl">
+                Book a 15-Minute Consultation
               </a>
             </div>
           </section>
@@ -126,37 +119,39 @@ export const Services: React.FC = () => {
                   title: 'AI Influencers',
                   description: 'Launch ultra-realistic virtual talent, then drive measurable results across the entire funnel.',
                   features: [
-                    'Bespoke persona development',
-                    '24/7 content engine', 
-                    'Data-driven growth optimization',
-                    'Brand-safe & exclusive'
+                    'Bespoke persona — unique look, voice, back-story and values aligned to your brand brief.',
+                    '24/7 content engine — daily photos, Reels, Shorts, Stories auto-generated and scheduled on Instagram, TikTok, YouTube, X and Threads.',
+                    'Data-driven growth loop — real-time analytics refine hooks, hashtags and post timing for maximum ER and follower velocity.',
+                    'Paid-media packs — weekly A/B creative sets that keep CPMs low and ROAS high.',
+                    'Experiential add-ons — livestream takeovers, virtual meet-and-greets and AR try-on filters.',
+                    'Brand-safe & exclusive — human QA on every post; you own all IP and audience data.'
                   ],
                   link: '/services/ai-influencers',
                   reverse: false
                 },
                 {
-                  title: 'Dating Profile Generation',
+                  title: 'Dating Profiles Generation',
                   description: 'Fill new dating or social platforms with realistic, compliant and exclusive user profiles.',
                   features: [
-                    '3-50 consistent images per profile',
-                    'Fully customizable demographics',
-                    '20K+ photos/month capacity',
-                    'Manual QA on every asset'
+                    '3–50 consistent images + 1-10 short video per profile',
+                    'Gender, age (18-85 +), ethnicity and style fully customizable',
+                    'Manual QA on every asset; 20 K+ production-ready photos/month—scalable to 100 ×'
                   ],
                   link: '/services/dating-profiles-generation',
-                  reverse: true
+                  reverse: true,
+                  buttonText: 'Explore the service'
                 },
                 {
-                  title: 'AI Photo Shoot Generator',
-                  description: 'Studio-quality shoots from just two reference images — delivered in hours, not days.',
+                  title: 'Photo Shoots Generation',
+                  description: 'Realistic or Studio-quality shoots from just two reference images — delivered in hours, not days.',
                   features: [
-                    '10,000+ themed prompts',
-                    'Ultra-realistic 4K output',
-                    'Any ratio or format',
-                    'Human moderation included'
+                    '10 000 + themed prompts (selfie, casual, seasonal, profession, travel, etc.)',
+                    'Ultra-realistic 4K output, any ratio or format',
+                    'Human moderation for flawless consistency and brand safety'
                   ],
                   link: '/services/photo-shoots-generation',
-                  reverse: false
+                  reverse: false,
+                  buttonText: 'See how it works'
                 }
               ].map((service, index) => (
                 <div key={index} className="p-12 md:p-16">
@@ -179,7 +174,7 @@ export const Services: React.FC = () => {
                         to={service.link} 
                         className="bg-gray-900 text-white px-8 py-4 rounded-xl font-semibold hover:bg-purple-600 transition-colors duration-200 inline-flex items-center gap-2"
                       >
-                        Learn More
+                        {service.buttonText || 'Learn more'}
                         <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                           <path d="M9 18l6-6-6-6" />
                         </svg>
@@ -188,7 +183,7 @@ export const Services: React.FC = () => {
                     
                     {/* Visual */}
                     <div className={service.reverse ? 'lg:col-start-1' : ''}>
-                      {service.title === 'Dating Profile Generation' ? (
+                      {service.title === 'Dating Profiles Generation' ? (
                         <div className="rounded-3xl overflow-hidden min-h-80">
                           <img
                             src="/images/home/Swipe right.png"
@@ -196,7 +191,7 @@ export const Services: React.FC = () => {
                             className="w-full h-full object-cover"
                           />
                         </div>
-                      ) : service.title === 'AI Photo Shoot Generator' ? (
+                      ) : service.title === 'Photo Shoots Generation' ? (
                         <div className="rounded-3xl overflow-hidden min-h-80">
                           <img
                             src="/images/home/Photo Shoot.png"
@@ -286,12 +281,9 @@ export const Services: React.FC = () => {
               <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
                 Tell us your growth goal — we'll map the AI service stack that gets you there fastest.
               </p>
-              <div className="flex flex-wrap gap-6 justify-center">
-                <a href="mailto:info@zencreator.pro?subject=Consultation" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl">
+              <div className="flex justify-center">
+                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl">
                   Book a 15-Minute Consultation
-                </a>
-                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-transparent text-white border-2 border-white/30 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 hover:border-white/60 transition-all duration-200">
-                  Book a Demo
                 </a>
               </div>
             </div>
