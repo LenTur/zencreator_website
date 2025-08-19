@@ -106,10 +106,7 @@ export const PlatformSnapshot = () => {
           title: "Export & Share",
           description: "CSV, PDF or live link; schedule auto-reports for stakeholders."
         },
-        {
-          title: "Attribution Ready",
-          description: "GA4, Meta Pixel, TikTok Pixel & Shopify connectors tie posts to revenue."
-        }
+
       ],
       buttonText: "Open Analytics →",
       buttonLink: "/products/zencreator/analytics",

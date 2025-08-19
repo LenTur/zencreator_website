@@ -91,9 +91,9 @@ export const navigationMenu = {
         href: "/pricing", 
         description: "Choose the perfect plan for your needs."
     },
-    about: {
-        title: "About Us",
-        href: "/about-us",
-        description: "About ZenCreator — mission, values, global team."
-    }
+    // about: {
+    //     title: "About Us",
+    //     href: "/about-us",
+    //     description: "About ZenCreator — mission, values, global team."
+    // }
 };

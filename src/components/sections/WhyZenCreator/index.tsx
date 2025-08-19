@@ -25,7 +25,7 @@ export const WhyZenCreator = () => {
     {
       icon: <Lock className="w-6 h-6 text-purple-600" />,
       title: "Official integrations",
-      description: "Meta, X, YouTube, TikTok with token-health monitoring."
+      description: "Meta (Facebook, Instagram, Threads), X, YouTube, TikTok with token-health monitoring."
     },
     {
       icon: <TrendingUp className="w-6 h-6 text-purple-600" />,

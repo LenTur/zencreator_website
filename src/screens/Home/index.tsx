@@ -59,65 +59,65 @@ export const Home: React.FC = () => {
     { 
       name: 'Face Generation', 
       description: 'Generate realistic faces with AI technology.',
-      link: '/products/zencreator/content-creation/ai-face-generation',
-      tryLink: 'https://app.zencreator.pro/tools',
+      link: '/products/zencreator/content-creation/face-generation',
+      tryLink: 'https://app.zencreator.pro/',
       mockup: 'bg-gradient-to-br from-red-100 to-blue-100'
     },
     { 
       name: 'Face Swapping', 
       description: 'Swap faces in images with perfect AI precision.',
-      link: '/products/zencreator/content-creation/ai-face-swapping',
-      tryLink: 'https://app.zencreator.pro/tools',
+      link: '/products/zencreator/content-creation/face-swapping',
+      tryLink: 'https://app.zencreator.pro/',
       mockup: 'bg-gradient-to-br from-blue-100 to-gray-100'
     },
     { 
       name: 'Upscaling', 
       description: 'Enhance image quality and resolution with AI.',
-      link: '/products/zencreator/content-creation/ai-upscaling',
-      tryLink: 'https://app.zencreator.pro/tools',
+      link: '/products/zencreator/content-creation/upscaling',
+      tryLink: 'https://app.zencreator.pro/',
       mockup: 'bg-gradient-to-br from-green-100 to-teal-100',
       showBeforeAfter: true
     },
     { 
       name: 'Generation by Prompt', 
       description: 'Create images from text descriptions.',
-      link: '/products/zencreator/content-creation/ai-generation-prompt',
-      tryLink: 'https://app.zencreator.pro/tools',
+      link: '/products/zencreator/content-creation/generation-by-prompt',
+      tryLink: 'https://app.zencreator.pro/',
       mockup: 'bg-gradient-to-br from-purple-100 to-indigo-100'
     },
     { 
       name: 'Generation by Reference', 
       description: 'Generate images based on reference photos.',
-      link: '/products/zencreator/content-creation/ai-generation-reference',
-      tryLink: 'https://app.zencreator.pro/tools',
+      link: '/products/zencreator/content-creation/generation-by-reference',
+      tryLink: 'https://app.zencreator.pro/',
       mockup: 'bg-gradient-to-br from-yellow-100 to-orange-100'
     },
     { 
       name: 'Photo Shoot Generation', 
       description: 'Create professional photo shoots with AI.',
-      link: '/services/photo-shoots-generation',
-      tryLink: 'https://app.zencreator.pro/tools',
+      link: '/services/photo-shoot-generation',
+      tryLink: 'https://app.zencreator.pro/',
       mockup: 'bg-gradient-to-br from-pink-100 to-red-100'
     },
     { 
       name: 'Dating Profile Generation', 
       description: 'Generate attractive dating profiles automatically.',
-      link: '/services/dating-profiles-generation',
-      tryLink: 'https://app.zencreator.pro/tools',
+      link: '/services/dating-profile-generation',
+      tryLink: 'https://app.zencreator.pro/',
       mockup: 'bg-gradient-to-br from-rose-100 to-pink-100'
     },
     { 
       name: 'Video Generation', 
       description: 'Create stunning videos from text and images.',
       link: '/products/zencreator/content-creation/video-generation',
-      tryLink: 'https://app.zencreator.pro/tools',
+      tryLink: 'https://app.zencreator.pro/',
       mockup: 'bg-gradient-to-br from-indigo-100 to-purple-100'
     },
     { 
       name: 'Carousel Generation', 
       description: 'Generate engaging carousel posts for social media.',
       link: '/products/zencreator/content-creation/carousel-generation',
-      tryLink: 'https://app.zencreator.pro/tools',
+      tryLink: 'https://app.zencreator.pro/',
       mockup: 'bg-gradient-to-br from-teal-100 to-blue-100',
       showCarousel: true
     }
@@ -353,7 +353,7 @@ export const Home: React.FC = () => {
               ))}
           </div>
             <div className="text-center mt-12">
-              <Link to="/products/zencreator" className="inline-flex items-center gap-2 bg-white text-gray-900 hover:bg-purple-600 hover:text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200">
+              <Link to="/products/zencreator/content-creation" className="inline-flex items-center gap-2 bg-white text-gray-900 hover:bg-purple-600 hover:text-white px-8 py-4 rounded-xl font-semibold transition-all duration-200">
                 View All Tools
                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M7 17L17 7" />

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { ResponsiveImage } from '@/components/ui/ResponsiveImage';
 
@@ -44,7 +44,21 @@ export const SocialProof = () => {
 
   // Carousel state
   const [currentSlide, setCurrentSlide] = useState(0);
-  const imagesPerSlide = 4; // Show 4 images at once
+  const [isMobile, setIsMobile] = useState(false);
+  
+  // Check screen size
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+  
+  const imagesPerSlide = isMobile ? 1 : 4; // Show 1 image on mobile, 4 on desktop
   const totalSlides = Math.ceil(galleryImages.length / imagesPerSlide);
 
   const nextSlide = () => {
@@ -118,7 +132,7 @@ export const SocialProof = () => {
         </button>
 
         {/* Images Container */}
-        <div className="overflow-hidden px-16">
+        <div className="overflow-hidden px-4 md:px-16">
           <div 
             className="flex transition-transform duration-500 ease-out"
             style={{ 
@@ -126,17 +140,17 @@ export const SocialProof = () => {
             }}
           >
             {Array.from({ length: totalSlides }).map((_, slideIndex) => (
-              <div key={slideIndex} className="w-full flex-shrink-0 flex space-x-6 md:space-x-8 lg:space-x-10 justify-center">
+              <div key={slideIndex} className={`w-full flex-shrink-0 flex justify-center ${isMobile ? '' : 'space-x-6 md:space-x-8 lg:space-x-10'}`}>
                 {galleryImages
                   .slice(slideIndex * imagesPerSlide, (slideIndex + 1) * imagesPerSlide)
                   .map((src, idx) => (
-                    <div key={`${slideIndex}-${idx}`} className="w-56 h-72 md:w-64 md:h-80 lg:w-72 lg:h-96 bg-gray-100 rounded-xl overflow-hidden">
+                    <div key={`${slideIndex}-${idx}`} className={isMobile ? "w-64 h-80 bg-gray-100 rounded-xl overflow-hidden" : "w-56 h-72 md:w-64 md:h-80 lg:w-72 lg:h-96 bg-gray-100 rounded-xl overflow-hidden"}>
                       <ResponsiveImage 
                         src={src} 
                         alt={`Gallery ${slideIndex * imagesPerSlide + idx + 1}`} 
                         className="w-full h-full object-cover"
                         loading="lazy"
-                        sizes="(max-width: 768px) 256px, (max-width: 1024px) 288px, 320px"
+                        sizes={isMobile ? "256px" : "(max-width: 768px) 256px, (max-width: 1024px) 288px, 320px"}
                       />
                     </div>
                   ))}

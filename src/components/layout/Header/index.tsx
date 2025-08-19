@@ -91,7 +91,13 @@ const NavItem: React.FC<NavItemProps> = ({ item, isDark }) => {
             <div className="lg:hidden absolute top-full left-0 mt-2 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50 min-w-64">
               <div className="py-2">
                 <a href="/products/zencreator" onClick={closeMenu} className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors font-medium">ZenCreator</a>
+                <a href="/products/zencreator/content-creation" onClick={closeMenu} className="block px-4 py-2 pl-8 text-gray-700 hover:bg-gray-50">Content Creation</a>
+                <a href="/products/zencreator/publishing-hub" onClick={closeMenu} className="block px-4 py-2 pl-8 text-gray-700 hover:bg-gray-50">Publishing Hub</a>
+                <a href="/products/zencreator/analytics" onClick={closeMenu} className="block px-4 py-2 pl-8 text-gray-700 hover:bg-gray-50">Analytics & Insights</a>
+                <a href="/products/zencreator/account-management" onClick={closeMenu} className="block px-4 py-2 pl-8 text-gray-700 hover:bg-gray-50">Account Management</a>
                 <a href="/products/zencomfy" onClick={closeMenu} className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors font-medium">ZenComfy</a>
+                <a href="/products/zencomfy/comfy-ui-cloud" onClick={closeMenu} className="block px-4 py-2 pl-8 text-gray-700 hover:bg-gray-50">ComfyUI in the Cloud</a>
+                <a href="/products/zencomfy/workflow-as-app" onClick={closeMenu} className="block px-4 py-2 pl-8 text-gray-700 hover:bg-gray-50">Workflow as Web App</a>
               </div>
             </div>
           </>
@@ -126,7 +132,7 @@ const NavItem: React.FC<NavItemProps> = ({ item, isDark }) => {
             {/* Desktop Services Mega Menu */}
             <ServicesMegaMenu onClose={closeMenu} />
             
-            {/* Mobile Simple Menu for Services */}
+            {/* Mobile Simple Menu for Services - Only first level, immediately clickable */}
             <div className="lg:hidden absolute top-full left-0 mt-2 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden z-50 min-w-64">
               <div className="py-2">
                 <a href="/services/ai-influencers" onClick={closeMenu} className="block px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors font-medium">AI Influencers</a>
@@ -276,7 +282,6 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             {renderMobileItem(navigationMenu.products)}
             {renderMobileItem(navigationMenu.services)}
             {renderMobileItem(navigationMenu.pricing)}
-            {renderMobileItem(navigationMenu.about)}
           </div>
           
           <div className="border-t mt-4 pt-4 px-4 space-y-2">
@@ -348,7 +353,6 @@ export const Header = ({ forceDark = false }: { forceDark?: boolean }) => {
 
               <NavItem item={navigationMenu.services} isDark={isScrolled || forceDark} />
               <NavItem item={navigationMenu.pricing} isDark={isScrolled || forceDark} />
-              <NavItem item={navigationMenu.about} isDark={isScrolled || forceDark} />
             </div>
             
             {/* CTA Buttons */}

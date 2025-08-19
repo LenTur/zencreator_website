@@ -8,7 +8,7 @@ interface ServicesMenuProps {
 
 export const ServicesMenu: React.FC<ServicesMenuProps> = ({ onClose }) => {
   const root = navigationMenu.services;
-  const level1 = root.children || [];
+  const level1 = (root.children || []).filter((s) => s.title !== 'AI Influencers');
   const [active, setActive] = useState<MenuSection>(level1[0]);
 
   return (
@@ -46,19 +46,8 @@ export const ServicesMenu: React.FC<ServicesMenuProps> = ({ onClose }) => {
         ))}
       </div>
 
-      {/* Column 2: children of active service */}
-      <div style={{ width: '360px', flexDirection: 'column', gap: '12px', display: 'flex', overflowY: 'auto' }}>
-        {(active?.children || []).map((c) => (
-          <a
-            key={c.title}
-            href={c.href}
-            onClick={onClose}
-            className="flex items-center px-3 py-2 rounded-lg hover:bg-gray-50 hover:text-gray-900 transition-colors duration-200"
-          >
-            <span className="text-gray-900 font-medium">{c.title}</span>
-          </a>
-        ))}
-      </div>
+      {/* Column 2 removed per requirement (hide subsections) */}
+      <div style={{ width: '360px' }} />
     </div>
   );
 };

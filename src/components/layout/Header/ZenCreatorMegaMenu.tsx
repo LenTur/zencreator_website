@@ -25,9 +25,7 @@ export const ZenCreatorMegaMenu: React.FC<ZenCreatorMegaMenuProps> = ({ onClose 
           {/* Left Column - Content Creation */}
           <div className="w-[265px]">
             <div className="mb-4">
-              <a href="/products/zencreator/content-creation" onClick={onClose} className="block hover:opacity-80 transition-opacity">
-                <h4 className="text-base font-semibold text-black mb-4">Content Creation</h4>
-              </a>
+              <h4 className="text-base font-semibold text-black mb-4">Content Creation</h4>
             </div>
             
             <div className="space-y-4">
@@ -81,9 +79,7 @@ export const ZenCreatorMegaMenu: React.FC<ZenCreatorMegaMenuProps> = ({ onClose 
           {/* Middle Column - Publishing Hub */}
           <div className="w-[179px]">
             <div className="mb-4">
-              <a href="/products/zencreator/publishing-hub" onClick={onClose} className="block hover:opacity-80 transition-opacity">
-                <h4 className="text-base font-semibold text-black mb-4">Publishing Hub</h4>
-              </a>
+              <h4 className="text-base font-semibold text-black mb-4">Publishing Hub</h4>
             </div>
             
             <div className="space-y-4">

@@ -28,11 +28,7 @@ export const Cta = () => {
                 Start Free
               </Button>
             </a>
-            <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer">
-              <Button className="bg-white text-gray-900 hover:bg-gray-100 px-8 h-[50px] text-lg rounded-xl">
-                Contact Sales
-              </Button>
-            </a>
+
           </div>
         </div>
       </div>
