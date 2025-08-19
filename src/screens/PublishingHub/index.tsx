@@ -1,7 +1,6 @@
 import React from 'react';
 import { PageLayout } from '@/components/layout/PageLayout';
 import { Instagram, MessageSquare, Twitter, Facebook, Youtube, Music4 as TikTok, Shield, Lock, ShieldCheck, Ban, Scan, ClipboardCheck } from 'lucide-react';
-import { FAQAccordion } from '@/components/sections/FAQAccordion';
 
 export const PublishingHub: React.FC = () => {
   const whyItems = [
@@ -13,7 +12,7 @@ export const PublishingHub: React.FC = () => {
     {
       title: 'Smart Publish Windows',
       description:
-        'Define posting windows; Creator OS auto-slots the next free time and fills missing copy, hashtags, CTAs, and music.'
+        'Define posting windows; ZenCreator auto-slots the next free time and fills missing copy, hashtags, CTAs, and music.'
     },
     {
       title: 'Unified Calendar',
@@ -57,7 +56,7 @@ export const PublishingHub: React.FC = () => {
   ];
 
   const getChannelIcon = (title: string) => {
-    const cls = 'w-6 h-6 text-purple-600';
+    const cls = 'w-12 h-12 text-purple-600';
     if (title.toLowerCase().includes('instagram')) return <Instagram className={cls} />;
     if (title.toLowerCase().includes('threads')) return <MessageSquare className={cls} />;
     if (title.toLowerCase().includes('twitter') || title.includes('X (Twitter)')) return <Twitter className={cls} />;
@@ -73,7 +72,7 @@ export const PublishingHub: React.FC = () => {
     <PageLayout
       title="Publishing — From Asset to Audience in One Click"
       description={
-        'Every visual you create in Creator OS can go live on five major social networks without ever leaving the platform.'
+        'Every visual you create in ZenCreator can go live on five major social networks without ever leaving the platform.'
       }
     >
       {/* Hero */}
@@ -96,14 +95,11 @@ export const PublishingHub: React.FC = () => {
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
-                Every visual you create in Creator OS can go live on five major social networks without ever leaving the platform.
+                Every visual you create in ZenCreator can go live on five major social networks without ever leaving the platform.
               </p>
               <div className="flex justify-center gap-4">
-                <a href="/products/zencreator/publishing-hub/instagram" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl">
+                <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl">
                   Connect Your First Channel
-                </a>
-                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-transparent text-white border-2 border-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all duration-200">
-                  Book a Demo
                 </a>
               </div>
             </section>
@@ -112,7 +108,7 @@ export const PublishingHub: React.FC = () => {
       </div>
 
       {/* Why Teams Choose — advanced cards like WorkflowTemplates */}
-      <section className="py-[100px] bg-white">
+      <section className="py-[130px] bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 text-center">Why Teams Choose<br /> the Publishing Hub</h3>
@@ -134,6 +130,9 @@ export const PublishingHub: React.FC = () => {
                 </div>
               ))}
             </div>
+            <div className="text-center mt-8">
+              <p className="text-gray-600 font-medium">Draft → Manager Approval → Legal Sign-off workflow with full audit trail.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -147,15 +146,17 @@ export const PublishingHub: React.FC = () => {
               {channels.map(([title, desc, href]) => (
                 <div key={title as string} className="relative group">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
-                  <div className="relative p-7 bg-white/90 backdrop-blur-md rounded-3xl border border-white/20 shadow-xl transition-all duration-500 group-hover:scale-[1.02] group-hover:border-purple-200/50">
-                    <div className="flex items-center gap-3 mb-2">
+                  <div className="relative p-7 bg-white/90 backdrop-blur-md rounded-3xl border border-white/20 shadow-xl transition-all duration-500 group-hover:scale-[1.02] group-hover:border-purple-200/50 flex items-center gap-6">
+                    <div className="flex-shrink-0 flex items-center justify-center h-full">
                       {getChannelIcon(title as string)}
-                      <h4 className="text-lg font-bold text-gray-900 group-hover:text-purple-600 transition-colors">{title as string}</h4>
                     </div>
-                    <p className="text-gray-600 leading-relaxed">{desc as string}</p>
-                    <a href={href as string} onClick={(e)=>e.preventDefault()} className="mt-4 inline-flex items-center text-sm font-medium text-gray-400 cursor-not-allowed">
-                      Learn More →
-                    </a>
+                    <div className="flex-1">
+                      <h4 className="text-lg font-bold text-gray-900 group-hover:text-purple-600 transition-colors mb-2">{title as string}</h4>
+                      <p className="text-gray-600 leading-relaxed mb-4">{desc as string}</p>
+                      <a href={href as string} onClick={(e)=>e.preventDefault()} className="inline-flex items-center text-sm font-medium text-gray-400 cursor-not-allowed">
+                        Learn More →
+                      </a>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -165,21 +166,18 @@ export const PublishingHub: React.FC = () => {
         </div>
       </section>
 
-      {/* End-to-End Workflow — now 8 cards */}
+      {/* End-to-End Workflow — now 5 cards */}
       <section className="py-[100px] bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 text-center">End-to-End Workflow</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
               {[
                 ['Generate', 'Create images, videos or entire sets in the Content Creation suite.'],
-                ['Push to Publishing', 'One click moves assets (and metadata) into the Publishing queue.'],
                 ['Set Strategy', 'Pick channels, fill or auto-generate copy, choose Now / Schedule / Smart Publish.'],
-                ['Approve & Launch', 'Role-based sign-off; automatic posting with compliance checks.'],
-                ['Analyse & Iterate', 'Dashboards surface winners; recycle or boost in seconds.'],
-                ['Pick a Module', 'Choose Face Gen, Photo Shoot or Video.'],
-                ['Generate & Refine', 'Batch, review, approve.'],
-                ['Publish or Pipeline', 'Post to social or send downstream for more magic.'],
+                ['Push to Publishing', 'One click moves assets (and metadata) into the Publishing queue.'],
+                ['Approve & Launch', 'Role-based sign-off, then automatic posting with compliance checks.'],
+                ['Analyse & Iterate', 'Built-in dashboards surface winners; recycle or boost in seconds.'],
               ].map(([title, desc], i) => (
                 <div key={title as string} className="rounded-3xl p-6 border border-gray-200 bg-white shadow-md hover:shadow-lg transition-shadow duration-300">
                   <div className="text-purple-600 font-black mb-2">{String(i + 1).padStart(2,'0')}</div>
@@ -218,20 +216,16 @@ export const PublishingHub: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 text-center">Security & Compliance</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-3 gap-6">
               {[
-                ['OAuth Only', 'Revoke access anytime.', Shield, 'from-indigo-400 to-purple-400'],
-                ['Zero Retention', 'Tokens kept only in encrypted vaults.', Lock, 'from-emerald-400 to-teal-400'],
-                ['SOC‑2 + VPC', 'Enterprise-grade hosting, optional VPC peering.', ShieldCheck, 'from-sky-400 to-blue-400'],
-                ['Policy Filters', 'Banned keywords and over‑text checks before posting.', Ban, 'from-rose-400 to-pink-400'],
-                ['Risk Scanning', 'Copyright risk and nudity mismatch scanning.', Scan, 'from-violet-400 to-purple-500'],
-                ['Audit Trail', 'Role‑based approvals with full audit trail.', ClipboardCheck, 'from-amber-400 to-yellow-400'],
-              ].map(([title, desc, Icon, grad]) => (
-                <div key={title as string} className="bg-[#0F172A] rounded-3xl p-7 border border-white/10 shadow-xl text-white">
+                ['OAuth only; revoke access anytime.', Shield, 'from-indigo-400 to-purple-400'],
+                ['Zero retention of tokens outside encrypted vaults.', Lock, 'from-emerald-400 to-teal-400'],
+                ['SOC-2 hosting, optional VPC peering for enterprise.', ShieldCheck, 'from-sky-400 to-blue-400'],
+              ].map(([desc, Icon, grad]) => (
+                <div key={desc as string} className="bg-[#0F172A] rounded-3xl p-7 border border-white/10 shadow-xl text-white">
                   <div className={`w-10 h-10 rounded-2xl bg-gradient-to-br ${grad as string} bg-opacity-20 flex items-center justify-center mb-4`}> 
                     {Icon ? (() => { const C = Icon as any; return <C className="w-5 h-5 text-white" />; })() : null}
                   </div>
-                  <h4 className="text-lg font-bold mb-2">{title as string}</h4>
                   <p className="text-white/80 leading-relaxed">{desc as string}</p>
                 </div>
               ))}
@@ -240,36 +234,40 @@ export const PublishingHub: React.FC = () => {
         </div>
       </section>
 
-      {/* Unified FAQ with CTA inside same background */}
-      <FAQAccordion
-        cta={(
-          <section className="relative overflow-hidden">
-            <div className="container mx-auto px-4">
-              <div className="max-w-[1200px] mx-auto">
-                <div className="bg-[#0F172A] text-white rounded-3xl p-12 md:p-16 pt-[40px] text-center border border-white/10">
-                  <div className="inline-block bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
-                    Start in minutes
-                  </div>
-                  <h2 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">
-                    Ready to Replace Six Dashboards <br className="hidden sm:block" /> With One?
-                  </h2>
-                  <p className="text-white/80 text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
-                    Connect a channel and schedule your first Smart Publish in under two minutes.
-                  </p>
-                  <div className="flex flex-wrap gap-4 justify-center mb-2">
-                    <a href="/products/zencreator/publishing-hub/instagram" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors">Try Smart Publishing</a>
-                    <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-colors">Book a Demo</a>
-                    <a href="mailto:info@zencreator.pro?subject=Publishing%20Hub%20question" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-colors">Contact us</a>
-                  </div>
-                  
-                </div>
+      {/* Ready to Replace Six Dashboards With One? */}
+      <section className="py-[100px] bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-[1200px] mx-auto">
+            <div className="bg-[#0F172A] text-white rounded-3xl p-12 md:p-16 pt-[40px] text-center border border-white/10">
+              <div className="inline-block bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+                Start in minutes
+              </div>
+              <h2 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">
+                Ready to Replace Six Dashboards <br className="hidden sm:block" /> With One?
+              </h2>
+              <p className="text-white/80 text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed">
+                Connect a channel and schedule your first Smart Publish in under two minutes.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors">Try Smart Publishing</a>
+                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-colors">Book a Demo</a>
               </div>
             </div>
-          </section>
-        )}
-      />
+          </div>
+        </div>
+      </section>
 
-      {/* Final CTA removed (merged into FAQ background) */}
+      {/* Questions Contact Section */}
+      <section className="py-[100px] bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Questions?</h3>
+            <p className="text-gray-600 text-lg mb-6">
+              Email us at <a href="mailto:info@zencreator.pro" className="text-purple-600 hover:text-purple-700 font-semibold">info@zencreator.pro</a> — our team answers within a business day.
+            </p>
+          </div>
+        </div>
+      </section>
     </PageLayout>
   );
 };
