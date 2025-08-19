@@ -1,5 +1,5 @@
 import React from 'react';
-import { CreditCard, ShieldCheck, Rocket, Headset } from 'lucide-react';
+import { Folder, Hash, Bell, BarChart3, RotateCcw, Settings, Shield } from 'lucide-react';
 import { PageLayout } from '@/components/layout/PageLayout';
 import { FAQAccordion } from '@/components/sections/FAQAccordion';
 
@@ -32,7 +32,7 @@ export const AccountManagement: React.FC = () => {
                 From first face upload to daily KPI tracking, everything about your creators’ lives in one, searchable workspace.
               </p>
               <div className="flex justify-center">
-                <a href="/products/zencreator/account-management" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl">
+                <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl">
                   Add New Persona
                 </a>
               </div>
@@ -86,38 +86,38 @@ export const AccountManagement: React.FC = () => {
             <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 text-center">Key Features</h3>
             <div className="grid md:grid-cols-2 gap-6">
               {[
-                { icon: '📁', title: 'Centralised Persona Profiles', bullets: [
+                { icon: Folder, title: 'Centralised Persona Profiles', bullets: [
                   'Core Data: face ID, bio, pronouns, location, brand voice.',
                   'Gallery: every generated photo, video, Reel, or Story auto-tagged and searchable.',
                   'Post History: filter by network, date, status (scheduled / live / failed).',
                 ]},
-                { icon: '🏷️', title: 'Categories & Cohorts', bullets: [
+                { icon: Hash, title: 'Categories & Cohorts', bullets: [
                   'Tag personas (e.g., Fitness, Fashion, Gen Z).',
                   'Use tags to slice analytics or bulk-schedule themed campaigns.',
                 ]},
-                { icon: '🔔', title: 'Token Health & Alerts', bullets: [
+                { icon: Bell, title: 'Token Health & Alerts', bullets: [
                   'Real-time badge shows Active, Needs Attention, or Expired.',
                   'Email / Slack alert when a network requires re-login — click to refresh OAuth.',
                 ]},
-                { icon: '📊', title: 'KPI Dashboard', bullets: [
+                { icon: BarChart3, title: 'KPI Dashboard', bullets: [
                   'Snapshot cards: daily posts, success vs. fail, posts by format.',
-                  'Traffic-light colours flag who’s on target.',
+                  'Traffic-light colours flag who\'s on target.',
                 ]},
-                { icon: '🔁', title: 'Content Loop Integration', bullets: [
+                { icon: RotateCcw, title: 'Content Loop Integration', bullets: [
                   'One click from profile to Generate Content.',
                   'Direct push from Gallery to Publishing with persona metadata auto-injected.',
                 ]},
-                { icon: '🛠️', title: 'Bulk Actions', bullets: [
+                { icon: Settings, title: 'Bulk Actions', bullets: [
                   'Update bios, rotate profile pics, or refresh tokens for multiple personas at once.',
                   'CSV import/export for enterprise migrations.',
                 ]},
-                { icon: '🔒', title: 'Security & Roles', bullets: [
+                { icon: Shield, title: 'Security & Roles', bullets: [
                   'Workspace-level RBAC and audit log for every profile edit or token refresh.',
                 ]},
               ].map((card) => (
                 <div key={card.title} className="relative bg-[#0F172A] rounded-3xl p-8 border border-white/10 shadow-xl text-white">
-                  <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-xl mb-4">
-                    <span>{card.icon}</span>
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center mb-4">
+                    <card.icon className="w-6 h-6 text-white" />
                   </div>
                   <h4 className="text-2xl font-bold mb-3">{card.title}</h4>
                   <ul className="list-disc list-inside text-white/80 space-y-2">
@@ -144,36 +144,44 @@ export const AccountManagement: React.FC = () => {
               ))}
             </div>
             <div className="mt-10 flex justify-center gap-4">
-              <a href="/products/zencreator/account-management" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-colors">Add New Persona</a>
+              <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-colors">Add New Persona</a>
             </div>
           </section>
 
-          {/* Shared Advantages */}
-          <section className="py-[100px] bg-white">
-            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 text-center">Shared Advantages</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {([
-                ['Unified Billing','One invoice, usage broken down by product.', CreditCard],
-                ['SOC-2 Infrastructure','Same secure cloud backbone for both platforms.', ShieldCheck],
-                ['Rapid Roadmap','Monthly feature drops pushed automatically.', Rocket],
-                ['Dedicated Success Team','Onboarding, best‑practice workshops, 24×7 priority support on enterprise tiers.', Headset],
-              ] as const).map(([title, desc, Icon]) => (
-                <div key={title} className="bg-[#0F172A] rounded-3xl p-7 border border-white/10 shadow-xl text-white">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-100 to-indigo-100 flex items-center justify-center mb-4">
-                    <Icon className="w-5 h-5 text-purple-700" />
-                  </div>
-                  <h4 className="text-lg font-bold mb-2">{title}</h4>
-                  <p className="text-white/80 leading-relaxed">{desc}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+
 
         </div>
       </div>
 
       {/* FAQ alone */}
-      <FAQAccordion />
+      <FAQAccordion 
+        items={[
+          { 
+            question: 'How many personas can I create?', 
+            answer: 'Unlimited.' 
+          },
+          { 
+            question: 'What if a token expires during a scheduled post?', 
+            answer: 'ZenCreator retries, logs the fail, and notifies you to refresh credentials.' 
+          },
+          { 
+            question: 'Can I restrict who edits a persona?', 
+            answer: 'Yes — assign roles; only Managers or Admins can modify core data or tokens.' 
+          },
+          { 
+            question: 'Do categories affect analytics?', 
+            answer: 'Absolutely — filter dashboards by tag to benchmark categories side-by-side.' 
+          }
+        ]}
+        cta={(
+          <div className="text-center">
+            <p className="text-gray-600 mb-4">Still have questions?</p>
+            <a href="mailto:info@zencreator.pro?subject=Account%20Management%20Support" className="text-purple-600 hover:text-purple-700 font-medium">
+              Contact support →
+            </a>
+          </div>
+        )}
+      />
 
       {/* Separate Final CTA — full-width light gradient like FAQ */}
       <section className="py-[150px] bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
@@ -183,9 +191,8 @@ export const AccountManagement: React.FC = () => {
               <h3 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">Ready to tame your creator fleet?</h3>
               <p className="text-white/80 text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed"><strong>Spin up a new persona and see the control tower in action in under five minutes.</strong></p>
               <div className="flex flex-wrap gap-4 justify-center mb-2">
-                <a href="/products/zencreator/account-management" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors">Add New Persona</a>
+                <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors">Add New Persona</a>
                 <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-colors">Book a demo</a>
-                <a href="mailto:info@zencreator.pro?subject=Account%20Management%20question" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-colors">Contact us</a>
               </div>
             </div>
           </div>

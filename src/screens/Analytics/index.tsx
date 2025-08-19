@@ -1,5 +1,5 @@
 import React from 'react';
-import { CreditCard, ShieldCheck, Rocket, Headset } from 'lucide-react';
+import { CreditCard, ShieldCheck, Rocket, Headset, Zap, Brain, Hash, Shield } from 'lucide-react';
 import { PageLayout } from '@/components/layout/PageLayout';
 import { FAQAccordion } from '@/components/sections/FAQAccordion';
 
@@ -7,7 +7,7 @@ export const Analytics: React.FC = () => {
 	return (
 		<PageLayout
 			title="Analytics & Insights — One Truth for Every Channel"
-			description="From big-picture growth to frame-by-frame performance, Creator OS turns raw data into decisions you can act on."
+			description="From big-picture growth to frame-by-frame performance, ZenCreator turns raw data into decisions you can act on."
 		>
 			{/* Hero */}
 			<div className="container mx-auto px-4" style={{ paddingTop: '180px' }}>
@@ -29,11 +29,11 @@ export const Analytics: React.FC = () => {
 								</span>
 							</h1>
 							<p className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
-								From big-picture growth to frame-by-frame performance, Creator OS turns raw data into decisions you can act on.
+								From big-picture growth to frame-by-frame performance, ZenCreator turns raw data into decisions you can act on.
 							</p>
 							<div className="flex justify-center">
-								<a href="/products/zencreator" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl">
-									Try Creator OS
+								<a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl">
+									Try ZenCreator
 								</a>
 							</div>
 						</section>
@@ -82,7 +82,7 @@ export const Analytics: React.FC = () => {
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
 							{[
 								{ title: 'Secure API Pulls', desc: 'Official APIs fetch fresh data every 10 minutes.', img: '' },
-								{ title: 'Unified Taxonomy', desc: 'Creator OS normalises KPIs across platforms; “Engagement” means the same everywhere.', img: '' },
+								{ title: 'Unified Taxonomy', desc: 'ZenCreator normalises KPIs across platforms; "Engagement" means the same everywhere.', img: '' },
 								{ title: 'AI Insight Engine', desc: 'Flags spikes, drops, best-time windows and under-performing formats; surfaces next-step suggestions.', img: '' },
 								{ title: 'Dashboards & Alerts', desc: 'Drag-and-drop widgets; send Slack / email alerts when KPIs cross thresholds.', img: '' },
 								{ title: 'Export & Share', desc: 'CSV, PDF, or live link; schedule weekly or monthly reports automatically.', img: '' },
@@ -120,26 +120,26 @@ export const Analytics: React.FC = () => {
 						<h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 text-center">Key Features</h3>
 						<div className="grid md:grid-cols-2 gap-6">
 							{[
-								{ icon: '⚡', title: 'Granular to Global', bullets: [
-									'Toggle from “All Channels • Last 90 Days” to “This Reel • Last 24 h” in two clicks.',
+								{ icon: Zap, title: 'Granular to Global', bullets: [
+									'Toggle from "All Channels • Last 90 Days" to "This Reel • Last 24 h" in two clicks.',
 									'Save any filter combo as a reusable view.',
 								]},
-								{ icon: '🧠', title: 'AI Recommendations', bullets: [
+								{ icon: Brain, title: 'AI Recommendations', bullets: [
 									'Picks winning hooks, optimal posting windows, and repeat-worthy formats.',
 									'Suggests under-served audience segments based on hashtag & geo data.',
 								]},
-								{ icon: '🏷️', title: 'Campaign Tags & Filters', bullets: [
+								{ icon: Hash, title: 'Campaign Tags & Filters', bullets: [
 									'Group posts by campaign, product line, or creator.',
 									'Compare A/B variants at a glance.',
 								]},
-								{ icon: '🔒', title: 'Privacy & Security', bullets: [
+								{ icon: Shield, title: 'Privacy & Security', bullets: [
 									'OAuth tokens stored in encrypted vaults.',
 									'SOC-2 infrastructure; optional VPC peering for enterprise.',
 								]},
-							].map((card, idx) => (
+							].map((card) => (
 								<div key={card.title} className="relative bg-[#0F172A] rounded-3xl p-8 border border-white/10 shadow-xl text-white">
-									<div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-xl mb-4">
-										<span>{card.icon}</span>
+									<div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center mb-4">
+										<card.icon className="w-6 h-6 text-white" />
 									</div>
 									<h4 className="text-2xl font-bold mb-3">{card.title}</h4>
 									<ul className="list-disc list-inside text-white/80 space-y-2">
@@ -147,7 +147,6 @@ export const Analytics: React.FC = () => {
 											<li key={b}>{b}</li>
 										))}
 									</ul>
-									<div className="mt-4 text-purple-200 font-semibold">{String(idx+1).padStart(2,'0')}</div>
 								</div>
 							))}
 						</div>
@@ -165,7 +164,7 @@ export const Analytics: React.FC = () => {
 								</div>
 								<div className="flex gap-3 pt-6">
 									<a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors">Book a Demo</a>
-									<a href="/products/zencreator" className="border-2 border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-gray-900 transition-colors">Try Creator OS</a>
+									<a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white px-6 py-3 rounded-xl font-semibold hover:bg-white hover:text-gray-900 transition-colors">Try ZenCreator</a>
 								</div>
 							</div>
 
@@ -214,29 +213,47 @@ export const Analytics: React.FC = () => {
 									</div>
 								</div>
 								<h4 className="text-xl font-bold mb-2 text-gray-900">Segment Groups</h4>
-								<p className="text-gray-700">Cohorts (e.g., “Fitness”, “Gaming”, “Gen Z”) with side‑by‑side KPI averages. Spot leaders in seconds.</p>
+								<p className="text-gray-700">Cohorts (e.g., "Fitness", "Gaming", "Gen Z") with side‑by‑side KPI averages. Spot leaders in seconds.</p>
+							</div>
+						</div>
+
+						{/* Summary text after cards */}
+						<div className="mt-12 text-center max-w-4xl mx-auto">
+							<p className="text-lg text-gray-600 leading-relaxed mb-6">
+								Instant toggles let you jump from "Mila.AI on Instagram last 7 days" to "All 100 models • All channels • QTD" with two clicks. Every insight — AI recommendations, alerts, exports — works at *any* level you choose.
+							</p>
+							<div className="bg-gradient-to-r from-purple-100 to-indigo-100 rounded-2xl p-6 border border-purple-200">
+								<p className="text-lg font-semibold text-gray-900 leading-relaxed">
+									<strong>Result:</strong> One platform, crystal-clear answers—from an individual Reel to the collective impact of your entire influencer studio.
+								</p>
 							</div>
 						</div>
 					</section>
 
 					{/* Perfect For Teams */}
 					<section id="perfect-for" className="py-[100px] bg-white">
-						<h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 text-center">Shared Advantages</h3>
-						<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-							{([
-								['Unified Billing','One invoice, usage broken down by product.', CreditCard],
-								['SOC-2 Infrastructure','Same secure cloud backbone for both platforms.', ShieldCheck],
-								['Rapid Roadmap','Monthly feature drops pushed automatically.', Rocket],
-								['Dedicated Success Team','Onboarding, best‑practice workshops, 24×7 priority support on enterprise tiers.', Headset],
-							] as const).map(([title,desc,Icon]) => (
-								<div key={title} className="bg-[#0F172A] rounded-3xl p-7 border border-white/10 shadow-xl text-white">
-									<div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-100 to-indigo-100 flex items-center justify-center mb-4">
-										<Icon className="w-5 h-5 text-purple-700" />
-									</div>
-									<h4 className="text-lg font-bold mb-2">{title}</h4>
-									<p className="text-white/80 leading-relaxed">{desc}</p>
-								</div>
-							))}
+						<h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 text-center">Perfect For Teams That Need to…</h3>
+						<div className="max-w-4xl mx-auto space-y-6 mb-12">
+							<div className="flex items-start space-x-4">
+								<div className="flex-shrink-0 w-3 h-3 bg-purple-600 rounded-full mt-2"></div>
+								<p className="text-lg text-gray-700"><strong>Replace fractured spreadsheets</strong> with a single source of truth.</p>
+							</div>
+							<div className="flex items-start space-x-4">
+								<div className="flex-shrink-0 w-3 h-3 bg-purple-600 rounded-full mt-2"></div>
+								<p className="text-lg text-gray-700"><strong>Prove ROI</strong> to execs with conversion & revenue tie-ins.</p>
+							</div>
+							<div className="flex items-start space-x-4">
+								<div className="flex-shrink-0 w-3 h-3 bg-purple-600 rounded-full mt-2"></div>
+								<p className="text-lg text-gray-700"><strong>Iterate content quickly</strong> using real-time feedback loops and AI tips.</p>
+							</div>
+							<div className="flex items-start space-x-4">
+								<div className="flex-shrink-0 w-3 h-3 bg-purple-600 rounded-full mt-2"></div>
+								<p className="text-lg text-gray-700"><strong>Collaborate across roles</strong>—creatives, growth, and leadership see tailored views.</p>
+							</div>
+						</div>
+						<div className="flex justify-center gap-4">
+							<a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-colors">Try ZenCreator</a>
+							<a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border-2 border-black text-black px-8 py-4 rounded-xl font-semibold text-lg hover:bg-black hover:text-white transition-colors">Book a Demo</a>
 						</div>
 					</section>
 
@@ -249,19 +266,25 @@ export const Analytics: React.FC = () => {
 			items={[
 				{ question: 'How fresh is the data?', answer: 'API sync runs every 10 minutes; YouTube metrics every hour (API limit).' },
 			]}
+			cta={(
+				<div className="text-center">
+					<p className="text-gray-600 mb-4">Still have questions?</p>
+					<a href="mailto:info@zencreator.pro?subject=Analytics%20%26%20Insights%20Support" className="text-purple-600 hover:text-purple-700 font-medium">
+						Contact support →
+					</a>
+				</div>
+			)}
 		/>
 
 		{/* Separate CTA section — dark card on light gradient background */}
 		<section className="py-[150px] bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
 			<div className="max-w-6xl mx-auto px-4">
 				<div className="bg-[#0F172A] text-white rounded-3xl p-12 md:p-16 text-center border border-white/10 shadow-2xl">
-					<div className="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-bold mb-6 bg-white/10 border border-white/20">Start in minutes</div>
 					<h3 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">Ready to turn data into action—without another analytics tab?</h3>
 					<p className="text-white/80 mb-8 text-lg max-w-3xl mx-auto"><strong>Connect your channels and see insights populate in under five minutes.</strong></p>
 					<div className="flex flex-wrap gap-4 justify-center">
-						<a href="/products/zencreator" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors">Try Creator OS</a>
+						<a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors">Try ZenCreator</a>
 						<a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-colors">Book a Demo</a>
-						<a href="mailto:info@zencreator.pro?subject=Analytics%20question" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-colors">Contact us</a>
 					</div>
 				</div>
 			</div>
