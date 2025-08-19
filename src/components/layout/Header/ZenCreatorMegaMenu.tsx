@@ -31,50 +31,50 @@ export const ZenCreatorMegaMenu: React.FC<ZenCreatorMegaMenuProps> = ({ onClose 
             </div>
             
             <div className="space-y-4">
-              <div className="flex items-center gap-3 py-1.5 px-2 opacity-50 cursor-not-allowed">
-                <Sparkles className="w-6 h-6 text-gray-400" />
-                <span className="text-sm font-medium text-gray-400">FaceGenerator</span>
-              </div>
+              <a href="/products/zencreator/content-creation/ai-face-generation" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded-lg hover:bg-gray-50 transition-colors">
+                <Sparkles className="w-6 h-6 text-purple-400" />
+                <span className="text-sm font-medium text-black">FaceGenerator</span>
+              </a>
               
-              <div className="flex items-center gap-3 py-1.5 px-2 opacity-50 cursor-not-allowed">
-                <Image className="w-6 h-6 text-gray-400" />
-                <span className="text-sm font-medium text-gray-400">Face Swapping</span>
-              </div>
+              <a href="/products/zencreator/content-creation/ai-face-swapping" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded-lg hover:bg-gray-50 transition-colors">
+                <Image className="w-6 h-6 text-purple-400" />
+                <span className="text-sm font-medium text-black">Face Swapping</span>
+              </a>
               
-              <div className="flex items-center gap-3 py-1.5 px-2 opacity-50 cursor-not-allowed">
-                <ArrowUp className="w-6 h-6 text-gray-400" />
-                <span className="text-sm font-medium text-gray-400">Upscaling</span>
-              </div>
+              <a href="/products/zencreator/content-creation/ai-upscaling" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded-lg hover:bg-gray-50 transition-colors">
+                <ArrowUp className="w-6 h-6 text-purple-400" />
+                <span className="text-sm font-medium text-black">Upscaling</span>
+              </a>
               
-              <div className="flex items-center gap-3 py-1.5 px-2 opacity-50 cursor-not-allowed">
-                <MessageSquare className="w-6 h-6 text-gray-400" />
-                <span className="text-sm font-medium text-gray-400">Generation by Prompt</span>
-              </div>
+              <a href="/products/zencreator/content-creation/ai-generation-prompt" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded-lg hover:bg-gray-50 transition-colors">
+                <MessageSquare className="w-6 h-6 text-purple-400" />
+                <span className="text-sm font-medium text-black">Generation by Prompt</span>
+              </a>
               
-              <div className="flex items-center gap-3 py-1.5 px-2 opacity-50 cursor-not-allowed">
-                <Hash className="w-6 h-6 text-gray-400" />
-                <span className="text-sm font-medium text-gray-400">Generation by Reference</span>
-              </div>
+              <a href="/products/zencreator/content-creation/ai-generation-reference" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded-lg hover:bg-gray-50 transition-colors">
+                <Hash className="w-6 h-6 text-purple-400" />
+                <span className="text-sm font-medium text-black">Generation by Reference</span>
+              </a>
               
-              <div className="flex items-center gap-3 py-1.5 px-2 opacity-50 cursor-not-allowed">
-                <Hash className="w-6 h-6 text-gray-400" />
-                <span className="text-sm font-medium text-gray-400">Dating Profile Generation</span>
-              </div>
+              <a href="/products/zencreator/content-creation/dating-profiles" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded-lg hover:bg-gray-50 transition-colors">
+                <Hash className="w-6 h-6 text-purple-400" />
+                <span className="text-sm font-medium text-black">Dating Profile Generation</span>
+              </a>
               
-              <div className="flex items-center gap-3 py-1.5 px-2 opacity-50 cursor-not-allowed">
-                <Play className="w-6 h-6 text-gray-400" />
-                <span className="text-sm font-medium text-gray-400">Video Generation</span>
-              </div>
+              <a href="/products/zencreator/content-creation/video-generation" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded-lg hover:bg-gray-50 transition-colors">
+                <Play className="w-6 h-6 text-purple-400" />
+                <span className="text-sm font-medium text-black">Video Generation</span>
+              </a>
               
-              <div className="flex items-center gap-3 py-1.5 px-2 opacity-50 cursor-not-allowed">
-                <LayoutGrid className="w-6 h-6 text-gray-400" />
-                <span className="text-sm font-medium text-gray-400">Carousel Generation</span>
-              </div>
+              <a href="/products/zencreator/content-creation/carousel-generation" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded-lg hover:bg-gray-50 transition-colors">
+                <LayoutGrid className="w-6 h-6 text-purple-400" />
+                <span className="text-sm font-medium text-black">Carousel Generation</span>
+              </a>
               
-              <div className="flex items-center gap-3 py-1.5 px-2 opacity-50 cursor-not-allowed">
-                <Camera className="w-6 h-6 text-gray-400" />
-                <span className="text-sm font-medium text-gray-400">Photo Shoot Generation</span>
-              </div>
+              <a href="/products/zencreator/content-creation/photo-shoot" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded-lg hover:bg-gray-50 transition-colors">
+                <Camera className="w-6 h-6 text-purple-400" />
+                <span className="text-sm font-medium text-black">Photo Shoot Generation</span>
+              </a>
             </div>
           </div>
 
@@ -87,30 +87,30 @@ export const ZenCreatorMegaMenu: React.FC<ZenCreatorMegaMenuProps> = ({ onClose 
             </div>
             
             <div className="space-y-4">
-              <div className="flex items-center gap-3 py-1.5 px-2 opacity-50 cursor-not-allowed">
-                <Instagram className="w-6 h-6 text-gray-400" />
-                <span className="text-sm font-medium text-gray-400">on Instagram</span>
-              </div>
+              <a href="/products/zencreator/publishing-hub/instagram" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded-lg hover:bg-gray-50 transition-colors">
+                <Instagram className="w-6 h-6 text-purple-400" />
+                <span className="text-sm font-medium text-black">on Instagram</span>
+              </a>
               
-              <div className="flex items-center gap-3 py-1.5 px-2 opacity-50 cursor-not-allowed">
-                <MessageSquare className="w-6 h-6 text-gray-400" />
-                <span className="text-sm font-medium text-gray-400">on Threads</span>
-              </div>
+              <a href="/products/zencreator/publishing-hub/threads" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded-lg hover:bg-gray-50 transition-colors">
+                <MessageSquare className="w-6 h-6 text-purple-400" />
+                <span className="text-sm font-medium text-black">on Threads</span>
+              </a>
               
-              <div className="flex items-center gap-3 py-1.5 px-2 opacity-50 cursor-not-allowed">
-                <Twitter className="w-6 h-6 text-gray-400" />
-                <span className="text-sm font-medium text-gray-400">on Twitter (X)</span>
-              </div>
+              <a href="/products/zencreator/publishing-hub/twitter" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded-lg hover:bg-gray-50 transition-colors">
+                <Twitter className="w-6 h-6 text-purple-400" />
+                <span className="text-sm font-medium text-black">on Twitter (X)</span>
+              </a>
               
-              <div className="flex items-center gap-3 py-1.5 px-2 opacity-50 cursor-not-allowed">
-                <Facebook className="w-6 h-6 text-gray-400" />
-                <span className="text-sm font-medium text-gray-400">on Facebook</span>
-              </div>
+              <a href="/products/zencreator/publishing-hub/facebook" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded-lg hover:bg-gray-50 transition-colors">
+                <Facebook className="w-6 h-6 text-purple-400" />
+                <span className="text-sm font-medium text-black">on Facebook</span>
+              </a>
               
-              <div className="flex items-center gap-3 py-1.5 px-2 opacity-50 cursor-not-allowed">
-                <Youtube className="w-6 h-6 text-gray-400" />
-                <span className="text-sm font-medium text-gray-400">on YouTube</span>
-              </div>
+              <a href="/products/zencreator/publishing-hub/youtube" onClick={onClose} className="flex items-center gap-3 py-1.5 px-2 rounded-lg hover:bg-gray-50 transition-colors">
+                <Youtube className="w-6 h-6 text-purple-400" />
+                <span className="text-sm font-medium text-black">on YouTube</span>
+              </a>
             </div>
           </div>
 

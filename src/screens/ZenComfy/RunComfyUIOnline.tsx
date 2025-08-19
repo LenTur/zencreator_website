@@ -38,10 +38,22 @@ export const RunComfyUIOnline: React.FC = () => {
 
       <div className="container mx-auto px-4 pb-20">
         <div className="max-w-6xl mx-auto">
-          {/* Trusted by */}
-          <section className="py-[150px] bg-white text-center">
-            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">Trusted by 10,000+ creators worldwide</h3>
-            <p className="text-gray-700">• 10 000 + creators worldwide &emsp;• 4.9 / 5 satisfaction &emsp;• 50 k + deployed workflows &emsp;• 99.9 % uptime</p>
+          {/* Trusted by — dark metric cards */}
+          <section className="py-[150px] bg-white">
+            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-10 text-center">Trusted by 10,000+ creators worldwide</h3>
+            <div className="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              {[
+                ['10,000+', 'creators worldwide'],
+                ['4.9 / 5', 'satisfaction'],
+                ['50k+', 'deployed workflows'],
+                ['99.9 %', 'uptime'],
+              ].map(([num, label]) => (
+                <div key={label as string} className="bg-[#0F172A] text-white rounded-3xl p-8 border border-white/10 shadow-xl text-center">
+                  <div className="text-4xl md:text-5xl font-black mb-2">{num as string}</div>
+                  <div className="text-white/80">{label as string}</div>
+                </div>
+              ))}
+            </div>
           </section>
 
           {/* Unlock Full Power */}
@@ -118,7 +130,7 @@ export const RunComfyUIOnline: React.FC = () => {
         </div>
       </div>
 
-      {/* Unified FAQ with CTA inside */}
+      {/* Unified FAQ with CTA inside — add top padding and dark section background */}
       <FAQAccordion
         items={[
           { question: 'What is ComfyUI?', answer: 'ComfyUI is a node-based interface for Stable Diffusion and beyond (SD1.x, SDXL, SD3, Flux.1, AnimateDiff, ControlNet, SVD and many more). It lets you design granular image or video pipelines without writing code.' },
@@ -129,14 +141,14 @@ export const RunComfyUIOnline: React.FC = () => {
           { question: 'Is my data secure?', answer: 'We encrypt everything in transit and at rest. By default nothing is stored; persistent outputs are saved only to your connected bucket.' },
         ]}
         cta={(
-          <div className="max-w-3xl mx-auto text-center">
-            <h3 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">Ready to Create Without Limits?</h3>
-            <p className="text-gray-700 mb-8">Join thousands of artists, devs, and studios running ComfyUI at cloud scale.</p>
+          <section className="pt-10 bg-[#0F172A] text-white rounded-3xl p-12 md:p-16 text-center border border-white/10">
+            <h3 className="text-3xl md:text-5xl font-black text-white mb-4">Ready to Create Without Limits?</h3>
+            <p className="text-white/80 mb-8">Join thousands of artists, devs, and studios running ComfyUI at cloud scale.</p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-colors">Book a Demo</a>
-              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-colors">Talk to Sales</a>
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors">Book a Demo</a>
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-colors">Talk to Sales</a>
             </div>
-          </div>
+          </section>
         )}
       />
     </PageLayout>

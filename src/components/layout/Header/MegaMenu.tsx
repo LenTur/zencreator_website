@@ -96,10 +96,15 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({ onClose }) => {
               { title: 'Carousel Generation', href: '/products/zencreator/content-creation/carousel-generation' },
               { title: 'Photo Shoot Generation', href: '/products/zencreator/content-creation/photo-shoot' },
             ].map((item) => (
-              <div key={item.title} className="flex items-center gap-3 rounded-xl p-3 opacity-50 cursor-not-allowed">
+              <a
+                key={item.title}
+                href={item.href}
+                onClick={onClose}
+                className="flex items-center gap-3 rounded-xl p-3 hover:bg-gray-50 transition"
+              >
                 {getMenuIcon(item.title)}
-                <span className="text-gray-500 font-medium">{item.title}</span>
-              </div>
+                <span className="text-gray-900 font-medium">{item.title}</span>
+              </a>
             ))}
           </div>
         </div>
@@ -115,10 +120,15 @@ export const MegaMenu: React.FC<MegaMenuProps> = ({ onClose }) => {
               { title: 'on Facebook', href: '/products/zencreator/publishing-hub/facebook' },
               { title: 'on YouTube', href: '/products/zencreator/publishing-hub/youtube' },
             ].map((item) => (
-              <div key={item.title} className="flex items-center gap-3 rounded-xl p-3 opacity-50 cursor-not-allowed">
+              <a
+                key={item.title}
+                href={item.href}
+                onClick={onClose}
+                className="flex items-center gap-3 rounded-xl p-3 hover:bg-gray-50 transition"
+              >
                 {getMenuIcon(item.title)}
-                <span className="text-gray-500 font-medium">{item.title}</span>
-              </div>
+                <span className="text-gray-900 font-medium">{item.title}</span>
+              </a>
             ))}
           </div>
         </div>
