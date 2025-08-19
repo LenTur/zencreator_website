@@ -322,12 +322,14 @@ export const Home: React.FC = () => {
                   ) : tool.name === 'Video Generation' ? (
                     <div className="absolute inset-0 w-full h-full">
                       <video
-                        src="/images/home/tools/video.mp4"
+                        src="/images/home/tools/video.mp4?v=1"
                         className="w-full h-full object-cover"
                         autoPlay
                         loop
                         muted
                         playsInline
+                        preload="auto"
+                        controls={false}
                       />
                     </div>
                   ) : tool.name === 'Carousel Generation' ? (
