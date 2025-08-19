@@ -59,21 +59,21 @@ export const Home: React.FC = () => {
     { 
       name: 'Face Generation', 
       description: 'Generate realistic faces with AI technology.',
-      link: '/products/zencreator/content-creation/face-generation',
+      link: '/products/zencreator/content-creation/ai-face-generation',
       tryLink: 'https://app.zencreator.pro/',
       mockup: 'bg-gradient-to-br from-red-100 to-blue-100'
     },
     { 
       name: 'Face Swapping', 
       description: 'Swap faces in images with perfect AI precision.',
-      link: '/products/zencreator/content-creation/face-swapping',
+      link: '/products/zencreator/content-creation/ai-face-swapping',
       tryLink: 'https://app.zencreator.pro/',
       mockup: 'bg-gradient-to-br from-blue-100 to-gray-100'
     },
     { 
       name: 'Upscaling', 
       description: 'Enhance image quality and resolution with AI.',
-      link: '/products/zencreator/content-creation/upscaling',
+      link: '/products/zencreator/content-creation/ai-upscaling',
       tryLink: 'https://app.zencreator.pro/',
       mockup: 'bg-gradient-to-br from-green-100 to-teal-100',
       showBeforeAfter: true
@@ -81,28 +81,28 @@ export const Home: React.FC = () => {
     { 
       name: 'Generation by Prompt', 
       description: 'Create images from text descriptions.',
-      link: '/products/zencreator/content-creation/generation-by-prompt',
+      link: '/products/zencreator/content-creation/ai-generation-prompt',
       tryLink: 'https://app.zencreator.pro/',
       mockup: 'bg-gradient-to-br from-purple-100 to-indigo-100'
     },
     { 
       name: 'Generation by Reference', 
       description: 'Generate images based on reference photos.',
-      link: '/products/zencreator/content-creation/generation-by-reference',
+      link: '/products/zencreator/content-creation/ai-generation-reference',
       tryLink: 'https://app.zencreator.pro/',
       mockup: 'bg-gradient-to-br from-yellow-100 to-orange-100'
     },
     { 
       name: 'Photo Shoot Generation', 
       description: 'Create professional photo shoots with AI.',
-      link: '/services/photo-shoot-generation',
+      link: '/products/zencreator/content-creation/photo-shoot',
       tryLink: 'https://app.zencreator.pro/',
       mockup: 'bg-gradient-to-br from-pink-100 to-red-100'
     },
     { 
       name: 'Dating Profile Generation', 
       description: 'Generate attractive dating profiles automatically.',
-      link: '/services/dating-profile-generation',
+      link: '/services/dating-profiles-generation',
       tryLink: 'https://app.zencreator.pro/',
       mockup: 'bg-gradient-to-br from-rose-100 to-pink-100'
     },
