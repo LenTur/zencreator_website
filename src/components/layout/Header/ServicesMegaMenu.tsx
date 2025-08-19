@@ -39,7 +39,7 @@ export const ServicesMegaMenu: React.FC<ServicesMegaMenuProps> = ({ onClose }) =
         <div>
           <div className="text-xs font-semibold uppercase tracking-wide text-[#D8B4FE] mb-4">Get Started</div>
           <div className="space-y-3">
-            <a href="mailto:info@zencreator.pro?subject=Service Consultation" onClick={onClose} className="block rounded-xl p-4 bg-gray-900 text-white hover:bg-purple-600 transition">
+            <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" onClick={onClose} className="block rounded-xl p-4 bg-gray-900 text-white hover:bg-purple-600 transition">
               <div className="font-semibold mb-1">Book Consultation</div>
               <div className="text-gray-300 text-sm">15-minute strategy call</div>
             </a>
