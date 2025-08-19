@@ -174,8 +174,8 @@ export const PublishingHub: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
               {[
                 ['Generate', 'Create images, videos or entire sets in the Content Creation suite.'],
-                ['Set Strategy', 'Pick channels, fill or auto-generate copy, choose Now / Schedule / Smart Publish.'],
                 ['Push to Publishing', 'One click moves assets (and metadata) into the Publishing queue.'],
+                ['Set Strategy', 'Pick channels, fill or auto-generate copy, choose Now / Schedule / Smart Publish.'],
                 ['Approve & Launch', 'Role-based sign-off, then automatic posting with compliance checks.'],
                 ['Analyse & Iterate', 'Built-in dashboards surface winners; recycle or boost in seconds.'],
               ].map(([title, desc], i) => (
