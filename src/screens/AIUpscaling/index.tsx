@@ -1,7 +1,6 @@
 import React from 'react';
+import { Zap, CheckCircle, Settings, ArrowUp } from 'lucide-react';
 import { PageLayout } from '@/components/layout/PageLayout';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { FAQAccordion } from '@/components/sections/FAQAccordion';
 
 export const AIUpscaling: React.FC = () => {
   const faqData = [
@@ -23,34 +22,50 @@ export const AIUpscaling: React.FC = () => {
     },
     {
       question: "Can I batch-process folders?",
-      answer: "Yes — upload hundreds of photos; Creator OS handles queueing and retry logic automatically."
+      answer: "Yes — upload hundreds of photos; ZenCreator handles queueing and retry logic automatically."
     }
   ];
 
   return (
     <PageLayout
-      title="AI Image Upscale"
+      title="AI Upscaling — Four specialised models"
       description="Four specialised models — because one-size-fits-all upscalers don't exist."
     >
-      <div className="container mx-auto px-4 pb-20" style={{ paddingTop: '140px' }}>
+      {/* Hero */}
+      <div className="container mx-auto px-4" style={{ paddingTop: '180px' }}>
+        <div className="max-w-[1200px] mx-auto">
+          <div className="bg-[#0F172A] rounded-3xl border border-white/10 min-h-[60vh] flex items-center justify-center">
+            <section className="pt-24 pb-[40px] text-center text-white w-full px-6">
+              <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
+                AI Upscaling
+                <br />
+                <span
+                  style={{
+                    background: 'linear-gradient(135deg, #7BA1F8, #C084FC)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text'
+                  }}
+                  className="text-2xl md:text-4xl"
+                >
+                  Four specialised models
+                </span>
+              </h1>
+              <p className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
+                <strong>Four specialised models — because one-size-fits-all upscalers don't exist.</strong>
+              </p>
+              <div className="flex gap-4 justify-center">
+                <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl">
+                  Try Upscale
+                </a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 pb-20">
         <div className="max-w-6xl mx-auto">
-          {/* Hero */}
-          <section className="pt-24 pb-[40px] text-center">
-            <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-6 leading-tight">
-              AI Image Upscale
-            </h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
-              <strong>Four specialised models — because one-size-fits-all upscalers don't exist.</strong>
-            </p>
-            <div className="flex flex-wrap gap-6 justify-center">
-              <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-all duration-200">
-                Try Upscale
-              </a>
-            </div>
-            <p className="text-gray-500 mt-8 italic">
-              *(Interactive before/after carousel placeholder)*
-            </p>
-          </section>
 
           {/* How It Works */}
           <section className="mt-[150px]">
@@ -74,7 +89,7 @@ export const AIUpscaling: React.FC = () => {
                 <div className="text-4xl font-black text-purple-600 mb-6">3</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Launch & Download</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Click <strong>Upscale</strong> — process single shots or entire folders. Export, send to another Creator OS tool, or publish directly.
+                  Click <strong>Upscale</strong> — process single shots or entire folders. Export, send to another ZenCreator tool, or publish directly.
                 </p>
               </div>
             </div>
@@ -203,16 +218,23 @@ export const AIUpscaling: React.FC = () => {
             </div>
           </section>
 
-          {/* Final CTA */}
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">Ready to turn grainy pixels into crystal-clear assets?</h3>
-            <div className="flex gap-3">
-              <a href="/products/zencreator/content-creation/ai-upscaling" className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Try AI Upscaler</a>
-              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Book a demo</a>
-            </div>
-          </section>
         </div>
       </div>
+      
+      {/* Final CTA */}
+      <section className="py-[150px] bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-[1200px] mx-auto">
+            <div className="bg-[#0F172A] text-white rounded-3xl p-12 md:p-16 text-center border border-white/10">
+              <h3 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">Ready to turn grainy pixels into crystal-clear assets?</h3>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors">Try AI Upscaler</a>
+                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-colors">Book a demo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </PageLayout>
   );
 };
