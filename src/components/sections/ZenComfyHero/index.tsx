@@ -19,8 +19,8 @@ export const ZenComfyHero = () => {
       </p>
       
       <div className="flex flex-wrap gap-6 justify-center">
-        <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-all duration-200 shadow-lg hover:shadow-xl">
-          Start Free
+        <a href="mailto:info@zencreator.pro?subject=ZenComfy%20Sales%20Inquiry" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-all duration-200 shadow-lg hover:shadow-xl">
+          Talk to Sales
         </a>
         <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 border-2 border-gray-300 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-purple-50 hover:border-purple-400 hover:text-purple-900 transition-all duration-200">
           Book a Demo

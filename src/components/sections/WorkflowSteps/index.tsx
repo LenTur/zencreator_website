@@ -1,14 +1,19 @@
+import { Upload, Settings, Rocket } from 'lucide-react';
+
 export const WorkflowSteps = () => {
   const steps = [
     {
+      icon: <Upload className="w-8 h-8 text-purple-600" />,
       title: 'Import or Create',
       description: 'Drag-and-drop an existing workflow or build in the visual editor.'
     },
     {
+      icon: <Settings className="w-8 h-8 text-purple-600" />,
       title: 'Select Hardware',
       description: 'Pick L4, A100 80 GB, H100 or let Auto-GPU choose.'
     },
     {
+      icon: <Rocket className="w-8 h-8 text-purple-600" />,
       title: 'Deploy',
       description: 'Run instantly or publish as a branded web app for clients.'
     }
@@ -24,37 +29,27 @@ export const WorkflowSteps = () => {
             </h2>
           </div>
           
-          {/* Steps in Services Style */}
-          <div className="flex flex-col gap-[60px]">
+          {/* 3 Cards in 1 Row */}
+          <div className="grid md:grid-cols-3 gap-8">
             {steps.map((step, index) => (
-              <div key={index} className="p-12 md:p-16">
-                <div className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
-                  {/* Content */}
-                  <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className="w-12 h-12 rounded-full bg-purple-600 text-white flex items-center justify-center font-bold text-xl">
-                        {index + 1}
-                      </div>
-                      <h3 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight">{step.title}</h3>
-                    </div>
-                    <p className="text-gray-600 text-lg leading-relaxed">{step.description}</p>
-                  </div>
-                  
-                  {/* Visual */}
-                  <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
-                    <div className="bg-gradient-to-br from-blue-400 to-purple-500 rounded-3xl p-8 min-h-80 flex items-center justify-center">
-                      <div className="bg-white/20 backdrop-blur-sm rounded-xl p-6 w-full max-w-sm">
-                        <div className="text-center">
-                          <div className="bg-white rounded-lg p-4 mb-4">
-                            <div className="text-gray-900 font-semibold">Step {index + 1}</div>
-                            <div className="text-sm text-gray-600">{step.title}</div>
-                          </div>
-                          <div className="text-white font-medium">Process Preview</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              <div key={index} className="bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-lg hover:shadow-xl transition-all duration-300 group p-8 text-center">
+                {/* Icon */}
+                <div className="flex items-center justify-center w-16 h-16 rounded-2xl bg-purple-100 group-hover:bg-purple-200 transition-colors duration-300 mx-auto mb-6">
+                  {step.icon}
                 </div>
+                
+                {/* Step Number */}
+                <div className="w-8 h-8 rounded-full bg-purple-600 text-white flex items-center justify-center font-bold text-sm mx-auto mb-4">
+                  {index + 1}
+                </div>
+                
+                {/* Content */}
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors duration-200">
+                  {step.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {step.description}
+                </p>
               </div>
             ))}
           </div>

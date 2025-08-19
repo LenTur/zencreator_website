@@ -41,6 +41,37 @@ export const ZenComfy: React.FC = () => {
           </div>
 
           <div className="flex flex-col">
+            {/* Trusted by Section */}
+            <div className="mt-[150px]">
+              <section className="py-16">
+                <div className="container mx-auto px-4">
+                  <div className="max-w-6xl mx-auto">
+                    <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-12 text-center">
+                      Trusted by 10,000+ creators worldwide
+                    </h2>
+                    <div className="grid grid-cols-4 gap-6">
+                      <div className="bg-ink-900 rounded-3xl p-8 text-center">
+                        <div className="text-3xl md:text-4xl font-black text-white mb-2">10,000+</div>
+                        <div className="text-white/80 text-sm">creators worldwide</div>
+                      </div>
+                      <div className="bg-ink-900 rounded-3xl p-8 text-center">
+                        <div className="text-3xl md:text-4xl font-black text-white mb-2">4.9/5</div>
+                        <div className="text-white/80 text-sm">satisfaction</div>
+                      </div>
+                      <div className="bg-ink-900 rounded-3xl p-8 text-center">
+                        <div className="text-3xl md:text-4xl font-black text-white mb-2">50K+</div>
+                        <div className="text-white/80 text-sm">deployed workflows</div>
+                      </div>
+                      <div className="bg-ink-900 rounded-3xl p-8 text-center">
+                        <div className="text-3xl md:text-4xl font-black text-white mb-2">99.9%</div>
+                        <div className="text-white/80 text-sm">uptime</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+
             {/* New structure like ZenCreator */}
             <div className="mt-[150px]">
               <WhyZenComfy />
@@ -58,8 +89,68 @@ export const ZenComfy: React.FC = () => {
               <WorkflowTemplates />
             </div>
             
+            {/* Secure & Scalable by Design */}
             <div className="mt-[150px]">
-              <FAQAccordion />
+              <section className="py-24">
+                <div className="container mx-auto px-4">
+                  <div className="max-w-6xl mx-auto">
+                    <div className="text-center mb-16">
+                      <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-8">
+                        Secure & Scalable by Design
+                      </h2>
+                    </div>
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-lg p-8">
+                        <h3 className="text-xl font-bold text-gray-900 mb-4">Serverless autoscaling</h3>
+                        <p className="text-gray-600 leading-relaxed">Handles 1 to 1 000 parallel runs without queuing.</p>
+                      </div>
+                      <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-lg p-8">
+                        <h3 className="text-xl font-bold text-gray-900 mb-4">Custom hardware tiers</h3>
+                        <p className="text-gray-600 leading-relaxed">Swap GPUs on the fly to balance cost and VRAM.</p>
+                      </div>
+                      <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-lg p-8">
+                        <h3 className="text-xl font-bold text-gray-900 mb-4">Consistent environments</h3>
+                        <p className="text-gray-600 leading-relaxed">Version-locked containers prevent node conflicts.</p>
+                      </div>
+                      <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-gray-200/50 shadow-lg p-8">
+                        <h3 className="text-xl font-bold text-gray-900 mb-4">SSO & RBAC</h3>
+                        <p className="text-gray-600 leading-relaxed">Google, Microsoft 365, SAML 2.0; fine-grained roles for teams.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            
+            <div className="mt-[150px]">
+              <FAQAccordion 
+                items={[
+                  { 
+                    question: 'Do I need to install anything locally?', 
+                    answer: 'No — just open a browser. All compute runs in ZenComfy\'s cloud.' 
+                  },
+                  { 
+                    question: 'How is pricing calculated?', 
+                    answer: 'Per-second GPU runtime plus optional persistent storage. No charges while editing graphs.' 
+                  },
+                  { 
+                    question: 'Can I keep models private?', 
+                    answer: 'Yes. Upload to a private bucket or let ZenComfy host them in an encrypted workspace.' 
+                  },
+                  { 
+                    question: 'Can I expose only certain sliders to end users?', 
+                    answer: 'Absolutely. The Web App builder lets you pick which parameters appear in the UI.' 
+                  }
+                ]}
+                cta={(
+                  <div className="text-center">
+                    <p className="text-gray-600 mb-4">More questions?</p>
+                    <a href="mailto:info@zencreator.pro?subject=ZenComfy%20Support" className="text-purple-600 hover:text-purple-700 font-medium">
+                      Contact Support →
+                    </a>
+                  </div>
+                )}
+              />
             </div>
             
             {/* Final CTA */}
@@ -71,14 +162,11 @@ export const ZenComfy: React.FC = () => {
                       Ready to Create Without Limits?
                     </h3>
                     <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-                      Build, run, and deploy ComfyUI workflows at cloud scale — no setup, no DevOps, no wasted spend.
+                      Join thousands of artists, studios and enterprises who ship faster with ZenComfy.
                     </p>
                     <div className="flex flex-wrap gap-6 justify-center">
                       <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-200">
                         Book a Demo
-                      </a>
-                      <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-gray-900 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-all duration-200">
-                        Try ZenComfy
                       </a>
                     </div>
                   </div>

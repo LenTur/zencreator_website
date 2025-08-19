@@ -70,32 +70,11 @@ export const PlatformFeatures = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-8">
-            Two Ways to Ship
+            Two Ways to Ship — One Unified Platform
           </h2>
           <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed">
-            One unified platform for ComfyUI workflows and production apps.
+            Build in ComfyUI Cloud, deploy as production apps.
           </p>
-        </div>
-
-        {/* Flow Schema with Equal Height Cards */}
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-6 mb-16">
-          {/* ComfyUI Cloud */}
-          <div className="w-full lg:w-48 h-24 p-4 text-center rounded-2xl bg-purple-600/20 border border-purple-400/30 text-white flex items-center justify-center">
-            <span className="font-medium">ComfyUI Cloud</span>
-          </div>
-
-          {/* Arrow */}
-          <div className="hidden lg:flex items-center">
-            <div className="flex flex-col items-center">
-              <div className="text-white text-lg">→</div>
-              <div className="text-white/60 text-xs mt-1 text-center">deploy as</div>
-            </div>
-          </div>
-
-          {/* Web App */}
-          <div className="w-full lg:w-48 h-24 p-4 text-center rounded-2xl bg-purple-600/20 border border-purple-400/30 text-white flex items-center justify-center">
-            <span className="font-medium">Web App</span>
-          </div>
         </div>
 
         {/* All Features - Sequential Display */}
