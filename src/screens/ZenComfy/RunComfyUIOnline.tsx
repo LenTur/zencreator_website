@@ -30,7 +30,6 @@ export const RunComfyUIOnline: React.FC = () => {
                   Talk to Sales
                 </a>
               </div>
-              <p className="text-white/70 mt-10">(Embedded: live ComfyUI graph running in browser on ZenComfy GPU)</p>
             </section>
           </div>
         </div>
@@ -100,6 +99,15 @@ export const RunComfyUIOnline: React.FC = () => {
                 </div>
               ))}
             </div>
+            
+            {/* Highlighted phrase after template cards */}
+            <div className="mt-12 text-center">
+              <div className="bg-gradient-to-r from-purple-100 to-indigo-100 rounded-2xl p-6 border border-purple-200 max-w-4xl mx-auto">
+                <p className="text-lg font-semibold text-gray-900 leading-relaxed">
+                  <strong>Zero downloads. Zero config. Just click Deploy.</strong>
+                </p>
+              </div>
+            </div>
           </section>
 
           {/* Built for Teams & Enterprises */}
@@ -109,7 +117,6 @@ export const RunComfyUIOnline: React.FC = () => {
               {[
                 ['Single Workspace', 'Central hub for workflows, models and usage stats.'],
                 ['Hardware Flexibility', 'From cost-efficient L4 to 144 GB B200s. Swap anytime.'],
-                ['Instant Scale', 'Serverless fleet auto-matches demand—no DevOps.'],
                 ['Instant Scale', 'Serverless fleet auto-matches demand—no DevOps.'],
                 ['Custom UI Layers', 'Expose only the sliders your users need; hide the rest.'],
                 ['SSO & RBAC', 'SAML 2.0, Google & Microsoft 365 logins; fine-grained roles.'],
@@ -136,11 +143,20 @@ export const RunComfyUIOnline: React.FC = () => {
           { question: 'What is ComfyUI?', answer: 'ComfyUI is a node-based interface for Stable Diffusion and beyond (SD1.x, SDXL, SD3, Flux.1, AnimateDiff, ControlNet, SVD and many more). It lets you design granular image or video pipelines without writing code.' },
           { question: 'Do I need a local GPU to use ZenComfy?', answer: 'No. All compute happens on ZenComfy’s cloud GPUs. You only need a browser.' },
           { question: 'Can I upload my own models, LoRAs or checkpoints?', answer: 'Yes — upload from your device or pull directly from Civitai, Hugging Face, Google Drive, S3, etc. They remain in your private storage between sessions.' },
-          { question: 'Can I install custom nodes or Python dependencies?', answer: 'Absolutely. Use the built-in ComfyUI Manager or upload a requirements.txt. Each workspace is containerised and isolated.' },
+          { question: 'Can I install custom nodes or Python dependencies?', answer: 'Absolutely. Use the built-in ComfyUI Manager or upload a `requirements.txt`. Each workspace is containerised and isolated.' },
           { question: 'How is billing calculated?', answer: 'Per-second GPU runtime plus optional persistent storage. No charges while you edit graphs or when instances are idle.' },
           { question: 'Is my data secure?', answer: 'We encrypt everything in transit and at rest. By default nothing is stored; persistent outputs are saved only to your connected bucket.' },
         ]}
         cta={(
+          <div>
+            {/* Contact Support */}
+            <div className="text-center mb-8">
+              <p className="text-gray-600 mb-4">More questions?</p>
+              <a href="mailto:info@zencreator.pro?subject=ComfyUI%20Cloud%20Support" className="text-purple-600 hover:text-purple-700 font-medium">
+                Contact Support →
+              </a>
+            </div>
+            {/* CTA Section */}
           <section className="pt-10 bg-[#0F172A] text-white rounded-3xl p-12 md:p-16 text-center border border-white/10">
             <h3 className="text-3xl md:text-5xl font-black text-white mb-4">Ready to Create Without Limits?</h3>
             <p className="text-white/80 mb-8">Join thousands of artists, devs, and studios running ComfyUI at cloud scale.</p>
@@ -149,6 +165,7 @@ export const RunComfyUIOnline: React.FC = () => {
               <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-colors">Talk to Sales</a>
             </div>
           </section>
+          </div>
         )}
       />
     </PageLayout>
