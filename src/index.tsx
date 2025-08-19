@@ -1,11 +1,13 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ScrollToTop } from "./components/layout/ScrollToTop";
 import { Home, MacbookAir, Products, CreatorOS as ZenCreator, ZenComfy, Services, Technologies, Pricing, ContentCreationSuite, PublishingHub, PublishingInstagram, PublishingThreads, PublishingTwitter, PublishingFacebook, PublishingYouTube, Analytics, AccountManagement, RunComfyUIOnline, WorkflowAsWebApp, AIFaceGeneration, AIFaceSwapping, AIUpscaling, AIGenerationPrompt, AIGenerationReference, AIVideo, AICarousel, DatingProfilesService, PhotoShootsService, FullFunnelMarketing, PerformanceMarketing, ExperientialMarketing, CreativeProjects, BrandAmbassador, AIInfluencers, AboutUs } from "./screens";
 
 createRoot(document.getElementById("app") as HTMLElement).render(
   <StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
