@@ -105,13 +105,36 @@ export const Products = () => {
                 </div>
                 
                 {/* Right side - Visual */}
-                <div className="lg:col-span-3 bg-gradient-to-br from-teal-400 to-blue-500 rounded-3xl p-4 min-h-[500px] flex items-center justify-center">
-                  <div className="bg-white/20 backdrop-blur-sm rounded-xl p-6 w-full max-w-lg text-center">
-                    <div className="bg-white rounded-lg p-4 mb-4">
-                      <div className="text-gray-900 font-semibold">{creatorModules[activeModule].title}</div>
-                      <div className="text-sm text-gray-600">Preview Coming Soon</div>
-                    </div>
-                    <div className="text-white font-medium">{creatorModules[activeModule].visual}</div>
+                <div className="lg:col-span-3 bg-white rounded-3xl p-4 min-h-[500px] flex items-center justify-center">
+                  <div className="w-full h-full rounded-2xl overflow-hidden">
+                    {activeModule === 'creator-hub' && (
+                      <img 
+                        src="/CreatorHub.png" 
+                        alt="Creator Hub Interface" 
+                        className="w-full h-full object-cover rounded-2xl"
+                      />
+                    )}
+                    {activeModule === 'publishing-hub' && (
+                      <img 
+                        src="/PublishingHub.png" 
+                        alt="Publishing Hub Interface" 
+                        className="w-full h-full object-cover rounded-2xl"
+                      />
+                    )}
+                    {activeModule === 'analytics-insights' && (
+                      <img 
+                        src="/Analytics & Insights.png" 
+                        alt="Analytics & Insights Interface" 
+                        className="w-full h-full object-cover rounded-2xl"
+                      />
+                    )}
+                    {activeModule === 'account-management' && (
+                      <img 
+                        src="/AccountManagement.png" 
+                        alt="Account Management Interface" 
+                        className="w-full h-full object-cover rounded-2xl"
+                      />
+                    )}
                   </div>
                 </div>
               </div>
@@ -164,13 +187,33 @@ export const Products = () => {
                 </div>
                 
                 {/* Right side - Visual */}
-                <div className="lg:col-span-3 bg-gradient-to-br from-purple-400 to-pink-500 rounded-3xl p-4 min-h-[500px] flex items-center justify-center">
-                  <div className="bg-white/20 backdrop-blur-sm rounded-xl p-6 w-full max-w-lg text-center">
-                    <div className="bg-white rounded-lg p-4 mb-4">
-                      <div className="text-gray-900 font-semibold">{zenComfyModules[activeZenModule].title}</div>
-                      <div className="text-sm text-gray-600">Preview Coming Soon</div>
-                    </div>
-                    <div className="text-white font-medium">{zenComfyModules[activeZenModule].visual}</div>
+                <div className="lg:col-span-3 bg-white rounded-3xl p-4 min-h-[500px] flex items-center justify-center">
+                  <div className="w-full h-full rounded-2xl overflow-hidden">
+                    {activeZenModule === 'comfyui-cloud' && (
+                      <img 
+                        src="/images/zencomfy/ComfyUI in the Cloud.png" 
+                        alt="ComfyUI in the Cloud Interface" 
+                        className="w-full h-full object-cover rounded-2xl"
+                      />
+                    )}
+                    {activeZenModule === 'workflow-webapp' && (
+                      <img 
+                        src="/images/zencomfy/ComfyUI in the Cloud2.png" 
+                        alt="Workflow Web App Interface" 
+                        className="w-full h-full object-cover rounded-2xl"
+                      />
+                    )}
+                    {(activeZenModule === 'serverless-autoscale' || activeZenModule === 'private-models') && (
+                      <div className="bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl p-6 w-full h-full flex items-center justify-center">
+                        <div className="bg-white/20 backdrop-blur-sm rounded-xl p-6 w-full max-w-lg text-center">
+                          <div className="bg-white rounded-lg p-4 mb-4">
+                            <div className="text-gray-900 font-semibold">{zenComfyModules[activeZenModule].title}</div>
+                            <div className="text-sm text-gray-600">Preview Coming Soon</div>
+                          </div>
+                          <div className="text-white font-medium">{zenComfyModules[activeZenModule].visual}</div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -353,9 +396,6 @@ export const Products = () => {
               <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-purple-600 hover:text-white transition-colors duration-200">
                 Get ZenCreator
               </a>
-              <Link to="/products/zencomfy" className="border-2 border-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 transition-colors duration-200">
-                Get ZenComfy
-              </Link>
               <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border-2 border-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 transition-colors duration-200">
                 Request Custom Quote
               </a>
