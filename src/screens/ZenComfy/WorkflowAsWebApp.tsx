@@ -38,9 +38,8 @@ export const WorkflowAsWebApp: React.FC = () => {
               </p>
               <div className="flex gap-4 justify-center mt-10">
                 <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-2xl">Book a Demo</a>
-                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all duration-200">Talk to Sales</a>
+                <a href="mailto:info@zencreator.pro?subject=ComfyUI%20Workflow%20Web%20App%20Inquiry" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all duration-200">Talk to Sales</a>
               </div>
-              <p className="text-white/70 mt-10">(Illustration: live app interface)</p>
             </section>
           </div>
         </div>
@@ -49,9 +48,21 @@ export const WorkflowAsWebApp: React.FC = () => {
       <div className="container mx-auto px-4 pb-20">
         <div className="max-w-6xl mx-auto">
           {/* Trusted by */}
-          <section className="py-[150px] bg-white text-center">
-            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">Trusted by 10,000+ creators worldwide</h3>
-            <p className="text-gray-700">• 10 000 + creators worldwide &emsp;• 4.9 / 5 satisfaction &emsp;• 50 k + deployed workflows &emsp;• 99.9 % uptime</p>
+          <section className="py-[150px] bg-white">
+            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-10 text-center">Trusted by 10,000+ creators worldwide</h3>
+            <div className="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              {[
+                ['10,000+', 'creators worldwide'],
+                ['4.9/5', 'satisfaction'],
+                ['50K+', 'deployed workflows'],
+                ['99.9%', 'uptime'],
+              ].map(([num, label]) => (
+                <div key={label as string} className="bg-[#0F172A] text-white rounded-3xl p-8 border border-white/10 shadow-xl text-center">
+                  <div className="text-4xl md:text-5xl font-black mb-2">{num as string}</div>
+                  <div className="text-white/80">{label as string}</div>
+                </div>
+              ))}
+            </div>
           </section>
 
           {/* Why ZenComfy */}
@@ -73,21 +84,37 @@ export const WorkflowAsWebApp: React.FC = () => {
           {/* 3 Steps */}
           <section className="py-[150px] bg-white">
             <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">From Prototype to Production in 3 Steps</h3>
-            <ol className="list-decimal pl-6 space-y-3 text-gray-800 max-w-4xl mx-auto">
-              <li><strong>Upload JSON</strong> – Drag-and-drop or paste your ComfyUI workflow.</li>
-              <li><strong>Design App</strong> – Select inputs, set defaults, add tooltips, brand the UI.</li>
-              <li><strong>Share & Scale</strong> – Send a link; ZenComfy allocates GPUs instantly as traffic grows.</li>
-            </ol>
-            <p className="text-gray-500 text-center mt-6">(Illustration: side-by-side of JSON import → live app interface)</p>
+            <div className="grid md:grid-cols-3 gap-6 items-stretch">
+              {[
+                ['Upload JSON', 'Drag-and-drop or paste your ComfyUI workflow.'],
+                ['Design App', 'Select inputs, set defaults, add tooltips, brand the UI.'],
+                ['Share & Scale', 'Send a link; ZenComfy allocates GPUs instantly as traffic grows.'],
+              ].map(([title, desc], index) => (
+                <div key={title as string} className="relative group h-full">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
+                  <div className="relative bg-white/90 backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] group-hover:border-purple-200/50 h-full">
+                    <div className="w-10 h-10 rounded-full bg-purple-600 text-white flex items-center justify-center font-bold mb-4">{index + 1}</div>
+                    <h4 className="text-xl font-bold text-gray-900 mb-2">{title as string}</h4>
+                    <p className="text-gray-700">{desc as string}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </section>
 
           {/* Build Chains */}
           <section className="py-[150px] bg-white">
             <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">Build Complex Creative Chains—Visually</h3>
-            <p className="text-gray-700 max-w-4xl mx-auto text-center">
-              Merge simple tools into powerful pipelines: e.g., <strong>Reference-guided generation → Upscale → FaceSwap</strong>. Approve intermediate results manually or let the chain run fully automated. Full debug logs and step-by-step previews give you transparency without touching code.
-            </p>
-            <p className="text-gray-500 text-center mt-6">(Illustration: visual editor with multi-step node chain)</p>
+            <div className="max-w-4xl mx-auto">
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
+                <div className="relative bg-white/90 backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] group-hover:border-purple-200/50">
+                  <p className="text-gray-700 text-center leading-relaxed">
+                    Merge simple tools into powerful pipelines: e.g., <strong>Reference-guided generation → Upscale → FaceSwap</strong>. Approve intermediate results manually or let the chain run fully automated. Full debug logs and step-by-step previews give you transparency without touching code.
+                  </p>
+                </div>
+              </div>
+            </div>
           </section>
 
           {/* Templates */}
@@ -99,7 +126,7 @@ export const WorkflowAsWebApp: React.FC = () => {
                 ['Text → Video', 'AnimateDiff • Prompt Travel'],
                 ['Upscaling', 'Hires-Fix • UltraSharp • SUPIR • CCSR • APISR'],
                 ['Style Transfer', 'IPAdapter • IC-Light'],
-                ['More Coming', 'Custom recipes & community contributions\n\nZero downloads. Zero config. Just click Deploy.'],
+                ['More Coming', 'Custom recipes & community contributions'],
               ].map(([title, desc]) => (
                 <div key={title as string} className="relative group h-full">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
@@ -110,6 +137,15 @@ export const WorkflowAsWebApp: React.FC = () => {
                 </div>
               ))}
             </div>
+            
+            {/* Highlighted phrase after template cards */}
+            <div className="mt-12 text-center">
+              <div className="bg-gradient-to-r from-purple-100 to-indigo-100 rounded-2xl p-6 border border-purple-200 max-w-4xl mx-auto">
+                <p className="text-lg font-semibold text-gray-900 leading-relaxed">
+                  <strong>Zero downloads. Zero config. Just click Deploy.</strong>
+                </p>
+              </div>
+            </div>
           </section>
         </div>
       </div>
@@ -119,13 +155,23 @@ export const WorkflowAsWebApp: React.FC = () => {
         items={faqItems}
         title="Frequently Asked Questions"
         cta={(
-          <div className="max-w-3xl mx-auto text-center">
-            <h3 className="text-3xl md:text-5xl font-black text-gray-900 mb-4">Ready to see your ComfyUI Workflow live?</h3>
-            <p className="text-gray-700 mb-8 text-lg">Book a 15-minute demo and ship your first ComfyUI web app today.</p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-colors">Book a Demo</a>
-              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-colors">Talk to Sales</a>
+          <div>
+            {/* Contact Support */}
+            <div className="text-center mb-8">
+              <p className="text-gray-600 mb-4">More questions?</p>
+              <a href="mailto:info@zencreator.pro?subject=ComfyUI%20Workflow%20Web%20App%20Support" className="text-purple-600 hover:text-purple-700 font-medium">
+                Contact support →
+              </a>
             </div>
+            {/* CTA Section */}
+            <section className="pt-10 bg-[#0F172A] text-white rounded-3xl p-12 md:p-16 text-center border border-white/10">
+              <h3 className="text-3xl md:text-5xl font-black text-white mb-4">Ready to see your ComfyUI Workflow live?</h3>
+              <p className="text-white/80 mb-8 text-lg">Book a 15-minute demo and ship your first ComfyUI web app today.</p>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors">Book a Demo</a>
+                <a href="mailto:info@zencreator.pro?subject=ComfyUI%20Workflow%20Web%20App%20Sales%20Inquiry" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-colors">Talk to Sales</a>
+              </div>
+            </section>
           </div>
         )}
       />
