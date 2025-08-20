@@ -7,361 +7,528 @@ export const Pricing = () => {
   return (
     <PageLayout 
       title="Pricing" 
-      description="Simple credit packs for every ZenCreator tool, flat-rate add-ons for publishing & references, and transparent 'book-a-call' enterprise tiers for ZenComfy and managed services."
+      description="Simple credit packs for every ZenCreator tool, flat-rate add-ons for publishing & references, and transparent book-a-call enterprise tiers for ZenComfy and managed services."
     >
-      {/* Hero Section */}
-      <div className="container mx-auto px-4 pb-20" style={{ paddingTop: '140px' }}>
-        <div className="max-w-6xl mx-auto">
-          <section className="pt-24 pb-[40px] text-center">
-            <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-6 leading-tight">
-              Pricing<br />
-              <span style={{background: 'linear-gradient(141deg, #D8B4FE -1.09%, #5A17CE 108.36%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}} className="text-2xl md:text-4xl">ZenCreator & ZenComfy</span>
-            </h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
-              Simple credit packs for every ZenCreator tool, flat-rate add-ons for publishing & references, and transparent "book-a-call" enterprise tiers for ZenComfy and managed services.
-            </p>
-          </section>
+      {/* Hero Section - Enhanced */}
+      <div className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-purple-50">
+        <div className="absolute inset-0 opacity-20" style={{backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")"}}></div>
+        <div className="container mx-auto px-4 pb-20 relative" style={{ paddingTop: '140px' }}>
+          <div className="max-w-6xl mx-auto">
+            <section className="pt-24 pb-[40px] text-center relative">
+              <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 w-24 h-24 bg-gradient-to-br from-purple-400 to-blue-500 rounded-full opacity-10 blur-3xl"></div>
+              <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-6 leading-tight">
+                Pricing<br />
+                <span style={{background: 'linear-gradient(141deg, #D8B4FE -1.09%, #5A17CE 108.36%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}} className="text-2xl md:text-4xl">ZenCreator & ZenComfy</span>
+              </h1>
+              <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
+                Simple credit packs for every ZenCreator tool, flat-rate add-ons for publishing & references, and transparent <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="inline-flex items-center bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">Book a Call</a> enterprise tiers for ZenComfy and managed services.
+              </p>
+            </section>
+          </div>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 pb-16">
-        <div className="max-w-6xl mx-auto">
-
-          {/* Overview Cards - Full Width Scroll */}
-          <section id="overview" className="pt-16">
-            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-12 text-center">Pick the Plan That Fits Your Workflow</h2>
-          </section>
-        </div>
-      </div>
-
-      {/* Full Width Cards Carousel */}
-      <div className="overflow-hidden">
+      {/* Enhanced Cards - 2 Rows Layout */}
+      <div className="bg-gradient-to-br from-gray-50 to-white relative py-16">
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-50/20 via-transparent to-blue-50/20"></div>
         <style dangerouslySetInnerHTML={{
           __html: `
-            .hide-scrollbar {
-              scrollbar-width: none;
-              -ms-overflow-style: none;
+            .pricing-card {
+              background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.8) 100%);
+              backdrop-filter: blur(10px);
+              border: 1px solid rgba(255,255,255,0.2);
             }
-            .hide-scrollbar::-webkit-scrollbar {
-              display: none;
+            .pricing-card:hover {
+              transform: translateY(-8px);
+              box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
             }
           `
         }} />
-        <div className="flex gap-6 px-6 overflow-x-auto pb-4 hide-scrollbar">
-          {/* Credit Packs Card */}
-          <div className="min-w-[350px] bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-            <div className="flex items-center mb-4">
-              <div className="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
-              <h3 className="text-lg font-bold text-blue-700">Content Creation</h3>
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            
+            {/* Pick the Plan That Fits Your Workflow */}
+            <div className="text-center mb-16 relative">
+              <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-16 relative">
+                Pick the Plan That Fits Your Workflow
+                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-purple-400 to-blue-500 rounded-full"></div>
+              </h2>
             </div>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Generate images, videos or profiles with ZenCreator tools
-            </p>
-            <a href="#credit-packs" className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-colors">
-              Credit Packs (pay-as-you-go)
-              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
 
-          {/* Publishing Hub Card */}
-          <div className="min-w-[350px] bg-gradient-to-br from-purple-50 to-purple-100 border border-purple-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-            <div className="flex items-center mb-4">
-              <div className="w-3 h-3 bg-purple-500 rounded-full mr-3"></div>
-              <h3 className="text-lg font-bold text-purple-700">Social Publishing</h3>
-            </div>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Auto-publish across social channels
-            </p>
-            <a href="#publishing-hub" className="inline-flex items-center text-purple-600 font-semibold hover:text-purple-800 transition-colors">
-              Publishing Hub Add-On ($49/persona/month)
-              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
+              
+              {/* Credit Packs Card */}
+              <a 
+                href="#credit-packs" 
+                className="pricing-card rounded-3xl p-6 transition-all duration-500 relative overflow-hidden shadow-xl hover:shadow-2xl hover:scale-105 cursor-pointer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('credit-packs')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-400/10 to-transparent rounded-full -mr-12 -mt-12"></div>
+                <div className="flex flex-col h-full">
+                  <div className="flex items-center mb-4 relative">
+                    <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mr-3 shadow-lg"></div>
+                    <h3 className="text-lg font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">Content Creation</h3>
+                  </div>
+                  <p className="text-gray-600 mb-6 leading-relaxed text-sm relative flex-1">
+                    Generate images, videos or profiles with ZenCreator tools
+                  </p>
+                  <div className="text-left font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent text-sm mt-auto">
+                    Credit Packs (pay-as-you-go)
+                  </div>
+                </div>
+              </a>
 
-          {/* Reference Feed Card */}
-          <div className="min-w-[350px] bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-            <div className="flex items-center mb-4">
-              <div className="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
-              <h3 className="text-lg font-bold text-green-700">AI Training Data</h3>
-            </div>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Pull real Instagram references for AI fine-tuning
-            </p>
-            <a href="#reference-feed" className="inline-flex items-center text-green-600 font-semibold hover:text-green-800 transition-colors">
-              Reference Feed Add-On ($49/10 refs/month)
-              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
+              {/* Publishing Hub Card */}
+              <a 
+                href="#publishing-hub" 
+                className="pricing-card rounded-3xl p-6 transition-all duration-500 relative overflow-hidden shadow-xl hover:shadow-2xl hover:scale-105 cursor-pointer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('publishing-hub')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-purple-400/10 to-transparent rounded-full -mr-12 -mt-12"></div>
+                <div className="flex flex-col h-full">
+                  <div className="flex items-center mb-4 relative">
+                    <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full mr-3 shadow-lg"></div>
+                    <h3 className="text-lg font-bold bg-gradient-to-r from-purple-600 to-purple-700 bg-clip-text text-transparent">Social Publishing</h3>
+                  </div>
+                  <p className="text-gray-600 mb-6 leading-relaxed text-sm relative flex-1">
+                    Auto-publish across social channels
+                  </p>
+                  <div className="text-left font-bold bg-gradient-to-r from-purple-600 to-purple-700 bg-clip-text text-transparent text-sm mt-auto">
+                    Publishing Hub Add-On ($49/persona/month)
+                  </div>
+                </div>
+              </a>
 
-          {/* ZenComfy Card */}
-          <div className="min-w-[350px] bg-gradient-to-br from-orange-50 to-orange-100 border border-orange-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-            <div className="flex items-center mb-4">
-              <div className="w-3 h-3 bg-orange-500 rounded-full mr-3"></div>
-              <h3 className="text-lg font-bold text-orange-700">Cloud Infrastructure</h3>
-            </div>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Run ComfyUI workflows in the cloud or as web apps
-            </p>
-            <a href="#zencomfy" className="inline-flex items-center text-orange-600 font-semibold hover:text-orange-800 transition-colors">
-              ZenComfy Enterprise (from $1,000)
-              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
+              {/* Reference Feed Card */}
+              <a 
+                href="#reference-feed" 
+                className="pricing-card rounded-3xl p-6 transition-all duration-500 relative overflow-hidden shadow-xl hover:shadow-2xl hover:scale-105 cursor-pointer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('reference-feed')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-green-400/10 to-transparent rounded-full -mr-12 -mt-12"></div>
+                <div className="flex flex-col h-full">
+                  <div className="flex items-center mb-4 relative">
+                    <div className="w-3 h-3 bg-gradient-to-r from-green-500 to-green-600 rounded-full mr-3 shadow-lg"></div>
+                    <h3 className="text-lg font-bold bg-gradient-to-r from-green-600 to-green-700 bg-clip-text text-transparent">AI Training Data</h3>
+                  </div>
+                  <p className="text-gray-600 mb-6 leading-relaxed text-sm relative flex-1">
+                    Pull real Instagram references for AI fine-tuning
+                  </p>
+                  <div className="text-left font-bold bg-gradient-to-r from-green-600 to-green-700 bg-clip-text text-transparent text-sm mt-auto">
+                    Reference Feed Add-On ($49/10 refs/month)
+                  </div>
+                </div>
+              </a>
 
-          {/* Managed Services Card */}
-          <div className="min-w-[350px] bg-gradient-to-br from-red-50 to-red-100 border border-red-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-            <div className="flex items-center mb-4">
-              <div className="w-3 h-3 bg-red-500 rounded-full mr-3"></div>
-              <h3 className="text-lg font-bold text-red-700">Full Service</h3>
+              {/* ZenComfy Card */}
+              <a 
+                href="#zencomfy" 
+                className="pricing-card rounded-3xl p-6 transition-all duration-500 relative overflow-hidden shadow-xl hover:shadow-2xl hover:scale-105 cursor-pointer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('zencomfy')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-orange-400/10 to-transparent rounded-full -mr-12 -mt-12"></div>
+                <div className="flex flex-col h-full">
+                  <div className="flex items-center mb-4 relative">
+                    <div className="w-3 h-3 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full mr-3 shadow-lg"></div>
+                    <h3 className="text-lg font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">Cloud Infrastructure</h3>
+                  </div>
+                  <p className="text-gray-600 mb-6 leading-relaxed text-sm relative flex-1">
+                    Run ComfyUI workflows in the cloud or as web apps
+                  </p>
+                  <div className="text-left font-bold bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent text-sm mt-auto">
+                    ZenComfy Enterprise (from $1,000)
+                  </div>
+                </div>
+              </a>
+
+              {/* Managed Services Card */}
+              <a 
+                href="#managed-services" 
+                className="pricing-card rounded-3xl p-6 transition-all duration-500 relative overflow-hidden shadow-xl hover:shadow-2xl hover:scale-105 cursor-pointer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('managed-services')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-red-400/10 to-transparent rounded-full -mr-12 -mt-12"></div>
+                <div className="flex flex-col h-full">
+                  <div className="flex items-center mb-4 relative">
+                    <div className="w-3 h-3 bg-gradient-to-r from-red-500 to-red-600 rounded-full mr-3 shadow-lg"></div>
+                    <h3 className="text-lg font-bold bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent">Full Service</h3>
+                  </div>
+                  <p className="text-gray-600 mb-6 leading-relaxed text-sm relative flex-1">
+                    Fully managed content or influencer services
+                  </p>
+                  <div className="text-left font-bold bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent text-sm mt-auto">
+                    Pro Services (from $1,000)
+                  </div>
+                </div>
+              </a>
+
             </div>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Fully managed content or influencer services
-            </p>
-            <a href="#managed-services" className="inline-flex items-center text-red-600 font-semibold hover:text-red-800 transition-colors">
-              Pro Services (from $1,000)
-              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </a>
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 pb-16">
-        <div className="max-w-6xl mx-auto">
-
-          {/* ZenCreator Credit Packs */}
-          <section id="credit-packs" className="pt-24 pb-16">
-            <div className="text-center mb-12">
-              <h3 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">ZenCreator Credit Packs</h3>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">Pay-as-you-go credits that never expire. Use across all ZenCreator tools.</p>
+      {/* ZenCreator Credit Packs */}
+      <section id="credit-packs" className="mb-24 relative">
+        <div className="text-center mb-12">
+          <h3 className="text-3xl md:text-4xl font-black text-gray-900 mb-6">ZenCreator Credit Packs</h3>
+        </div>
+        
+        <div className="relative max-w-5xl mx-auto">
+          {/* Decorative background elements */}
+          <div className="absolute -top-4 -left-4 w-72 h-72 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full opacity-20 blur-3xl"></div>
+          <div className="absolute -bottom-4 -right-4 w-72 h-72 bg-gradient-to-br from-purple-100 to-pink-100 rounded-full opacity-20 blur-3xl"></div>
+          
+          <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl border border-gray-200/50 shadow-2xl overflow-hidden">
+            {/* Table Header */}
+            <div className="bg-gradient-to-r from-gray-50 to-gray-100/50 px-8 py-6 border-b border-gray-200/50">
+              <div className="grid grid-cols-4 gap-8">
+                <div className="text-left font-bold text-gray-900 text-lg">Pack</div>
+                <div className="text-left font-bold text-gray-900 text-lg">Credits</div>
+                <div className="text-left font-bold text-gray-900 text-lg">Price</div>
+                <div className="text-left font-bold text-gray-900 text-lg">Effective /credit</div>
+              </div>
             </div>
             
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-              {[
-                ['Starter','100','$ 9.99','$ 0.099', true],
-                ['Builder','1 100','$ 99','$ 0.090', false],
-                ['Pro','5 850','$ 499','$ 0.085', false],
-                ['Scale','12 500','$ 999','$ 0.080', false]
-              ].map(([name, credits, price, effective, highlight]) => (
-                <Card key={name as string} className={`h-full transition-all duration-300 hover:shadow-xl hover:scale-105 ${highlight ? 'border-2 border-blue-400 bg-gradient-to-br from-blue-50 to-blue-100 shadow-lg' : 'hover:border-gray-300 border border-gray-200'}`}>
-                  <CardHeader className="p-6 pb-4">
-                    <CardTitle className={`text-gray-900 text-lg ${highlight ? 'text-blue-700' : ''}`}>{name as string}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-0 px-6 pb-6">
-                    <div className="text-sm text-gray-600 mb-1">Credits</div>
-                    <div className="text-xl font-bold text-gray-900 mb-4">{credits as string}</div>
-                    <div className="text-sm text-gray-600 mb-1">Price</div>
-                    <div className="text-xl font-bold text-gray-900 mb-4">{price as string}</div>
-                    <div className="text-sm text-gray-600 mb-1">Effective /credit</div>
-                    <div className={`text-lg font-semibold ${highlight ? 'text-blue-600' : 'text-gray-900'}`}>{effective as string}</div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-8 mb-12 border border-blue-200 shadow-lg">
-              <h4 className="font-bold text-gray-900 mb-4 text-lg">Good to know</h4>
-              <ul className="space-y-3 text-gray-700 break-words">
-                <li className="flex items-start">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  <span className="whitespace-nowrap">Credits <strong>never expire</strong>.</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  <span>One shared balance for <em>all</em> ZenCreator tools.</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  <span>Buy packs any time; larger packs stack and lower blended cost.</span>
-                </li>
-              </ul>
-            </div>
-          </section>
-
-          {/* Publishing Hub Add-On */}
-          <section id="publishing-hub" className="py-16">
-            <div className="text-center mb-12">
-              <h3 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">Publishing Hub Add-On</h3>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">Connect all major social platforms with smart scheduling and AI-powered optimization.</p>
-            </div>
-            
-            <div className="bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200 rounded-2xl overflow-hidden mb-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="bg-gradient-to-r from-purple-100 to-pink-100 px-6 py-4 border-b border-purple-200">
-                <div className="grid grid-cols-2 gap-4">
-                  <h4 className="font-bold text-gray-900">What's Included</h4>
-                  <h4 className="font-bold text-gray-900">Price</h4>
+            {/* Table Rows */}
+            <div className="divide-y divide-gray-100">
+              {/* Starter Row */}
+              <div className="px-8 py-6 hover:bg-gradient-to-r hover:from-blue-50/50 hover:to-transparent transition-all duration-300 group">
+                <div className="grid grid-cols-4 gap-8 items-center">
+                  <div className="flex items-center">
+                    <div className="w-3 h-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full mr-3 group-hover:scale-110 transition-transform duration-300"></div>
+                    <span className="text-gray-900 font-semibold text-lg">Starter</span>
+                  </div>
+                  <div className="text-gray-700 font-medium text-lg">100</div>
+                  <div className="text-gray-700 font-medium text-lg">$ 9.99</div>
+                  <div className="text-gray-600 font-medium text-lg">$ 0.099</div>
                 </div>
               </div>
-              <div className="divide-y divide-purple-200">
-                <div className="px-6 py-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="text-gray-700">Connect IG, Threads, X, Facebook, TikTok, YouTube</div>
-                    <div className="text-gray-600">—</div>
+              
+              {/* Builder Row */}
+              <div className="px-8 py-6 hover:bg-gradient-to-r hover:from-purple-50/50 hover:to-transparent transition-all duration-300 group">
+                <div className="grid grid-cols-4 gap-8 items-center">
+                  <div className="flex items-center">
+                    <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full mr-3 group-hover:scale-110 transition-transform duration-300"></div>
+                    <span className="text-gray-900 font-semibold text-lg">Builder</span>
                   </div>
+                  <div className="text-gray-700 font-medium text-lg">1 100</div>
+                  <div className="text-gray-700 font-medium text-lg">$ 99</div>
+                  <div className="text-gray-600 font-medium text-lg">$ 0.090</div>
                 </div>
-                <div className="px-6 py-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="text-gray-700">Smart Publish windows, AI captions & hashtags</div>
-                    <div className="text-gray-600">—</div>
+              </div>
+              
+              {/* Pro Row - Highlighted */}
+              <div className="px-8 py-6 via-emerald-50/50 to-teal-50/30 hover:from-green-100/70 hover:via-emerald-100/50 hover:to-teal-100/30 transition-all duration-300 group relative">
+                <div className="absolute -left-1 top-0 bottom-0 w-1 bg-gradient-to-b from-green-500 to-emerald-500 rounded-r-full"></div>
+                <div className="grid grid-cols-4 gap-8 items-center">
+                  <div className="flex items-center">
+                    <div className="w-3 h-3 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full mr-3 group-hover:scale-110 transition-transform duration-300"></div>
+                    <span className="text-gray-900 font-bold text-lg">Pro</span>
                   </div>
+                  <div className="text-gray-700 font-semibold text-lg">5 850</div>
+                  <div className="text-gray-700 font-semibold text-lg">$ 499</div>
+                  <div className="text-gray-700 font-semibold text-lg">$ 0.085</div>
                 </div>
-                <div className="px-6 py-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="text-gray-700">Unified calendar & role-based approvals</div>
-                    <div className="text-gray-600">—</div>
+              </div>
+              
+              {/* Scale Row */}
+              <div className="px-8 py-6 hover:bg-gradient-to-r hover:from-orange-50/50 hover:to-transparent transition-all duration-300 group">
+                <div className="grid grid-cols-4 gap-8 items-center">
+                  <div className="flex items-center">
+                    <div className="w-3 h-3 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mr-3 group-hover:scale-110 transition-transform duration-300"></div>
+                    <span className="text-gray-900 font-semibold text-lg">Scale</span>
                   </div>
-                </div>
-                <div className="px-6 py-4 bg-gradient-to-r from-purple-100 to-pink-100 border-t-2 border-purple-300">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="font-bold text-gray-900">Price</div>
-                    <div className="font-bold text-purple-700 text-xl">$49 / persona / month*</div>
-                  </div>
+                  <div className="text-gray-700 font-medium text-lg">12 500</div>
+                  <div className="text-gray-700 font-medium text-lg">$ 999</div>
+                  <div className="text-gray-600 font-medium text-lg">$ 0.080</div>
                 </div>
               </div>
             </div>
-            <p className="text-sm text-gray-600">
+          </div>
+        </div>
+
+        {/* Good to know */}
+        <div className="max-w-4xl mx-auto pt-12">
+          <div className="bg-gradient-to-r from-blue-50 via-white to-cyan-50 rounded-3xl p-8 border border-blue-100 shadow-lg">
+            <h4 className="font-bold text-gray-900 mb-6 text-xl">Good to know</h4>
+            <ul className="space-y-4 text-gray-700">
+              <li className="flex items-start">
+                <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span className="break-words">Credits <strong>never expire</strong>.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span className="break-words">One shared balance for <em>all</em> ZenCreator tools.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                <span className="break-words">Buy packs any time; larger packs stack and lower blended cost.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Publishing Hub Add-On */}
+      <section id="publishing-hub" className="mb-24 relative">
+        <div className="text-center mb-12">
+          <h3 className="text-3xl md:text-4xl font-black text-gray-900 mb-6">Publishing Hub Add-On</h3>
+        </div>
+        
+        <div className="relative max-w-2xl mx-auto">
+          <div className="bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300">
+            
+            {/* What's Included Section */}
+            <div className="bg-gradient-to-br from-purple-50 via-pink-50 to-white px-8 py-8 border-b border-purple-100/50">
+              <h4 className="font-black text-gray-900 text-xl mb-6 flex items-center">
+                <div className="w-2 h-8 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full mr-3"></div>
+                What's Included
+              </h4>
+              <div className="space-y-4">
+                <div className="flex items-start group">
+                  <div className="w-4 h-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mr-4 mt-0.5 group-hover:scale-110 transition-transform duration-200"></div>
+                  <span className="text-gray-700 font-medium leading-relaxed">Connect IG, Threads, X, Facebook, TikTok, YouTube</span>
+                </div>
+                <div className="flex items-start group">
+                  <div className="w-4 h-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mr-4 mt-0.5 group-hover:scale-110 transition-transform duration-200"></div>
+                  <span className="text-gray-700 font-medium leading-relaxed">Smart Publish windows, AI captions & hashtags</span>
+                </div>
+                <div className="flex items-start group">
+                  <div className="w-4 h-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mr-4 mt-0.5 group-hover:scale-110 transition-transform duration-200"></div>
+                  <span className="text-gray-700 font-medium leading-relaxed">Unified calendar & role-based approvals</span>
+                </div>
+              </div>
+            </div>
+            
+            {/* Price Section */}
+            <div className="px-8 py-10 bg-gradient-to-br from-white via-purple-50/30 to-pink-50/30 text-center relative">
+              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full shadow-lg"></div>
+              <h4 className="font-black text-gray-900 text-xl mb-4">Price</h4>
+              <div className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 font-black text-4xl mb-2">
+                $ 49 / persona / month *
+              </div>
+            </div>
+          </div>
+          
+          {/* Footnote */}
+          <div className="mt-6 text-center">
+            <p className="text-gray-500 text-sm italic font-medium">
               * A "persona" is one creator profile with any number of connected social accounts.
             </p>
-          </section>
-
-          {/* Reference Feed Add-On */}
-          <section id="reference-feed" className="py-16">
-            <div className="text-center mb-12">
-              <h3 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">Reference Feed Add-On</h3>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">Live Instagram inspiration boards for AI training and style consistency.</p>
-            </div>
-            
-            <div className="bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="bg-gradient-to-r from-green-100 to-emerald-100 px-6 py-4 border-b border-green-200">
-                <div className="grid grid-cols-2 gap-4">
-                  <h4 className="font-bold text-gray-900">Feature</h4>
-                  <h4 className="font-bold text-gray-900">Price</h4>
-                </div>
-              </div>
-              <div className="divide-y divide-green-200">
-                <div className="px-6 py-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="text-gray-700">10 live Instagram boards for style & pose inspiration</div>
-                    <div className="font-bold text-green-700 text-lg">$49 / month</div>
-                  </div>
-                </div>
-                <div className="px-6 py-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="text-gray-700">Auto-refresh every 24 h, searchable in Creator Hub</div>
-                    <div className="text-gray-600">—</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* ZenComfy */}
-          <section id="zencomfy" className="py-16">
-            <div className="text-center mb-12">
-              <h3 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">ZenComfy — ComfyUI in the Cloud</h3>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">Professional GPU cloud infrastructure for ComfyUI workflows and web app deployment.</p>
-            </div>
-            
-            <div className="bg-gradient-to-br from-orange-50 to-amber-50 border border-orange-200 rounded-2xl overflow-hidden mb-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="bg-gradient-to-r from-orange-100 to-amber-100 px-6 py-4 border-b border-orange-200">
-                <div className="grid grid-cols-3 gap-4">
-                  <h4 className="font-bold text-gray-900">Plan</h4>
-                  <h4 className="font-bold text-gray-900">Ideal For</h4>
-                  <h4 className="font-bold text-gray-900">From</h4>
-                </div>
-              </div>
-              <div className="divide-y divide-orange-200">
-                <div className="px-6 py-4">
-                  <div className="grid grid-cols-3 gap-4">
-                    <div className="font-medium text-gray-900">Team</div>
-                    <div className="text-gray-700">Small R&D or creative teams</div>
-                    <div className="font-bold text-orange-700 text-lg">$ 1 000 / month</div>
-                  </div>
-                </div>
-                <div className="px-6 py-4">
-                  <div className="grid grid-cols-3 gap-4">
-                    <div className="font-medium text-gray-900">Enterprise</div>
-                    <div className="text-gray-700">Dedicated GPU clusters, VPC, SSO, SLA</div>
-                    <div className="text-gray-600">Custom</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-gradient-to-r from-orange-100 to-amber-100 rounded-2xl p-8 mb-8 border border-orange-300 shadow-lg">
-              <ul className="space-y-3 text-gray-700">
-                <li className="flex items-start">
-                  <span className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Pay-for-runtime GPU billing (A100 / H100 / L4 options).
-                </li>
-                <li className="flex items-start">
-                  <span className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Workflow → Web-App builder included.
-                </li>
-                <li className="flex items-start">
-                  <span className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Book a 30-min call; we size hardware and forecast cost.
-                </li>
-              </ul>
-            </div>
-            
-          </section>
-
-          {/* Managed Services */}
-          <section id="managed-services" className="py-16">
-            <div className="text-center mb-12">
-              <h3 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">Managed Services</h3>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">Full-service content creation and AI influencer management with dedicated teams.</p>
-            </div>
-            
-            <div className="bg-gradient-to-br from-red-50 to-pink-50 border border-red-200 rounded-2xl overflow-hidden mb-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="bg-gradient-to-r from-red-100 to-pink-100 px-6 py-4 border-b border-red-200">
-                <div className="grid grid-cols-3 gap-4">
-                  <h4 className="font-bold text-gray-900">Service</h4>
-                  <h4 className="font-bold text-gray-900">From</h4>
-                  <h4 className="font-bold text-gray-900">What's Covered</h4>
-                </div>
-              </div>
-              <div className="divide-y divide-red-200">
-                <div className="px-6 py-4">
-                  <div className="grid grid-cols-3 gap-4">
-                    <div className="font-medium text-gray-900">AI Influencer Studio</div>
-                    <div className="font-bold text-red-700 text-lg">$ 3 000 / month</div>
-                    <div className="text-gray-700">Persona design, daily content, engagement loop</div>
-                  </div>
-                </div>
-                <div className="px-6 py-4">
-                  <div className="grid grid-cols-3 gap-4">
-                    <div className="font-medium text-gray-900">Dating Profile Packs</div>
-                    <div className="font-bold text-red-700 text-lg">$ 1 000</div>
-                    <div className="text-gray-700">moderated profiles (bio + media)</div>
-                  </div>
-                </div>
-                <div className="px-6 py-4">
-                  <div className="grid grid-cols-3 gap-4">
-                    <div className="font-medium text-gray-900">Photo Shoot Generation</div>
-                    <div className="font-bold text-red-700 text-lg">$ 1 000</div>
-                    <div className="text-gray-700">moderated images</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <p className="text-gray-600 mb-8 text-center">All services include human QA and dedicated PM.</p>
-            
-          </section>
-
+          </div>
         </div>
-      </div>
+      </section>
+
+      {/* Reference Feed Add-On */}
+      <section id="reference-feed" className="mb-24 relative">
+        <div className="text-center mb-12">
+          <h3 className="text-3xl md:text-4xl font-black text-gray-900 mb-6">Reference Feed Add-On</h3>
+        </div>
+        
+        <div className="relative max-w-2xl mx-auto">
+          <div className="bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300">
+            
+            {/* Features Section */}
+            <div className="bg-gradient-to-br from-green-50 via-emerald-50 to-white px-8 py-8 border-b border-green-100/50">
+              <h4 className="font-black text-gray-900 text-xl mb-6 flex items-center">
+                <div className="w-2 h-8 bg-gradient-to-b from-green-500 to-emerald-500 rounded-full mr-3"></div>
+                Features
+              </h4>
+              <div className="space-y-4">
+                <div className="flex items-start group">
+                  <div className="w-4 h-4 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mr-4 mt-0.5 group-hover:scale-110 transition-transform duration-200"></div>
+                  <span className="text-gray-700 font-medium leading-relaxed">10 live Instagram boards for style & pose inspiration</span>
+                </div>
+                <div className="flex items-start group">
+                  <div className="w-4 h-4 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mr-4 mt-0.5 group-hover:scale-110 transition-transform duration-200"></div>
+                  <span className="text-gray-700 font-medium leading-relaxed">Auto-refresh every 24 h, searchable in Creator Hub</span>
+                </div>
+              </div>
+            </div>
+            
+            {/* Price Section */}
+            <div className="px-8 py-10 bg-gradient-to-br from-white via-green-50/30 to-emerald-50/30 text-center relative">
+              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full shadow-lg"></div>
+              <h4 className="font-black text-gray-900 text-xl mb-4">Price</h4>
+              <div className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-600 font-black text-4xl">
+                $ 49 / month
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ZenComfy — ComfyUI in the Cloud */}
+      <section id="zencomfy" className="mb-24 relative">
+        <div className="text-center mb-12">
+          <h3 className="text-3xl md:text-4xl font-black text-gray-900 mb-6">ZenComfy — ComfyUI in the Cloud</h3>
+        </div>
+        
+        <div className="relative max-w-3xl mx-auto">
+          <div className="bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300">
+            
+            {/* Plans Section */}
+            <div className="bg-gradient-to-br from-orange-50 via-red-50 to-white px-8 py-8 border-b border-orange-100/50">
+              <h4 className="font-black text-gray-900 text-xl mb-6 flex items-center">
+                <div className="w-2 h-8 bg-gradient-to-b from-orange-500 to-red-500 rounded-full mr-3"></div>
+                Plans
+              </h4>
+              <div className="space-y-6">
+                {/* Team Plan */}
+                <div className="flex items-center justify-between p-4 bg-white/50 rounded-2xl border border-orange-100 group hover:border-orange-200 transition-colors duration-200">
+                  <div className="flex items-center">
+                    <div className="w-4 h-4 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mr-4 group-hover:scale-110 transition-transform duration-200"></div>
+                    <div>
+                      <div className="font-bold text-gray-900 text-lg">Team</div>
+                      <div className="text-gray-600 text-sm">Small R&D or creative teams</div>
+                    </div>
+                  </div>
+                  <div className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600 font-black text-xl">
+                    $ 1 000 / month
+                  </div>
+                </div>
+                
+                {/* Enterprise Plan */}
+                <div className="flex items-center justify-between p-4 bg-white/50 rounded-2xl border border-orange-100 group hover:border-orange-200 transition-colors duration-200">
+                  <div className="flex items-center">
+                    <div className="w-4 h-4 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mr-4 group-hover:scale-110 transition-transform duration-200"></div>
+                    <div>
+                      <div className="font-bold text-gray-900 text-lg">Enterprise</div>
+                      <div className="text-gray-600 text-sm">Dedicated GPU clusters, VPC, SSO, SLA</div>
+                    </div>
+                  </div>
+                  <div className="text-gray-700 font-bold text-xl">
+                    Custom
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Details & CTA Section */}
+            <div className="px-8 py-8 bg-gradient-to-br from-white via-orange-50/30 to-red-50/30">
+              <div className="space-y-4 mb-6">
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mr-3 mt-2"></div>
+                  <span className="text-gray-700 font-medium leading-relaxed">Pay-for-runtime GPU billing (A100 / H100 / L4 options).</span>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mr-3 mt-2"></div>
+                  <span className="text-gray-700 font-medium leading-relaxed">Workflow → Web-App builder included.</span>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mr-3 mt-2"></div>
+                  <span className="text-gray-700 font-medium leading-relaxed">Book a 30-min call; we size hardware and forecast cost.</span>
+                </div>
+              </div>
+              
+              <div className="text-center">
+                <a 
+                  href="mailto:sales@zencreator.pro" 
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold rounded-2xl hover:from-orange-600 hover:to-red-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                >
+                  Talk to Sales →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Managed Services */}
+      <section id="managed-services" className="mb-24 relative">
+        <div className="text-center mb-12">
+          <h3 className="text-3xl md:text-4xl font-black text-gray-900 mb-6">Managed Services</h3>
+        </div>
+        
+        <div className="relative max-w-4xl mx-auto">
+          <div className="bg-white rounded-3xl border border-gray-100 shadow-xl overflow-hidden transform hover:scale-[1.02] transition-all duration-300">
+            
+            {/* Services Section */}
+            <div className="bg-gradient-to-br from-indigo-50 via-blue-50 to-white px-8 py-8 border-b border-indigo-100/50">
+              <h4 className="font-black text-gray-900 text-xl mb-6 flex items-center">
+                <div className="w-2 h-8 bg-gradient-to-b from-indigo-500 to-blue-500 rounded-full mr-3"></div>
+                Services
+              </h4>
+              <div className="space-y-6">
+                {/* AI Influencer Studio */}
+                <div className="flex items-center justify-between p-4 bg-white/50 rounded-2xl border border-indigo-100 group hover:border-indigo-200 transition-colors duration-200">
+                  <div className="flex items-center flex-1">
+                    <div className="w-4 h-4 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full mr-4 group-hover:scale-110 transition-transform duration-200"></div>
+                    <div className="flex-1">
+                      <div className="font-bold text-gray-900 text-lg">AI Influencer Studio</div>
+                      <div className="text-gray-600 text-sm">Persona design, daily content, engagement loop</div>
+                    </div>
+                  </div>
+                  <div className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-600 font-black text-xl ml-4">
+                    $ 3 000 / month
+                  </div>
+                </div>
+                
+                {/* Dating Profile Packs */}
+                <div className="flex items-center justify-between p-4 bg-white/50 rounded-2xl border border-indigo-100 group hover:border-indigo-200 transition-colors duration-200">
+                  <div className="flex items-center flex-1">
+                    <div className="w-4 h-4 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full mr-4 group-hover:scale-110 transition-transform duration-200"></div>
+                    <div className="flex-1">
+                      <div className="font-bold text-gray-900 text-lg">Dating Profile Packs</div>
+                      <div className="text-gray-600 text-sm">moderated profiles (bio + media)</div>
+                    </div>
+                  </div>
+                  <div className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-600 font-black text-xl ml-4">
+                    $ 1 000
+                  </div>
+                </div>
+                
+                {/* Photo-Shoot Generation */}
+                <div className="flex items-center justify-between p-4 bg-white/50 rounded-2xl border border-indigo-100 group hover:border-indigo-200 transition-colors duration-200">
+                  <div className="flex items-center flex-1">
+                    <div className="w-4 h-4 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full mr-4 group-hover:scale-110 transition-transform duration-200"></div>
+                    <div className="flex-1">
+                      <div className="font-bold text-gray-900 text-lg">Photo-Shoot Generation</div>
+                      <div className="text-gray-600 text-sm">moderated images</div>
+                    </div>
+                  </div>
+                  <div className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-600 font-black text-xl ml-4">
+                    $ 1 000
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Footer Note */}
+            <div className="px-8 py-6 bg-gradient-to-br from-white via-indigo-50/30 to-blue-50/30 text-center">
+              <p className="text-gray-700 font-medium">
+                All services include <strong>human QA</strong> and <strong>dedicated PM</strong>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+
+
+
+
+
+
 
       {/* FAQ - Full Width with Gradient Background */}
       <section className="py-[150px] bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
@@ -398,17 +565,14 @@ export const Pricing = () => {
                   <p className="text-gray-700 leading-relaxed">Contact sales — bulk credits and multi-persona Publishing discounts are available.</p>
                 </div>
               </div>
-              
-
             </div>
           </div>
         </div>
       </section>
 
-     
       {/* CTA - Full Width */}
       <section className="relative overflow-hidden">
-        <div className="bg-ink-900 text-white text-center py-24 relative ">
+        <div className="bg-ink-900 text-white text-center py-24 relative">
           <div className="relative z-10 max-w-4xl mx-auto px-4">
             <div className="inline-block bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
               Level up your content game
@@ -445,3 +609,6 @@ export const Pricing = () => {
     </PageLayout>
   );
 };
+
+
+
