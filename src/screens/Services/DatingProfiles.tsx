@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Heart, Users, CheckCircle, Camera, Clock, Shield } from 'lucide-react';
 import { PageLayout } from '@/components/layout/PageLayout';
 import { FAQAccordion } from '@/components/sections/FAQAccordion';
@@ -17,6 +17,272 @@ const faqItems = [
     answer: "Our moderation pipeline flags nudity, minors, weapons, hate symbols and more; humans approve the final set."
   }
 ];
+
+// Interactive Widget Component
+const InteractiveProfileWidget: React.FC = () => {
+  const [selectedGender, setSelectedGender] = useState<string>('Female');
+  const [selectedAge, setSelectedAge] = useState<string>('25-35');
+  const [selectedEthnicity, setSelectedEthnicity] = useState<string>('Caucasian');
+  const [isGenerating, setIsGenerating] = useState(false);
+  const [currentProfile, setCurrentProfile] = useState({
+    name: 'Sarah',
+    age: '28',
+    location: 'San Francisco, CA',
+    bio: 'Love hiking, yoga, and trying new restaurants. Looking for someone who shares my passion for adventure and good coffee ☕️',
+    avatar: '👩🏼‍💼',
+    photos: [] as string[]
+  });
+
+  const profileVariations = {
+    'Male-18-25-Caucasian': { name: 'Jake', age: '23', location: 'Austin, TX', bio: 'Tech enthusiast, rock climbing, and craft beer lover. Always up for spontaneous adventures! 🧗‍♂️', avatar: '👨🏻‍💻' },
+    'Male-25-35-Asian': { name: 'Kevin', age: '29', location: 'Seattle, WA', bio: 'Software engineer by day, chef by night. Love trying new recipes and exploring the city! 👨‍🍳', avatar: '👨🏻‍💻' },
+    'Female-25-35-Black': { name: 'Maya', age: '31', location: 'Atlanta, GA', bio: 'Artist and yoga instructor. Passionate about mindfulness, travel, and good music 🎨✨', avatar: '👩🏾‍🎨' },
+    'Female-18-25-Latina': { name: 'Sofia', age: '24', location: 'Miami, FL', bio: 'Dancing through life! Love salsa, beach days, and trying new cuisines 💃🏻', avatar: '👩🏻‍🦱' },
+    'Male-35-45-Black': { name: 'Marcus', age: '38', location: 'Chicago, IL', bio: 'Entrepreneur and fitness enthusiast. Looking for someone to share life\'s adventures with 💪🏾', avatar: '👨🏾‍💼' },
+    'Female-25-35-Caucasian': { name: 'Sarah', age: '28', location: 'San Francisco, CA', bio: 'Love hiking, yoga, and trying new restaurants. Looking for someone who shares my passion for adventure and good coffee ☕️', avatar: '👩🏼‍💼' },
+  };
+
+  const generateProfile = async () => {
+    setIsGenerating(true);
+    
+    try {
+      // Generate real AI photos using Pollinations API
+      const ageNumber = selectedAge.split('-')[0]; // Get first number from range
+      const prompt = `professional headshot photo of attractive ${selectedGender.toLowerCase()} ${selectedEthnicity.toLowerCase()} person aged ${ageNumber}, realistic, high quality, dating app profile photo, natural lighting, smiling, modern style`;
+      
+      // Generate 3 different photos
+      const photos = await Promise.all([
+        generatePhoto(prompt + ', portrait style'),
+        generatePhoto(prompt + ', casual style'),
+        generatePhoto(prompt + ', lifestyle photo')
+      ]);
+      
+      // Get profile data
+      const key = `${selectedGender}-${selectedAge}-${selectedEthnicity}`;
+      const profile = profileVariations[key as keyof typeof profileVariations] || currentProfile;
+      
+      // Update profile with generated photos
+      setCurrentProfile({
+        ...profile,
+        photos: photos,
+        avatar: photos[0] // Use first photo as avatar
+      });
+      
+    } catch (error) {
+      console.error('Error generating profile:', error);
+      // Fallback to predefined profiles
+      const key = `${selectedGender}-${selectedAge}-${selectedEthnicity}`;
+      const profile = profileVariations[key as keyof typeof profileVariations] || currentProfile;
+      setCurrentProfile(profile);
+    }
+    
+    setIsGenerating(false);
+  };
+
+  const generatePhoto = async (prompt: string): Promise<string> => {
+    const seed = Math.floor(Math.random() * 1000000);
+    const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=400&height=400&seed=${seed}&enhance=true&nologo=true`;
+    
+    // Preload image to ensure it's ready
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.onload = () => resolve(url);
+      img.onerror = () => resolve(url); // Even if error, return URL
+      img.src = url;
+    });
+  };
+
+  const ButtonStyle = {
+    base: "transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 font-medium",
+    unselected: "border-2 border-gray-200 text-gray-600 bg-white hover:border-purple-300 hover:bg-purple-25 hover:text-gray-700",
+    selected: "border-2 border-purple-500 bg-purple-500 text-white shadow-lg transform scale-[1.02]",
+    hover: "hover:shadow-md"
+  };
+
+  return (
+    <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 border border-gray-200 shadow-xl max-w-6xl mx-auto">
+      <div className="grid lg:grid-cols-2 gap-8">
+        
+        {/* Controls Panel */}
+        <div className="space-y-6">
+          <h4 className="text-2xl font-bold text-gray-900 mb-6">Customize Profile</h4>
+          
+          {/* Gender */}
+          <div>
+            <label className="block text-sm font-semibold text-gray-700 mb-3">Gender</label>
+            <div className="flex gap-3">
+              {['Male', 'Female'].map((option) => (
+                <button
+                  key={option}
+                  onClick={() => setSelectedGender(option)}
+                  className={`px-6 py-3 rounded-xl ${ButtonStyle.base} ${
+                    selectedGender === option ? ButtonStyle.selected : ButtonStyle.unselected
+                  } ${ButtonStyle.hover}`}
+                >
+                  {option}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Age Range */}
+          <div>
+            <label className="block text-sm font-semibold text-gray-700 mb-3">Age Range</label>
+            <div className="grid grid-cols-3 gap-2">
+              {['18-25', '25-35', '35-45', '45-55', '55-65', '65-75', '75+'].map((range) => (
+                <button
+                  key={range}
+                  onClick={() => setSelectedAge(range)}
+                  className={`px-4 py-2 rounded-lg text-sm ${ButtonStyle.base} ${
+                    selectedAge === range ? ButtonStyle.selected : ButtonStyle.unselected
+                  } ${ButtonStyle.hover}`}
+                >
+                  {range}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Ethnicity */}
+          <div>
+            <label className="block text-sm font-semibold text-gray-700 mb-3">Ethnicity</label>
+            <div className="grid grid-cols-2 gap-2">
+              {['Caucasian', 'Asian', 'Black', 'Indian', 'Latina', 'Mixed'].map((ethnicity) => (
+                <button
+                  key={ethnicity}
+                  onClick={() => setSelectedEthnicity(ethnicity)}
+                  className={`px-4 py-2 rounded-lg text-sm ${ButtonStyle.base} ${
+                    selectedEthnicity === ethnicity ? ButtonStyle.selected : ButtonStyle.unselected
+                  } ${ButtonStyle.hover}`}
+                >
+                  {ethnicity}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <button 
+            onClick={generateProfile}
+            disabled={isGenerating}
+            className={`w-full px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl ${
+              isGenerating 
+                ? 'bg-gray-400 cursor-not-allowed text-white' 
+                : 'bg-gradient-to-r from-purple-500 to-indigo-500 text-white hover:from-purple-600 hover:to-indigo-600 active:scale-[0.98]'
+            }`}
+          >
+            {isGenerating ? (
+              <div className="flex items-center justify-center space-x-2">
+                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                <span>Generating...</span>
+              </div>
+            ) : (
+              'Generate Profile Preview'
+            )}
+          </button>
+        </div>
+
+        {/* Preview Panel */}
+        <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+          <h4 className="text-xl font-bold text-gray-900 mb-4">Profile Preview</h4>
+          
+          {/* Profile Card Mockup */}
+          <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4 border border-purple-200 transition-all duration-500">
+            <div className="flex items-center space-x-4 mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-indigo-400 rounded-full flex items-center justify-center text-2xl transition-all duration-500 overflow-hidden">
+                {isGenerating ? (
+                  <div className="w-8 h-8 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                ) : currentProfile.photos && currentProfile.photos.length > 0 ? (
+                  <img 
+                    src={currentProfile.photos[0]} 
+                    alt="Profile" 
+                    className="w-full h-full object-cover rounded-full"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).style.display = 'none';
+                      (e.target as HTMLImageElement).nextElementSibling!.classList.remove('hidden');
+                    }}
+                  />
+                ) : (
+                  <span className="text-white text-sm">👤</span>
+                )}
+                <div className="hidden text-white text-sm">👤</div>
+              </div>
+              <div>
+                <h5 className="text-lg font-bold text-gray-900 transition-all duration-500">
+                  {isGenerating ? '...' : `${currentProfile.name}, ${currentProfile.age}`}
+                </h5>
+                <p className="text-sm text-gray-600 transition-all duration-500">
+                  {isGenerating ? 'Loading...' : currentProfile.location}
+                </p>
+              </div>
+            </div>
+            
+            <div className="grid grid-cols-3 gap-2 mb-4">
+              {[0, 1, 2].map((i) => (
+                <div key={i} className={`aspect-square rounded-lg flex items-center justify-center transition-all duration-500 overflow-hidden ${
+                  isGenerating 
+                    ? 'bg-gradient-to-br from-gray-300 to-gray-400 animate-pulse' 
+                    : 'bg-gradient-to-br from-gray-200 to-gray-300'
+                }`}>
+                  {isGenerating ? (
+                    <div className="w-6 h-6 border-2 border-gray-500 border-t-transparent rounded-full animate-spin"></div>
+                  ) : currentProfile.photos && currentProfile.photos[i] ? (
+                    <img 
+                      src={currentProfile.photos[i]} 
+                      alt={`Profile photo ${i + 1}`}
+                      className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).style.display = 'none';
+                        (e.target as HTMLImageElement).nextElementSibling!.classList.remove('hidden');
+                      }}
+                    />
+                  ) : (
+                    <Camera className="w-6 h-6 text-gray-500" />
+                  )}
+                  <div className="hidden">
+                    <Camera className="w-6 h-6 text-gray-500" />
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <div className="bg-white rounded-lg p-3 border border-purple-200">
+              <p className="text-sm text-gray-700 leading-relaxed transition-all duration-500">
+                {isGenerating ? 'Generating personalized bio...' : `"${currentProfile.bio}"`}
+              </p>
+            </div>
+            
+            <div className="flex justify-center mt-4 space-x-2">
+              <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full font-medium transition-colors hover:shadow-lg active:scale-95">
+                ✕ Pass
+              </button>
+              <button className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full font-medium transition-colors hover:shadow-lg active:scale-95">
+                ♥ Like
+              </button>
+            </div>
+          </div>
+          
+          <div className="mt-4 text-center">
+            <p className="text-sm text-gray-500">
+              ✨ Generated in real-time based on your parameters
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div className="mt-8 text-center">
+        <div className="bg-gradient-to-r from-purple-100 to-indigo-100 rounded-2xl p-6 border border-purple-200">
+          <p className="text-gray-700 font-semibold mb-2">✨ What you get with each profile:</p>
+          <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-600">
+            <div>📸 6 high-quality images</div>
+            <div>🎥 2 short video clips</div>
+            <div>📝 AI-generated bio</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export const DatingProfilesService: React.FC = () => {
   return (
@@ -63,19 +329,15 @@ export const DatingProfilesService: React.FC = () => {
       <div className="container mx-auto px-4 pb-20">
         <div className="max-w-6xl mx-auto">
 
-          {/* Pain Point */}
-          <section className="py-[150px] bg-white">
-            <div className="text-center">
-              <div className="bg-gradient-to-r from-purple-100 to-indigo-100 rounded-2xl p-8 border border-purple-200 max-w-5xl mx-auto">
-                <p className="text-xl text-gray-800 leading-relaxed">
-                  A brand-new dating platform is an empty room: users arrive, see no matches, and churn. You need a critical mass of realistic profiles <strong>before</strong> launch — and you need them updated continuously.
-                </p>
-              </div>
-            </div>
-          </section>
 
-          {/* Trusted by */}
-          <section className="py-[150px] bg-gray-50">
+
+        </div>
+      </div>
+
+      {/* Trusted by */}
+      <section className="w-full py-[75px] bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
             <h3 className="text-sm tracking-wide text-gray-500 mb-12 uppercase text-center">Trusted by Singles on</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
               {[
@@ -94,7 +356,12 @@ export const DatingProfilesService: React.FC = () => {
                 </div>
               ))}
             </div>
-          </section>
+          </div>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-4 pb-20">
+        <div className="max-w-6xl mx-auto">
 
           {/* Service Details */}
           <section className="py-[150px] bg-white">
@@ -149,8 +416,13 @@ export const DatingProfilesService: React.FC = () => {
             </div>
           </section>
 
-          {/* Scale & Speed */}
-          <section className="py-[150px] bg-gray-50">
+        </div>
+      </div>
+
+      {/* Scale & Speed */}
+      <section className="w-full py-[75px] bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
             <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">Scale & Speed</h3>
             <div className="grid md:grid-cols-3 gap-8">
               {[
@@ -170,43 +442,19 @@ export const DatingProfilesService: React.FC = () => {
                 </div>
               ))}
             </div>
-          </section>
+          </div>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-4 pb-20">
+        <div className="max-w-6xl mx-auto">
 
           {/* Live Preview Widget */}
           <section className="py-[150px] bg-white">
             <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 text-center">Live Preview Widget</h3>
-            <p className="text-lg text-gray-600 mb-12 text-center">Parameters your visitors can play with:</p>
+            <p className="text-lg text-gray-600 mb-12 text-center">Customize and see instant profile previews:</p>
             
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
-              {[
-                { title: 'Gender', options: 'Male | Female' },
-                { title: 'Age range', options: '18-25 | 25-35 | 35-45 | 45-55 | 55-65 | 65-75 | 75+' },
-                { title: 'Ethnicity', options: 'Caucasian | Asian | Black | Indian | Latina | Mixed' }
-              ].map((param) => (
-                <div key={param.title} className="relative group h-full">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
-                  <div className="relative bg-white/90 backdrop-blur-md rounded-3xl p-6 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] group-hover:border-purple-200/50 h-full">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center mb-4">
-                      <Users className="w-5 h-5 text-white" />
-                    </div>
-                    <h4 className="text-lg font-bold text-gray-900 mb-2">{param.title}</h4>
-                    <p className="text-gray-600 leading-relaxed">{param.options}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="bg-gradient-to-r from-purple-100 to-indigo-100 rounded-2xl p-8 border border-purple-200">
-              <p className="text-gray-700 mb-4 font-semibold">When a user toggles options, we instantly display:</p>
-              <ul className="space-y-2 text-gray-700 mb-6">
-                <li>• 6 sample images (2 selfies • 2 casual • 2 swim/lingerie)</li>
-                <li>• 2 looping 5-10-second video clip</li>
-                <li>• Auto-generated sample bio</li>
-              </ul>
-              <p className="text-gray-700">
-                Examples: <a className="text-purple-600 hover:text-purple-800 font-medium transition-colors" href="https://compliantpix.com/" target="_blank" rel="noreferrer">compliantpix.com</a>
-              </p>
-            </div>
+            <InteractiveProfileWidget />
           </section>
 
         </div>

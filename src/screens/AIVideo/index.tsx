@@ -1,146 +1,257 @@
 import React from 'react';
+import { Play, Settings, Film, CheckCircle, Zap, Camera } from 'lucide-react';
 import { PageLayout } from '@/components/layout/PageLayout';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { FAQAccordion } from '@/components/sections/FAQAccordion';
+import { MoreMagicTools } from '@/components/sections/MoreMagicTools';
 
 export const AIVideo: React.FC = () => {
-  const faqData = [
-    {
-      question: "Which engine is best for me?",
-      answer: "Use Kling 1.6 for quick stylised drafts, Kling 2.0 for realistic footage, and WAN when you need uncensored or experimental content."
-    },
-    {
-      question: "How long can a clip be?",
-      answer: "Currently, 10-20 seconds. Longer formats roll out soon."
-    },
-    {
-      question: "Can I batch-generate 1 000 clips?",
-      answer: "Yes. The batch queue spins up additional GPUs automatically; you pay only for compute you consume."
-    },
-    {
-      question: "Does uncensored mode break platform policies?",
-      answer: "Clips stay in your private workspace. You decide where to publish; we supply compliance guidelines."
-    },
-    {
-      question: "What resolutions are supported?",
-      answer: "Default 720 p."
-    }
-  ];
-
   return (
     <PageLayout
-      title="AI Video Generator — From Image to Motion"
-      description="Cinematic, social-ready videos — no camera, no render farm, no waiting."
+      title="AI Video Generation — Create Stunning Videos"
+      description="Generate professional videos from text and images with AI technology."
     >
-      <div className="container mx-auto px-4 pb-20" style={{ paddingTop: '140px' }}>
-        <div className="max-w-6xl mx-auto">
-          {/* Hero */}
-          <section className="pt-24 pb-[40px] text-center">
-            <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-6 leading-tight">
-              AI Video Generator — From Image to Motion
-            </h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
-              <strong>Cinematic, social-ready videos — no camera, no render farm, no waiting.</strong>
-            </p>
-            <div className="flex flex-wrap gap-6 justify-center">
-              <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-all duration-200">
-                Try Video Generator
-              </a>
+      {/* Hero Section */}
+      <section className="w-full py-[180px] bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-[1200px] mx-auto">
+            <div className="bg-[#0F172A] text-white rounded-3xl p-12 md:p-16 text-center border border-white/10">
+              <h1 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+                AI Video Generation
+              </h1>
+              <p className="text-xl md:text-2xl mb-8 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-semibold">
+                Create Stunning Videos
+              </p>
+              <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Generate professional videos from text descriptions and images. Perfect for social media, marketing, and creative projects.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors">Try AI Video Generator</a>
+                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-colors">Book a demo</a>
+              </div>
             </div>
-            <p className="text-gray-500 mt-8 italic">
-              *(Interactive player mock-up: reference frame ➜ 4-sec generated clip loop)*
-            </p>
-          </section>
+          </div>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-4 pb-20">
+        <div className="max-w-6xl mx-auto">
 
           {/* How It Works */}
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">How It Works</h3>
-            <ol className="list-decimal list-inside space-y-4 text-gray-700">
-              <li><strong>Choose Your Engine</strong> — Kling 1.6 (fast, stylised) · Kling 2.0 (photoreal) · WAN (uncensored, artistic).</li>
-              <li><strong>Input a Prompt or Reference</strong> — Describe the scene and add images. The system infers motion, style, and rhythm.</li>
-              <li><strong>Set Length & Quality</strong> — 5–10s · HD. Fine‑grained control over clip dynamics.</li>
-              <li><strong>Launch (Batch-Mode Optional)</strong> — Queue one clip or thousands. Real‑time progress and cost.</li>
-              <li><strong>Auto-Pipeline</strong> — Results pass to Upscale, Face Swap, Publishing; one click to Reels/TikTok/Shorts.</li>
-            </ol>
-          </section>
-
-          {/* Key Features */}
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Key Features</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <section className="py-16 md:py-24">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4 text-center">How It Works</h2>
+            <p className="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+              Create professional videos in three simple steps
+            </p>
+            <div className="grid md:grid-cols-3 gap-8">
               {[
-                ['Three Specialised Engines','Kling 1.6 — fast stylised drafts; Kling 2.0 — photorealism; WAN — 18+ and art stories.'],
-                ['Batch Generation at Scale','Generate hundreds and thousands of clips in parallel.'],
-                ['Consistency Toolkit','Locked seed and character embeddings; Face Swap integration.'],
-                ['Context-Aware Motion & Lighting','Camera moves, highlights, and shadow sync — without manual animation.'],
-                ['Seamless Pipeline','Upscale 4K, Thumbnail Carousel, Social Scheduler.'],
-              ].map(([title,desc]) => (
-                <Card key={title as string}>
-                  <CardHeader className="p-5 pb-2"><CardTitle>{title as string}</CardTitle></CardHeader>
-                  <CardContent className="pt-0 px-5 pb-5 text-gray-700">{desc as string}</CardContent>
-                </Card>
+                {
+                  step: "1",
+                  icon: Camera,
+                  title: "Input Content",
+                  description: "Upload images or write text descriptions for your video content."
+                },
+                {
+                  step: "2", 
+                  icon: Settings,
+                  title: "Choose Style & Length",
+                  description: "Select video style, duration, and motion settings for your creation."
+                },
+                {
+                  step: "3",
+                  icon: Film,
+                  title: "Generate & Download",
+                  description: "Get your AI-generated video ready for social media or professional use."
+                }
+              ].map((item, index) => (
+                <div key={index} className="text-center group">
+                  <div className="bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl p-8 mb-6 group-hover:scale-105 transition-transform duration-300">
+                    <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                      <span className="text-white font-bold text-xl">{item.step}</span>
+                    </div>
+                    <item.icon className="w-8 h-8 text-purple-600 mx-auto mb-4" />
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
               ))}
             </div>
           </section>
 
-          {/* Ideal For */}
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Ideal For Teams That Need to…</h3>
-            <ul className="list-disc list-inside text-gray-700 space-y-2">
-              <li>Ship ad creatives weekly — no production house required.</li>
-              <li>Feed TikTok/Reels/Shorts with constant video content.</li>
-              <li>Extend static campaigns into motion without losing identity.</li>
-            </ul>
-            <div className="mt-6">
-              <a href="/products/zencreator/content-creation/video-generation" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Try Video Generator</a>
+          {/* Key Features */}
+          <section className="py-16 md:py-24 border-t border-gray-200">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4 text-center">Key Features</h2>
+            <p className="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+              Advanced AI video generation technology
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  icon: Film,
+                  title: "Multiple Video Engines",
+                  features: [
+                    "Kling 1.6 for stylized content",
+                    "Kling 2.0 for photorealistic videos", 
+                    "WAN for experimental content",
+                    "Custom fine-tuned models"
+                  ]
+                },
+                {
+                  icon: Play,
+                  title: "Flexible Duration",
+                  features: [
+                    "10-20 second clips",
+                    "Extended formats coming soon",
+                    "Loop-optimized videos",
+                    "Custom timing control"
+                  ]
+                },
+                {
+                  icon: Settings,
+                  title: "Advanced Controls",
+                  features: [
+                    "Motion intensity settings",
+                    "Style transfer options",
+                    "Resolution up to 720p",
+                    "Aspect ratio control"
+                  ]
+                },
+                {
+                  icon: Zap,
+                  title: "Batch Processing",
+                  features: [
+                    "Generate 1000+ clips",
+                    "Automatic GPU scaling",
+                    "Queue management",
+                    "Pay-per-use pricing"
+                  ]
+                },
+                {
+                  icon: Camera,
+                  title: "Input Flexibility",
+                  features: [
+                    "Text-to-video generation",
+                    "Image-to-video animation",
+                    "Multiple format support",
+                    "Batch upload capability"
+                  ]
+                },
+                {
+                  icon: CheckCircle,
+                  title: "Professional Output",
+                  features: [
+                    "High-quality rendering",
+                    "Multiple export formats",
+                    "No watermarks",
+                    "Commercial usage rights"
+                  ]
+                }
+              ].map((feature, index) => (
+                <div key={index} className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 group">
+                  <div className="bg-gradient-to-r from-indigo-500 to-purple-500 w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <feature.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+                  <ul className="space-y-2">
+                    {feature.features.map((item, idx) => (
+                      <li key={idx} className="text-gray-600 text-sm flex items-start">
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </section>
 
-          {/* More Tools */}
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">More Magic Tools</h3>
-            <p className="text-gray-700">(placeholder for tool tiles — shared block)</p>
-            <div className="mt-4">
-              <a href="/products/zencreator/content-creation" className="text-purple-600 hover:underline font-medium">See full Content Creation suite →</a>
+          {/* Perfect For Teams */}
+          <section className="py-16 md:py-24 border-t border-gray-200">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4 text-center">Perfect For Teams That Need to…</h2>
+            <div className="grid md:grid-cols-3 gap-6 mt-8">
+              {[
+                {
+                  icon: Play,
+                  title: "Create Social Media Content",
+                  description: "Generate engaging videos for Instagram, TikTok, and other platforms without expensive video production."
+                },
+                {
+                  icon: Film,
+                  title: "Prototype Video Concepts", 
+                  description: "Quickly test video ideas and concepts before investing in full production workflows."
+                },
+                {
+                  icon: Zap,
+                  title: "Scale Video Production",
+                  description: "Generate hundreds of video variations for A/B testing and different audience segments."
+                }
+              ].map((item, index) => (
+                <div key={index} className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300">
+                  <div className="bg-gradient-to-r from-indigo-500 to-purple-500 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <item.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                </div>
+              ))}
             </div>
           </section>
 
           {/* FAQ */}
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">FAQ</h3>
-            <div className="space-y-4 text-gray-700">
-              <div>
-                <p className="font-medium">Which engine is best for me?</p>
-                <p>Kling 1.6 — stylised drafts; Kling 2.0 — realism; WAN — experimental and 18+.</p>
+          <section className="py-16 md:py-24 border-t border-gray-200">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4 text-center">Frequently Asked Questions</h2>
+            <div className="max-w-3xl mx-auto">
+              <div className="space-y-6">
+                {[
+                  {
+                    question: "Which engine is best for me?",
+                    answer: "Use Kling 1.6 for quick stylised drafts, Kling 2.0 for realistic footage, and WAN when you need uncensored or experimental content."
+                  },
+                  {
+                    question: "How long can a clip be?", 
+                    answer: "Currently, 10-20 seconds. Longer formats roll out soon."
+                  },
+                  {
+                    question: "Can I batch-generate 1,000 clips?",
+                    answer: "Yes. The batch queue spins up additional GPUs automatically; you pay only for compute you consume."
+                  },
+                  {
+                    question: "What resolutions are supported?",
+                    answer: "Base 720p with various aspect ratios. Higher resolutions coming soon."
+                  },
+                  {
+                    question: "How is pricing calculated?",
+                    answer: "Pay-per-second of generated video content. No upfront costs, no monthly minimums."
+                  }
+                ].map((faq, index) => (
+                  <div key={index} className="border border-gray-200 rounded-xl p-6 hover:border-purple-200 transition-colors">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.question}</h3>
+                    <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                  </div>
+                ))}
               </div>
-              <div>
-                <p className="font-medium">How long can a clip be?</p>
-                <p>10–20 seconds today; longer — coming soon.</p>
-              </div>
-              <div>
-                <p className="font-medium">Can I batch-generate 1 000 clips?</p>
-                <p>Yes. The queue scales GPUs automatically; pay only for runtime.</p>
-              </div>
-              <div>
-                <p className="font-medium">What resolutions are supported?</p>
-                <p>Base 720p.</p>
-              </div>
-              <p>Still have questions? <a href="mailto:support@zencreator.pro" className="text-purple-600 hover:underline">Contact support →</a></p>
+              <p className="text-center mt-8">Still have questions? <a href="mailto:support@zencreator.pro" className="text-purple-600 hover:underline">Contact support →</a></p>
             </div>
           </section>
 
-          {/* Final CTA */}
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">Ready to turn prompts into scroll-stopping videos?</h3>
-            <div className="flex gap-3">
-              <a href="/products/zencreator/content-creation/video-generation" className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Try AI Video Generator</a>
-              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Book a demo</a>
-            </div>
-          </section>
         </div>
       </div>
+
+      {/* More Magic Tools */}
+      <MoreMagicTools />
+      
+      {/* Final CTA */}
+      <section className="w-full py-[150px] bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-[1200px] mx-auto">
+            <div className="bg-[#0F172A] text-white rounded-3xl p-12 md:p-16 text-center border border-white/10">
+              <h3 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">Ready to turn prompts into scroll-stopping videos?</h3>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors">Try AI Video Generator</a>
+                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-colors">Book a demo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </PageLayout>
   );
 };
-
-

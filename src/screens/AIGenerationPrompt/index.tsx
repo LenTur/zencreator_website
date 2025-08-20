@@ -1,156 +1,257 @@
 import React from 'react';
+import { Zap, Settings, Image as ImageIcon, CheckCircle, Sparkles, Palette } from 'lucide-react';
 import { PageLayout } from '@/components/layout/PageLayout';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { MoreMagicTools } from '@/components/sections/MoreMagicTools';
 
 export const AIGenerationPrompt: React.FC = () => {
   return (
     <PageLayout
-      title="AI Image Generator — Prompt-to-Picture in One Click"
-      description="Flux-level realism or SDXL photography, with optional uncensored output and LoRa body tuning."
+      title="AI Generation by Prompt — Prompt-to-Picture in One Click"
+      description="Create stunning images from text descriptions with AI technology."
     >
-      <div className="container mx-auto px-4 pb-20" style={{ paddingTop: '140px' }}>
-        <div className="max-w-6xl mx-auto">
-          {/* Hero */}
-          <section className="pt-24 pb-[40px] text-center">
-            <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-6 leading-tight">
-              AI Image Generator — Prompt-to-Picture in One Click
-            </h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
-              <strong>Flux-level realism or SDXL photography, with optional uncensored output and LoRa body tuning.</strong>
-            </p>
-            <div className="flex flex-wrap gap-6 justify-center">
-              <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-all duration-200">
-                Try Image Generator
-              </a>
+      {/* Hero Section */}
+      <section className="w-full py-[180px] bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-[1200px] mx-auto">
+            <div className="bg-[#0F172A] text-white rounded-3xl p-12 md:p-16 text-center border border-white/10">
+              <h1 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+                AI Generation by Prompt
+              </h1>
+              <p className="text-xl md:text-2xl mb-8 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent font-semibold">
+                Prompt-to-Picture in One Click
+              </p>
+              <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Create stunning images from text descriptions with AI technology. From simple keywords to detailed scenes.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors">Try AI Generation by Prompt</a>
+                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-colors">Book a demo</a>
+              </div>
             </div>
-            <p className="text-gray-500 mt-8 italic">
-              *(Interactive gallery: 3-image before/after carousel showing raw keywords → refined "Magic Prompt" → final images)*
-            </p>
-          </section>
+          </div>
+        </div>
+      </section>
+
+      <div className="container mx-auto px-4 pb-20">
+        <div className="max-w-6xl mx-auto">
 
           {/* How It Works */}
-          <section className="mt-[150px]">
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">How It Works</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="rounded-3xl p-8 border border-gray-200 hover:shadow-xl transition-all duration-300">
-                <div className="text-4xl font-black text-purple-600 mb-6">1</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Pick Your Model</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  <strong>Flux</strong> for cinematic detail · <strong>SDXL</strong> for photographic realism.
-                  Engine optimised for your style.
-                </p>
-              </div>
-              <div className="rounded-3xl p-8 border border-gray-200 hover:shadow-xl transition-all duration-300">
-                <div className="text-4xl font-black text-purple-600 mb-6">2</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Set Options</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Toggle <strong>Uncensored</strong> · Attach <strong>LoRa modifiers</strong> (e.g., athletic abs, curvy silhouette).
-                  Rules & weights applied.
-                </p>
-              </div>
-              <div className="rounded-3xl p-8 border border-gray-200 hover:shadow-xl transition-all duration-300">
-                <div className="text-4xl font-black text-purple-600 mb-6">3</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Type an Idea</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Write a few keywords or a full sentence. <strong>Magic Prompt</strong> expands it into a pro-level prompt automatically.
-                </p>
-              </div>
-              <div className="rounded-3xl p-8 border border-gray-200 hover:shadow-xl transition-all duration-300">
-                <div className="text-4xl font-black text-purple-600 mb-6">4</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Generate & Iterate</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Up to 8 images per run; lock seed for series consistency. Save, upscale, swap faces, or publish directly.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          {/* Key Features */}
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Key Features</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <section className="py-16 md:py-24">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4 text-center">How It Works</h2>
+            <p className="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+              Transform your ideas into stunning visuals in three simple steps
+            </p>
+            <div className="grid md:grid-cols-3 gap-8">
               {[
-                ['Dual-Model Engine','Flux — hyper-real textures, dramatic lighting, deep colour depth. SDXL — true-to-life skin tones and soft bokeh, ideal for portraits.'],
-                ['Censorship Control','Safe-default mode for mainstream platforms. Uncensored toggle for 18+ or artistic work (policy-compliant storage only).'],
-                ['LoRa Body Modifiers','Emphasise physique traits — broad shoulders, toned abs, fuller curves — without breaking anatomy.'],
-                ['Magic Prompt','AI copywriter expands simple keywords into detailed, weighted prompts.'],
-                ['Consistency Mode','Fixed seed + reference embedding keeps the same identity across shots.'],
-                ['Batch Friendly','Generate hundreds of images in parallel — route to Upscale, Face Swap or Publishing automatically.'],
-              ].map(([title,desc]) => (
-                <Card key={title as string}>
-                  <CardHeader className="p-5 pb-2"><CardTitle>{title as string}</CardTitle></CardHeader>
-                  <CardContent className="pt-0 px-5 pb-5 text-gray-700">{desc as string}</CardContent>
-                </Card>
+                {
+                  step: "1",
+                  icon: Zap,
+                  title: "Write Your Prompt",
+                  description: "Describe what you want to see. Be as detailed or simple as you like."
+                },
+                {
+                  step: "2", 
+                  icon: Settings,
+                  title: "Choose Style & Settings",
+                  description: "Select art style, aspect ratio, and quality settings for your image."
+                },
+                {
+                  step: "3",
+                  icon: ImageIcon,
+                  title: "Generate & Download",
+                  description: "Get your AI-generated image in seconds, ready to use or refine further."
+                }
+              ].map((item, index) => (
+                <div key={index} className="text-center group">
+                  <div className="bg-gradient-to-br from-purple-100 to-indigo-100 rounded-2xl p-8 mb-6 group-hover:scale-105 transition-transform duration-300">
+                    <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                      <span className="text-white font-bold text-xl">{item.step}</span>
+                    </div>
+                    <item.icon className="w-8 h-8 text-purple-600 mx-auto mb-4" />
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
               ))}
             </div>
           </section>
 
-          {/* Perfect For */}
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Perfect For Teams That Need to…</h3>
-            <ul className="list-disc list-inside text-gray-700 space-y-2">
-              <li><strong>Prototype ad creatives</strong> before committing to a photo shoot.</li>
-              <li><strong>Populate dating or social profiles</strong> with consistent, realistic imagery.</li>
-              <li><strong>Produce concept art</strong> for fashion, gaming, or product visuals — fast.</li>
-            </ul>
-            <div className="mt-6">
-              <a href="/products/zencreator/content-creation/ai-generation-prompt" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Try Image Generator</a>
+          {/* Key Features */}
+          <section className="py-16 md:py-24 border-t border-gray-200">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4 text-center">Key Features</h2>
+            <p className="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+              Advanced AI technology for creative image generation
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  icon: Sparkles,
+                  title: "Multiple AI Models",
+                  features: [
+                    "FLUX for photorealism",
+                    "SDXL for artistic styles", 
+                    "Custom fine-tuned models",
+                    "Style-specific engines"
+                  ]
+                },
+                {
+                  icon: Palette,
+                  title: "Style Control",
+                  features: [
+                    "Photography styles",
+                    "Artistic movements",
+                    "Digital art styles",
+                    "Custom style mixing"
+                  ]
+                },
+                {
+                  icon: Settings,
+                  title: "Advanced Settings",
+                  features: [
+                    "Aspect ratio control",
+                    "Quality adjustments",
+                    "Seed control for consistency",
+                    "Batch generation"
+                  ]
+                },
+                {
+                  icon: Zap,
+                  title: "Lightning Fast",
+                  features: [
+                    "Results in under 30 seconds",
+                    "GPU-accelerated processing",
+                    "Queue management",
+                    "Real-time progress tracking"
+                  ]
+                },
+                {
+                  icon: ImageIcon,
+                  title: "High Quality Output",
+                  features: [
+                    "Up to 4K resolution",
+                    "Multiple format support",
+                    "Lossless compression",
+                    "Print-ready quality"
+                  ]
+                },
+                {
+                  icon: CheckCircle,
+                  title: "Commercial Use",
+                  features: [
+                    "Full commercial rights",
+                    "No watermarks",
+                    "Unlimited downloads",
+                    "API access available"
+                  ]
+                }
+              ].map((feature, index) => (
+                <div key={index} className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 group">
+                  <div className="bg-gradient-to-r from-purple-500 to-indigo-500 w-12 h-12 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    <feature.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+                  <ul className="space-y-2">
+                    {feature.features.map((item, idx) => (
+                      <li key={idx} className="text-gray-600 text-sm flex items-start">
+                        <CheckCircle className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </section>
 
-          {/* More Tools placeholder */}
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">More Magic Tools</h3>
-            <p className="text-gray-700">(placeholder for tool tiles — shared block)</p>
-            <div className="mt-4">
-              <a href="/products/zencreator/content-creation" className="text-purple-600 hover:underline font-medium">See full Content Creation suite →</a>
+          {/* Perfect For Teams */}
+          <section className="py-16 md:py-24 border-t border-gray-200">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4 text-center">Perfect For Teams That Need to…</h2>
+            <div className="grid md:grid-cols-3 gap-6 mt-8">
+              {[
+                {
+                  icon: Sparkles,
+                  title: "Create Marketing Visuals",
+                  description: "Generate unique images for ads, social media, and campaigns without stock photo costs."
+                },
+                {
+                  icon: Palette,
+                  title: "Prototype Design Concepts", 
+                  description: "Quickly visualize ideas and concepts before investing in professional photography."
+                },
+                {
+                  icon: ImageIcon,
+                  title: "Scale Content Production",
+                  description: "Generate hundreds of variations for A/B testing and different market segments."
+                }
+              ].map((item, index) => (
+                <div key={index} className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300">
+                  <div className="bg-gradient-to-r from-purple-500 to-indigo-500 w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <item.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                </div>
+              ))}
             </div>
           </section>
 
           {/* FAQ */}
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">FAQ</h3>
-            <div className="space-y-4 text-gray-700">
-              <div>
-                <p className="font-medium">Which model should I choose?</p>
-                <p>Use Flux for dramatic, detail-rich shots; SDXL for natural photography. You can swap instantly to compare.</p>
+          <section className="py-16 md:py-24 border-t border-gray-200">
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4 text-center">Frequently Asked Questions</h2>
+            <div className="max-w-3xl mx-auto">
+              <div className="space-y-6">
+                {[
+                  {
+                    question: "What makes a good prompt?",
+                    answer: "Be descriptive but not overly complex. Include style, mood, colors, and composition details. For example: 'A serene mountain lake at sunset, photorealistic, golden hour lighting, 4K quality'."
+                  },
+                  {
+                    question: "Can I generate images in different styles?", 
+                    answer: "Yes! We support photography, digital art, paintings, sketches, and many other styles. You can specify the style in your prompt or use our style presets."
+                  },
+                  {
+                    question: "What image sizes are supported?",
+                    answer: "We support various aspect ratios from square (1:1) to ultra-wide (21:9), with resolutions up to 4K. Perfect for social media, print, and web use."
+                  },
+                  {
+                    question: "How do I get consistent results?",
+                    answer: "Use seed values to reproduce similar results, or save successful prompts as templates. Our prompt enhancement feature also helps optimize your descriptions."
+                  },
+                  {
+                    question: "Can I use these images commercially?",
+                    answer: "Yes! All generated images come with full commercial usage rights. No attribution required, no watermarks, perfect for business use."
+                  }
+                ].map((faq, index) => (
+                  <div key={index} className="border border-gray-200 rounded-xl p-6 hover:border-purple-200 transition-colors">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{faq.question}</h3>
+                    <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                  </div>
+                ))}
               </div>
-              <div>
-                <p className="font-medium">What is LoRa?</p>
-                <p>Low-Rank Adaptation files that fine-tune style or anatomy. Upload your own or pick from presets.</p>
-              </div>
-              <div>
-                <p className="font-medium">Does uncensored mode violate platform policies?</p>
-                <p>Images remain in your private workspace. You choose where and how to publish; we provide compliance guidelines.</p>
-              </div>
-              <div>
-                <p className="font-medium">How does Magic Prompt work?</p>
-                <p>A language model expands your keywords into a detailed, weighted prompt — no prompt engineering skills required.</p>
-              </div>
-              <div>
-                <p className="font-medium">Can I ensure the same face appears in every shot?</p>
-                <p>Yes — enable Consistency Mode and lock the seed; the generator will preserve core facial features across outputs.</p>
-              </div>
-              <div>
-                <p className="font-medium">What’s the max resolution?</p>
-                <p>Initial renders up to 1024×1536; one-click hand-off to Upscale for 4K output.</p>
-              </div>
-              <p>Still have questions? <a href="mailto:support@zencreator.pro" className="text-purple-600 hover:underline">Contact support →</a></p>
+              <p className="text-center mt-8">Still have questions? <a href="mailto:support@zencreator.pro" className="text-purple-600 hover:underline">Contact support →</a></p>
             </div>
           </section>
 
-          {/* Final CTA */}
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-3">Ready to turn three words into a full photo set?</h3>
-            <div className="flex gap-3">
-              <a href="/products/zencreator/content-creation/ai-generation-prompt" className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Try AI Generation by Prompt</a>
-              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">Book a demo</a>
-            </div>
-          </section>
         </div>
       </div>
+
+      {/* More Magic Tools */}
+      <MoreMagicTools />
+      
+      {/* Final CTA */}
+      <section className="w-full py-[150px] bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-[1200px] mx-auto">
+            <div className="bg-[#0F172A] text-white rounded-3xl p-12 md:p-16 text-center border border-white/10">
+              <h3 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">Ready to turn three words into a full photo set?</h3>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors">Try AI Generation by Prompt</a>
+                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-colors">Book a demo</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </PageLayout>
   );
 };
-
-
