@@ -7,7 +7,7 @@ export const Pricing = () => {
   return (
     <PageLayout 
       title="Pricing" 
-      description="Simple credit packs for every Creator OS tool, flat-rate add-ons for publishing & references, and transparent 'book-a-call' enterprise tiers for ZenComfy and managed services."
+      description="Simple credit packs for every ZenCreator tool, flat-rate add-ons for publishing & references, and transparent 'book-a-call' enterprise tiers for ZenComfy and managed services."
     >
       {/* Hero Section */}
       <div className="container mx-auto px-4 pb-20" style={{ paddingTop: '140px' }}>
@@ -15,10 +15,10 @@ export const Pricing = () => {
           <section className="pt-24 pb-[40px] text-center">
             <h1 className="text-5xl md:text-7xl font-black text-gray-900 mb-6 leading-tight">
               Pricing<br />
-              <span style={{background: 'linear-gradient(141deg, #D8B4FE -1.09%, #5A17CE 108.36%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}} className="text-2xl md:text-4xl">Creator OS & ZenComfy</span>
+              <span style={{background: 'linear-gradient(141deg, #D8B4FE -1.09%, #5A17CE 108.36%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}} className="text-2xl md:text-4xl">ZenCreator & ZenComfy</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
-              Simple credit packs for every Creator OS tool, flat-rate add-ons for publishing & references, and transparent "book-a-call" enterprise tiers for ZenComfy and managed services.
+              Simple credit packs for every ZenCreator tool, flat-rate add-ons for publishing & references, and transparent "book-a-call" enterprise tiers for ZenComfy and managed services.
             </p>
           </section>
         </div>
@@ -142,7 +142,7 @@ export const Pricing = () => {
           <section id="credit-packs" className="pt-24 pb-16">
             <div className="text-center mb-12">
               <h3 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">ZenCreator Credit Packs</h3>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">Pay-as-you-go credits that never expire. Use across all Creator OS tools.</p>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">Pay-as-you-go credits that never expire. Use across all ZenCreator tools.</p>
             </div>
             
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
@@ -177,7 +177,7 @@ export const Pricing = () => {
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  One shared balance for <em>all</em> Creator OS tools.
+                  One shared balance for <em>all</em> ZenCreator tools.
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
