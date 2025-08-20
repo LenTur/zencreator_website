@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Heart, Users, CheckCircle, Camera, Clock, Shield } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { Heart, Users, CheckCircle, Camera, Clock, Shield, ChevronLeft, ChevronRight } from 'lucide-react';
 import { PageLayout } from '@/components/layout/PageLayout';
 import { FAQAccordion } from '@/components/sections/FAQAccordion';
 
@@ -17,6 +17,96 @@ const faqItems = [
     answer: "Our moderation pipeline flags nudity, minors, weapons, hate symbols and more; humans approve the final set."
   }
 ];
+
+// Profile Gallery Component with Navigation
+const ProfileGallery: React.FC = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: -320, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: 320, behavior: 'smooth' });
+    }
+  };
+
+  const profiles = [
+    { before: 'dating-profiles/before1.jpg', after: 'dating-profiles/after1.jpg' },
+    { before: 'dating-profiles/before2.jpg', after: 'dating-profiles/after2.jpg' },
+    { before: 'dating-profiles/before3.jpg', after: 'dating-profiles/after3.jpg' },
+    { before: 'dating-profiles/before4.jpg', after: 'dating-profiles/after4.jpg' },
+    { before: 'dating-profiles/before5.jpg', after: 'dating-profiles/after5.jpg' },
+    { before: 'dating-profiles/before6.jpg', after: 'dating-profiles/after6.jpg' },
+    { before: 'dating-profiles/before7.jpg', after: 'dating-profiles/after7.jpg' },
+    { before: 'dating-profiles/before8.jpg', after: 'dating-profiles/after8.jpg' }
+  ];
+
+  return (
+    <div className="relative">
+      {/* Navigation Arrows */}
+      <button 
+        onClick={scrollLeft}
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-gray-700 p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 backdrop-blur-sm"
+      >
+        <ChevronLeft className="w-6 h-6" />
+      </button>
+      
+      <button 
+        onClick={scrollRight}
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white text-gray-700 p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 backdrop-blur-sm"
+      >
+        <ChevronRight className="w-6 h-6" />
+      </button>
+
+      {/* Gallery */}
+      <div 
+        ref={scrollRef}
+        className="overflow-x-auto scrollbar-hide pb-4"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      >
+        <div className="flex space-x-6 min-w-max px-16">
+          {profiles.map((profile, index) => (
+            <div key={index} className="flex-shrink-0 w-64 h-80" style={{ perspective: '1000px' }}>
+              <div className="relative w-full h-full transition-transform duration-700 group hover:[transform:rotateY(180deg)]" style={{ transformStyle: 'preserve-3d' }}>
+                {/* Front Side - Before */}
+                <div className="absolute inset-0 w-full h-full" style={{ backfaceVisibility: 'hidden' }}>
+                  <div className="bg-white rounded-2xl shadow-lg h-full border border-gray-200 overflow-hidden">
+                    <img 
+                      src={`/images/${profile.before}`}
+                      alt="Before transformation"
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxwYXRoIGQ9Ik0xMDAgNzBDMTA4LjI4NCA3MCA5NS4wMzU1IDc2LjcxNTcgOTUuMDM1NSA4NS4wMzU1Qzk1LjAzNTUgOTMuMzU1MyAxMDEuNzUxIDEwMCAxMTAgMTAwQzExOC4yNDkgMTAwIDEyNSA5My4zNTUzIDEyNSA4NS4wMzU1QzEyNSA3Ni43MTU3IDExOC4yNDkgNzAgMTEwIDcwSDEwMFoiIGZpbGw9IiM5Q0EzQUYiLz4KPC9zdmc+';
+                      }}
+                    />
+                  </div>
+                </div>
+                
+                {/* Back Side - After */}
+                <div className="absolute inset-0 w-full h-full" style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}>
+                  <div className="bg-white rounded-2xl shadow-lg h-full border border-gray-200 overflow-hidden">
+                    <img 
+                      src={`/images/${profile.after}`}
+                      alt="After transformation"
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRkJGQkZCIi8+CjxwYXRoIGQ9Ik0xMDAgNzBDMTA4LjI4NCA3MCA5NS4wMzU1IDc2LjcxNTcgOTUuMDM1NSA4NS4wMzU1Qzk1LjAzNTUgOTMuMzU1MyAxMDEuNzUxIDEwMCAxMTAgMTAwQzExOC4yNDkgMTAwIDEyNSA5My4zNTUzIDEyNSA4NS4wMzU1QzEyNSA3Ni43MTU3IDExOC4yNDkgNzAgMTEwIDcwSDEwMFoiIGZpbGw9IiM4QjVDRjYiLz4KPC9zdmc+';
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 // Interactive Widget Component
 const InteractiveProfileWidget: React.FC = () => {
@@ -342,10 +432,10 @@ export const DatingProfilesService: React.FC = () => {
       </div>
 
       {/* Trusted by */}
-      <section className="w-full py-[75px] bg-gray-50">
+      <section className="w-full pt-4 pb-12">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h3 className="text-sm tracking-wide text-gray-500 mb-12 uppercase text-center">Trusted by Singles on</h3>
+            <h3 className="text-sm tracking-wide text-gray-500 mb-8 uppercase text-center">Trusted by Singles on</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
               {[
                 { name: 'match.com', url: 'https://match.com' },
@@ -365,6 +455,11 @@ export const DatingProfilesService: React.FC = () => {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Profile Gallery - Full Width */}
+      <section className="w-full py-16 bg-white">
+        <ProfileGallery />
       </section>
 
       <div className="container mx-auto px-4 pb-20">
