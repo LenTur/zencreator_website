@@ -1,5 +1,5 @@
 import React from 'react';
-import { CreditCard, ShieldCheck, Rocket, Headset, Zap, Brain, Hash, Shield } from 'lucide-react';
+import { CreditCard, ShieldCheck, Rocket, Headset, Zap, Brain, Hash, Shield, BarChart3 } from 'lucide-react';
 import { PageLayout } from '@/components/layout/PageLayout';
 import { FAQAccordion } from '@/components/sections/FAQAccordion';
 
@@ -233,22 +233,42 @@ export const Analytics: React.FC = () => {
 					{/* Perfect For Teams */}
 					<section id="perfect-for" className="py-[100px] bg-white">
 						<h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 text-center">Perfect For Teams That Need to…</h3>
-						<div className="max-w-4xl mx-auto space-y-6 mb-12">
-							<div className="flex items-start space-x-4">
-								<div className="flex-shrink-0 w-3 h-3 bg-purple-600 rounded-full mt-2"></div>
-								<p className="text-lg text-gray-700"><strong>Replace fractured spreadsheets</strong> with a single source of truth.</p>
+						<div className="grid md:grid-cols-2 gap-6 mb-12">
+							<div className="relative group">
+								<div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
+								<div className="relative bg-white rounded-3xl p-6 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] text-center">
+									<div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center mb-4 mx-auto">
+										<BarChart3 className="w-6 h-6 text-white" />
+									</div>
+									<p className="text-gray-700"><strong>Replace fractured spreadsheets</strong> with a single source of truth.</p>
+								</div>
 							</div>
-							<div className="flex items-start space-x-4">
-								<div className="flex-shrink-0 w-3 h-3 bg-purple-600 rounded-full mt-2"></div>
-								<p className="text-lg text-gray-700"><strong>Prove ROI</strong> to execs with conversion & revenue tie-ins.</p>
+							<div className="relative group">
+								<div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
+								<div className="relative bg-white rounded-3xl p-6 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] text-center">
+									<div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center mb-4 mx-auto">
+										<CreditCard className="w-6 h-6 text-white" />
+									</div>
+									<p className="text-gray-700"><strong>Prove ROI</strong> to execs with conversion & revenue tie-ins.</p>
+								</div>
 							</div>
-							<div className="flex items-start space-x-4">
-								<div className="flex-shrink-0 w-3 h-3 bg-purple-600 rounded-full mt-2"></div>
-								<p className="text-lg text-gray-700"><strong>Iterate content quickly</strong> using real-time feedback loops and AI tips.</p>
+							<div className="relative group">
+								<div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
+								<div className="relative bg-white rounded-3xl p-6 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] text-center">
+									<div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center mb-4 mx-auto">
+										<Zap className="w-6 h-6 text-white" />
+									</div>
+									<p className="text-gray-700"><strong>Iterate content quickly</strong> using real-time feedback loops and AI tips.</p>
+								</div>
 							</div>
-							<div className="flex items-start space-x-4">
-								<div className="flex-shrink-0 w-3 h-3 bg-purple-600 rounded-full mt-2"></div>
-								<p className="text-lg text-gray-700"><strong>Collaborate across roles</strong>—creatives, growth, and leadership see tailored views.</p>
+							<div className="relative group">
+								<div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
+								<div className="relative bg-white rounded-3xl p-6 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] text-center">
+									<div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center mb-4 mx-auto">
+										<Headset className="w-6 h-6 text-white" />
+									</div>
+									<p className="text-gray-700"><strong>Collaborate across roles</strong>—creatives, growth, and leadership see tailored views.</p>
+								</div>
 							</div>
 						</div>
 						<div className="flex justify-center gap-4">
@@ -266,14 +286,7 @@ export const Analytics: React.FC = () => {
 			items={[
 				{ question: 'How fresh is the data?', answer: 'API sync runs every 10 minutes; YouTube metrics every hour (API limit).' },
 			]}
-			cta={(
-				<div className="text-center">
-					<p className="text-gray-600 mb-4">Still have questions?</p>
-					<a href="mailto:info@zencreator.pro?subject=Analytics%20%26%20Insights%20Support" className="text-purple-600 hover:text-purple-700 font-medium">
-						Contact support →
-					</a>
-				</div>
-			)}
+			cta={null}
 		/>
 
 		{/* Separate CTA section — dark card on light gradient background */}
