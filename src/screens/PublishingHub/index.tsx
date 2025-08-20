@@ -56,7 +56,7 @@ export const PublishingHub: React.FC = () => {
   ];
 
   const getChannelIcon = (title: string) => {
-    const cls = 'w-12 h-12 text-purple-600';
+    const cls = 'w-16 h-16 text-purple-600';
     if (title.toLowerCase().includes('instagram')) return <Instagram className={cls} />;
     if (title.toLowerCase().includes('threads')) return <MessageSquare className={cls} />;
     if (title.toLowerCase().includes('twitter') || title.includes('X (Twitter)')) return <Twitter className={cls} />;
@@ -108,7 +108,7 @@ export const PublishingHub: React.FC = () => {
       </div>
 
       {/* Why Teams Choose — advanced cards like WorkflowTemplates */}
-      <section className="py-[130px] bg-white">
+      <section className="py-[169px] bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 text-center">Why Teams Choose<br /> the Publishing Hub</h3>
@@ -174,8 +174,8 @@ export const PublishingHub: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
               {[
                 ['Generate', 'Create images, videos or entire sets in the Content Creation suite.'],
-                ['Push to Publishing', 'One click moves assets (and metadata) into the Publishing queue.'],
                 ['Set Strategy', 'Pick channels, fill or auto-generate copy, choose Now / Schedule / Smart Publish.'],
+                ['Push to Publishing', 'One click moves assets (and metadata) into the Publishing queue.'],
                 ['Approve & Launch', 'Role-based sign-off, then automatic posting with compliance checks.'],
                 ['Analyse & Iterate', 'Built-in dashboards surface winners; recycle or boost in seconds.'],
               ].map(([title, desc], i) => (

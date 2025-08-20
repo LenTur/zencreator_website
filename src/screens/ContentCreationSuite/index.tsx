@@ -34,9 +34,10 @@ export const ContentCreationSuite = () => {
         </div>
       </div>
 
-      {/* Tools Section */}
+      {/* What You Can Do Here */}
       <section className="py-[100px] bg-white">
         <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">What You Can Do Here</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 { 
@@ -202,7 +203,7 @@ export const ContentCreationSuite = () => {
               {[
                 { 
                   name: 'Batch Mode Everywhere', 
-                  description: 'Spin up 1 or 1 000 assets; Creator OS fans out GPU jobs and shows live progress.',
+                  description: 'Spin up 1 or 1 000 assets; ZenCreator fans out GPU jobs and shows live progress.',
                   icon: Layers
                 },
                 { 
@@ -311,21 +312,6 @@ export const ContentCreationSuite = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 text-center">Why Teams Love the Suite</h2>
-
-            {/* Metrics strip */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              {[
-                ['10K+', 'assets/day'],
-                ['99.9%', 'uptime'],
-                ['4.9/5', 'satisfaction'],
-                ['50K+', 'workflows'],
-              ].map(([num, label]) => (
-                <div key={num as string} className="rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-sm">
-                  <div className="text-2xl md:text-3xl font-black text-gray-900">{num as string}</div>
-                  <div className="text-gray-600 text-sm">{label as string}</div>
-                </div>
-              ))}
-            </div>
 
             {/* Benefit cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
