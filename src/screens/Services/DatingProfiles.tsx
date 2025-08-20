@@ -33,6 +33,47 @@ const InteractiveProfileWidget: React.FC = () => {
     photos: [] as string[]
   });
 
+  // Name databases by gender and ethnicity
+  const names = {
+    Male: {
+      European: ['James', 'Michael', 'David', 'John', 'Robert', 'William', 'Richard', 'Thomas', 'Christopher', 'Daniel'],
+      Asian: ['Kevin', 'Ryan', 'Alex', 'Brandon', 'Jason', 'Eric', 'Steven', 'Andrew', 'Justin', 'Tony'],
+      Black: ['Marcus', 'Damon', 'Terrell', 'Jamal', 'Andre', 'Malik', 'DeShawn', 'Tyrone', 'Jerome', 'Antoine'],
+      Indian: ['Arjun', 'Raj', 'Vikram', 'Amit', 'Rohit', 'Pradeep', 'Suresh', 'Kiran', 'Anil', 'Deepak'],
+      Latina: ['Carlos', 'Miguel', 'Diego', 'Luis', 'Jorge', 'Fernando', 'Ricardo', 'Eduardo', 'Roberto', 'Antonio'],
+      Mixed: ['Tyler', 'Jordan', 'Cameron', 'Blake', 'Austin', 'Mason', 'Logan', 'Hunter', 'Connor', 'Parker']
+    },
+    Female: {
+      European: ['Sarah', 'Emma', 'Olivia', 'Ava', 'Isabella', 'Sophia', 'Charlotte', 'Mia', 'Amelia', 'Harper'],
+      Asian: ['Lisa', 'Amy', 'Grace', 'Chloe', 'Lily', 'Anna', 'Sophie', 'Jenny', 'Michelle', 'Jessica'],
+      Black: ['Maya', 'Zara', 'Nia', 'Kyla', 'Amara', 'Zoe', 'Layla', 'Aaliyah', 'Simone', 'Jasmine'],
+      Indian: ['Priya', 'Anjali', 'Kavya', 'Meera', 'Sita', 'Radha', 'Nisha', 'Pooja', 'Riya', 'Shreya'],
+      Latina: ['Sofia', 'Isabella', 'Camila', 'Valentina', 'Natalia', 'Gabriela', 'Victoria', 'Alejandra', 'Daniela', 'Andrea'],
+      Mixed: ['Maya', 'Zoe', 'Chloe', 'Aria', 'Luna', 'Nova', 'Sage', 'River', 'Sky', 'Phoenix']
+    }
+  };
+
+  const cities = [
+    'San Francisco, CA', 'New York, NY', 'Los Angeles, CA', 'Chicago, IL', 'Austin, TX',
+    'Seattle, WA', 'Denver, CO', 'Miami, FL', 'Atlanta, GA', 'Boston, MA'
+  ];
+
+  const generateRandomProfile = (gender: string, ageRange: string, ethnicity: string) => {
+    const nameList = names[gender as keyof typeof names]?.[ethnicity as keyof typeof names.Male] || names.Female.European;
+    const randomName = nameList[Math.floor(Math.random() * nameList.length)];
+    const randomAge = Math.floor(Math.random() * (parseInt(ageRange.split('-')[1]) - parseInt(ageRange.split('-')[0]) + 1)) + parseInt(ageRange.split('-')[0]);
+    const randomCity = cities[Math.floor(Math.random() * cities.length)];
+    
+    return {
+      name: randomName,
+      age: randomAge.toString(),
+      location: randomCity,
+      bio: '',
+      avatar: gender === 'Male' ? '👨' : '👩',
+      photos: []
+    };
+  };
+
   const profileVariations = {
     'Male-18-25-European': { name: 'Jake', age: '23', location: 'Austin, TX', bio: 'Tech enthusiast, rock climbing, and craft beer lover. Always up for spontaneous adventures! 🧗‍♂️', avatar: '👨🏻‍💻' },
     'Male-25-35-Asian': { name: 'Kevin', age: '29', location: 'Seattle, WA', bio: 'Software engineer by day, chef by night. Love trying new recipes and exploring the city! 👨‍🍳', avatar: '👨🏻‍💻' },
@@ -57,9 +98,8 @@ const InteractiveProfileWidget: React.FC = () => {
         generatePhoto(prompt + ', lifestyle photo')
       ]);
       
-      // Get profile data
-      const key = `${selectedGender}-${selectedAge}-${selectedEthnicity}`;
-      const profile = profileVariations[key as keyof typeof profileVariations] || currentProfile;
+      // Generate random profile data
+      const profile = generateRandomProfile(selectedGender, selectedAge, selectedEthnicity);
       
       // Update profile with generated photos
       setCurrentProfile({
