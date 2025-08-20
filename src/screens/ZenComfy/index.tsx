@@ -6,7 +6,6 @@ import { PlatformFeatures } from '@/components/sections/PlatformFeatures';
 import { WorkflowSteps } from '@/components/sections/WorkflowSteps';
 import { WorkflowTemplates } from '@/components/sections/WorkflowTemplates';
 import { FAQAccordion } from '@/components/sections/FAQAccordion';
-import TrustedByBlock from '@/components/sections/TrustedByBlock';
 // import { FinalFooter } from '@/components/layout/FinalFooter';
 
 export const ZenComfy: React.FC = () => {

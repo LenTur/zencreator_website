@@ -44,21 +44,21 @@ export const ContentCreationSuite = () => {
                   name: 'Face Generation', 
                   description: 'Four realistic faces per click—dial in gender, age, ethnicity, more.',
                   link: '/products/zencreator/content-creation/ai-face-generation',
-                  tryLink: 'https://app.zencreator.pro/tools',
+                  tryLink: 'https://app.zencreator.pro',
                   mockup: 'bg-gradient-to-br from-red-100 to-blue-100'
                 },
                 { 
                   name: 'Face Swapping', 
                   description: 'Ultra-seamless swaps for images & video, bulk-ready.',
                   link: '/products/zencreator/content-creation/ai-face-swapping',
-                  tryLink: 'https://app.zencreator.pro/tools',
+                  tryLink: 'https://app.zencreator.pro',
                   mockup: 'bg-gradient-to-br from-blue-100 to-gray-100'
                 },
                 { 
                   name: 'Upscaling', 
                   description: 'Four specialised models (Basic, Face-Safe, Textured, Full Restored) up to 4K+.',
                   link: '/products/zencreator/content-creation/ai-upscaling',
-                  tryLink: 'https://app.zencreator.pro/tools',
+                  tryLink: 'https://app.zencreator.pro',
                   mockup: 'bg-gradient-to-br from-green-100 to-teal-100',
                   showBeforeAfter: true
                 },
@@ -66,42 +66,42 @@ export const ContentCreationSuite = () => {
                   name: 'Generation by Prompt', 
                   description: 'Flux or SDXL images from keyword prompts, LoRa physique tuning, uncensored option.',
                   link: '/products/zencreator/content-creation/ai-generation-prompt',
-                  tryLink: 'https://app.zencreator.pro/tools',
+                  tryLink: 'https://app.zencreator.pro',
                   mockup: 'bg-gradient-to-br from-purple-100 to-indigo-100'
                 },
                 { 
                   name: 'Generation by Reference', 
                   description: 'Re-imagine any photo into new scenes while preserving identity.',
                   link: '/products/zencreator/content-creation/ai-generation-reference',
-                  tryLink: 'https://app.zencreator.pro/tools',
+                  tryLink: 'https://app.zencreator.pro',
                   mockup: 'bg-gradient-to-br from-yellow-100 to-orange-100'
                 },
                 { 
                   name: 'Photo Shoot Generation', 
                   description: 'Full themed sets from one face + body reference.',
                   link: '/products/zencreator/content-creation/photo-shoot',
-                  tryLink: 'https://app.zencreator.pro/tools',
+                  tryLink: 'https://app.zencreator.pro',
                   mockup: 'bg-gradient-to-br from-pink-100 to-red-100'
                 },
                 { 
                   name: 'Dating Profile Generation', 
                   description: 'Complete bios + photo/video packs, JSON export.',
                   link: '/products/zencreator/content-creation/dating-profiles',
-                  tryLink: 'https://app.zencreator.pro/tools',
+                  tryLink: 'https://app.zencreator.pro',
                   mockup: 'bg-gradient-to-br from-rose-100 to-pink-100'
                 },
                 { 
                   name: 'Video Generation', 
                   description: '5–10 s clips via Kling 1.6, Kling 2.0, or WAN (uncensored).',
                   link: '/products/zencreator/content-creation/video-generation',
-                  tryLink: 'https://app.zencreator.pro/tools',
+                  tryLink: 'https://app.zencreator.pro',
                   mockup: 'bg-gradient-to-br from-indigo-100 to-purple-100'
                 },
                 { 
                   name: 'Carousel Generation', 
                   description: 'Multi-angle image sets for social carousels & catalogs.',
                   link: '/products/zencreator/content-creation/carousel-generation',
-                  tryLink: 'https://app.zencreator.pro/tools',
+                  tryLink: 'https://app.zencreator.pro',
                   mockup: 'bg-gradient-to-br from-teal-100 to-blue-100',
                   showCarousel: true
                 }
