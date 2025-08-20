@@ -173,14 +173,7 @@ export const AccountManagement: React.FC = () => {
             answer: 'Absolutely — filter dashboards by tag to benchmark categories side-by-side.' 
           }
         ]}
-        cta={(
-          <div className="text-center">
-            <p className="text-gray-600 mb-4">Still have questions?</p>
-            <a href="mailto:info@zencreator.pro?subject=Account%20Management%20Support" className="text-purple-600 hover:text-purple-700 font-medium">
-              Contact support →
-            </a>
-          </div>
-        )}
+        cta={null}
       />
 
       {/* Separate Final CTA — full-width light gradient like FAQ */}

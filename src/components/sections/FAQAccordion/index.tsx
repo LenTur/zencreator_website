@@ -29,7 +29,7 @@ export const FAQAccordion = ({ title = 'Frequently asked questions', items, cta 
   };
 
   return (
-    <section className="py-[150px] bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
+    <section className="pt-[150px] pb-0 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid lg:grid-cols-5 gap-12 items-start">
           {/* Left side - Title */}

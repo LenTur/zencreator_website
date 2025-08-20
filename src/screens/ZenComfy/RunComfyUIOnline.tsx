@@ -151,10 +151,7 @@ export const RunComfyUIOnline: React.FC = () => {
           <div>
             {/* Contact Support */}
             <div className="text-center mb-8">
-              <p className="text-gray-600 mb-4">More questions?</p>
-              <a href="mailto:info@zencreator.pro?subject=ComfyUI%20Cloud%20Support" className="text-purple-600 hover:text-purple-700 font-medium">
-                Contact Support →
-              </a>
+              <p className="text-gray-600">More questions? <a href="mailto:info@zencreator.pro?subject=ComfyUI%20Cloud%20Support" className="text-purple-600 hover:text-purple-700 font-medium">Contact Support →</a></p>
             </div>
             {/* CTA Section */}
           <section className="pt-10 bg-[#0F172A] text-white rounded-3xl p-12 md:p-16 text-center border border-white/10">

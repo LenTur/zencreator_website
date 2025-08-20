@@ -144,10 +144,7 @@ export const ZenComfy: React.FC = () => {
                 ]}
                 cta={(
                   <div className="text-center">
-                    <p className="text-gray-600 mb-4">More questions?</p>
-                    <a href="mailto:info@zencreator.pro?subject=ZenComfy%20Support" className="text-purple-600 hover:text-purple-700 font-medium">
-                      Contact Support →
-                    </a>
+                    <p className="text-gray-600">More questions? <a href="mailto:info@zencreator.pro?subject=ZenComfy%20Support" className="text-purple-600 hover:text-purple-700 font-medium">Contact Support →</a></p>
                   </div>
                 )}
               />
