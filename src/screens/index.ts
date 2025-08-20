@@ -35,4 +35,8 @@ export { AICarousel } from './AICarousel';
 export { AIDatingProfiles } from './AIDatingProfiles';
 export { AIPhotoShoot } from './AIPhotoShoot';
 export { AboutUs } from './AboutUs';
+export { PrivacyPolicy } from './Legal/PrivacyPolicy';
+export { CookiesPolicy } from './Legal/CookiesPolicy';
+export { TermsAndConditions } from './Legal/TermsAndConditions';
+export { DataDeletion } from './Legal/DataDeletion';
 

@@ -35,9 +35,6 @@ export const AIInfluencers: React.FC = () => {
                 <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl">
                   Book a Demo
                 </a>
-                <a href="mailto:info@zencreator.pro?subject=AI%20Influencers%20Proposal" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all duration-200">
-                  Get a Proposal
-                </a>
               </div>
             </section>
           </div>
@@ -63,7 +60,7 @@ export const AIInfluencers: React.FC = () => {
                 {
                   number: '02', 
                   title: 'Strategic Planning',
-                  description: '4–8 week content strategy with topics, hook formulas, posting cadence, and brand integration based on data insights.',
+                  description: '1–2 week content strategy with topics, hook formulas, posting cadence, and brand integration based on data insights.',
                   icon: Target
                 },
                 {

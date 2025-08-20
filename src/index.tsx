@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ScrollToTop } from "./components/layout/ScrollToTop";
-import { Home, MacbookAir, Products, CreatorOS as ZenCreator, ZenComfy, Services, Technologies, Pricing, ContentCreationSuite, PublishingHub, PublishingInstagram, PublishingThreads, PublishingTwitter, PublishingFacebook, PublishingYouTube, Analytics, AccountManagement, RunComfyUIOnline, WorkflowAsWebApp, AIFaceGeneration, AIFaceSwapping, AIUpscaling, AIGenerationPrompt, AIGenerationReference, AIVideo, AICarousel, AIDatingProfiles, AIPhotoShoot, DatingProfilesService, PhotoShootsService, FullFunnelMarketing, PerformanceMarketing, ExperientialMarketing, CreativeProjects, BrandAmbassador, AIInfluencers, AboutUs } from "./screens";
+import { Home, MacbookAir, Products, CreatorOS as ZenCreator, ZenComfy, Services, Technologies, Pricing, ContentCreationSuite, PublishingHub, PublishingInstagram, PublishingThreads, PublishingTwitter, PublishingFacebook, PublishingYouTube, Analytics, AccountManagement, RunComfyUIOnline, WorkflowAsWebApp, AIFaceGeneration, AIFaceSwapping, AIUpscaling, AIGenerationPrompt, AIGenerationReference, AIVideo, AICarousel, AIDatingProfiles, AIPhotoShoot, DatingProfilesService, PhotoShootsService, FullFunnelMarketing, PerformanceMarketing, ExperientialMarketing, CreativeProjects, BrandAmbassador, AIInfluencers, AboutUs, PrivacyPolicy, CookiesPolicy, TermsAndConditions, DataDeletion } from "./screens";
 
 createRoot(document.getElementById("app") as HTMLElement).render(
   <StrictMode>
@@ -55,6 +55,12 @@ createRoot(document.getElementById("app") as HTMLElement).render(
         <Route path="/tech" element={<Technologies />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/about-us" element={<AboutUs />} />
+        
+        {/* Legal Pages */}
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/cookies-policy" element={<CookiesPolicy />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/data-deletion" element={<DataDeletion />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

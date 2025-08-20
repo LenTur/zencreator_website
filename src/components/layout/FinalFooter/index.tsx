@@ -5,8 +5,8 @@ interface FinalFooterProps {
     className?: string;
 }
 
-const FooterLink = ({ href = "#", children }: { href?: string, children: React.ReactNode }) => (
-    <a href={href} className="text-gray-400 hover:text-white transition-colors cursor-pointer">{children}</a>
+const FooterLink = ({ href = "#", children, className, target, rel }: { href?: string, children: React.ReactNode, className?: string, target?: string, rel?: string }) => (
+    <a href={href} target={target} rel={rel} className={cn("text-gray-400 hover:text-white transition-colors cursor-pointer", className)}>{children}</a>
 );
 
 const FooterColumn = ({ title, children }: { title: string, children: React.ReactNode }) => (
@@ -67,8 +67,8 @@ export const FinalFooter = ({ className }: FinalFooterProps) => {
 
             {/* Column 4: Free Resources */}
             <FooterColumn title="Free Resources">
-                <FooterLink href="/products/zencreator">ZenCreator Documentation</FooterLink>
-                <FooterLink href="/services">Best Trend Reels</FooterLink>
+                <FooterLink href="https://help.zencreator.pro" target="_blank" rel="noopener noreferrer">ZenCreator Documentation</FooterLink>
+                <FooterLink href="/services" className="hidden">Best Trend Reels</FooterLink>
             </FooterColumn>
 
             {/* Column 5: Terms of Use */}
