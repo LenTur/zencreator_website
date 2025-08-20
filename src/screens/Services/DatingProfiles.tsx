@@ -22,7 +22,7 @@ const faqItems = [
 const InteractiveProfileWidget: React.FC = () => {
   const [selectedGender, setSelectedGender] = useState<string>('Female');
   const [selectedAge, setSelectedAge] = useState<string>('25-35');
-  const [selectedEthnicity, setSelectedEthnicity] = useState<string>('Caucasian');
+  const [selectedEthnicity, setSelectedEthnicity] = useState<string>('European');
   const [isGenerating, setIsGenerating] = useState(false);
   const [currentProfile, setCurrentProfile] = useState({
     name: 'Sarah',
@@ -34,12 +34,12 @@ const InteractiveProfileWidget: React.FC = () => {
   });
 
   const profileVariations = {
-    'Male-18-25-Caucasian': { name: 'Jake', age: '23', location: 'Austin, TX', bio: 'Tech enthusiast, rock climbing, and craft beer lover. Always up for spontaneous adventures! 🧗‍♂️', avatar: '👨🏻‍💻' },
+    'Male-18-25-European': { name: 'Jake', age: '23', location: 'Austin, TX', bio: 'Tech enthusiast, rock climbing, and craft beer lover. Always up for spontaneous adventures! 🧗‍♂️', avatar: '👨🏻‍💻' },
     'Male-25-35-Asian': { name: 'Kevin', age: '29', location: 'Seattle, WA', bio: 'Software engineer by day, chef by night. Love trying new recipes and exploring the city! 👨‍🍳', avatar: '👨🏻‍💻' },
     'Female-25-35-Black': { name: 'Maya', age: '31', location: 'Atlanta, GA', bio: 'Artist and yoga instructor. Passionate about mindfulness, travel, and good music 🎨✨', avatar: '👩🏾‍🎨' },
     'Female-18-25-Latina': { name: 'Sofia', age: '24', location: 'Miami, FL', bio: 'Dancing through life! Love salsa, beach days, and trying new cuisines 💃🏻', avatar: '👩🏻‍🦱' },
     'Male-35-45-Black': { name: 'Marcus', age: '38', location: 'Chicago, IL', bio: 'Entrepreneur and fitness enthusiast. Looking for someone to share life\'s adventures with 💪🏾', avatar: '👨🏾‍💼' },
-    'Female-25-35-Caucasian': { name: 'Sarah', age: '28', location: 'San Francisco, CA', bio: 'Love hiking, yoga, and trying new restaurants. Looking for someone who shares my passion for adventure and good coffee ☕️', avatar: '👩🏼‍💼' },
+    'Female-25-35-European': { name: 'Sarah', age: '28', location: 'San Francisco, CA', bio: 'Love hiking, yoga, and trying new restaurants. Looking for someone who shares my passion for adventure and good coffee ☕️', avatar: '👩🏼‍💼' },
   };
 
   const generateProfile = async () => {
@@ -81,7 +81,7 @@ const InteractiveProfileWidget: React.FC = () => {
 
   const generatePhoto = async (prompt: string): Promise<string> => {
     const seed = Math.floor(Math.random() * 1000000);
-    const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=400&height=400&seed=${seed}&enhance=true&nologo=true`;
+    const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=512&height=512&seed=${seed}&enhance=true&nologo=true&model=flux`;
     
     // Preload image to ensure it's ready
     return new Promise((resolve) => {
@@ -102,7 +102,7 @@ const InteractiveProfileWidget: React.FC = () => {
 
   return (
     <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 border border-gray-200 shadow-xl max-w-6xl mx-auto">
-      <div className="grid lg:grid-cols-2 gap-8">
+      <div className="grid lg:grid-cols-2 gap-8 items-start">
         
         {/* Controls Panel */}
         <div className="space-y-6">
@@ -148,7 +148,7 @@ const InteractiveProfileWidget: React.FC = () => {
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-3">Ethnicity</label>
             <div className="grid grid-cols-2 gap-2">
-              {['Caucasian', 'Asian', 'Black', 'Indian', 'Latina', 'Mixed'].map((ethnicity) => (
+              {['European', 'Asian', 'Black', 'Indian', 'Latina', 'Mixed'].map((ethnicity) => (
                 <button
                   key={ethnicity}
                   onClick={() => setSelectedEthnicity(ethnicity)}
@@ -183,11 +183,10 @@ const InteractiveProfileWidget: React.FC = () => {
         </div>
 
         {/* Preview Panel */}
-        <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg">
-          <h4 className="text-xl font-bold text-gray-900 mb-4">Profile Preview</h4>
-          
-          {/* Profile Card Mockup */}
+        <div className="bg-gray-50 rounded-xl p-4 h-full">
+          {/* Profile Card - Like Production */}
           <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4 border border-purple-200 transition-all duration-500">
+            {/* Avatar + Name Header */}
             <div className="flex items-center space-x-4 mb-4">
               <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-indigo-400 rounded-full flex items-center justify-center text-2xl transition-all duration-500 overflow-hidden">
                 {isGenerating ? (
@@ -197,15 +196,10 @@ const InteractiveProfileWidget: React.FC = () => {
                     src={currentProfile.photos[0]} 
                     alt="Profile" 
                     className="w-full h-full object-cover rounded-full"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).style.display = 'none';
-                      (e.target as HTMLImageElement).nextElementSibling!.classList.remove('hidden');
-                    }}
                   />
                 ) : (
                   <span className="text-white text-sm">👤</span>
                 )}
-                <div className="hidden text-white text-sm">👤</div>
               </div>
               <div>
                 <h5 className="text-lg font-bold text-gray-900 transition-all duration-500">
@@ -217,9 +211,10 @@ const InteractiveProfileWidget: React.FC = () => {
               </div>
             </div>
             
-            <div className="grid grid-cols-3 gap-2 mb-4">
-              {[0, 1, 2].map((i) => (
-                <div key={i} className={`aspect-square rounded-lg flex items-center justify-center transition-all duration-500 overflow-hidden ${
+            {/* Photo Grid 2x2 */}
+            <div className="grid grid-cols-2 gap-2 mb-4">
+              {[0, 1, 2, 0].map((i, index) => (
+                <div key={index} className={`aspect-square rounded-lg flex items-center justify-center transition-all duration-500 overflow-hidden ${
                   isGenerating 
                     ? 'bg-gradient-to-br from-gray-300 to-gray-400 animate-pulse' 
                     : 'bg-gradient-to-br from-gray-200 to-gray-300'
@@ -231,41 +226,13 @@ const InteractiveProfileWidget: React.FC = () => {
                       src={currentProfile.photos[i]} 
                       alt={`Profile photo ${i + 1}`}
                       className="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer"
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).style.display = 'none';
-                        (e.target as HTMLImageElement).nextElementSibling!.classList.remove('hidden');
-                      }}
                     />
                   ) : (
                     <Camera className="w-6 h-6 text-gray-500" />
                   )}
-                  <div className="hidden">
-                    <Camera className="w-6 h-6 text-gray-500" />
-                  </div>
                 </div>
               ))}
             </div>
-            
-            <div className="bg-white rounded-lg p-3 border border-purple-200">
-              <p className="text-sm text-gray-700 leading-relaxed transition-all duration-500">
-                {isGenerating ? 'Generating personalized bio...' : `"${currentProfile.bio}"`}
-              </p>
-            </div>
-            
-            <div className="flex justify-center mt-4 space-x-2">
-              <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full font-medium transition-colors hover:shadow-lg active:scale-95">
-                ✕ Pass
-              </button>
-              <button className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full font-medium transition-colors hover:shadow-lg active:scale-95">
-                ♥ Like
-              </button>
-            </div>
-          </div>
-          
-          <div className="mt-4 text-center">
-            <p className="text-sm text-gray-500">
-              ✨ Generated in real-time based on your parameters
-            </p>
           </div>
         </div>
       </div>
