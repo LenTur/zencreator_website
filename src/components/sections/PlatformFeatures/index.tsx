@@ -62,7 +62,7 @@ export const PlatformFeatures = () => {
       ],
       buttonText: "Learn more",
       buttonLink: "/products/zencomfy/workflow-as-app",
-      visual: "/images/zencomfy/WorkflowWebApp.png"
+      visual: "/images/zencomfy/ComfyUI-webapp.png"
     }
   ];
 

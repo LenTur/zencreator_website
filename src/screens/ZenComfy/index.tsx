@@ -6,6 +6,7 @@ import { PlatformFeatures } from '@/components/sections/PlatformFeatures';
 import { WorkflowSteps } from '@/components/sections/WorkflowSteps';
 import { WorkflowTemplates } from '@/components/sections/WorkflowTemplates';
 import { FAQAccordion } from '@/components/sections/FAQAccordion';
+import TrustedByBlock from '@/components/sections/TrustedByBlock';
 // import { FinalFooter } from '@/components/layout/FinalFooter';
 
 export const ZenComfy: React.FC = () => {
@@ -26,11 +27,45 @@ export const ZenComfy: React.FC = () => {
             </div>
           </div>
 
+          {/* Colorfull1.png - новая картинка на всю ширину */}
+          <img src="/Colorfull1.png" alt="" className="w-full" />
+
+          {/* Trusted by Section - перемещено сюда */}
+          <div className="mt-[50px]">
+            <section className="py-16">
+              <div className="container mx-auto px-4">
+                <div className="max-w-6xl mx-auto">
+                  <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-12 text-center">
+                    Trusted by 10,000+ creators worldwide
+                  </h2>
+                  <div className="grid grid-cols-4 gap-6">
+                    <div className="bg-ink-900 rounded-3xl p-8 text-center">
+                      <div className="text-3xl md:text-4xl font-black text-white mb-2">10,000+</div>
+                      <div className="text-white/80 text-sm">creators worldwide</div>
+                    </div>
+                    <div className="bg-ink-900 rounded-3xl p-8 text-center">
+                      <div className="text-3xl md:text-4xl font-black text-white mb-2">4.9/5</div>
+                      <div className="text-white/80 text-sm">satisfaction</div>
+                    </div>
+                    <div className="bg-ink-900 rounded-3xl p-8 text-center">
+                      <div className="text-3xl md:text-4xl font-black text-white mb-2">50K+</div>
+                      <div className="text-white/80 text-sm">deployed workflows</div>
+                    </div>
+                    <div className="bg-ink-900 rounded-3xl p-8 text-center">
+                      <div className="text-3xl md:text-4xl font-black text-white mb-2">99.9%</div>
+                      <div className="text-white/80 text-sm">uptime</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
           {/* Platform Interface Screenshot */}
           <div className="container mx-auto px-4 hidden" style={{ paddingTop: '0px' }}>
             <div className="max-w-6xl mx-auto">
               <img
-                src="/images/zencomfy/ComfyUI in the Cloud.png"
+                src="/images/zencomfy/ComfyUI-webapp.png"
                 alt="ZenComfy Platform Interface"
                 className="w-full max-w-4xl mx-auto h-auto rounded-3xl border border-gray-200"
                 style={{
@@ -44,37 +79,6 @@ export const ZenComfy: React.FC = () => {
             {/* New structure like ZenCreator */}
             <div className="mt-[150px]">
               <PlatformFeatures />
-            </div>
-            
-            {/* Trusted by Section */}
-            <div className="mt-[50px]">
-              <section className="py-16">
-                <div className="container mx-auto px-4">
-                  <div className="max-w-6xl mx-auto">
-                    <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-12 text-center">
-                      Trusted by 10,000+ creators worldwide
-                    </h2>
-                    <div className="grid grid-cols-4 gap-6">
-                      <div className="bg-ink-900 rounded-3xl p-8 text-center">
-                        <div className="text-3xl md:text-4xl font-black text-white mb-2">10,000+</div>
-                        <div className="text-white/80 text-sm">creators worldwide</div>
-                      </div>
-                      <div className="bg-ink-900 rounded-3xl p-8 text-center">
-                        <div className="text-3xl md:text-4xl font-black text-white mb-2">4.9/5</div>
-                        <div className="text-white/80 text-sm">satisfaction</div>
-                      </div>
-                      <div className="bg-ink-900 rounded-3xl p-8 text-center">
-                        <div className="text-3xl md:text-4xl font-black text-white mb-2">50K+</div>
-                        <div className="text-white/80 text-sm">deployed workflows</div>
-                      </div>
-                      <div className="bg-ink-900 rounded-3xl p-8 text-center">
-                        <div className="text-3xl md:text-4xl font-black text-white mb-2">99.9%</div>
-                        <div className="text-white/80 text-sm">uptime</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
             </div>
             
             <div className="mt-[150px]">
@@ -142,11 +146,6 @@ export const ZenComfy: React.FC = () => {
                     answer: 'Absolutely. The Web App builder lets you pick which parameters appear in the UI.' 
                   }
                 ]}
-                cta={(
-                  <div className="text-center">
-                    <p className="text-gray-600">More questions? <a href="mailto:info@zencreator.pro?subject=ZenComfy%20Support" className="text-purple-600 hover:text-purple-700 font-medium">Contact Support →</a></p>
-                  </div>
-                )}
               />
             </div>
             
