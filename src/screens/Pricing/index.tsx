@@ -170,61 +170,21 @@ export const Pricing = () => {
 
             <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-8 mb-12 border border-blue-200 shadow-lg">
               <h4 className="font-bold text-gray-900 mb-4 text-lg">Good to know</h4>
-              <ul className="space-y-3 text-gray-700">
+              <ul className="space-y-3 text-gray-700 break-words">
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Credits <strong>never expire</strong>.
+                  <span className="whitespace-nowrap">Credits <strong>never expire</strong>.</span>
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  One shared balance for <em>all</em> ZenCreator tools.
+                  <span>One shared balance for <em>all</em> ZenCreator tools.</span>
                 </li>
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  Buy packs any time; larger packs stack and lower blended cost.
+                  <span>Buy packs any time; larger packs stack and lower blended cost.</span>
                 </li>
               </ul>
             </div>
-
-            {/* Tool Cost Reference */}
-            <h4 className="text-xl font-bold text-gray-900 mb-6">Tool Cost Reference</h4>
-            <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden mb-8 shadow-lg">
-              <div className="bg-gradient-to-r from-gray-50 to-gray-100 px-6 py-4 border-b border-gray-200">
-                <div className="grid grid-cols-3 gap-4">
-                  <h5 className="font-bold text-gray-900">Module</h5>
-                  <h5 className="font-bold text-gray-900">Unit</h5>
-                  <h5 className="font-bold text-gray-900">Credits</h5>
-                </div>
-              </div>
-              <div className="divide-y divide-gray-200 text-sm">
-                {[
-                  ['Face Generation','1 task = 4 faces','2'],
-                  ['Face Swap','1 image','2'],
-                  ['', '1 s video','3'],
-                  ['Upscale','v1 / v2 / v3 / v4','2 / 3 / 4 / 5'],
-                  ['Prompt Gen (SDXL or Flux)','1 image','2'],
-                  ['Reference Gen (SDXL or Flux)','1 image','2'],
-                  ['Video Gen','Kling 1.6 5 s / 10 s','2 / 4'],
-                  ['', 'Kling 2.0 5 s / 10 s','2 / 4'],
-                  ['', 'WAN 5 s','5'],
-                  ['Carousel','1 angle','2'],
-                  ['Photo Shoot','1 image','2'],
-                  ['Dating Profile','1 moderated image','2'],
-                  ['', '1 intro video','15']
-                ].map(([module, unit, credits], idx) => (
-                  <div key={idx} className="px-6 py-4 hover:bg-gray-50 transition-colors">
-                    <div className="grid grid-cols-3 gap-4">
-                      <div className="font-medium text-gray-900">{module}</div>
-                      <div className="text-gray-600">{unit}</div>
-                      <div className="text-gray-700 font-medium">{credits}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <p className="text-sm text-gray-600 italic text-center">
-              <em>(Dashboard shows remaining balance & per-task cost before you confirm.)</em>
-            </p>
           </section>
 
           {/* Publishing Hub Add-On */}
@@ -354,11 +314,6 @@ export const Pricing = () => {
               </ul>
             </div>
             
-            <div className="text-center">
-              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-orange-600 to-red-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-orange-700 hover:to-red-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105">
-                Talk to Sales →
-              </a>
-            </div>
           </section>
 
           {/* Managed Services */}
@@ -403,11 +358,6 @@ export const Pricing = () => {
             
             <p className="text-gray-600 mb-8 text-center">All services include human QA and dedicated PM.</p>
             
-            <div className="text-center">
-              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-red-600 to-pink-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-red-700 hover:to-pink-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105">
-                Book a Call →
-              </a>
-            </div>
           </section>
 
         </div>
@@ -455,18 +405,42 @@ export const Pricing = () => {
         </div>
       </section>
 
-      {/* CTA Contact Section */}
-      <div className="container mx-auto px-4 pb-20">
-        <div className="max-w-6xl mx-auto">
-          <section className="py-16">
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 text-center">
-              <p className="text-xl text-gray-700">
-                Still unsure? Email <span className="font-bold text-purple-600">sales@zencreator.pro</span> — we'll walk you through a cost model in 10 minutes.
+     
+      {/* CTA - Full Width */}
+      <section className="relative overflow-hidden">
+        <div className="bg-ink-900 text-white text-center py-24 relative ">
+          <div className="relative z-10 max-w-4xl mx-auto px-4">
+            <div className="inline-block bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
+              Level up your content game
+            </div>
+            <h2 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">Ready to accelerate your creative pipeline?</h2>
+            <p className="text-white/80 text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
+              Pick your starting point and see results today.
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center mb-16">
+              <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-purple-600 hover:text-white transition-colors duration-200">
+                Get ZenCreator
+              </a>
+              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border-2 border-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 transition-colors duration-200">
+                Request Custom Quote
+              </a>
+            </div>
+            <div className="border-t border-white/20 pt-8">
+              <p className="text-white/90 mb-2"><strong>Need something custom?</strong></p>
+              <p className="text-white/80">
+                Email <a href="mailto:info@zencreator.pro" className="text-white hover:underline font-medium">info@zencreator.pro</a> — we're happy to architect the perfect mix.
               </p>
             </div>
-          </section>
+          </div>
+          {/* Gradient bars at bottom */}
+          <div className="absolute bottom-0 left-0 right-0 h-32">
+            <div className="absolute bottom-0 left-0 w-1/4 h-6 bg-gradient-to-r from-red-500 to-orange-500"></div>
+            <div className="absolute bottom-0 left-1/4 w-1/4 h-12 bg-gradient-to-r from-blue-500 to-cyan-500"></div>
+            <div className="absolute bottom-0 left-2/4 w-1/4 h-8 bg-gradient-to-r from-green-500 to-teal-500"></div>
+            <div className="absolute bottom-0 left-3/4 w-1/4 h-16 bg-gradient-to-r from-purple-500 to-pink-500"></div>
+          </div>
         </div>
-      </div>
+      </section>
 
     </PageLayout>
   );
