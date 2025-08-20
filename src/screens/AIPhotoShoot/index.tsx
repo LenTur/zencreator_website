@@ -2,6 +2,7 @@ import React from 'react';
 import { PageLayout } from '@/components/layout/PageLayout';
 import { FAQAccordion } from '@/components/sections/FAQAccordion';
 import { Link } from 'react-router-dom';
+import { MoreMagicTools } from '@/components/sections/MoreMagicTools';
 
 const faqItems = [
   {
@@ -144,20 +145,12 @@ export const AIPhotoShoot: React.FC = () => {
             </div>
           </section>
 
-          {/* More Magic Tools Placeholder */}
-          <section className="py-[150px]">
-             <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">More Magic Tools</h2>
-             <div className="bg-gray-100 h-64 rounded-2xl flex items-center justify-center">
-               <p className="text-gray-500">(тут картинки и названия инструментов), этот блок будет переиспользоваться на всех страницах</p>
-             </div>
-             <div className="text-center mt-8">
-                <Link to="/products/zencreator/content-creation" className="text-purple-600 font-semibold hover:text-purple-800">
-                  See full Content Creation suite →
-                </Link>
-             </div>
-          </section>
+
         </div>
       </div>
+      
+      {/* More Magic Tools */}
+      <MoreMagicTools />
       
       <FAQAccordion 
         items={faqItems} 

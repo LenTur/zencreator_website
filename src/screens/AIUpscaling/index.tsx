@@ -1,6 +1,7 @@
 import React from 'react';
 import { Zap, CheckCircle, Settings, ArrowUp } from 'lucide-react';
 import { PageLayout } from '@/components/layout/PageLayout';
+import { MoreMagicTools } from '@/components/sections/MoreMagicTools';
 
 export const AIUpscaling: React.FC = () => {
   const faqData = [
@@ -181,14 +182,7 @@ export const AIUpscaling: React.FC = () => {
             </div>
           </section>
 
-          {/* More Tools placeholder */}
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">More Magic Tools</h3>
-            <p className="text-gray-700">(placeholder for tool tiles — shared block)</p>
-            <div className="mt-4">
-              <a href="/products/zencreator/content-creation" className="text-purple-600 hover:underline font-medium">See full Content Creation suite →</a>
-            </div>
-          </section>
+
 
           {/* FAQ */}
           <section className="py-12 border-t border-gray-200">
@@ -220,6 +214,9 @@ export const AIUpscaling: React.FC = () => {
 
         </div>
       </div>
+
+      {/* More Magic Tools */}
+      <MoreMagicTools />
       
       {/* Final CTA */}
       <section className="py-[150px] bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">

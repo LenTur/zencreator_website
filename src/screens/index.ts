@@ -32,5 +32,7 @@ export { AIGenerationPrompt } from './AIGenerationPrompt';
 export { AIGenerationReference } from './AIGenerationReference';
 export { AIVideo } from './AIVideo';
 export { AICarousel } from './AICarousel';
+export { AIDatingProfiles } from './AIDatingProfiles';
+export { AIPhotoShoot } from './AIPhotoShoot';
 export { AboutUs } from './AboutUs';
 
