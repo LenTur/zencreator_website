@@ -27,12 +27,12 @@ export const ZenComfy: React.FC = () => {
           </div>
 
           {/* Platform Interface Screenshot */}
-          <div className="container mx-auto px-4" style={{ paddingTop: '0px' }}>
+          <div className="container mx-auto px-4 hidden" style={{ paddingTop: '0px' }}>
             <div className="max-w-6xl mx-auto">
               <img
                 src="/images/zencomfy/ComfyUI in the Cloud.png"
                 alt="ZenComfy Platform Interface"
-                className="w-full h-auto rounded-3xl border border-gray-200"
+                className="w-full max-w-4xl mx-auto h-auto rounded-3xl border border-gray-200"
                 style={{
                   boxShadow: '0 25px 50px -12px rgba(147, 51, 234, 0.25), 0 25px 50px -12px rgba(168, 85, 247, 0.15)'
                 }}
@@ -41,8 +41,13 @@ export const ZenComfy: React.FC = () => {
           </div>
 
           <div className="flex flex-col">
-            {/* Trusted by Section */}
+            {/* New structure like ZenCreator */}
             <div className="mt-[150px]">
+              <PlatformFeatures />
+            </div>
+            
+            {/* Trusted by Section */}
+            <div className="mt-[50px]">
               <section className="py-16">
                 <div className="container mx-auto px-4">
                   <div className="max-w-6xl mx-auto">
@@ -71,14 +76,9 @@ export const ZenComfy: React.FC = () => {
                 </div>
               </section>
             </div>
-
-            {/* New structure like ZenCreator */}
-            <div className="mt-[150px]">
-              <WhyZenComfy />
-            </div>
             
             <div className="mt-[150px]">
-              <PlatformFeatures />
+              <WhyZenComfy />
             </div>
             
             <div className="mt-[75px]">

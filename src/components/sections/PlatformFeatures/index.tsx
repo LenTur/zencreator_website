@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 interface Feature {
   title: string;
   description: string;
@@ -33,8 +35,8 @@ export const PlatformFeatures = () => {
           description: "Invite collaborators to shared workspaces."
         }
       ],
-      buttonText: "Try ComfyUI Cloud →",
-      buttonLink: "/products/zencomfy/comfyui-cloud",
+      buttonText: "Learn more",
+      buttonLink: "/products/zencomfy/comfy-ui-cloud",
       visual: "/images/zencomfy/ComfyUI in the Cloud2.png"
     },
     {
@@ -58,9 +60,9 @@ export const PlatformFeatures = () => {
           description: "Share workflows with simple web links."
         }
       ],
-      buttonText: "Build Web Apps →",
+      buttonText: "Learn more",
       buttonLink: "/products/zencomfy/workflow-as-app",
-      visual: "/WorkflowWebApp.png"
+      visual: "/images/zencomfy/WorkflowWebApp.png"
     }
   ];
 
@@ -111,12 +113,12 @@ export const PlatformFeatures = () => {
                     ))}
                   </div>
 
-                  <a 
-                    href={feature.buttonLink} 
+                  <Link 
+                    to={feature.buttonLink} 
                     className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold hover:bg-purple-600 hover:text-white transition-colors duration-200 inline-block"
                   >
                     {feature.buttonText}
-                  </a>
+                  </Link>
                 </div>
 
                 {/* Right Visual */}
