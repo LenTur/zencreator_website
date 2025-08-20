@@ -14,19 +14,19 @@ export const RunComfyUIOnline: React.FC = () => {
           <div className="bg-[#0F172A] rounded-3xl border border-white/10 min-h-[60vh] flex items-center justify-center">
             <section className="pt-24 pb-[40px] text-center text-white w-full px-6">
               <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
-                Run ComfyUI in the Cloud
+                Run ComfyUI<br />in the Cloud
               </h1>
+              <p className="text-lg text-gray-300 max-w-4xl mx-auto mb-6 leading-relaxed">
+                ZenComfy spins up high-performance GPUs only while your job is active, so you pay for compute time, not idle time.
+              </p>
               <p className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
                 <strong>Share, run, and deploy complex ComfyUI workflows in minutes — no local GPU, no setup.</strong>
-              </p>
-              <p className="text-lg text-gray-300 max-w-4xl mx-auto mt-4 leading-relaxed">
-                ZenComfy spins up high-performance GPUs only while your job is active, so you pay for compute time, not idle time.
               </p>
               <div className="flex gap-4 justify-center mt-10">
                 <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl">
                   Book a Demo
                 </a>
-                <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all duration-200">
+                <a href="mailto:info@zencreator.pro?subject=ZenComfy%20Sales%20Inquiry" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all duration-200">
                   Talk to Sales
                 </a>
               </div>
@@ -88,7 +88,7 @@ export const RunComfyUIOnline: React.FC = () => {
                 ['Text → Video', 'AnimateDiff • Prompt Travel'],
                 ['Upscaling', 'Hires-Fix • UltraSharp • SUPIR • CCSR • APISR'],
                 ['Style Transfer', 'IPAdapter • IC-Light'],
-                ['More Coming', 'Custom recipes & community contributions\n\nZero downloads. Zero config. Just click Deploy.'],
+                ['More Coming', 'Custom recipes & community contributions'],
               ].map(([title, desc]) => (
                 <div key={title as string} className="relative group h-full">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
@@ -99,15 +99,7 @@ export const RunComfyUIOnline: React.FC = () => {
                 </div>
               ))}
             </div>
-            
-            {/* Highlighted phrase after template cards */}
-            <div className="mt-12 text-center">
-              <div className="bg-gradient-to-r from-purple-100 to-indigo-100 rounded-2xl p-6 border border-purple-200 max-w-4xl mx-auto">
-                <p className="text-lg font-semibold text-gray-900 leading-relaxed">
-                  <strong>Zero downloads. Zero config. Just click Deploy.</strong>
-                </p>
-              </div>
-            </div>
+
           </section>
 
           {/* Built for Teams & Enterprises */}
@@ -148,18 +140,15 @@ export const RunComfyUIOnline: React.FC = () => {
           { question: 'Is my data secure?', answer: 'We encrypt everything in transit and at rest. By default nothing is stored; persistent outputs are saved only to your connected bucket.' },
         ]}
         cta={(
-          <div>
-            {/* Contact Support */}
-            <div className="text-center mb-8">
-              <p className="text-gray-600">More questions? <a href="mailto:info@zencreator.pro?subject=ComfyUI%20Cloud%20Support" className="text-purple-600 hover:text-purple-700 font-medium">Contact Support →</a></p>
-            </div>
+          <div className="pb-32">
+
             {/* CTA Section */}
-          <section className="pt-10 bg-[#0F172A] text-white rounded-3xl p-12 md:p-16 text-center border border-white/10">
+          <section className="pt-16 pb-16 bg-[#0F172A] text-white rounded-3xl px-12 md:px-16 text-center border border-white/10">
             <h3 className="text-3xl md:text-5xl font-black text-white mb-4">Ready to Create Without Limits?</h3>
             <p className="text-white/80 mb-8">Join thousands of artists, devs, and studios running ComfyUI at cloud scale.</p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors">Book a Demo</a>
-              <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-colors">Talk to Sales</a>
+              <a href="mailto:info@zencreator.pro?subject=ZenComfy%20Sales%20Inquiry" className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-gray-900 transition-colors">Talk to Sales</a>
             </div>
           </section>
           </div>
