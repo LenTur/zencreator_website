@@ -57,7 +57,7 @@ export const AIUpscaling: React.FC = () => {
               </p>
               <div className="flex gap-4 justify-center">
                 <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="bg-white text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-200 shadow-lg hover:shadow-xl">
-                  Try Upscale
+                  Try AI Upscaler
                 </a>
               </div>
             </section>
@@ -69,146 +69,153 @@ export const AIUpscaling: React.FC = () => {
         <div className="max-w-6xl mx-auto">
 
           {/* How It Works */}
-          <section className="mt-[150px]">
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">How It Works</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="rounded-3xl p-8 border border-gray-200 hover:shadow-xl transition-all duration-300">
-                <div className="text-4xl font-black text-purple-600 mb-6">1</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Upload Media</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Drop in any JPG, PNG or WEBP (up to 8 K). Images queued for fast GPU processing.
-                </p>
-              </div>
-              <div className="rounded-3xl p-8 border border-gray-200 hover:shadow-xl transition-all duration-300">
-                <div className="text-4xl font-black text-purple-600 mb-6">2</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Pick Your Upscale Mode</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Basic · Face-Safe · Textured · Full Restored. Tailors enhancement to your quality vs. fidelity needs.
-                </p>
-              </div>
-              <div className="rounded-3xl p-8 border border-gray-200 hover:shadow-xl transition-all duration-300">
-                <div className="text-4xl font-black text-purple-600 mb-6">3</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Launch & Download</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Click <strong>Upscale</strong> — process single shots or entire folders. Export, send to another ZenCreator tool, or publish directly.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          {/* Four Upscale Modes Table */}
-          <section className="mt-[150px]">
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">Four Upscale Modes</h2>
-            
-            {/* Table for desktop */}
-            <div className="hidden md:block">
-              <div className="overflow-hidden rounded-3xl border border-gray-200">
-                <table className="w-full">
-                  <thead className="bg-gray-50">
-                    <tr>
-                      <th className="px-6 py-4 text-left text-sm font-bold text-gray-900">Mode</th>
-                      <th className="px-6 py-4 text-left text-sm font-bold text-gray-900">Best For</th>
-                      <th className="px-6 py-4 text-left text-sm font-bold text-gray-900">What It Does</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-gray-200">
-                    <tr className="hover:bg-gray-50">
-                      <td className="px-6 py-4 text-sm font-semibold text-gray-900">Basic Upscale</td>
-                      <td className="px-6 py-4 text-sm text-gray-600">Web speed • Thumbnails • Memes</td>
-                      <td className="px-6 py-4 text-sm text-gray-600">2×–4× resolution, light denoise, almost zero facial change.</td>
-                    </tr>
-                    <tr className="hover:bg-gray-50">
-                      <td className="px-6 py-4 text-sm font-semibold text-gray-900">Face-Safe Upscale</td>
-                      <td className="px-6 py-4 text-sm text-gray-600">Portraits • Influencer grids</td>
-                      <td className="px-6 py-4 text-sm text-gray-600">Enhances sharpness & colour while <strong>locking facial identity</strong>.</td>
-                    </tr>
-                    <tr className="hover:bg-gray-50">
-                      <td className="px-6 py-4 text-sm font-semibold text-gray-900">Textured Upscale</td>
-                      <td className="px-6 py-4 text-sm text-gray-600">Product shots • Landscapes</td>
-                      <td className="px-6 py-4 text-sm text-gray-600">Injects realistic grain, depth and micro-contrast—may subtly alter faces.</td>
-                    </tr>
-                    <tr className="hover:bg-gray-50">
-                      <td className="px-6 py-4 text-sm font-semibold text-gray-900">Full Restored Upscale</td>
-                      <td className="px-6 py-4 text-sm text-gray-600">Archival scans • Print assets</td>
-                      <td className="px-6 py-4 text-sm text-gray-600">Maximum detail recovery, artefact removal, and texture synthesis while preserving core features.</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            {/* Cards for mobile */}
-            <div className="md:hidden space-y-6">
+          <section className="py-[150px] bg-white">
+            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">How It Works</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
-                ['Basic Upscale','Web speed • Thumbnails • Memes','2×–4× resolution, light denoise, almost zero facial change.'],
-                ['Face-Safe Upscale','Portraits • Influencer grids','Enhances sharpness & colour while locking facial identity.'],
-                ['Textured Upscale','Product shots • Landscapes','Injects realistic grain, depth and micro-contrast—may subtly alter faces.'],
-                ['Full Restored Upscale','Archival scans • Print assets','Maximum detail recovery, artefact removal, and texture synthesis while preserving core features.'],
-              ].map(([mode, bestFor, desc]) => (
-                <div key={mode as string} className="rounded-3xl p-6 border border-gray-200 hover:shadow-xl transition-all duration-300">
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">{mode as string}</h3>
-                  <p className="text-sm text-purple-600 font-medium mb-3">Best For: {bestFor as string}</p>
-                  <p className="text-gray-600 leading-relaxed">{desc as string}</p>
+                { step: 1, icon: ArrowUp, title: 'Upload Images', description: 'Drag & drop your photos or select from cloud storage.' },
+                { step: 2, icon: Settings, title: 'Choose Mode', description: 'Pick from Face-Safe, Basic, Textured, or Full Restored modes.' },
+                { step: 3, icon: Zap, title: 'AI Processing', description: 'Our specialized models enhance your images with perfect quality.' },
+                { step: 4, icon: CheckCircle, title: 'Download Results', description: 'Get crystal-clear upscaled images ready for any use.' }
+              ].map((step, index) => (
+                <div key={index} className="text-center group">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
+                    <div className="relative bg-white/90 backdrop-blur-md rounded-3xl p-8 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] group-hover:border-purple-200/50">
+                      <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-xl flex items-center justify-center mx-auto mb-6">
+                        <span className="text-white font-bold text-xl">{step.step}</span>
+                      </div>
+                      <step.icon className="w-8 h-8 text-purple-600 mx-auto mb-4" />
+                      <h4 className="text-xl font-bold text-gray-900 mb-4">{step.title}</h4>
+                      <p className="text-gray-600 leading-relaxed">{step.description}</p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
+          </section>
+
+          {/* Four Upscale Modes */}
+          <section className="py-[150px] bg-gray-50">
+            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">Four Upscale Modes</h3>
             
-            <p className="text-center text-gray-600 mt-8 text-lg">
-              (Switch modes on the fly; pay only for processed pixels.)
-            </p>
-          </section>
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                { 
+                  title: 'Face-Safe', 
+                  description: 'Preserves facial features with zero distortion. Perfect for portraits and people-focused content.',
+                  features: ['Facial landmark protection', 'Natural skin texture', 'Expression preservation', 'Zero artifacts'],
+                  color: 'from-green-500 to-emerald-500'
+                },
+                { 
+                  title: 'Basic', 
+                  description: 'Fast, general-purpose upscaling for everyday photos and graphics.',
+                  features: ['2x speed advantage', 'Universal compatibility', 'Clean edge enhancement', 'Batch-optimized'],
+                  color: 'from-blue-500 to-sky-500'
+                },
+                { 
+                  title: 'Textured', 
+                  description: 'Enhances fabric, hair, and surface details. Ideal for fashion and product photography.',
+                  features: ['Fabric detail enhancement', 'Hair strand definition', 'Surface texture boost', 'Material clarity'],
+                  color: 'from-purple-500 to-violet-500'
+                },
+                { 
+                  title: 'Full Restored', 
+                  description: 'Maximum quality restoration for damaged or low-quality source images.',
+                  features: ['Noise reduction', 'Artifact removal', 'Detail reconstruction', 'Color correction'],
+                  color: 'from-orange-500 to-red-500'
+                }
+              ].map((mode, index) => (
+                <div key={index} className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
+                  <div className="relative bg-white rounded-3xl p-8 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02]">
+                    <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${mode.color} flex items-center justify-center mb-6`}>
+                      <ArrowUp className="w-6 h-6 text-white" />
+                    </div>
+                    <h4 className="text-2xl font-bold text-gray-900 mb-4">{mode.title}</h4>
+                    <p className="text-gray-600 leading-relaxed mb-6">{mode.description}</p>
+                    <ul className="space-y-2">
+                      {mode.features.map((feature, idx) => (
+                        <li key={idx} className="text-gray-600 text-sm flex items-center">
+                          <CheckCircle className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
 
-          {/* Key Features */}
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Key Features</h3>
-            <ul className="list-disc list-inside text-gray-700 space-y-2">
-              <li><strong>Context-Aware AI</strong> – Identifies faces, skin, fabric, and backgrounds; applies specialised enhancement per region.</li>
-              <li><strong>True 4K Output</strong> – Clean lines, no halo rings or cartoonish oversharpening.</li>
-              <li><strong>Batch Processing</strong> – Upscale hundreds of images in parallel; track progress in real time.</li>
-              <li><strong>Seamless Pipeline</strong> – Pipe results to Face Swap, Carousel Builder, or schedule straight to socials.</li>
-            </ul>
-          </section>
-
-          {/* Built For */}
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Built For Teams Who Need to…</h3>
-            <ul className="list-disc list-inside text-gray-700 space-y-2">
-              <li>Publish sharp visuals across high-DPI mobile feeds.</li>
-              <li>Rescue legacy or user-generated images for new campaigns.</li>
-              <li>Print large banners, lookbooks, or OOH without reshooting.</li>
-            </ul>
-            <div className="mt-6">
-              <a href="/products/zencreator/content-creation/ai-upscaling" className="inline-block bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors">Try Upscale</a>
+            <div className="mt-12 text-center">
+              <div className="bg-gradient-to-r from-purple-100 to-indigo-100 rounded-2xl p-6 border border-purple-200 max-w-2xl mx-auto">
+                <p className="text-lg text-gray-800 font-semibold">Switch modes on the fly; pay only for processed pixels.</p>
+              </div>
             </div>
           </section>
 
+          {/* Key Features */}
+          <section className="py-[150px] bg-white">
+            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">Key Features</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { title: 'Context-Aware AI', description: 'Identifies faces, skin, fabric, and backgrounds; applies specialised enhancement per region.', icon: Settings },
+                { title: 'True 4K Output', description: 'Clean lines, no halo rings or cartoonish oversharpening.', icon: ArrowUp },
+                { title: 'Batch Processing', description: 'Upscale hundreds of images in parallel; track progress in real time.', icon: Zap },
+                { title: 'Seamless Pipeline', description: 'Pipe results to Face Swap, Carousel Builder, or schedule straight to socials.', icon: CheckCircle }
+              ].map((feature) => (
+                <div key={feature.title} className="relative group h-full">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
+                  <div className="relative bg-white/90 backdrop-blur-md rounded-3xl p-6 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] group-hover:border-purple-200/50 h-full">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center mb-4">
+                      <feature.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-3">{feature.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
 
+          {/* Built For Teams */}
+          <section className="py-[150px] bg-gray-50">
+            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">Built For Teams Who Need to…</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                'Publish sharp visuals across high-DPI mobile feeds.',
+                'Rescue legacy or user-generated images for new campaigns.',
+                'Batch-enhance product catalogues without manual editing.'
+              ].map((need, index) => (
+                <div key={index} className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 via-blue-600/5 to-indigo-600/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl"></div>
+                  <div className="relative bg-white rounded-3xl p-8 border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] text-center">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-indigo-500 flex items-center justify-center mb-6 mx-auto">
+                      <CheckCircle className="w-6 h-6 text-white" />
+                    </div>
+                    <p className="text-gray-700 leading-relaxed font-medium">{need}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-12 text-center">
+              <a href="https://app.zencreator.pro/" target="_blank" rel="noopener noreferrer" className="inline-block bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-800 transition-colors shadow-lg hover:shadow-xl">Try Upscale</a>
+            </div>
+          </section>
 
           {/* FAQ */}
-          <section className="py-12 border-t border-gray-200">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">FAQ</h3>
-            <div className="space-y-4 text-gray-700">
-              <div>
-                <p className="font-medium">Why four different modes?</p>
-                <p>No single model nails every scenario. We give you targeted engines optimised for speed, facial fidelity, texture depth, or full restoration.</p>
+          <section className="py-[150px] bg-white">
+            <h3 className="text-4xl md:text-5xl font-black text-gray-900 mb-12 text-center">Frequently Asked Questions</h3>
+            <div className="max-w-3xl mx-auto">
+              <div className="space-y-6">
+                {faqData.map((faq, index) => (
+                  <div key={index} className="border border-gray-200 rounded-xl p-6 hover:border-purple-200 transition-colors">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-2">{faq.question}</h4>
+                    <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                  </div>
+                ))}
               </div>
-              <div>
-                <p className="font-medium">Does Upscale change faces?</p>
-                <p>Not in Face-Safe or Basic modes. Textured may add stylistic grain; Full Restored preserves structure while boosting detail.</p>
-              </div>
-              <div>
-                <p className="font-medium">What’s the max resolution?</p>
-                <p>Inputs up to 8K; outputs up to 4× the original size, capped at 16K.</p>
-              </div>
-              <div>
-                <p className="font-medium">How fast is it?</p>
-                <p>Rough guide: 100 images (2K→4K) in ~2 minutes on a standard GPU instance.</p>
-              </div>
-              <div>
-                <p className="font-medium">Can I batch-process folders?</p>
-                <p>Yes — upload hundreds of photos; ZenCreator handles queueing and retry logic automatically.</p>
-              </div>
-              <p>Still have questions? <a href="mailto:support@zencreator.pro" className="text-purple-600 hover:underline">Contact support →</a></p>
+              <p className="text-center mt-8">Still have questions? <a href="mailto:support@zencreator.pro" className="text-purple-600 hover:underline">Contact support →</a></p>
             </div>
           </section>
 
@@ -219,7 +226,7 @@ export const AIUpscaling: React.FC = () => {
       <MoreMagicTools />
       
       {/* Final CTA */}
-      <section className="py-[150px] bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
+      <section className="w-full py-[150px] bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50">
         <div className="container mx-auto px-4">
           <div className="max-w-[1200px] mx-auto">
             <div className="bg-[#0F172A] text-white rounded-3xl p-12 md:p-16 text-center border border-white/10">
@@ -235,5 +242,3 @@ export const AIUpscaling: React.FC = () => {
     </PageLayout>
   );
 };
-
-
