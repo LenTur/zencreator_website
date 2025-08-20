@@ -293,18 +293,6 @@ export const Products = () => {
                 </Link>
               </div>
             </div>
-
-            {/* Full Width Both Option */}
-            <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-3xl p-8 text-center">
-              <div className="inline-block bg-gray-900 text-white px-4 py-2 rounded-full text-sm font-medium mb-4">
-                Complete Solution
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Both — ZenCreator + ZenComfy</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">Create social assets <em>and</em> generate SDXL art in the cloud with shared SSO & billing</p>
-              <a href="mailto:info@zencreator.pro?subject=ZenCreator%20%2B%20ZenComfy%20Bundle" className="bg-gray-900 text-white px-8 py-4 rounded-xl font-semibold hover:bg-purple-600 transition-colors duration-200">
-                Get Bundle Quote →
-              </a>
-            </div>
           </section>
 
           {/* Shared Advantages */}
@@ -370,12 +358,7 @@ export const Products = () => {
                 </div>
               </div>
               
-              <div className="mt-8 pt-8 border-t border-gray-200 flex items-center gap-4">
-                <p className="text-gray-600">Still deciding?</p>
-                <a href="mailto:info@zencreator.pro?subject=Product%20Consultation" className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-purple-50 hover:border-purple-400 hover:text-purple-900 transition-all duration-200">
-                  Talk to Product Specialist →
-                </a>
-              </div>
+
             </div>
           </div>
         </div>
