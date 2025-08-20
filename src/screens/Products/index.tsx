@@ -59,8 +59,8 @@ export const Products = () => {
 
   return (
     <PageLayout 
-      title="ZenCreator Product Suite — Creator OS & ZenComfy" 
-      description="Discover Creator OS for social-first AI content and ZenComfy for ComfyUI cloud workflows. Two solutions, one vision: create, deploy and scale visual content without friction."
+      title="ZenCreator Product Suite — ZenCreator & ZenComfy" 
+      description="Discover ZenCreator for social-first AI content and ZenComfy for ComfyUI cloud workflows. Two solutions, one vision: create, deploy and scale visual content without friction."
     >
       <div className="container mx-auto px-4 pb-20" style={{ paddingTop: '140px' }}>
         <div className="max-w-6xl mx-auto">
@@ -74,11 +74,11 @@ export const Products = () => {
 
       <div className="container mx-auto px-4 pb-16">
         <div className="max-w-6xl mx-auto">
-          {/* Creator OS */}
+          {/* ZenCreator */}
           <section className="pt-[40px] pb-[40px]">
             <div className="bg-ink-900 rounded-3xl p-6 md:p-8">
               <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-black text-white mb-8">Creator OS</h2>
+                <h2 className="text-4xl md:text-5xl font-black text-white mb-8">ZenCreator</h2>
                 <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed">
                   <strong>AI studio + omni-channel publishing + growth analytics</strong>
                 </p>
@@ -147,7 +147,7 @@ export const Products = () => {
 
               <div className="flex gap-4 justify-center">
                 <Link to="/products/zencreator" className="bg-gray-900 text-white px-8 py-4 rounded-xl font-semibold hover:bg-purple-600 transition-colors duration-200">
-                  Explore Creator OS →
+                  Explore ZenCreator →
                 </Link>
                 <a href="https://calendly.com/leo-zencreator/zencreator-demo-1?month=2025-08" target="_blank" rel="noopener noreferrer" className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-semibold hover:bg-purple-50 hover:border-purple-400 hover:text-purple-900 transition-all duration-200">
                   Book a Demo
